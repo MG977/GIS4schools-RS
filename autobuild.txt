@@ -1,0 +1,4 @@
+d:
+cd D:\Sphinx\gis4schools
+conda activate sphinx-env
+sphinx-autobuild --open-browser D:\Sphinx\gis4schools\ D:\Sphinx\gis4schools\_build\html

@@ -1,0 +1,923 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Hands-on exercises &mdash; GIS4Schools 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Principles of image analysis" href="rs_imageanalysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> GIS4Schools
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rs_fundamentals.html">1. Fundamentals of remote sensing and Earth observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rs_satelliteimages.html">2. Access to Copernicus satellite images for free</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rs_imageanalysis.html">3. Principles of image analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Hands-on exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-lakes-trophic-state">4.1 Monitoring lake’s trophic state</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-environmental-problem">4.1.1 The environmental problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#satellite-images">4.1.2 Satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-modelling">4.1.3 The modelling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chlorophylls-concentration-data">4.1.4 Chlorophyll’s concentration data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qgis-set-up">4.1.5 QGIS set-up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mapping-crop-types">4.2 Mapping crop types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.2.1 The environmental problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-of-the-exercise">4.2.2 Scope of the exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#study-area">4.2.3 Study area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.2.4 Satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#land-cover-information">4.2.5 Land cover information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">4.2.6 Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.2.7 QGIS set-up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-multiband-files-for-10-meter-satellite-images">4.2.8 Prepare multiband files for 10-meter satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-multiband-files-for-20-meter-satellite-images">4.2.9 Prepare multiband files for 20-meter satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-the-training-samples-for-image-classification">4.2.10 Create the training samples for image classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-mapping-of-crop-types">4.2.11 Automatic mapping of crop types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-analysis-of-results">4.2.12 Simple analysis of results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-crops-vegetative-stage">4.3 Monitoring crops’ vegetative stage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-environmental-problem-agricultural-productivity">4.3.1 The environmental problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">4.3.2 Scope of the exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">4.3.3 Study area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">4.3.4 Satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">4.3.5 Land cover information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">4.3.6 Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">4.3.7 QGIS set-up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-ndvi">4.3.8 Calculate NDVI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-the-ndvi-information-for-barley-and-potato">4.3.9 Select the NDVI information for Barley and Potato</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compare-winter-crops-and-summer-crops">4.3.10 Compare winter crops and summer crops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">4.3.11 Simple analysis of results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS4Schools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>4. Hands-on exercises</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/rs_casestudies.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hands-on-exercises">
+<span id="imageanalysis"></span><h1>4. Hands-on exercises<a class="headerlink" href="#hands-on-exercises" title="Permalink to this headline">¶</a></h1>
+<p>lorem ipsum, lorem ipsum</p>
+<p>lorem ipsum, lorem ipsum</p>
+<p>lorem ipsum, lorem ipsum</p>
+<div class="section" id="monitoring-lakes-trophic-state">
+<h2>4.1 Monitoring lake’s trophic state<a class="headerlink" href="#monitoring-lakes-trophic-state" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-environmental-problem">
+<h3>4.1.1 The environmental problem<a class="headerlink" href="#the-environmental-problem" title="Permalink to this headline">¶</a></h3>
+<p>The trophic state of a water body describes the amount of nutrients (mainly phosphorus and nitrogen) available to grow aquatic vegetation and phytoplankton. However, when water becomes rich with nutrients, phytoplankton’s rapid growth (called <strong>algae bloom</strong>) could cause negative impacts on the marine environment, like:</p>
+<ul class="simple">
+<li>The disruption of the normal ecosystem functioning,</li>
+<li>The consumption of oxygen in the water, resulting in the death of aquatic organisms and fishes,</li>
+<li>The reduction of sunlight reaching aquatic plants under the water surface,</li>
+<li>The production of harmful toxins.</li>
+</ul>
+<p>Lakes are usually classified into 4 trophic states, according to chlorophyll’s concentration present in the water. <a class="reference internal" href="#tab1-wq"><span class="std std-numref">Table 2</span></a> shows the most common definitions.</p>
+<span id="tab1-wq"></span><table border="1" class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Chlorophyll’s concentration and trophic level of lakes.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="35%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Trophic level</th>
+<th class="head">Chlorophyll’s concentration</th>
+<th class="head">Primary productivity</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Oligotrophic</td>
+<td>0-2.6 mg/m3</td>
+<td>Low due to nutrient deficiency</td>
+</tr>
+<tr class="row-odd"><td>Mesotrophic</td>
+<td>2.6-20 mg/m3</td>
+<td>Intermediate</td>
+</tr>
+<tr class="row-even"><td>Eutrophic</td>
+<td>20-56 mg/m3</td>
+<td>High due to excessive nutrients</td>
+</tr>
+<tr class="row-odd"><td>Hypereutrophic</td>
+<td>&gt;56 mg/m3</td>
+<td>Very High due to excessive nutrients</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>The role of climate change</strong> <br />
+Climate change may indirectly cause eutrophication by increasing runoff from the land, affecting nutrient load, due to increased precipitation resulting from global warming.</p>
+</div>
+</div>
+<div class="section" id="satellite-images">
+<h3>4.1.2 Satellite images<a class="headerlink" href="#satellite-images" title="Permalink to this headline">¶</a></h3>
+<p>The analysis is done using ten cloud-free Sentinel-2 images collected in the following dates of Summer 2016:</p>
+<ul class="simple">
+<li>18 July 2016,</li>
+<li>4 August 2016,</li>
+<li>14 August 2016,</li>
+<li>17 August 2016,</li>
+<li>24 August 2016,</li>
+<li>27 August 2016,</li>
+<li>3 September 2016,</li>
+<li>13 September 2016,</li>
+<li>23 September 2016,</li>
+<li>26 September 2016.</li>
+</ul>
+</div>
+<div class="section" id="the-modelling">
+<h3>4.1.3 The modelling<a class="headerlink" href="#the-modelling" title="Permalink to this headline">¶</a></h3>
+<p>The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. <br />
+Phytoplankton are microorganisms that float on the water body and contain chlorophyll. Thus, they could be detected with RVI.</p>
+<p>In this exercise we use a simple linear regression model described by equation <a class="reference internal" href="#equation-eqwq1">(15)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eqwq1">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eqwq1" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times RVI+b\]</div>
+<p>For Sentinel-2 images, we calculate Equation <a class="reference internal" href="#equation-eqwq1">(15)</a> as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eqwq2">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqwq2" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b\]</div>
+</div>
+<div class="section" id="chlorophylls-concentration-data">
+<h3>4.1.4 Chlorophyll’s concentration data<a class="headerlink" href="#chlorophylls-concentration-data" title="Permalink to this headline">¶</a></h3>
+<p>The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of equation <a class="reference internal" href="#equation-eqwq2">(16)</a>:</p>
+<p><a class="reference internal" href="#fig1-wq"><span class="std std-numref">Fig. 25</span></a> shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.</p>
+<div class="figure align-default" id="fig1-wq">
+<img alt="_images/Fig1_WQ.png" src="_images/Fig1_WQ.png" />
+</div>
+<p>Lake Trasimeno with superimposed the sampling locations (green dots).</p>
+</div>
+<div class="section" id="qgis-set-up">
+<h3>4.1.5 QGIS set-up<a class="headerlink" href="#qgis-set-up" title="Permalink to this headline">¶</a></h3>
+<p>Open QGIS. Go to the menu bar and click <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> → <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">and</span> <span class="pre">Install</span> <span class="pre">Plugins...</span></code> (<a class="reference internal" href="#fig3-wq-plugins"><span class="std std-numref">Fig. 26</span></a>).</p>
+<div class="figure align-default" id="id17">
+<span id="fig3-wq-plugins"></span><img alt="_images/Fig3_WQ_Plugins.png" src="_images/Fig3_WQ_Plugins.png" />
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the search bar write <strong>SCP</strong> and select the <code class="docutils literal notranslate"><span class="pre">Semi-Automatic</span> <span class="pre">Classification</span> <span class="pre">Plugin</span></code>. Press <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">plugin</span></code> in the bottom-right corner of the window and close the window (<a class="reference internal" href="#fig4-wq-install-plugin"><span class="std std-numref">Fig. 27</span></a>).</p>
+<div class="figure align-default" id="id18">
+<span id="fig4-wq-install-plugin"></span><img alt="_images/Fig4_WQ_Install_Plugin.png" src="_images/Fig4_WQ_Install_Plugin.png" />
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>In QGIS main window, select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Empty</span> <span class="pre">Project</span></code> (<a class="reference internal" href="#fig2-wq-new-project"><span class="std std-numref">Fig. 28</span></a>).</p>
+<div class="figure align-default" id="id19">
+<span id="fig2-wq-new-project"></span><img alt="_images/Fig2_WQ_New_Project.png" src="_images/Fig2_WQ_New_Project.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="mapping-crop-types">
+<h2>4.2 Mapping crop types<a class="headerlink" href="#mapping-crop-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>4.2.1 The environmental problem<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Agriculture is highly dependent on the climate. For any crop type, the effect of climate change will depend on the crop’s optimal temperature and water availability for growth and reproduction.</p>
+<p>The temperature increase will change farming practices. In some countries, warming could increase productivity or allow farmers to shift to crops that are currently grown in warmer areas. A higher temperature could exceed the crop’s optimum temperature in some other countries, and production will decline.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>The role of climate change.</strong> <br />
+Overall, climate change may make it difficult to grow crops the same ways and in the same places as in the past.</p>
+</div>
+</div>
+<div class="section" id="scope-of-the-exercise">
+<h3>4.2.2 Scope of the exercise<a class="headerlink" href="#scope-of-the-exercise" title="Permalink to this headline">¶</a></h3>
+<p>This exercise shows a very simple method to map crop types with satellites.</p>
+</div>
+<div class="section" id="study-area">
+<h3>4.2.3 Study area<a class="headerlink" href="#study-area" title="Permalink to this headline">¶</a></h3>
+<p>The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. <br />
+The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.</p>
+</div>
+<div class="section" id="id2">
+<h3>4.2.4 Satellite images<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The analysis is done using two cloud-free Sentinel-2 images collected in the following dates of Spring-Summer 2018:</p>
+<ul class="simple">
+<li>18 April 2018,</li>
+<li>27 June 2018.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Sentinel-2 images used in this exercise are supplied as atmospherically corrected <code class="docutils literal notranslate"><span class="pre">L2A</span></code> products. <strong>THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.</strong></p>
+</div>
+</div>
+<div class="section" id="land-cover-information">
+<h3>4.2.5 Land cover information<a class="headerlink" href="#land-cover-information" title="Permalink to this headline">¶</a></h3>
+<p>Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in <a class="reference internal" href="#fig1-crop-study-area"><span class="std std-numref">Fig. 29</span></a> stands for a crop field with available information on the cultivated crop type.</p>
+<p>In the study area are cultivated the following main crops:</p>
+<ul class="simple">
+<li>Barley,</li>
+<li>Chicory,</li>
+<li>Wheat,</li>
+<li>Flax (linseed),</li>
+<li>Maize,</li>
+<li>Peas,</li>
+<li>Potato,</li>
+<li>Sugar beet.</li>
+</ul>
+<div class="figure align-default" id="id20">
+<span id="fig1-crop-study-area"></span><img alt="_images/Fig1_CROP_Study_area.png" src="_images/Fig1_CROP_Study_area.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Farmlands in the Wallonia region.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="methods">
+<h3>4.2.6 Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>The mapping process uses the <strong>Minimum Distance</strong> supervised classification algorithm. The training samples, called <em>Region Of Interest (ROI)</em> in QGIS, are extracted from available land cover polygons.</p>
+</div>
+<div class="section" id="id3">
+<h3>4.2.7 QGIS set-up<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Open QGIS and select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Empty</span> <span class="pre">Project</span></code> in the main window (<a class="reference internal" href="#fig2-crop-new-project"><span class="std std-numref">Fig. 30</span></a>).</p>
+<div class="figure align-default" id="id21">
+<span id="fig2-crop-new-project"></span><img alt="_images/Fig2_WQ_New_Project.png" src="_images/Fig2_WQ_New_Project.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="prepare-multiband-files-for-10-meter-satellite-images">
+<span id="id4"></span><h3>4.2.8 Prepare multiband files for 10-meter satellite images<a class="headerlink" href="#prepare-multiband-files-for-10-meter-satellite-images" title="Permalink to this headline">¶</a></h3>
+<p>Open the folder <code class="docutils literal notranslate"><span class="pre">S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE</span></code> → <code class="docutils literal notranslate"><span class="pre">GRANULE</span></code> → <code class="docutils literal notranslate"><span class="pre">L2A_T31UFS_A014734_20180418T104512</span></code> → <code class="docutils literal notranslate"><span class="pre">IMG_DATA</span></code> → <code class="docutils literal notranslate"><span class="pre">R10m</span></code>.</p>
+<p>Each 10-meter Sentinel-2’s spectral band is stored as a single file. Now select the spectral bands with 10 m spatial resolution, those file names end with  (<a class="reference internal" href="#fig3-crop-band-selection"><span class="std std-numref">Fig. 31</span></a>):</p>
+<ul class="simple">
+<li>“…_B02_10m.jp2”,</li>
+<li>“…_B03_10m.jp2”,</li>
+<li>“…_B04_10m.jp2”,</li>
+<li>“…_B08_10m.jp2”.</li>
+</ul>
+<div class="figure align-default" id="id22">
+<span id="fig3-crop-band-selection"></span><img alt="_images/Fig3_CROP_Band_selection.png" src="_images/Fig3_CROP_Band_selection.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>Import these files in QGIS.</p>
+<p>Now create the multiband file. <br />
+In QGIS menu bar open the <code class="docutils literal notranslate"><span class="pre">Raster</span></code> menu and select <code class="docutils literal notranslate"><span class="pre">Miscellaneous</span></code> → <code class="docutils literal notranslate"><span class="pre">Merge</span></code> (<a class="reference internal" href="#fig4-crop-merge"><span class="std std-numref">Fig. 32</span></a>).</p>
+<div class="figure align-default" id="id23">
+<span id="fig4-crop-merge"></span><img alt="_images/Fig4_CROP_Merge.png" src="_images/Fig4_CROP_Merge.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the <strong>merge window</strong> click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code> at the end of the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">layers</span></code> parameter (<a class="reference internal" href="#fig5-crop-merge-window"><span class="std std-numref">Fig. 33</span></a>).</p>
+<div class="figure align-default" id="id24">
+<span id="fig5-crop-merge-window"></span><img alt="_images/Fig5_CROP_Merge_window.png" src="_images/Fig5_CROP_Merge_window.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select all the layers and click <strong>OK</strong> (:numref:` Fig6_CROP_Merge_band_selection <a href="#id5"><span class="problematic" id="id6">`</span></a>).</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Be careful to check that files are sorted in the following order: <strong>B02, B03, B04 and B08.</strong></p>
+</div>
+<span class="target" id="fig6-crop-merge-band-selection"></span><hr class="docutils" />
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="prepare-multiband-files-for-20-meter-satellite-images">
+<h3>4.2.9 Prepare multiband files for 20-meter satellite images<a class="headerlink" href="#prepare-multiband-files-for-20-meter-satellite-images" title="Permalink to this headline">¶</a></h3>
+<p>Repeat the same data processing done for the 10-meter satellite images, and create multiband files for the 20-meter satellite images.</p>
+<p>Remove the open layers from QGIS and open the folder <code class="docutils literal notranslate"><span class="pre">S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE</span></code> → <code class="docutils literal notranslate"><span class="pre">GRANULE</span></code> → <code class="docutils literal notranslate"><span class="pre">L2A_T31UFS_A014734_20180418T104512</span></code> → <code class="docutils literal notranslate"><span class="pre">IMG_DATA</span></code> → <code class="docutils literal notranslate"><span class="pre">R20m</span></code>.</p>
+<p>Each 20-meter Sentinel-2’s spectral band is stored as a single file. Now select the spectral bands with 20 m spatial resolution, those file names end with (<a class="reference internal" href="#fig7-crop-20m-band-selection"><span class="std std-numref">Fig. 34</span></a>):</p>
+<ul class="simple">
+<li>“…B02_20m.jp2”,</li>
+<li>“…B03_20m.jp2”,</li>
+<li>“…B04_20m.jp2”,</li>
+<li>“…B05_20m.jp2”,</li>
+<li>“…B06_20m.jp2”,</li>
+<li>“…B07_20m.jp2”,</li>
+<li>“…B8A_20m.jp2”,</li>
+<li>“…B11_20m.jp2”,</li>
+<li>“…B12_20m.jp2”.</li>
+</ul>
+<div class="figure align-default" id="id25">
+<span id="fig7-crop-20m-band-selection"></span><img alt="_images/Fig7_CROP_20m_band_selection.png" src="_images/Fig7_CROP_20m_band_selection.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now create the multiband file by merging together the spectral bands, as described in <a class="reference internal" href="#prepare-multiband-files-for-10-meter-satellite-images"><span class="std std-ref">4.2.8 Prepare multiband files for 10-meter satellite images</span></a>.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Be careful when selecting the input layers. Band <strong>B8A</strong> is the last entry by default. <strong>IT MUST BE MOVED AFTER BAND B07</strong> (<a class="reference internal" href="#fig8-crop-20m-wrong-band-order"><span class="std std-numref">Fig. 35</span></a>).</p>
+</div>
+<div class="figure align-default" id="id26">
+<span id="fig8-crop-20m-wrong-band-order"></span><img alt="_images/Fig8_CROP_20m_wrong_band_order.png" src="_images/Fig8_CROP_20m_wrong_band_order.png" />
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once band <strong>B8A</strong> is moved AFTER band B07, the list will look like <code class="xref std std-numref docutils literal notranslate"><span class="pre">Fig9_CROP_20m_correct_band_order</span></code>).</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/Fig9_CROP_20m_correct_band_order.png" src="_images/Fig9_CROP_20m_correct_band_order.png" />
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>Save the output file as <code class="docutils literal notranslate"><span class="pre">S2_20180418_20m.tif</span></code> in the same folder used for 10-meters Sentinel-2 images.</p>
+</div>
+<div class="section" id="create-the-training-samples-for-image-classification">
+<h3>4.2.10 Create the training samples for image classification<a class="headerlink" href="#create-the-training-samples-for-image-classification" title="Permalink to this headline">¶</a></h3>
+<p>In our study area, farmlands are much more extensive than 20 m x 20 m. Thus, we use the 20-meters Sentinel-2 image to perform the classification process. On the one hand we do not need greater detail, and on the other hand the 20-meters images have much more spectral bands, thus allowing a better recognition of crop types.</p>
+<p>Import in QGIS the Sentinel-2 multiband image of 27 June 2018 <code class="docutils literal notranslate"><span class="pre">S2_20180627_20m.tif</span></code>.</p>
+<p>Import in QGIS the shapefile <code class="docutils literal notranslate"><span class="pre">Wallonia_2018_In_Situ_Extracted_v1.shp</span></code> that describes a field with available information on the cultivated crop type. This information is stored in the attribute table (<a class="reference internal" href="#fig10-crop-dataset-attribute-table"><span class="std std-numref">Fig. 37</span></a>). <br />
+To see the attributes, right-click the layer <code class="docutils literal notranslate"><span class="pre">Wallonia_2018_In_Situ_Extracted_v1.shp</span></code> and select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Attribute</span> <span class="pre">Table</span></code>.</p>
+<div class="figure align-default" id="id28">
+<span id="fig10-crop-dataset-attribute-table"></span><img alt="_images/Fig10_CROP_Dataset_attribute_table.png" src="_images/Fig10_CROP_Dataset_attribute_table.png" />
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>The attribute <strong>LC</strong> (i.e. land cover) describes the crop type, and the attribute <strong>Class_code</strong> assigns a unique numerical code to each land cover class. The database uses the coding scheme of <a class="reference internal" href="#tab1-crop"><span class="std std-numref">Table 3</span></a>.</p>
+<span id="tab1-crop"></span><table border="1" class="docutils align-default" id="id29">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Land cover classes and class code numbering.</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Land cover</th>
+<th class="head">Class code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Barley</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Chicory</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>Common wheat</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Flax (Linseed)</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Grassland</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>Maize</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>Not Agriculture</td>
+<td>7</td>
+</tr>
+<tr class="row-odd"><td>Peas</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Potato</td>
+<td>9</td>
+</tr>
+<tr class="row-odd"><td>Sugar beet</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">We need some <em>a priori</em> information on the land cover for EACH crop type we want to map. This information is used as training samples during the classification process.</p>
+</div>
+<p>Now we have to tell the software which satellite image we want to classify (<a class="reference internal" href="#fig11-crop-define-band-set"><span class="std std-numref">Fig. 38</span></a>). <br />
+Open the <strong>SCP</strong> tool window. <br />
+Select <strong>Band set</strong> from the left-side menu. <br />
+Set the parameter <code class="docutils literal notranslate"><span class="pre">Multiband</span> <span class="pre">image</span> <span class="pre">list</span></code> to the Sentinel-2 multiband image <code class="docutils literal notranslate"><span class="pre">S2_20180627_20m</span></code>.</p>
+<div class="figure align-default" id="id30">
+<span id="fig11-crop-define-band-set"></span><img alt="_images/Fig11_CROP_Define_band_set.png" src="_images/Fig11_CROP_Define_band_set.png" />
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>Then we need to convert the shapefile into ROI (Region of Interest) for the classification process to use these polygons as training samples.</p>
+<p>Open the <strong>SCP Dock</strong> (<a class="reference internal" href="#fig12-crop-scp-dock-tool"><span class="std std-numref">Fig. 39</span></a>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you don’t have the SCP Dock window opened in QGIS, select: <code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Panels</span></code> → <code class="docutils literal notranslate"><span class="pre">Activate</span> <span class="pre">SCP</span> <span class="pre">Dock</span></code>.</p>
+</div>
+<div class="figure align-default" id="id31">
+<span id="fig12-crop-scp-dock-tool"></span><img alt="_images/Fig12_CROP_SCP_Dock_tool.png" src="_images/Fig12_CROP_SCP_Dock_tool.png" />
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open the tab <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">input</span></code> and click on the icon <strong>Create a new ROI file</strong> (<a class="reference internal" href="#fig13-crop-create-new-roi-file"><span class="std std-numref">Fig. 40</span></a>).</p>
+<div class="figure align-default" id="id32">
+<span id="fig13-crop-create-new-roi-file"></span><img alt="_images/Fig13_CROP_Create_new_ROI_file.png" src="_images/Fig13_CROP_Create_new_ROI_file.png" />
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select the folder where you want to save the training samples file and name it <code class="docutils literal notranslate"><span class="pre">Training</span></code>.</p>
+<p>Open the main SCP window again and go to the panel <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">Tools</span> <span class="pre">panel</span></code> → <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">signatures</span></code> (<a class="reference internal" href="#fig14-crop-import-signature"><span class="std std-numref">Fig. 41</span></a>).</p>
+<div class="figure align-default" id="id33">
+<span id="fig14-crop-import-signature"></span><img alt="_images/Fig14_CROP_Import_signature.png" src="_images/Fig14_CROP_Import_signature.png" />
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>and click the button <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">vector</span></code> (<a class="reference internal" href="#fig15-crop-signature-from-vector"><span class="std std-numref">Fig. 42</span></a>)</p>
+<div class="figure align-default" id="id34">
+<span id="fig15-crop-signature-from-vector"></span><img alt="_images/Fig15_CROP_Signature_from_vector.png" src="_images/Fig15_CROP_Signature_from_vector.png" />
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now open the shapefile <code class="docutils literal notranslate"><span class="pre">Wallonia_2018_In_Situ_Extracted_v1.shp</span></code> (<a class="reference internal" href="#fig16-crop-select-the-vector-file"><span class="std std-numref">Fig. 43</span></a>). <br />
+The software shows the following information:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">MC</span> <span class="pre">ID</span> <span class="pre">field</span></code> (i.e. Macro Class ID field): this field requires a numerical code to identify the classes we want to classify. QGGIS allows to use an attribute of the shapefile; thus we use the <strong>Class_code</strong>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">MC</span> <span class="pre">Name</span> <span class="pre">field</span></code> (i.e. Macro Class Name field): this field requires the class name linked with the <strong>MC ID field</strong>. The attribute containing the class name is <strong>LC</strong>,</li>
+<li>In this exercise, we will not use the fields <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">ID</span></code> (i.e. Class ID) and <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">Name</span></code> (i.e. Class Name). Thus, select the same attributes of the Macro Classes.</li>
+</ul>
+<div class="figure align-default" id="id35">
+<span id="fig16-crop-select-the-vector-file"></span><img alt="_images/Fig16_CROP_Select_the_vector_file.png" src="_images/Fig16_CROP_Select_the_vector_file.png" />
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">vector</span></code> icon (<a class="reference internal" href="#fig17-crop-roi-creation"><span class="std std-numref">Fig. 44</span></a>).</p>
+<div class="figure align-default" id="id36">
+<span id="fig17-crop-roi-creation"></span><img alt="_images/Fig17_CROP_ROI_Creation.png" src="_images/Fig17_CROP_ROI_Creation.png" />
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Wait until the importing is finished! <br />
+This process might take some minutes, depending on your PC performances.</p>
+</div>
+</div>
+<div class="section" id="automatic-mapping-of-crop-types">
+<h3>4.2.11 Automatic mapping of crop types<a class="headerlink" href="#automatic-mapping-of-crop-types" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start the classification process.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">SCP</span> <span class="pre">window</span></code> and go to the <code class="docutils literal notranslate"><span class="pre">Band</span> <span class="pre">processing</span></code> panel. Select <code class="docutils literal notranslate"><span class="pre">Classification</span></code> and set the parameters as follows (<a class="reference internal" href="#fig18-crop-classification-tool"><span class="std std-numref">Fig. 45</span></a>):</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">input</span> <span class="pre">band</span> <span class="pre">set:</span></code> set <strong>1</strong>. We set earlier the Sentinel-2 multiband image <code class="docutils literal notranslate"><span class="pre">S2_20180627_20m</span></code> as the band set 1,</li>
+<li><code class="docutils literal notranslate"><span class="pre">Use:</span></code> flag <strong>MC ID</strong>. We set earlier the crop type as <code class="docutils literal notranslate"><span class="pre">MC</span> <span class="pre">ID</span></code>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">Algorithm:</span></code> select <strong>Minimum Distance</strong>. We use the minimum distance classification algorithm,</li>
+<li><code class="docutils literal notranslate"><span class="pre">Threshold:</span></code> set <strong>0</strong>. We are telling the algorithm to classify all the image pixels.</li>
+</ul>
+<div class="figure align-default" id="id37">
+<span id="fig18-crop-classification-tool"></span><img alt="_images/Fig18_CROP_Classification_tool.png" src="_images/Fig18_CROP_Classification_tool.png" />
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>Click the button <code class="docutils literal notranslate"><span class="pre">RUN</span></code> and select the folder where you want to save the classification map. Name the folder <code class="docutils literal notranslate"><span class="pre">20180627_Classification</span></code>.</p>
+<p>The data processing transforms the input satellite image into a land cover map of crops types. Each pixel of the map is coded with its <strong>Class_code</strong> (<a class="reference internal" href="#tab1-crop"><span class="std std-numref">Table 3</span></a>). All the image pixels whose land cover is not recognized are assigned the <strong>“special” Class_code 0</strong> (unclassified). <a class="reference internal" href="#fig19-crop-classification-result"><span class="std std-numref">Fig. 46</span></a> shows the result.</p>
+<div class="figure align-default" id="id38">
+<span id="fig19-crop-classification-result"></span><img alt="_images/Fig19_CROP_Classification_result.png" src="_images/Fig19_CROP_Classification_result.png" />
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="simple-analysis-of-results">
+<h3>4.2.12 Simple analysis of results<a class="headerlink" href="#simple-analysis-of-results" title="Permalink to this headline">¶</a></h3>
+<p>If we want to estimate the most farmed crop, right-click on the classification layer <code class="docutils literal notranslate"><span class="pre">20180627_Classification</span></code> and select <code class="docutils literal notranslate"><span class="pre">Properties</span></code> (<a class="reference internal" href="#fig20-crop-classification-properties"><span class="std std-numref">Fig. 47</span></a>).</p>
+<div class="figure align-default" id="id39">
+<span id="fig20-crop-classification-properties"></span><img alt="_images/Fig20_CROP_Classification_properties.png" src="_images/Fig20_CROP_Classification_properties.png" />
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the left-side menu select <code class="docutils literal notranslate"><span class="pre">Histogram</span></code> and then click the button <code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Histogram</span></code>. <br />
+This tool counts the number of pixels for each land cover class, called <strong>frequency</strong> (<a class="reference internal" href="#fig21-crop-classification-histogram"><span class="std std-numref">Fig. 48</span></a>). <br />
+We see that the crop Flax (Linseed), <em>coded with the class number 4</em>, is the most farmed in the study area.</p>
+<div class="figure align-default" id="id40">
+<span id="fig21-crop-classification-histogram"></span><img alt="_images/Fig21_CROP_Classification_histogram.png" src="_images/Fig21_CROP_Classification_histogram.png" />
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If we have some information on the land cover and satellite images for the same location, but in a different period, we can compare how the farming of crop types changes in time.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If we have some information on the land cover and satellite images for the same period, but in a different location, we can compare how crop types are farmed in other places.</p>
+</div>
+</div>
+</div>
+<div class="section" id="monitoring-crops-vegetative-stage">
+<h2>4.3 Monitoring crops’ vegetative stage<a class="headerlink" href="#monitoring-crops-vegetative-stage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-environmental-problem-agricultural-productivity">
+<span id="id7"></span><h3>4.3.1 The environmental problem<a class="headerlink" href="#the-environmental-problem-agricultural-productivity" title="Permalink to this headline">¶</a></h3>
+<p>Agricultural productivity is strictly related to environmental factors. For example:</p>
+<ul class="simple">
+<li>Rising levels of CO2 reduce protein content and essential minerals in most crops, including Wheat, Soybeans, and Rice, resulting in a loss of food quality,</li>
+<li>Extreme temperature and precipitation can prevent crops from growing,</li>
+<li>Floods and droughts can harm crops and reduce productivity,</li>
+<li>Droughts can cause desertification,</li>
+<li>Many insects and fungi prosper under warmer temperatures, wetter climates, and increased CO2 levels,</li>
+<li>Pollutants reduce agricultural productivity.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>The role of climate change</strong> <br />
+Climate change is modifying the temperature and the precipitation regimes, intensifying extreme weather, and increasing desertification in many fragile territories. That has an impact on the health of vegetation and crops.</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>4.3.2 Scope of the exercise<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>This exercise shows satellites’ use to evaluate Barley and Potatoes’ vegetative stage in different periods of the year.</p>
+</div>
+<div class="section" id="id9">
+<h3>4.3.3 Study area<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. <br />
+The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.</p>
+</div>
+<div class="section" id="id10">
+<h3>4.3.4 Satellite images<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>The analysis is done using two cloud-free Sentinel-2 images collected in the following dates of Spring-Summer 2018:</p>
+<ul class="simple">
+<li>18 April 2018,</li>
+<li>27 June 2018.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Sentinel-2 images used in this exercise are supplied as atmospherically corrected <code class="docutils literal notranslate"><span class="pre">L2A</span></code> products. <strong>THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.</strong></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>4.3.5 Land cover information<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in <a class="reference internal" href="#fig1-ndvi-study-area"><span class="std std-numref">Fig. 49</span></a> stands for a crop field with available information on the cultivated crop type.</p>
+<p>In the study area are cultivated the following main crops:</p>
+<ul class="simple">
+<li>Barley,</li>
+<li>Chicory,</li>
+<li>Wheat,</li>
+<li>Flax (linseed),</li>
+<li>Maize,</li>
+<li>Peas,</li>
+<li>Potato,</li>
+<li>Sugar beet.</li>
+</ul>
+<div class="figure align-default" id="id41">
+<span id="fig1-ndvi-study-area"></span><img alt="_images/Fig1_CROP_Study_area.png" src="_images/Fig1_CROP_Study_area.png" />
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Farmlands in the Wallonia region.</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>4.3.6 Methods<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>The monitoring of vegetative stage is done using the <strong>Normalized Difference Vegetation Index (NDVI)</strong> (<a class="reference internal" href="rs_imageanalysis.html#examples-of-spectral-indices-for-studying-vegetation"><span class="std std-ref">3.1.3. Examples of spectral indices for studying vegetation</span></a>) described by Equation <a class="reference internal" href="rs_imageanalysis.html#equation-eqsi2">(2)</a>:</p>
+<div class="math notranslate nohighlight">
+\[NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}\]</div>
+</div>
+<div class="section" id="id13">
+<h3>4.3.7 QGIS set-up<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Open QGIS and select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Empty</span> <span class="pre">Project</span></code> in the main window (<a class="reference internal" href="#fig2-ndvi-new-project"><span class="std std-numref">Fig. 50</span></a>).</p>
+<div class="figure align-default" id="id42">
+<span id="fig2-ndvi-new-project"></span><img alt="_images/Fig2_WQ_New_Project.png" src="_images/Fig2_WQ_New_Project.png" />
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="calculate-ndvi">
+<span id="id14"></span><h3>4.3.8 Calculate NDVI<a class="headerlink" href="#calculate-ndvi" title="Permalink to this headline">¶</a></h3>
+<p>To compute NDVI, we need only the NIR and Red bands. Thus, we use Sentinel-2’s highest spatial resolution images (10-meters).</p>
+<p>Open the folder <code class="docutils literal notranslate"><span class="pre">…\Sentinel-2\10m</span></code> and import in QGIS the image <code class="docutils literal notranslate"><span class="pre">S2_20180418_10m</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prepare the input multiband satellite images as described in <a class="reference internal" href="#prepare-multiband-files-for-10-meter-satellite-images"><span class="std std-ref">4.2.8 Prepare multiband files for 10-meter satellite images</span></a>.</p>
+</div>
+<p>Now we do some calculations with images using the <strong>Raster Calculator</strong>. This tool allows evaluating equations based on the image pixel values. <br />
+Open <strong>Raster Calculator</strong> from the menu <code class="docutils literal notranslate"><span class="pre">Raster</span></code> → <code class="docutils literal notranslate"><span class="pre">Raster</span> <span class="pre">Calculator...</span></code> (<a class="reference internal" href="#fig1-ndviraster-calculator"><span class="std std-numref">Fig. 51</span></a>).</p>
+<div class="figure align-default" id="id43">
+<span id="fig1-ndviraster-calculator"></span><img alt="Figure/Fig1_NDVIRaster_calculator.png" src="Figure/Fig1_NDVIRaster_calculator.png" />
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
+<p>We want to calculate the NDVI for each of the satellite image pixels (for more information refer to <a class="reference internal" href="rs_imageanalysis.html#examples-of-spectral-indices-for-studying-vegetation"><span class="std std-ref">3.1.3. Examples of spectral indices for studying vegetation</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}\]</div>
+<p>Before writing the calculation formula for NDVI, we need to know which are the Red and NIR spectral bands. <br />
+Remember that Sentinel-2’s 10-meters resolution Red band is band 3 (B3), and its 10-meters resolution NIR band is band 4 (B4). Thus, the NDVI equation written for Sentinel-2 images becomes Equation <a class="reference internal" href="#equation-eqndvi1">(17)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eqndvi1">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqndvi1" title="Permalink to this equation">¶</a></span>\[NDVI=\frac{\rho_{Band\ 4}-\rho_{Band\ 3}}{\rho_{Band\ 4}+\rho_{Band\ 3}}\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqndvi1">(17)</a> can also be written as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eqndvi2">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqndvi2" title="Permalink to this equation">¶</a></span>\[NDVI=(B4-B3)/(B4+B3)\]</div>
+<p>where: <br />
+B3 are the pixel values in Band 3 (i.e. the Red band), <br />
+B4 are the pixel values in Band 4 (i.e. the NIR band).</p>
+<p>Now, we have to write Equation <a class="reference internal" href="#equation-eqndvi2">(18)</a> using QGIS syntax, so the software can understand it. <br />
+With the help of the calculator buttons, write the following expression in <code class="docutils literal notranslate"><span class="pre">Raster</span> <span class="pre">Calculator</span> <span class="pre">Expression</span></code>:</p>
+<p>(“S2A_20180418_10m&#64;4” - “S2A_20180418_10m&#64;3”)/(“S2A_20180418_10m&#64;4”+”S2A_20180418_10m&#64;3”)</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p><strong>How to read QGIS equations?</strong></p>
+<p>“S2A_20180418_10m&#64;4” means: <br />
+<em>“pick each pixel value of image S2A_20180418_10m for band 4 (&#64;4)”</em>.</p>
+<p>“S2A_20180418_10m&#64;3” means: <br />
+<em>“pick each pixel value of image S2A_20180418_10m for band 3 (&#64;3)”</em>.</p>
+<p class="last"><strong>Equations are calculated on a pixel basis. Thus the same equation is computed for each image pixel individually. The results are shown in a new image.</strong></p>
+</div>
+<p>In <strong>Result Layer</strong> click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code> next to <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">layer</span></code> and select where you want to save the classification results. Name the folder <code class="docutils literal notranslate"><span class="pre">..\NDVI</span></code> and the file <code class="docutils literal notranslate"><span class="pre">2018_04_18_NDVI</span></code>  (<a class="reference internal" href="#fig2-ndvi-raster-calculator-window"><span class="std std-numref">Fig. 52</span></a>).</p>
+<div class="figure align-default" id="id44">
+<span id="fig2-ndvi-raster-calculator-window"></span><img alt="_images/Fig2_NDVI_Raster_Calculator_window.png" src="_images/Fig2_NDVI_Raster_Calculator_window.png" />
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+<p>The output is a grayscale image, where each pixel contains its NDVI value just computed (<a class="reference internal" href="#fig3-ndvi-april-ndvi"><span class="std std-numref">Fig. 53</span></a>).</p>
+<div class="figure align-default" id="id45">
+<span id="fig3-ndvi-april-ndvi"></span><img alt="_images/Fig3_NDVI_April_NDVI.png" src="_images/Fig3_NDVI_April_NDVI.png" />
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now repeat the data processing again for the satellite image collected on 27 June 2018 (multiband file <code class="docutils literal notranslate"><span class="pre">S2_20180627_10m</span></code>). <br />
+Remember to use <strong>“S2A_20180627_10m&#64;3”</strong> and <strong>“S2A_20180627_10m&#64;4”</strong> in the expression for calculating NDVI on 27 June 2018. Save results as <code class="docutils literal notranslate"><span class="pre">..\NDVI\2018_06_27_NDVI</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To simplify the processing, remove all the layer from QGIS and start from scratch (<a class="reference internal" href="#calculate-ndvi"><span class="std std-ref">4.3.8 Calculate NDVI</span></a>).</p>
+</div>
+</div>
+<div class="section" id="select-the-ndvi-information-for-barley-and-potato">
+<h3>4.3.9 Select the NDVI information for Barley and Potato<a class="headerlink" href="#select-the-ndvi-information-for-barley-and-potato" title="Permalink to this headline">¶</a></h3>
+<p>Once computed the NDVI for both the satellite images, we want to compare Barley and Potato’s vegetative stage in April and June.</p>
+<p>Open the attribute table of the shapefile <strong>Wallonia_2018_In_Situ_Extracted_v1</strong>: right-click on <code class="docutils literal notranslate"><span class="pre">Wallonia_2018_In_Situ_Extracted_v1</span></code> → <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Attribute</span> <span class="pre">Table</span></code> (<a class="reference internal" href="#fig4-ndvi-open-attribute-table"><span class="std std-numref">Fig. 54</span></a>).</p>
+<div class="figure align-default" id="id46">
+<span id="fig4-ndvi-open-attribute-table"></span><img alt="_images/Fig4_NDVI_Open_Attribute_table.png" src="_images/Fig4_NDVI_Open_Attribute_table.png" />
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</div>
+<p>To filter the attribute table by land cover type (the attribute <strong>LC</strong>), we need the tool <strong>Select feature using an expression.</strong> Click the icon showed in (<a class="reference internal" href="#fig5-ndvi-select-by-expression"><span class="std std-numref">Fig. 55</span></a>).</p>
+<div class="figure align-default" id="id47">
+<span id="fig5-ndvi-select-by-expression"></span><img alt="_images/Fig5_NDVI_Select_by_expression.png" src="_images/Fig5_NDVI_Select_by_expression.png" />
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+</div>
+<p>The window <strong>Select by Expression</strong> opens. Expand the tree <strong>Fields and Values</strong> and double click on <code class="docutils literal notranslate"><span class="pre">LC</span></code> (<a class="reference internal" href="#fig6-ndvi-select-lc"><span class="std std-numref">Fig. 56</span></a>).</p>
+<div class="figure align-default" id="id48">
+<span id="fig6-ndvi-select-lc"></span><img alt="_images/Fig6_NDVI_select_LC.png" src="_images/Fig6_NDVI_select_LC.png" />
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</div>
+<p>The main window <strong>Expression</strong> automatically fills with “LC”. <br />
+Click the button <code class="docutils literal notranslate"><span class="pre">=</span></code> and then click the button <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Unique</span></code>. This command shows, on the right side, the list of all available land cover in the shapefile <strong>Wallonia_2018_In_Situ_Extracted_v1</strong>. <br />
+Double click on <code class="docutils literal notranslate"><span class="pre">Barley</span> <span class="pre">(winter)</span></code>. Now the expression in the main window becomes “LC” =  ‘Barley (winter)’ (<a class="reference internal" href="#fig7-ndvi-select-barley"><span class="std std-numref">Fig. 57</span></a>).</p>
+<div class="figure align-default" id="id49">
+<span id="fig7-ndvi-select-barley"></span><img alt="_images/Fig7_NDVI_Select_Barley.png" src="_images/Fig7_NDVI_Select_Barley.png" />
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+</div>
+<p>We are telling the software to select the land cover Barley. But we want to select also Potato. <br />
+Expand the tree <strong>Operators</strong> and double click on the <strong>OR</strong> operator (<a class="reference internal" href="#fig8-ndvi-select-or-operator"><span class="std std-numref">Fig. 58</span></a>).</p>
+<div class="figure align-default" id="id50">
+<span id="fig8-ndvi-select-or-operator"></span><img alt="_images/Fig8_NDVI_Select_OR_operator.png" src="_images/Fig8_NDVI_Select_OR_operator.png" />
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+</div>
+<p>Expand the tree <strong>Fields and Values</strong> again, double click <strong>LC</strong>, click the button <code class="docutils literal notranslate"><span class="pre">=</span></code> and then click the button <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Unique</span></code>. Now double click on <code class="docutils literal notranslate"><span class="pre">Potato</span></code>.</p>
+<p>The expression in the main window becomes “LC”  =  ‘Barley (winter)’  OR  “LC”  =  ‘Potato (non-early)’ (<a class="reference internal" href="#fig9-ndvi-select-potato"><span class="std std-numref">Fig. 59</span></a>). We are now telling the software to select from the attribute table all the polygons whose land cover is Barley or Potato.</p>
+<div class="figure align-default" id="id51">
+<span id="fig9-ndvi-select-potato"></span><img alt="_images/Fig9_NDVI_Select_Potato.png" src="_images/Fig9_NDVI_Select_Potato.png" />
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+</div>
+<p>Click the button <strong>Select Features</strong> (bottom right of the window) and then <strong>Close</strong> the window.</p>
+<p>As a result, 13 polygons out of 55 are selected. Now export these polygons in a new layer. Right-click on the layer name → <code class="docutils literal notranslate"><span class="pre">Export</span></code> → <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Selected</span> <span class="pre">Features</span> <span class="pre">As...</span></code> (<a class="reference internal" href="#fig10-ndvi-export-selected-features"><span class="std std-numref">Fig. 60</span></a>).</p>
+<div class="figure align-default" id="id52">
+<span id="fig10-ndvi-export-selected-features"></span><img alt="_images/Fig10_NDVI_Export_Selected_Features.png" src="_images/Fig10_NDVI_Export_Selected_Features.png" />
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+</div>
+<p>A window opens. Select the following parameters (<a class="reference internal" href="#fig11-ndvi-save-vector-layer-as"><span class="std std-numref">Fig. 61</span></a>):</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Format:</span></code> set to <code class="docutils literal notranslate"><span class="pre">ESRI</span> <span class="pre">Shapefile</span></code>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">name:</span></code> Double-click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code> and select the folder where you want to save the file. Name it: <code class="docutils literal notranslate"><span class="pre">Barley_Potato</span></code>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">Layer</span> <span class="pre">name:</span></code> Leave this field empty,</li>
+<li><code class="docutils literal notranslate"><span class="pre">CRS:</span></code> Keep the default value. QGIS automatically takes the Coordinate Reference System (CRS) of the original file.</li>
+<li>Keep the default values for the other parameters.</li>
+</ul>
+<div class="figure align-default" id="id53">
+<span id="fig11-ndvi-save-vector-layer-as"></span><img alt="_images/Fig11_NDVI_Save_Vector_Layer_as.png" src="_images/Fig11_NDVI_Save_Vector_Layer_as.png" />
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="compare-winter-crops-and-summer-crops">
+<h3>4.3.10 Compare winter crops and summer crops<a class="headerlink" href="#compare-winter-crops-and-summer-crops" title="Permalink to this headline">¶</a></h3>
+<p>Now we want to compare the different vegetative stage of Barley and Potato. For this task, we use the <strong>Zonal statistics</strong> tool. <br />
+Unlike the <strong>Cell Statistics</strong> algorithm that computes per-pixel statistics, the <strong>Zonal statistics</strong> algorithm calculates per-polygon statistics. That means the output (e.g. minimum, maximum, sum, count, <em>etc.</em>) is calculated only on pixels within the selected polygons.</p>
+<p>Search in the <strong>Processing Toolbox</strong> for the <strong>Zonal statistics</strong> (or write <em>zonal statistics</em> in the Processing Toolbox search bar) and double-click on it (<a class="reference internal" href="#fig11-ndvi-zonal-statistics"><span class="std std-numref">Fig. 62</span></a>).</p>
+<div class="figure align-default" id="id54">
+<span id="fig11-ndvi-zonal-statistics"></span><img alt="_images/Fig11_NDVI_Zonal_Statistics.png" src="_images/Fig11_NDVI_Zonal_Statistics.png" />
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Zonal Statistics window opens. Select the following parameters (<a class="reference internal" href="#fig12-ndvi-zonals-statistics-parameters"><span class="std std-numref">Fig. 63</span></a>):</p>
+<ul>
+<li><p class="first"><strong>Raster layer:</strong> set to <code class="docutils literal notranslate"><span class="pre">2018_04_18_NDVI</span></code>,</p>
+</li>
+<li><p class="first"><strong>Raster band:</strong> set to <code class="docutils literal notranslate"><span class="pre">Band</span> <span class="pre">1</span> <span class="pre">(Gray)</span></code>,</p>
+</li>
+<li><p class="first"><strong>Vector layer containing zones:</strong> set to <code class="docutils literal notranslate"><span class="pre">Barley_Potato</span></code>,</p>
+</li>
+<li><p class="first"><strong>Output column prefix:</strong> set to <code class="docutils literal notranslate"><span class="pre">18_04_</span></code>,</p>
+</li>
+<li><p class="first">Statistics to calculate:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code>,</li>
+<li>Select <strong>Mean</strong> and unselect all the other statistics,</li>
+<li>Click the blue back arrow, located in the upper-left corner (<a class="reference internal" href="#fig13-ndvi-zonal-statistics-select-mean"><span class="std std-numref">Fig. 64</span></a>).</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Click the button <code class="docutils literal notranslate"><span class="pre">RUN</span></code> to execute the data processing.</p>
+<div class="figure align-default" id="id55">
+<span id="fig12-ndvi-zonals-statistics-parameters"></span><img alt="_images/Fig12_NDVI_Zonals_Statistics_Parameters.png" src="_images/Fig12_NDVI_Zonals_Statistics_Parameters.png" />
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id56">
+<span id="fig13-ndvi-zonal-statistics-select-mean"></span><img alt="_images/Fig13_NDVI_Zonal_statistics_select_mean.png" src="_images/Fig13_NDVI_Zonal_statistics_select_mean.png" />
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+</div>
+<p>The data processing adds a new attribute (i.e. column) to the attribute table of the shapefile <strong>Barley_Potato</strong>. It is called <strong>18_04_mean</strong>. <br />
+The new attribute <strong>18_04_mean</strong> contains the NDVI mean value of each polygon (i.e. rows) (<a class="reference internal" href="#fig14-ndvi-18-april-ndvi-in-the-attribute-table"><span class="std std-numref">Fig. 65</span></a>).</p>
+<div class="figure align-default" id="id57">
+<span id="fig14-ndvi-18-april-ndvi-in-the-attribute-table"></span><img alt="_images/Fig14_NDVI_18_April_NDVI_in_the_attribute_table.png" src="_images/Fig14_NDVI_18_April_NDVI_in_the_attribute_table.png" />
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now compute the zonal statistics for the satellite image collected on 27 June 2018 (file <code class="docutils literal notranslate"><span class="pre">2018_06_27_NDVI</span></code>).
+Remember to set the <strong>Raster layer</strong> to <code class="docutils literal notranslate"><span class="pre">2018_06_27_NDVI</span></code>, and <strong>Output column prefix:</strong> to <code class="docutils literal notranslate"><span class="pre">27_06_</span></code>. <br />
+<a class="reference internal" href="#fig15-ndvi-27-june-ndvi-in-the-attribute-table"><span class="std std-numref">Fig. 66</span></a> shows the result.</p>
+<div class="figure align-default" id="id58">
+<span id="fig15-ndvi-27-june-ndvi-in-the-attribute-table"></span><img alt="_images/Fig15_NDVI_27_June_NDVI_in_the_attribute_table.png" src="_images/Fig15_NDVI_27_June_NDVI_in_the_attribute_table.png" />
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>4.3.11 Simple analysis of results<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Let’s discuss our findings.</p>
+<ul>
+<li><p class="first"><strong>Mid April:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Barley has high NDVI values</strong>, corresponding to a high amount of healthy biomass (just before harvesting),</li>
+<li><strong>Potato has low NDVI values</strong>, corresponding to a low biomass amount (because the seedling is not grown yet).</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Late June:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Barley has low NDVI values</strong>, corresponding to a low biomass amount (because the crop has been harvested),</li>
+<li><strong>Potato has high NDVI values</strong>, corresponding to a high amount of healthy biomass (because the crop grew up).</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>We thus <strong>deduce</strong> that <em>Barley is cultivated as a winter crop</em> in the study area. <br />
+In contrast, we <strong>deduce</strong> that <em>Potato is cultivated as a summer crop</em> in the study area.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>It is interesting to notice that, unlike one may expect, not all the fields with the same crop have the same NDVI values in the period of full growth. This phenomenon is easily explained because the seedlings’ health and vigour may vary due to non-optimal environmental conditions.</p>
+<p class="last">Thus, fields cultivated with Barley in winter, or fields cultivated with Potato in summer, showing abnormal low NDVI values could have productivity issues related to environmental factors, as recalled in <a class="reference internal" href="#the-environmental-problem-agricultural-productivity"><span class="std std-ref">4.3.1 The environmental problem</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="rs_imageanalysis.html" class="btn btn-neutral float-left" title="3. Principles of image analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

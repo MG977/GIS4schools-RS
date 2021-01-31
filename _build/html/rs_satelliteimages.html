@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Access to Copernicus satellite images for free &mdash; GIS4Schools 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Principles of image analysis" href="rs_imageanalysis.html" />
+    <link rel="prev" title="1. Fundamentals of remote sensing and Earth observation" href="rs_fundamentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> GIS4Schools
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rs_fundamentals.html">1. Fundamentals of remote sensing and Earth observation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Access to Copernicus satellite images for free</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sentinel-hub-eo-browser">2.1. Sentinel Hub EO Browser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-the-correct-products-with-sentinel-hub-eo-browser">2.1.1. Selecting the correct products with Sentinel Hub EO Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-the-satellite-images-with-sentinel-hub-eo-browser">2.1.2. Viewing the satellite images with Sentinel Hub EO Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-the-data-with-sentinel-hub-eo-browser">2.1.3. Downloading the data with Sentinel Hub EO Browser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-repositories">2.2. Alternative repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rs_imageanalysis.html">3. Principles of image analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rs_casestudies.html">4. Case studies (examples)</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS4Schools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>2. Access to Copernicus satellite images for free</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/rs_satelliteimages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="access-to-copernicus-satellite-images-for-free">
+<span id="rs-fundamentals"></span><h1>2. Access to Copernicus satellite images for free<a class="headerlink" href="#access-to-copernicus-satellite-images-for-free" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sentinel-hub-eo-browser">
+<h2>2.1. Sentinel Hub EO Browser<a class="headerlink" href="#sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> (<a class="reference internal" href="#fig1-eobrowser"><span class="std std-numref">Fig. 1</span></a>) is the first place to look for the archive of the European Space Agency’s <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1" rel="noopener noreferrer" target="_blank">Sentinel-1</a>, <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2" rel="noopener noreferrer" target="_blank">Sentinel-2</a>, <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-3" rel="noopener noreferrer" target="_blank">Sentinel-3</a>, <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-5p" rel="noopener noreferrer" target="_blank">Sentinel-5P</a>, <a class="reference external" href="https://earth.esa.int/eogateway/missions/proba-v" rel="noopener noreferrer" target="_blank">PROBA-V</a>, and <a class="reference external" href="https://earth.esa.int/eogateway/instruments/meris" rel="noopener noreferrer" target="_blank">MERIS</a> imagery. <br />
+This repository also gives access to the images collected by NASA’s <a class="reference external" href="https://landsat.gsfc.nasa.gov/landsat-4-5" rel="noopener noreferrer" target="_blank">Landsat-5</a>, <a class="reference external" href="https://landsat.gsfc.nasa.gov/landsat-7" rel="noopener noreferrer" target="_blank">Landsat-7</a>, <a class="reference external" href="https://landsat.gsfc.nasa.gov/landsat-8" rel="noopener noreferrer" target="_blank">Landsat-8</a>, and <a class="reference external" href="https://modis.gsfc.nasa.gov/" rel="noopener noreferrer" target="_blank">MODIS</a> satellites, and even NASA’s <a class="reference external" href="https://earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/gibs" rel="noopener noreferrer" target="_blank">global imagery browse services (GIBS)</a> products in one single place.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Registered users have access to more features!</strong> <br />
+The <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> also offers some basic tools to explore Earth observation data, develop custom scripts for simple image analysis and also use third-party scripts. <br />
+Before browsing the image archives, sign up for a <a class="reference external" href="https://apps.sentinel-hub.com/" rel="noopener noreferrer" target="_blank">free account on Sentinel Hub EO Browser</a> and then log in (<a class="reference internal" href="#fig2-eobrowser"><span class="std std-numref">Fig. 2</span></a>).</p>
+</div>
+<div class="figure align-default" id="id14">
+<span id="fig1-eobrowser"></span><img alt="_images/Fig1_EObrowser.png" src="_images/Fig1_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Home page of the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id15">
+<span id="fig2-eobrowser"></span><img alt="_images/Fig2_EObrowser.png" src="_images/Fig2_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Log in to the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="selecting-the-correct-products-with-sentinel-hub-eo-browser">
+<h3>2.1.1. Selecting the correct products with Sentinel Hub EO Browser<a class="headerlink" href="#selecting-the-correct-products-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
+<p>Once logged in the <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a>, configure the search criteria (<a class="reference internal" href="#fig3-eobrowser"><span class="std std-numref">Fig. 3</span></a>):</p>
+<ol class="arabic simple">
+<li>In this example, we look for Sentinel-2 images. Thus, select <code class="docutils literal notranslate"><span class="pre">Sentinel-2</span></code> as a data source;</li>
+<li>Set <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">search</span></code> and select <code class="docutils literal notranslate"><span class="pre">L2A</span> <span class="pre">(atmospherically</span> <span class="pre">corrected)</span></code>. This option limits the search to atmospherically corrected Sentinel-2 images only;</li>
+<li>Optionally, set the <code class="docutils literal notranslate"><span class="pre">Max.</span> <span class="pre">cloud</span> <span class="pre">coverage</span></code> to the desired level of maximum cloud cover accepted;</li>
+<li>Select the starting and ending <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">range</span> <span class="pre">[UTC]</span></code> by clicking the calendars;</li>
+<li>Optionally, select <code class="docutils literal notranslate"><span class="pre">filter</span> <span class="pre">by</span> <span class="pre">months</span></code> to limit the search to specific months in the time range;</li>
+<li>Click the <code class="docutils literal notranslate"><span class="pre">Search</span></code> button to search the archive.</li>
+</ol>
+<div class="figure align-default" id="id16">
+<span id="fig3-eobrowser"></span><img alt="_images/Fig3_EObrowser-2.png" src="_images/Fig3_EObrowser-2.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Set the searching criteria.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Remember to use ONLY atmospherically corrected images!</strong> <br />
+Optical satellite images capture the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. <br />
+Sentinel-2 data provided as <code class="docutils literal notranslate"><span class="pre">L1C</span></code> products are uncorrected images. Sentinel-2 data provided as <code class="docutils literal notranslate"><span class="pre">L2A</span></code> products are atmospherically corrected images. <br />
+<strong>Only</strong> <code class="docutils literal notranslate"><span class="pre">L2A</span></code> <strong>products are ready for image processing!</strong></p>
+</div>
+</div>
+<div class="section" id="viewing-the-satellite-images-with-sentinel-hub-eo-browser">
+<h3>2.1.2. Viewing the satellite images with Sentinel Hub EO Browser<a class="headerlink" href="#viewing-the-satellite-images-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
+<p>Select your image tile in the main window and click <code class="docutils literal notranslate"><span class="pre">Visualize</span></code>. Alternatively, you can load your image by clicking <code class="docutils literal notranslate"><span class="pre">Visualize</span></code> in the left panel (<a class="reference internal" href="#fig6-eobrowser"><span class="std std-numref">Fig. 4</span></a>).</p>
+<div class="figure align-default" id="id17">
+<span id="fig6-eobrowser"></span><img alt="_images/Fig6_EObrowser-2.png" src="_images/Fig6_EObrowser-2.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Select your satellite image archived in the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>By default, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> opens a true colour image of the selected area (<a class="reference internal" href="#fig7-eobrowser"><span class="std std-numref">Fig. 5</span></a>). For <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2" rel="noopener noreferrer" target="_blank">Sentinel-2</a>, the red, green and blue colours are recorded by spectral band 4, band 3, and band 2. Therefore, the Earth’s surface is shown as humans would see it naturally.</p>
+<div class="figure align-default" id="id18">
+<span id="fig7-eobrowser"></span><img alt="_images/Fig7_EObrowser.png" src="_images/Fig7_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The satellite image(s) are displayed.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>However, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> shows the following additional pre-built colour composites:</p>
+<ul>
+<li><p class="first">False colour (<a class="reference internal" href="#fig8-eobrowser"><span class="std std-numref">Fig. 6</span></a>). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), red, and green spectral bands, represented as red, green and blue colours respectively:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vegetation is from dark red to light red;</li>
+<li>Urban areas are cyan or tan;</li>
+<li>Bare soils are from dark brown to light brown;</li>
+<li>Water is black or dark blue;</li>
+<li>Snow and ice are cyan or blue;</li>
+<li>Wildfires are white (the smoke plume).</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id19">
+<span id="fig8-eobrowser"></span><img alt="_images/Fig8_EObrowser.png" src="_images/Fig8_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">False colour composite.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p class="first">False colour (urban) (<a class="reference internal" href="#fig15-eobrowser"><span class="std std-numref">Fig. 7</span></a>). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the red spectral bands, represented as red, green and blue colours respectively:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vegetation is green;</li>
+<li>Urban areas are white, grey, or purple;</li>
+<li>Bare soils are shown in a variety of colours;</li>
+<li>Water is black or dark blue;</li>
+<li>Wildfires are red and yellow.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id20">
+<span id="fig15-eobrowser"></span><img alt="_images/Fig15_EObrowser.png" src="_images/Fig15_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">False colour (urban) composite.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p class="first">SWIR (<a class="reference internal" href="#fig16-eobrowser"><span class="std std-numref">Fig. 8</span></a>). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vegetation is red;</li>
+<li>Urban areas are cyan;</li>
+<li>Bare soils are from dark brown to light brown;</li>
+<li>Water is black or dark blue;</li>
+<li>Snow and ice are blue;</li>
+<li>Rocks are shown in a variety of colours.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id21">
+<span id="fig16-eobrowser"></span><img alt="_images/Fig16_EObrowser.png" src="_images/Fig16_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Shortwave infrared (SWIR) composite.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> also shows the maps of some basic spectral indices. These parameters are useful to recognize different land cover types and monitor the status of vegetated land. Specifically:</p>
+<ul>
+<li><p class="first">NDVI (<a class="reference internal" href="#fig9-eobrowser"><span class="std std-numref">Fig. 9</span></a>). This is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Dense and healthy vegetation is dark green;</li>
+<li>Sparse or unhealthy vegetation is light green;</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id22">
+<span id="fig9-eobrowser"></span><img alt="_images/Fig9_EObrowser.png" src="_images/Fig9_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Map of the Normalized Difference Vegetation Index (NDVI).</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p class="first">Moisture index (<a class="reference internal" href="#fig17-eobrowser"><span class="std std-numref">Fig. 10</span></a>). This index is used to estimate vegetation water content and monitor droughts. The index is calculated using a combination of the near infrared (NIR) and shortwave infrared (SWIR) spectral bands.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vegetation (on land) without water stress is dark blue.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id23">
+<span id="fig17-eobrowser"></span><img alt="_images/Fig17_EObrowser.png" src="_images/Fig17_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Map of the Normalized Difference Moisture Index (NDMI).</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p class="first">NDWI (<a class="reference internal" href="#fig18-eobrowser"><span class="std std-numref">Fig. 11</span></a>). This index is used to map water bodies. The index is calculated using a combination of the near infrared (NIR) and green spectral bands:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Water bodies are blue.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id24">
+<span id="fig18-eobrowser"></span><img alt="_images/Fig18_EObrowser.png" src="_images/Fig18_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Map of the Normalized Difference Water Index (NDWI).</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p class="first">NDSI (<a class="reference internal" href="#fig19-eobrowser"><span class="std std-numref">Fig. 12</span></a>). This index is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Clouds are white;</li>
+<li>Snow (and water) is light blue.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id25">
+<span id="fig19-eobrowser"></span><img alt="_images/Fig19_EObrowser.png" src="_images/Fig19_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Map of the Normalised Difference Snow Index (NDSI).</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>Additionally, there is a simple scene classification map with nine land cover classes (<a class="reference internal" href="#fig10-eobrowser"><span class="std std-numref">Fig. 13</span></a>).</p>
+<div class="figure align-default" id="id26">
+<span id="fig10-eobrowser"></span><img alt="_images/Fig10_EObrowser.png" src="_images/Fig10_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Scene classification map.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="downloading-the-data-with-sentinel-hub-eo-browser">
+<h3>2.1.3. Downloading the data with Sentinel Hub EO Browser<a class="headerlink" href="#downloading-the-data-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Sign up for Copernicus Open Access Hub.</strong> <br />
+The images searched with <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> are downloaded from the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>. <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Sign up for a free account!</a></p>
+</div>
+<ol class="arabic simple">
+<li>Click the green chain symbol to show the download link at the bottom of the image (<code class="docutils literal notranslate"><span class="pre">SciHub</span> <span class="pre">link:</span></code>);</li>
+<li>Click the link to download the data.</li>
+</ol>
+<div class="figure align-default" id="id27">
+<span id="fig14-eobrowser"></span><img alt="_images/Fig14_EObrowser.png" src="_images/Fig14_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Activate the link to download the images.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>If you are already logged in the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>, the download starts immediately. Otherwise, you will be prompted for user name and password of <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>.</li>
+</ol>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">username &amp; password for <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> is different from that of <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>!</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/user-guide/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser user guide</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="alternative-repositories">
+<h2>2.2. Alternative repositories<a class="headerlink" href="#alternative-repositories" title="Permalink to this headline">¶</a></h2>
+<p>Alternative European repositories are the Copernicus Open Access Hub (<a class="reference internal" href="#fig1-scihub"><span class="std std-numref">Fig. 15</span></a>) and the DIASs (<a class="reference internal" href="#fig-dias"><span class="std std-numref">Fig. 16</span></a>) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. <br />
+Discover more information on the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a></p>
+<div class="figure align-default" id="id28">
+<span id="fig1-scihub"></span><img alt="_images/Fig1_scihub.png" src="_images/Fig1_scihub.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Copernicus Open Access Hub</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>and on the five <a class="reference external" href="https://www.copernicus.eu/en/access-data/dias" rel="noopener noreferrer" target="_blank">DIASs</a>:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://creodias.eu" rel="noopener noreferrer" target="_blank">CREO DIAS</a>;</li>
+<li><a class="reference external" href="https://mundiwebservices.com" rel="noopener noreferrer" target="_blank">MUNDI web services</a>;</li>
+<li><a class="reference external" href="https://www.onda-dias.eu/cms" rel="noopener noreferrer" target="_blank">ONDA DIAS</a>;</li>
+<li><a class="reference external" href="https://sobloo.eu" rel="noopener noreferrer" target="_blank">Sobloo</a>;</li>
+<li><a class="reference external" href="https://wekeo.eu" rel="noopener noreferrer" target="_blank">WEkEO</a>.</li>
+</ul>
+<div class="figure align-default" id="id29">
+<span id="fig-dias"></span><img alt="_images/Fig_DIAS.png" src="_images/Fig_DIAS.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Data and Information Access Services (DIAS).</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Sentinel images could also be downloaded from the US repository <a class="reference external" href="https://earthexplorer.usgs.gov/" rel="noopener noreferrer" target="_blank">EarthExplorer</a>. However, this repository mirrors only <code class="docutils literal notranslate"><span class="pre">L1C</span></code> products (i.e. images which are NOT atmospherically corrected)!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rs_imageanalysis.html" class="btn btn-neutral float-right" title="3. Principles of image analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rs_fundamentals.html" class="btn btn-neutral float-left" title="1. Fundamentals of remote sensing and Earth observation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
