@@ -233,20 +233,22 @@ In the **merge window** click on the three dots ``[...]`` at the end of the ``In
 
    Sample screenshot.
 
-Select all the layers and click **OK** (:numref:` Fig6_CROP_Merge_band_selection `).
+Select all the layers and click **OK** (:numref:`Fig6_CROP_Merge_band_selection`).
 
 .. Caution:: Be careful to check that files are sorted in the following order: **B02, B03, B04 and B08.**
 
 .. _Fig6_CROP_Merge_band_selection:
-.. figure::` /Figure/Fig6_CROP_Merge_band_selection.png
+.. figure:: /Figure/Fig6_CROP_Merge_band_selection.png
 
    Sample screenshot.
 
-???????????????????????????????????????
 
-???????????????????????????????????????
 
-??????????????????????????????????????
+
+
+
+
+
 
 4.2.9 Prepare multiband files for 20-meter satellite images
 ````````````````````````````````````````````````````````````
@@ -282,7 +284,7 @@ Now create the multiband file by merging together the spectral bands, as describ
 
 Once band **B8A** is moved AFTER band B07, the list will look like :numref:`Fig9_CROP_20m_correct_band_order`).
 
-.. _ Fig9_CROP_20m_correct_band_order:
+.. _Fig9_CROP_20m_correct_band_order:
 .. figure:: /Figure/Fig9_CROP_20m_correct_band_order.png
 
    Sample screenshot.
@@ -524,7 +526,7 @@ Now we do some calculations with images using the **Raster Calculator**. This to
 Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:`Fig1_NDVIRaster_calculator`).
 
 .. _Fig1_NDVIRaster_calculator:
-.. figure:: /Figure/Fig1_NDVIRaster_calculator.png
+.. figure:: /Figure/Fig1_NDVI_Raster_calculator.png
 
    Sample screenshot.
 
