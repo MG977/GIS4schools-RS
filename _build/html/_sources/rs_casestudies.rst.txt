@@ -3,7 +3,7 @@
 .. _imageanalysis:
 
 4. Hands-on exercises
-=====================
+=======================
 
 lorem ipsum, lorem ipsum
 
@@ -22,14 +22,10 @@ lorem ipsum, lorem ipsum
 
 
 
-
-
-
-
-4.1 Monitoring lake’s trophic state
------------------------------------
+4.1. Monitoring lake’s trophic state
+------------------------------------
 4.1.1 The environmental problem
-```````````````````````````````
+````````````````````````````````
 The trophic state of a water body describes the amount of nutrients (mainly phosphorus and nitrogen) available to grow aquatic vegetation and phytoplankton. However, when water becomes rich with nutrients, phytoplankton’s rapid growth (called **algae bloom**) could cause negative impacts on the marine environment, like:
 
 - The disruption of the normal ecosystem functioning,
@@ -52,10 +48,14 @@ Lakes are usually classified into 4 trophic states, according to chlorophyll’s
    ==============  ===========================  ====================================
 
 .. Warning:: **The role of climate change** |br|
-	Climate change may indirectly cause eutrophication by increasing runoff from the land, affecting nutrient load, due to increased precipitation resulting from global warming.
+   Climate change may indirectly cause eutrophication by increasing runoff from the land, affecting nutrient load, due to increased precipitation resulting from global warming.
 
-4.1.2 Satellite images
-``````````````````````
+4.1.2 Scope of the exercise
+````````````````````````````
+This exercise shows a very simple method to monitor the eutrophic level of a lake with satellites.
+
+4.1.3 Satellite images
+````````````````````````
 The analysis is done using ten cloud-free Sentinel-2 images collected in the following dates of Summer 2016:
 
 - 18 July 2016,
@@ -69,8 +69,13 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 - 23 September 2016,
 - 26 September 2016.
 
-4.1.3 The modelling
-```````````````````
+.. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
+   Today (February 2021), Sentinel-2 data collected on 2016 are only provided only as ``L1C`` products. That means these satellite images are NOT corrected for the atmospheric disturbance. Thus, **they are NOT ready for image processing!**
+
+   Atmospheric correction is an advanced topic not covered in training. Thus, this exercise uses the most simple atmospheric compensation technique, called Dark Object Subtraction (DOS), to derive pseudo ``L2A`` products.
+
+4.1.4 The modelling
+````````````````````
 The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. |br|
 Phytoplankton are microorganisms that float on the water body and contain chlorophyll. Thus, they could be detected with RVI.
 
@@ -84,8 +89,8 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 .. math:: Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b
    :label: eqWQ2
 
-4.1.4 Chlorophyll’s concentration data
-``````````````````````````````````````
+4.1.5 Chlorophyll’s concentration data
+````````````````````````````````````````
 The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of equation :eq:`eqWQ2`:
 
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
@@ -93,30 +98,70 @@ The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentratio
 .. _Fig1_WQ:
 .. figure:: /Figure/Fig1_WQ.png
 
-Lake Trasimeno with superimposed the sampling locations (green dots).
+   Lake Trasimeno with superimposed the sampling locations (green dots).
 
-4.1.5 QGIS set-up
+4.1.6 QGIS set-up
 `````````````````
 Open QGIS. Go to the menu bar and click ``Plugins`` → ``Manage and Install Plugins...`` (:numref:`Fig3_WQ_Plugins`).
 
 .. _Fig3_WQ_Plugins:
 .. figure:: /Figure/Fig3_WQ_Plugins.png
 
-	Sample screenshot.
+   Sample screenshot.
 
 In the search bar write **SCP** and select the ``Semi-Automatic Classification Plugin``. Press ``Install plugin`` in the bottom-right corner of the window and close the window (:numref:`Fig4_WQ_Install_Plugin`).
 
 .. _Fig4_WQ_Install_Plugin:
 .. figure:: /Figure/Fig4_WQ_Install_Plugin.png
 
-	Sample screenshot.
+   Sample screenshot.
 
 In QGIS main window, select ``New Empty Project`` (:numref:`Fig2_WQ_New_Project`).
- 
+
 .. _Fig2_WQ_New_Project:
 .. figure:: /Figure/Fig2_WQ_New_Project.png
 
    Sample screenshot.
+
+4.1.7 Prepare the satellite images
+````````````````````````````````````
+Open the Semi-Automatic Classification Plugin (SCP) (:numref:`Fig5_WQ_Open_SCP`).
+
+.. _Fig5_WQ_Open_SCP:
+.. figure:: /Figure/Fig5_WQ_Open_SCP.png
+
+   Sample screenshot.
+
+In the left-side window open ``Preprocessing`` → ``Sentinel-2`` (:numref:`Fig6_WQ_Import_Sentinel2`). This tool provides the pre-processing tasks to prepare the satellite images for the analysis.
+
+.. _Fig6_WQ_Import_Sentinel2:
+.. figure:: /Figure/Fig6_WQ_Import_Sentinel2.png
+
+   Sample screenshot.
+
+Select the following parameters (:numref:`Fig7_WQ_Import_Sentinel2_part2`):
+
+- ``Directory containing Sentinel-2 bands:`` open the folder where you saved the Sentinel-2 image ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``GRANULE`` → ``L1C_T32TQN_A005596_20160718T101028`` → ``IMG_DATA``,
+- ``Select metadata file (MTD_MSI):`` select the file **MTD_MSIL1C** in the folder ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``MTD_MSIL1C``,
+- ``Apply DOS1 atmospheric correction:`` select this option. This command applies the simple DOS atmospheric correction to the satellite images.
+
+Click the button **RUN** and select the output directory (:numref:`Fig7_WQ_Import_Sentinel2_part2`).
+
+.. _Fig7_WQ_Import_Sentinel2_part2:
+.. figure:: /Figure/Fig7_WQ_Import_Sentinel2_part2.png
+
+   Sample screenshot.
+
+The outcomes of this processing are 10 spectral bands:
+
+- 4 bands with 10-meters spatial resolution saved in GeoTiff format,
+- 6 bands (with original 20-meters spatial resolution) resampled to match the 10-meters spatial resolution of the first 4 bands, saved in GeoTiff format.
+
+Now we want to merge all the spectral bands in a single image. This is called **multiband image** (or **multispectral image**).
+
+
+
+
 
 
 
@@ -136,7 +181,7 @@ In QGIS main window, select ``New Empty Project`` (:numref:`Fig2_WQ_New_Project`
 
 
 4.2 Mapping crop types
-----------------------
+------------------------
 4.2.1 The environmental problem
 `````````````````````````````````
 Agriculture is highly dependent on the climate. For any crop type, the effect of climate change will depend on the crop’s optimal temperature and water availability for growth and reproduction.
@@ -147,17 +192,17 @@ The temperature increase will change farming practices. In some countries, warmi
    Overall, climate change may make it difficult to grow crops the same ways and in the same places as in the past.
 
 4.2.2 Scope of the exercise
-````````````````````````````
+`````````````````````````````
 This exercise shows a very simple method to map crop types with satellites.
 
 4.2.3 Study area
-`````````````````
+````````````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
 
 
 4.2.4 Satellite images
-````````````````````````
+`````````````````````````
 The analysis is done using two cloud-free Sentinel-2 images collected in the following dates of Spring-Summer 2018:
 
 - 18 April 2018,
@@ -166,7 +211,7 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
 
 4.2.5 Land cover information
-`````````````````````````````
+````````````````````````````````
 Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in :numref:`Fig1_CROP_Study_area` stands for a crop field with available information on the cultivated crop type.
 
 In the study area are cultivated the following main crops:
@@ -186,11 +231,11 @@ In the study area are cultivated the following main crops:
    Farmlands in the Wallonia region.
 
 4.2.6 Methods
-`````````````
+````````````````
 The mapping process uses the **Minimum Distance** supervised classification algorithm. The training samples, called *Region Of Interest (ROI)* in QGIS, are extracted from available land cover polygons.
 
 4.2.7 QGIS set-up
-`````````````````
+````````````````````
 Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_CROP_New_Project`).
 
 .. _Fig2_CROP_New_Project:
@@ -201,7 +246,7 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_CRO
 .. _Prepare-multiband-files-for-10-meter-satellite-images:
 
 4.2.8 Prepare multiband files for 10-meter satellite images
-````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````
 Open the folder ``S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE`` → ``GRANULE`` → ``L2A_T31UFS_A014734_20180418T104512`` → ``IMG_DATA`` → ``R10m``.
 
 Each 10-meter Sentinel-2’s spectral band is stored as a single file. Now select the spectral bands with 10 m spatial resolution, those file names end with  (:numref:`Fig3_CROP_Band_selection`):
@@ -216,7 +261,40 @@ Each 10-meter Sentinel-2’s spectral band is stored as a single file. Now selec
 
    Sample screenshot.
 
-Import these files in QGIS.
+Import these files in QGIS. In the menu bar open ``Layer`` → ``Data Source Manager`` (:numref:`Fig101_Data_Source_Manager`).
+
+.. _Fig101_Data_Source_Manager:
+.. figure:: /Figure/Fig101_Data_Source_Manager.png
+
+   Sample screenshot.
+
+On the left-side menu, select **Raster** (:numref:`Fig102_Import_Raster`).
+
+.. _Fig102_Import_Raster:
+.. figure:: /Figure/Fig102_Import_Raster.png
+
+   Sample screenshot.
+
+Select the following parameters:
+
+- ``Source type:`` select ``File (Default option)``,
+- ``Source:``
+
+- Click on the three dots ``[...]``, browse to the folder ``S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE`` → ``GRANULE`` → ``L2A_T31UFS_A014734_20180418T104512`` → ``IMG_DATA`` → ``R10m``,
+- Select the four images (files “.jp2”),
+- Click on ``Open`` (:numref:`Fig103_Select_bands`).
+
+.. _Fig103_Select_bands:
+.. figure:: /Figure/Fig103_Select_bands.png
+
+   Sample screenshot.
+
+Click **Add** (:numref:`Fig104_add_bands`).
+
+.. _Fig104_add_bands:
+.. figure:: /Figure/Fig104_add_bands.png
+
+   Sample screenshot.
 
 Now create the multiband file. |br|
 In QGIS menu bar open the ``Raster`` menu and select ``Miscellaneous`` → ``Merge`` (:numref:`Fig4_CROP_Merge`).
@@ -235,23 +313,16 @@ In the **merge window** click on the three dots ``[...]`` at the end of the ``In
 
 Select all the layers and click **OK** (:numref:`Fig6_CROP_Merge_band_selection`).
 
-.. Caution:: Be careful to check that files are sorted in the following order: **B02, B03, B04 and B08.**
+.. Caution:: Be careful to check that files are sorted in the following order: **B02, B03, B04 and B08.** |br|
+   If the order is different, the saved image will have the wrong order’s spectral bands, and the image processing will give incorrect results.
 
 .. _Fig6_CROP_Merge_band_selection:
 .. figure:: /Figure/Fig6_CROP_Merge_band_selection.png
 
    Sample screenshot.
 
-
-
-
-
-
-
-
-
 4.2.9 Prepare multiband files for 20-meter satellite images
-````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````
 Repeat the same data processing done for the 10-meter satellite images, and create multiband files for the 20-meter satellite images.
 
 Remove the open layers from QGIS and open the folder ``S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE`` → ``GRANULE`` → ``L2A_T31UFS_A014734_20180418T104512`` → ``IMG_DATA`` → ``R20m``.
@@ -292,7 +363,7 @@ Once band **B8A** is moved AFTER band B07, the list will look like :numref:`Fig9
 Save the output file as ``S2_20180418_20m.tif`` in the same folder used for 10-meters Sentinel-2 images.
 
 4.2.10 Create the training samples for image classification
-````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````
 In our study area, farmlands are much more extensive than 20 m x 20 m. Thus, we use the 20-meters Sentinel-2 image to perform the classification process. On the one hand we do not need greater detail, and on the other hand the 20-meters images have much more spectral bands, thus allowing a better recognition of crop types.
 
 Import in QGIS the Sentinel-2 multiband image of 27 June 2018 ``S2_20180627_20m.tif``.
@@ -419,7 +490,7 @@ The data processing transforms the input satellite image into a land cover map o
    Sample screenshot.
 
 4.2.12 Simple analysis of results
-`````````````````````````````````
+````````````````````````````````````
 If we want to estimate the most farmed crop, right-click on the classification layer ``20180627_Classification`` and select ``Properties`` (:numref:`Fig20_CROP_Classification_properties`).
 
 .. _Fig20_CROP_Classification_properties:
@@ -442,11 +513,11 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 
 
 4.3 Monitoring crops’ vegetative stage
---------------------------------------
+----------------------------------------
 .. _The-environmental-problem-agricultural-productivity:
 
 4.3.1 The environmental problem
-````````````````````````````````
+`````````````````````````````````
 Agricultural productivity is strictly related to environmental factors. For example:
 
 - Rising levels of CO2 reduce protein content and essential minerals in most crops, including Wheat, Soybeans, and Rice, resulting in a loss of food quality,
@@ -459,12 +530,12 @@ Agricultural productivity is strictly related to environmental factors. For exam
 .. Warning:: **The role of climate change** |br|
    Climate change is modifying the temperature and the precipitation regimes, intensifying extreme weather, and increasing desertification in many fragile territories. That has an impact on the health of vegetation and crops.
 
-4.3.2 Scope of the exercise
+3.2 Scope of the exercise
 ````````````````````````````
 This exercise shows satellites’ use to evaluate Barley and Potatoes’ vegetative stage in different periods of the year.
 
 4.3.3 Study area
-````````````````
+````````````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
 
@@ -478,7 +549,7 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
 
 4.3.5 Land cover information
-````````````````````````````
+````````````````````````````````
 Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in :numref:`Fig1_NDVI_Study_area` stands for a crop field with available information on the cultivated crop type.
 
 In the study area are cultivated the following main crops:
@@ -498,13 +569,13 @@ In the study area are cultivated the following main crops:
    Farmlands in the Wallonia region.
 
 4.3.6 Methods
-`````````````
+````````````````
 The monitoring of vegetative stage is done using the **Normalized Difference Vegetation Index (NDVI)** (:any:`Examples-of-spectral-indices-for-studying-vegetation`) described by Equation :eq:`eqSI2`:
 
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
 
 4.3.7 QGIS set-up
-`````````````````
+````````````````````
 Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDVI_New_Project`).
 
 .. _Fig2_NDVI_New_Project:
@@ -515,7 +586,7 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDV
 .. _Calculate_NDVI:
 
 4.3.8 Calculate NDVI
-````````````````````
+````````````````````````
 To compute NDVI, we need only the NIR and Red bands. Thus, we use Sentinel-2’s highest spatial resolution images (10-meters).
 
 Open the folder ``…\Sentinel-2\10m`` and import in QGIS the image ``S2_20180418_10m``.
@@ -583,7 +654,7 @@ Remember to use **"S2A_20180627_10m@3"** and **"S2A_20180627_10m@4"** in the exp
 
 .. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:any:`Calculate_NDVI`).
 
-4.3.9 Select the NDVI information for Barley and Potato
+3.9 Select the NDVI information for Barley and Potato
 ````````````````````````````````````````````````````````
 Once computed the NDVI for both the satellite images, we want to compare Barley and Potato’s vegetative stage in April and June.
 
@@ -657,7 +728,7 @@ A window opens. Select the following parameters (:numref:`Fig11_NDVI_Save_Vector
    Sample screenshot.
 
 4.3.10 Compare winter crops and summer crops
-````````````````````````````````````````````
+````````````````````````````````````````````````
 Now we want to compare the different vegetative stage of Barley and Potato. For this task, we use the **Zonal statistics** tool. |br|
 Unlike the **Cell Statistics** algorithm that computes per-pixel statistics, the **Zonal statistics** algorithm calculates per-polygon statistics. That means the output (e.g. minimum, maximum, sum, count, *etc.*) is calculated only on pixels within the selected polygons.
 
@@ -709,8 +780,8 @@ Remember to set the **Raster layer** to ``2018_06_27_NDVI``, and **Output column
 
    Sample screenshot.
 
-4.3.11 Simple analysis of results
-`````````````````````````````````
+s4.3.11 Simple analysis of results
+````````````````````````````````````
 Let’s discuss our findings.
 
 - **Mid April:**

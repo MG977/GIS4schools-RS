@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'GIS4Schools'
-copyright = '2020, Lars'
-author = 'Lars'
+project = 'GIS4Schools-RS'
+copyright = '2020, Politecnico di Milano'
+author = 'Marco Gianinetto, Francesco Polinelli'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
@@ -66,6 +66,7 @@ html_static_path = ['_static']
 # have a caption. They can be referred in the text using :numref:`figure_label` or
 # :numref:`table_label`. :numref: returns Fig.n_figure or Tab.n_table 
 numfig = True
+numfig_secnum_depth = 3
 
 # code for making links open in a new tab
 from sphinx.writers.html import HTMLTranslator
