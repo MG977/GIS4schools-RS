@@ -1,6 +1,5 @@
 .. include:: html_lat.txt
 
-.. _index:
 
 1. Fundamentals of remote sensing and Earth observation
 =======================================================
@@ -46,7 +45,3 @@ Thus, *Earth observation* **is the process** of collecting information on our pl
 1.3.4. Copernicus and the Sentinels
 ```````````````````````````````````
 `Copernicus <https://www.copernicus.eu>`_ is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects vast amounts of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.
-
-
-1.4 References
---------------

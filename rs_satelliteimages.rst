@@ -1,6 +1,5 @@
 .. include:: html_lat.txt
 
-.. _rs_fundamentals:
 
 2. Access to Copernicus satellite images for free
 =================================================

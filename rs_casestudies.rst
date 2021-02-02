@@ -1,6 +1,5 @@
 .. include:: html_lat.txt
 
-.. _imageanalysis:
 
 4. Hands-on exercises
 =======================
@@ -321,6 +320,21 @@ Select all the layers and click **OK** (:numref:`Fig6_CROP_Merge_band_selection`
 
    Sample screenshot.
 
+Select the following parameters in the **Merge window**:
+
+- ``Grab pseudocolor table from first layer:`` unselected,
+- ``Place each input file into a separate band:`` select,
+- ``Output data type:`` Float32,
+- ``Merged:`` Click on the three dots ``[...]``:
+
+   - Save to File
+   - Select the folder where you want to save the image. Use the following file name ``S2_20180418_10m.tif``.
+
+.. _Fig105_Merge_settings_10m:
+.. figure:: /Figure/Fig105_Merge_settings_10m.png
+
+   Sample screenshot.
+
 4.2.9 Prepare multiband files for 20-meter satellite images
 `````````````````````````````````````````````````````````````
 Repeat the same data processing done for the 10-meter satellite images, and create multiband files for the 20-meter satellite images.
@@ -360,13 +374,100 @@ Once band **B8A** is moved AFTER band B07, the list will look like :numref:`Fig9
 
    Sample screenshot.
 
-Save the output file as ``S2_20180418_20m.tif`` in the same folder used for 10-meters Sentinel-2 images.
+Select the following parameters in the **Merge window**:
 
-4.2.10 Create the training samples for image classification
+- ``Grab pseudocolor table from first layer:`` unselected,
+- ``Place each input file into a separate band:`` select,
+- ``Output data type:`` Float32,
+- ``Merged:`` Click on the three dots ``[...]``:
+- ``Save to File: `` Save the output file as ``S2_20180418_20m.tif`` in the same folder used for 10-meters Sentinel-2 images.
+
+.. _Fig106_Merge_Settings_20m:
+.. figure:: /Figure/Fig106_Merge_Settings_20m.png
+
+   Sample screenshot.
+
+4.2.10 Resize the image
+````````````````````````
+The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the classification process.
+
+In the menu bar select ``Layer`` → ``Data Source Manager`` (:numref:`Fig107_Data_Source_Manager_Vector`).
+
+.. _Fig107_Data_Source_Manager_Vector:
+.. figure:: /Figure/Fig107_Data_Source_Manager_Vector.png
+
+   Sample screenshot.
+
+In the left-side menu select **Vector** and set the following parameters (:numref:`Fig109_Add_Vector`):
+
+- ``Source Type:`` set ``File (Default setting)``,
+- ``Source:`` Click on the three dots ``[...]`` and browse to the folder ``Study_area\``. Select the file ``Wallonia_Study_Area.shp`` (:numref:`Fig108_Select_Study_Area_Layer`).
+
+Click the button ``Add``.
+
+.. _Fig109_Add_Vector:
+.. figure:: /Figure/Fig109_Add_Vector.png
+
+   Sample screenshot.
+
+.. _Fig108_Select_Study_Area_Layer:
+.. figure:: /Figure/Fig108_Select_Study_Area_Layer.png
+
+   Sample screenshot.
+
+A rectangle will appear in the bottom left corner of the image (:numref:`Fig110_Study_Area_Visualization`). This is the extent of the study area.
+
+.. _Fig110_Study_Area_Visualization:
+.. figure:: /Figure/Fig110_Study_Area_Visualization.png
+
+   Sample screenshot.
+
+To resize (i.e. clip) the satellite image, search in the **Processing Toolbox** window the command *clip* and open the tool *Clip raster by mask layer* in the GDAL package (:numref:`Fig111_Clip_tool`).
+
+.. _Fig111_Clip_tool:
+.. figure:: /Figure/Fig111_Clip_tool.png
+
+   Sample screenshot.
+
+In the **Clip Raster by Mask Layer** window, set the following parameters (:numref:`Fig112_Clip_tool_Settings`):
+
+- ``Input layer:`` set ``S2_20180418_20m``,
+- ``Mask layer:`` set ``Wallonia_Study_Area``,
+- ``Source CRS:`` Not set,
+- ``Target CRS:`` Not set,
+- ``Assign a specified nodata value to output bands:`` Not set,
+- ``Create an output alpha band:`` unselect,
+- ``Match the extent of the clipped raster to the extent o the mask layer:`` select,
+- ``Keep resolution of input raster:`` select,
+- ``Set output file resolution``: unselect,
+- ``X Resolution of output bands``: Not set,
+- ``Y Resolution of output bands``: Not set,
+- ``Clipped (mask):`` Click on the three dots [...]. Select ``Save to file`` and browse to the folder where you saved the merged images. Now save the new resized (clipped) image the file name ``S2_20180418_20m_clip``.
+
+.. _Fig112_Clip_tool_Settings:
+.. figure:: /Figure/Fig112_Clip_tool_Settings.png
+
+   Sample screenshot.
+
+The new clipped image will appear in QGIS (:numref:`Fig113_Clipped_image`). Now the image is smaller; thus, the subsequent data processing will be faster.
+
+.. _Fig113_Clipped_image:
+.. figure:: /Figure/Fig113_Clipped_image.png
+
+   Sample screenshot.
+
+Remove all the layers from QGIS.
+
+4.2.11 Create the training samples for image classification
 `````````````````````````````````````````````````````````````
 In our study area, farmlands are much more extensive than 20 m x 20 m. Thus, we use the 20-meters Sentinel-2 image to perform the classification process. On the one hand we do not need greater detail, and on the other hand the 20-meters images have much more spectral bands, thus allowing a better recognition of crop types.
 
-Import in QGIS the Sentinel-2 multiband image of 27 June 2018 ``S2_20180627_20m.tif``.
+Import in QGIS the Sentinel-2 multiband image of 27 June 2018 ``S2_20180627_20m_clip.tif`` (:numref:`Fig114_Import_Clipped_Image`).
+
+.. _Fig114_Import_Clipped_Image:
+.. figure:: /Figure/Fig114_Import_Clipped_Image.png
+
+   Sample screenshot.
 
 Import in QGIS the shapefile ``Wallonia_2018_In_Situ_Extracted_v1.shp`` that describes a field with available information on the cultivated crop type. This information is stored in the attribute table (:numref:`Fig10_CROP_Dataset_attribute_table`). |br|
 To see the attributes, right-click the layer ``Wallonia_2018_In_Situ_Extracted_v1.shp`` and select ``Open Attribute Table``.
@@ -454,17 +555,17 @@ The software shows the following information:
 
    Sample screenshot.
 
-Click the ``Import vector`` icon (:numref:`Fig17_CROP_ROI_Creation`).
+Click the ``Import vector`` icon (:numref:`Fig17_v2_CROP_ROI_Creation`).
 
-.. _Fig17_CROP_ROI_Creation:
-.. figure:: /Figure/Fig17_CROP_ROI_Creation.png
+.. _Fig17_v2_CROP_ROI_Creation:
+.. figure:: /Figure/Fig17_v2_CROP_ROI_Creation.png
 
    Sample screenshot.
 
 .. important:: Wait until the importing is finished! |br|
    This process might take some minutes, depending on your PC performances.
 
-4.2.11 Automatic mapping of crop types
+4.2.12 Automatic mapping of crop types
 ````````````````````````````````````````
 Let’s start the classification process.
 
@@ -480,7 +581,12 @@ Open the ``SCP window`` and go to the ``Band processing`` panel. Select ``Classi
 
    Sample screenshot.
 
-Click the button ``RUN`` and select the folder where you want to save the classification map. Name the folder ``20180627_Classification``.
+Click the button ``RUN`` and select the folder where you want to save the classification map. Name the folder ``20180627_Classification`` (:numref:`Fig115_Save_Classification`).
+
+.. _Fig115_Save_Classification: 
+.. figure:: /Figure/Fig115_Save_Classification.png
+
+   Sample screenshot.
 
 The data processing transforms the input satellite image into a land cover map of crops types. Each pixel of the map is coded with its **Class_code** (:numref:`Tab1_CROP`). All the image pixels whose land cover is not recognized are assigned the **"special" Class_code 0** (unclassified). :numref:`Fig19_CROP_Classification_result` shows the result.
 
@@ -489,7 +595,7 @@ The data processing transforms the input satellite image into a land cover map o
 
    Sample screenshot.
 
-4.2.12 Simple analysis of results
+4.2.13 Simple analysis of results
 ````````````````````````````````````
 If we want to estimate the most farmed crop, right-click on the classification layer ``20180627_Classification`` and select ``Properties`` (:numref:`Fig20_CROP_Classification_properties`).
 

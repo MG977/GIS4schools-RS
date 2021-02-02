@@ -1,6 +1,5 @@
 .. include:: html_lat.txt
 
-.. _satelliteimages:
 
 
 3. Principles of image analysis 
