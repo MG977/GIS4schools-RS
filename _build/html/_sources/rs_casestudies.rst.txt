@@ -158,6 +158,25 @@ The outcomes of this processing are 10 spectral bands:
 
 Now we want to merge all the spectral bands in a single image. This is called **multiband image** (or **multispectral image**).
 
+In the Semi-Automatic Classification Plugin window, select **Band set** (Upper left corner) and flag the option **Create raster of band set (stack bands)** (:numref:`Fig8_CROP_20m_wrong_band_order`).
+
+Click the button **RUN** and select the output directory (:numref:`Fig8_WQ_Create_Stack`). Name the output file with the name of the input image followed by ``stack_raster``. For example ``RT_T32TQN_20160718T101032_B0stack_raster``.
+
+.. _Fig8_WQ_Create_Stack:
+.. figure:: /Figure/Fig8_WQ_Create_Stack.png
+
+   Sample screenshot.
+
+Remove from QGIS all the layer, except ``RT_T32TQN_20160718T101032_B0stack_raster``. To remove a layer, right-click the layer in the windows **Layers** and select ``Remove layer``.
+
+The image is loaded in QGIS. However, its colours are not what we expect because the satellite’s spectral bands are not loaded in the correct order (:numref:`Fig9_WQ_Sentinel2_Visaulization`).
+
+.. _Fig9_WQ_Sentinel2_Visaulization:
+.. figure:: /Figure/Fig9_WQ_Sentinel2_Visaulization.png
+
+   Sample screenshot.
+
+To solve this problem, we need to tell QGIS which spectral bands correspond to Red, Green and Blue.
 
 
 
