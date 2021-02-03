@@ -4,20 +4,9 @@
 4. Hands-on exercises
 =======================
 
-lorem ipsum, lorem ipsum
-
-lorem ipsum, lorem ipsum
-
-lorem ipsum, lorem ipsum
-
-
-
-
-
-
-
-
-
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
 
@@ -73,6 +62,8 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 
    Atmospheric correction is an advanced topic not covered in training. Thus, this exercise uses the most simple atmospheric compensation technique, called Dark Object Subtraction (DOS), to derive pseudo ``L2A`` products.
 
+.. _The-modelling-WQ:
+
 4.1.4 The modelling
 ````````````````````
 The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. |br|
@@ -90,7 +81,7 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 
 4.1.5 Chlorophyll’s concentration data
 ````````````````````````````````````````
-The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of equation :eq:`eqWQ2`:
+The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`:
 
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
 
@@ -178,11 +169,146 @@ The image is loaded in QGIS. However, its colours are not what we expect because
 
 To solve this problem, we need to tell QGIS which spectral bands correspond to Red, Green and Blue.
 
+.. _Load-the-satellite-images-with-the-correct-colours:
+
+4.1.8 Load the satellite images with the correct colours
+`````````````````````````````````````````````````````````
+Right-click on the image name → ``Properties`` → ``Symbology`` and set (:numref:`Fig10_WQ_Layer_Symbology`):
+
+- ``Red band:`` set ``Band 03``. The satellite’s band 3 collects the Red reflected sunlight,
+- ``Green band:`` set ``Band 02``. The satellite’s band 2 collects the Green reflected sunlight,
+- ``Blue band:`` as ``Band 01``. The satellite’s band 1 collects the Blue reflected sunlight.
+
+Click the button ``Apply`` and then click the button ``OK``.
+
+.. _Fig10_WQ_Layer_Symbology:
+.. figure:: /Figure/Fig10_WQ_Layer_Symbology.png
+
+   Sample screenshot.
+
+Now QGIS shows the satellite image with the correct colours (:numref:`Fig11_WQ_True_Color`).
+
+.. _Fig11_WQ_True_Color:
+.. figure:: /Figure/Fig11_WQ_True_Color.png
+
+   Sample screenshot.
+
+4.1.9 Resize the image
+````````````````````````
+The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the data processing.
+
+Import in QGIS the vector layer ``..\Study_area\trasimeno_proj.shp``.
+To resize (i.e. clip) the satellite image, search in the **Processing Toolbox** panel the command **clip** and open the tool **Clip raster by mask layer** in the *GDAL package* (:numref:`Fig13_WQ_Toolbox_Clip`).
+
+.. _Fig13_WQ_Toolbox_Clip:
+.. figure:: /Figure/Fig13_WQ_Toolbox_Clip.png
+
+   Sample screenshot.
+
+.. hint:: If the Processing Toolbox panel is not loaded, open the QGIS menu ``View`` → ``Panels`` and select ``Processing Toolbox``.
+
+A new window appears (:numref:`Fig14_WQ_Clip_parameters`). In the **Clip Raster by Mask Layer** window, set the following parameters:
+
+- ``Input layer:`` set ``RT_T32TQN_20160718T101032_B0stack_raster``,
+- ``Mask layer:`` set ``Trasimeno_proj``,
+- ``Source CRS:`` Not set,
+- ``Target CRS:`` Not set,
+- ``Assign a specified nodata value to output bands:`` Not set,
+- ``Create an output alpha band:`` unselect,
+- ``Match the extent of the clipped raster to the extent o the mask layer:`` select,
+- ``Keep resolution of input raster:`` select,
+- ``Set output file resolution``: unselect,
+- ``X Resolution of output bands``: Not set,
+- ``Y Resolution of output bands``: Not set,
+- ``Clipped (mask):`` Click on the three dots [...]. Select ``Save to file`` and browse to the folder where you saved the merged images. Now save the new resized (clipped) image with the file name ``RT_T32TQN_20160718T101032_Clip``.
+
+.. _Fig14_WQ_Clip_parameters:
+.. figure:: /Figure/Fig14_WQ_Clip_parameters.png
+
+   Sample screenshot.
+
+Click the button ``RUN``, then ``CLOSE``.
+
+The new clipped image will appear in QGIS (:numref:`Fig15_WQ_Lake_Clip`). Now the image is smaller; thus, the subsequent data processing will be faster.
+
+.. _Fig15_WQ_Lake_Clip:
+.. figure:: /Figure/Fig15_WQ_Lake_Clip.png
+
+   Sample screenshot.
+
+Like it happened when importing the full-size Sentinel-2 image, the resized image is loaded with the wrong order’s spectral bands. Thus, Lake Trasimeno has the wrong colour.
+
+Repeat the steps described in :any:`Load-the-satellite-images-with-the-correct-colours` (:numref:`Fig16_WQ_Lake_Clip_Symbology`).
+
+.. _Fig16_WQ_Lake_Clip_Symbology:
+.. figure:: /Figure/Fig16_WQ_Lake_Clip_Symbology.png
+
+   Sample screenshot.
+
+Now QGIS shows the satellite image with the correct colours (:numref:`Fig17_WQ_Lake_True_color_visualization`).
+
+.. _Fig17_WQ_Lake_True_color_visualization:
+.. figure:: /Figure/Fig17_WQ_Lake_True_color_visualization.png
+
+   Sample screenshot.
+
+4.1.10 Calculate the Ratio Vegetation Index
+````````````````````````````````````````````
+Remember we use the spectral model described in (:any:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:any:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
+
+Now we do some calculations with images using the **Raster Calculator**. This tool allows evaluating equations based on the image pixel values. |br|
+Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:` Fig18_WQ_Raster_Calculator`).
+
+.. _Fig18_WQ_Raster_Calculator:
+.. figure:: /Figure/Fig18_WQ_Raster_Calculator.png
+
+   Sample screenshot.
+
+Now, we have to write Equation :eq:`eqWQ3` using QGIS syntax, so the software can understand it.
+
+.. math:: RVI=frac{\rho_{Band 4}}{\rho_{Band 3}}
+   :label: eqWQ3
+
+With the help of the calculator buttons, write the following expression in ``Raster Calculator Expression``:
+
+"RT_T32TQN_20160718T101032_Clip@4/RT_T32TQN_20160718T101032_Clip@3"
+
+.. hint:: **How to read QGIS equations?**
+
+   "RT_T32TQN_20160718T101032_Clip@4" means: |br|
+   *“pick each pixel value of the resized image RT_T32TQN_20160718T101032_Clip for band 4 (@4)”*.
+
+   "RT_T32TQN_20160718T101032_Clip@3" means: |br|
+   *“pick each pixel value of the resized image RT_T32TQN_20160718T101032_Clip for band 3 (@3)”*.
+
+   **Equations are calculated on a pixel basis. Thus the same equation is computed for each image pixel individually. The results are shown in a new image.**
+
+In **Result Layer** click on the three dots ``[...]`` next to ``Output layer`` and select where you want to save the classification results. Name the file ``Ratio_b4_b3.tif`` (:numref:`Fig19_WQ_Raster_Calculator_expression`).
+
+.. _Fig19_WQ_Raster_Calculator_expression:
+.. figure:: /Figure/Fig19_WQ_Raster_Calculator_expression.png
+
+   Sample screenshot.
+
+The output is a grayscale image, where each pixel contains its RVI value just computed (:numref:`Fig20_WQ_B4_b3_Index`).
+
+.. _Fig20_WQ_B4_b3_Index:
+.. figure:: /Figure/Fig20_WQ_B4_b3_Index.png
+
+   Sample screenshot.
+
+4.1.11 Sample the RVI in the calibration sites
+````````````````````````````````````````````````
 
 
 
 
 
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
 
@@ -441,8 +567,9 @@ A rectangle will appear in the bottom left corner of the image (:numref:`Fig110_
 
    Sample screenshot.
 
-To resize (i.e. clip) the satellite image, search in the **Processing Toolbox** window the command *clip* and open the tool *Clip raster by mask layer* in the GDAL package (:numref:`Fig111_Clip_tool`).
+To resize (i.e. clip) the satellite image, search in the **Processing Toolbox** panel the command *clip* and open the tool *Clip raster by mask layer* in the GDAL package (:numref:`Fig111_Clip_tool`).
 
+.. hint:: If the Processing Toolbox panel is not loaded, open the QGIS menu ``View`` → ``Panels`` and select ``Processing Toolbox``.
 .. _Fig111_Clip_tool:
 .. figure:: /Figure/Fig111_Clip_tool.png
 
@@ -462,6 +589,8 @@ In the **Clip Raster by Mask Layer** window, set the following parameters (:numr
 - ``X Resolution of output bands``: Not set,
 - ``Y Resolution of output bands``: Not set,
 - ``Clipped (mask):`` Click on the three dots [...]. Select ``Save to file`` and browse to the folder where you saved the merged images. Now save the new resized (clipped) image the file name ``S2_20180418_20m_clip``.
+
+Click the button ``RUN``.
 
 .. _Fig112_Clip_tool_Settings:
 .. figure:: /Figure/Fig112_Clip_tool_Settings.png
@@ -857,7 +986,9 @@ A window opens. Select the following parameters (:numref:`Fig11_NDVI_Save_Vector
 Now we want to compare the different vegetative stage of Barley and Potato. For this task, we use the **Zonal statistics** tool. |br|
 Unlike the **Cell Statistics** algorithm that computes per-pixel statistics, the **Zonal statistics** algorithm calculates per-polygon statistics. That means the output (e.g. minimum, maximum, sum, count, *etc.*) is calculated only on pixels within the selected polygons.
 
-Search in the **Processing Toolbox** for the **Zonal statistics** (or write *zonal statistics* in the Processing Toolbox search bar) and double-click on it (:numref:`Fig11_NDVI_Zonal_Statistics`).
+Search in the **Processing Toolbox** panel for the **Zonal statistics** (or write *zonal statistics* in the Processing Toolbox search bar) and double-click on it (:numref:`Fig11_NDVI_Zonal_Statistics`).
+
+.. hint:: If the Processing Toolbox panel is not loaded, open the QGIS menu ``View`` → ``Panels`` and select ``Processing Toolbox``.
 
 .. _Fig11_NDVI_Zonal_Statistics:
 .. figure:: /Figure/Fig11_NDVI_Zonal_Statistics.png

@@ -8,7 +8,7 @@
 3.1. Spectral indices for environmental monitoring
 --------------------------------------------------
 3.1.1. What is a spectral index
-```````````````````````````````
+````````````````````````````````
 A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. Spectral indices combine the reflectance information from multiple spectral bands into one numeric value; thus, they turn satellite images from a qualitative visual inspection tool into a quantitative numerical analysis of environmental phenomena. :numref:`Tab1_SI` shows the most common mathematical formulas.
 
 .. _Tab1_SI:
@@ -25,12 +25,12 @@ A spectral index is a math expression applied to a multispectral image to highli
 
 The most popular spectral indices are those to retrieve the status of vegetation and crops. However, there are also indices designed to:
 
-- Estimate soil properties;
-- Delineate burned areas;
-- Monitor built-up features;
-- Map water bodies;
-- Estimate the abundance of minerals or lithotypes;
-- Evaluate the snow cover;
+- Estimate soil properties,
+- Delineate burned areas,
+- Monitor built-up features,
+- Map water bodies,
+- Estimate the abundance of minerals or lithotypes,
+- Evaluate the snow cover.
 
 3.1.2. How are designed the spectral indices
 ````````````````````````````````````````````
@@ -53,7 +53,7 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
 3.1.3. Examples of spectral indices for studying vegetation
-```````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````````
 **Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
 
@@ -74,25 +74,28 @@ The larger the ratio, the more “amount of green and healthy vegetation” is p
 
 Conversely to RVI, NDVI is bounded from below (0, or more often 0.2) and bounded from above (1). Thus, it is useful to compare different vegetation covers. If we are looking at healthy vegetation, then:
 
-- Moderate values (0.2<NDVI<0.4) are typical for sparse vegetation;
-- Intermediate values (0.4<NDVI<0.6) are typical for moderately-density vegetation;
+- Moderate values (0.2<NDVI<0.4) are typical for sparse vegetation,
+- Intermediate values (0.4<NDVI<0.6) are typical for moderately-density vegetation,
 - And higher values (NDVI>0.6) are typical for high-density vegetation.
 
 On the other hand, if we are looking at a fully covered vegetated plot:
 
-- Moderate values (0<NDVI<0.2) are typical for very sick vegetation;
-- Intermediate values (0.2<NDVI<0.6) are typical for moderately healthy vegetation;
+- Moderate values (0<NDVI<0.2) are typical for very sick vegetation,
+- Intermediate values (0.2<NDVI<0.6) are typical for moderately healthy vegetation,
 - And higher values (NDVI>0.6) are typical for very healthy vegetation.
 
 While NDVI is meaningful only for vegetated areas, it can be calculated for all land covers. In this case, NDVI will have the following values:
 
-- NDVI close to -1 is a typical value for clear water;
-- -1<NDVI<0 are typical values for polluted water, snow or ice;
-- NDVI close to 0 is a typical value for clouds;
+- NDVI close to -1 is a typical value for clear water,
+- -1<NDVI<0 are typical values for polluted water, snow or ice,
+- NDVI close to 0 is a typical value for clouds,
 - Slightly positive NDVI (0<NDVI<0.2) are typical values for bare soil (i.e. soil without vegetation).
 
 
-**ADDITIONAL EXAMPLES**
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<------------------------------------------------- ADDITIONAL EXAMPLE -------------------------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
 .. hint:: **Monitoring crops.** |br|
@@ -106,7 +109,7 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 3.2. Automatic land cover mapping
 ---------------------------------
 3.2.1 Land cover maps vs land use maps
-``````````````````````````````````````
+````````````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
 Example of land cover classes are:
 
@@ -134,25 +137,29 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 	Land cover map vs land use map for the city of Toronto (Canada).
 
 3.2.2 From spectral signatures to spectral classes
-``````````````````````````````````````````````````
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum. →
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.
+````````````````````````````````````````````````````
+
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+
 
 3.2.3 Supervised image classification
 `````````````````````````````````````
 Automatic mapping of different land cover types is done with supervised image classification. The basic idea is to label each image pixel based on their spectral signature’s similarity with some known land cover locations, called the *training samples*. |br|
 The training samples define the map’s legend and define the spectral classes.
 
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.
-Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
 3.3. Map validation
 -------------------
 3.3.1 Precision, bias and accuracy
-``````````````````````````````````
+````````````````````````````````````
+To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy.
+
 Assume that three archers are participating in a tournament. |br|
 The first archer always hit the same spot, but his arrows are systematically displaced from the target’s centre (:numref:`Fig1_validation`).
 
