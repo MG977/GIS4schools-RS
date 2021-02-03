@@ -20,7 +20,7 @@
 project = 'GIS4Schools'
 copyright = '2020, Marco Gianinetto, Francesco Niccolò Polinelli'
 author = 'Marco Gianinetto, Francesco Niccolò Polinelli'
-
+release = 'preview'
 
 # -- General configuration ---------------------------------------------------
 
