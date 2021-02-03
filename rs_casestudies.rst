@@ -81,7 +81,13 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 
 4.1.5 Chlorophyll’s concentration data
 ````````````````````````````````````````
-The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`:
+The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`.
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+
 
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
 
@@ -299,6 +305,60 @@ The output is a grayscale image, where each pixel contains its RVI value just co
 
 4.1.11 Sample the RVI in the calibration sites
 ````````````````````````````````````````````````
+We know chlorophyll’s concentration in the five calibration sites because it was measured *on site*. But also we need the satellite-derived RVI.
+
+Import in QGIS the layer ``..Points/Sampling_2016.shp``. This file contains five small red polygons where the chlorophyll was sampled (:numref:`Fig21_WQ_Points`).
+
+.. _Fig21_WQ_Points:
+.. figure:: /Figure/Fig21_WQ_Points.png
+
+   Sample screenshot.
+
+To extract from the satellite image the RVI of the calibration sites, we use the **Zonal statistics** tool. |br|
+Unlike the **Cell Statistics** algorithm that computes per-pixel statistics, the **Zonal statistics** algorithm calculates per-polygon statistics. That means the output (e.g. minimum, maximum, sum, count, *etc.*) is calculated only on pixels within the selected polygons.
+
+Search in the **Processing Toolbox** panel for the **Zonal statistics** (or write *zonal statistics* in the Processing Toolbox search bar) and double-click on it (:numref:`Fig22_WQ_Toolbox_Zonal_Statistics`).
+
+.. _Fig22_WQ_Toolbox_Zonal_Statistics:
+.. figure:: /Figure/Fig22_WQ_Toolbox_Zonal_Statistics.png
+
+   Sample screenshot.
+
+.. hint:: If the Processing Toolbox panel is not loaded, open the QGIS menu ``View`` → ``Panels`` and select ``Processing Toolbox``.
+
+The Zonal Statistics window opens. Select the following parameters (:numref:`Fig23_WQ_Zonal_Statistics_parameters`): 
+
+- **Raster layer:** set to ``Ratio_b4_b3``,
+- **Raster band:** set to ``Band 1 (Gray)``,
+- **Vector layer containing zones:** set to ``Sampling_2016``,
+- **Output column prefix:** set to ``b4/b3_``,
+- Statistics to calculate:
+
+   - Click on the three dots ``[...]``,
+   - Select **Mean** and unselect all the other statistics,
+   - Click the blue back arrow, located in the upper-left corner.
+
+Click the button ``RUN`` to execute the data processing.
+
+.. _Fig23_WQ_Zonal_Statistics_parameters:
+.. figure:: /Figure/Fig23_WQ_Zonal_Statistics_parameters.png
+
+   Sample screenshot.
+
+The data processing adds a new attribute (i.e. column) to the attribute table of the shapefile **Sampling_2016**. It is called **Ratio_b4_b3**. |br|
+The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i.e. rows) (:numref:`Fig24_WQ_Points_attribute_table`).
+
+.. _Fig24_WQ_Points_attribute_table:
+.. figure:: /Figure/Fig24_WQ_Points_attribute_table.png
+
+   Sample screenshot.
+
+4.1.12 Build the spectral model
+````````````````````````````````````````````````
+
+
+
+
 
 
 
