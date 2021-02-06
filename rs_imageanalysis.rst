@@ -1,7 +1,6 @@
 .. include:: html_lat.txt
 
 
-
 3. Principles of image analysis 
 ===============================
 

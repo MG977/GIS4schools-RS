@@ -24,18 +24,18 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 	Log in to the Sentinel Hub EO Browser.
 
 2.1.1. Selecting the correct products with Sentinel Hub EO Browser
-``````````````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````````````````
 Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_, configure the search criteria (:numref:`Fig3_EObrowser`):
 
-1. In this example, we look for Sentinel-2 images. Thus, select ``Sentinel-2`` as a data source;
+1. In this example, we look for Sentinel-2 images. Thus, select ``Sentinel-2`` as a data source,
 
-2. Set ``Advanced search`` and select ``L2A (atmospherically corrected)``. This option limits the search to atmospherically corrected Sentinel-2 images only;
+2. Set ``Advanced search`` and select ``L2A (atmospherically corrected)``. This option limits the search to atmospherically corrected Sentinel-2 images only,
 
-3. Optionally, set the ``Max. cloud coverage`` to the desired level of maximum cloud cover accepted;
+3. Optionally, set the ``Max. cloud coverage`` to the desired level of maximum cloud cover accepted,
 
-4. Select the starting and ending ``Time range [UTC]`` by clicking the calendars;
+4. Select the starting and ending ``Time range [UTC]`` by clicking the calendars,
 
-5. Optionally, select ``filter by months`` to limit the search to specific months in the time range;
+5. Optionally, select ``filter by months`` to limit the search to specific months in the time range,
 
 6. Click the ``Search`` button to search the archive.
 
@@ -69,11 +69,11 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 - False colour (:numref:`Fig8_EObrowser`). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), red, and green spectral bands, represented as red, green and blue colours respectively:
 
-	- Vegetation is from dark red to light red;
-	- Urban areas are cyan or tan;
-	- Bare soils are from dark brown to light brown;
-	- Water is black or dark blue;
-	- Snow and ice are cyan or blue;
+	- Vegetation is from dark red to light red,
+	- Urban areas are cyan or tan,
+	- Bare soils are from dark brown to light brown,
+	- Water is black or dark blue,
+	- Snow and ice are cyan or blue,
 	- Wildfires are white (the smoke plume).
 
 .. _Fig8_EObrowser:
@@ -83,10 +83,10 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 - False colour (urban) (:numref:`Fig15_EObrowser`). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the red spectral bands, represented as red, green and blue colours respectively:
 
-	- Vegetation is green;
-	- Urban areas are white, grey, or purple;
-	- Bare soils are shown in a variety of colours;
-	- Water is black or dark blue;
+	- Vegetation is green,
+	- Urban areas are white, grey, or purple,
+	- Bare soils are shown in a variety of colours,
+	- Water is black or dark blue,
 	- Wildfires are red and yellow.
 
 .. _Fig15_EObrowser:
@@ -96,11 +96,11 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 - SWIR (:numref:`Fig16_EObrowser`). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:
 
-	- Vegetation is red;
-	- Urban areas are cyan;
-	- Bare soils are from dark brown to light brown;
-	- Water is black or dark blue;
-	- Snow and ice are blue;
+	- Vegetation is red,
+	- Urban areas are cyan,
+	- Bare soils are from dark brown to light brown,
+	- Water is black or dark blue,
+	- Snow and ice are blue,
 	- Rocks are shown in a variety of colours.
 
 .. _Fig16_EObrowser:
@@ -112,8 +112,8 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 - NDVI (:numref:`Fig9_EObrowser`). This is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands:
 
-	- Dense and healthy vegetation is dark green;
-	- Sparse or unhealthy vegetation is light green;
+	- Dense and healthy vegetation is dark green,
+	- Sparse or unhealthy vegetation is light green.
 
 .. _Fig9_EObrowser:
 .. figure:: /Figure/Fig9_EObrowser.png
@@ -140,7 +140,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 - NDSI (:numref:`Fig19_EObrowser`). This index is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands:
 
-	- Clouds are white;
+	- Clouds are white,
 	- Snow (and water) is light blue.
 
 .. _Fig19_EObrowser:
@@ -156,11 +156,11 @@ Additionally, there is a simple scene classification map with nine land cover cl
 	Scene classification map.
 
 2.1.3. Downloading the data with Sentinel Hub EO Browser
-````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````
 .. warning:: **Sign up for Copernicus Open Access Hub.** |br|
 	The images searched with `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are downloaded from the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_. `Sign up for a free account! <https://scihub.copernicus.eu/dhus/#/home>`_
 
-1. Click the green chain symbol to show the download link at the bottom of the image (``SciHub link:``);
+1. Click the green chain symbol to show the download link at the bottom of the image (``SciHub link:``),
 
 2. Click the link to download the data.
 
@@ -187,10 +187,10 @@ Discover more information on the `Copernicus Open Access Hub <https://scihub.cop
 
 and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
 
-- `CREO DIAS <https://creodias.eu>`_;
-- `MUNDI web services <https://mundiwebservices.com>`_;
-- `ONDA DIAS <https://www.onda-dias.eu/cms>`_;
-- `Sobloo <https://sobloo.eu>`_;
+- `CREO DIAS <https://creodias.eu>`_,
+- `MUNDI web services <https://mundiwebservices.com>`_,
+- `ONDA DIAS <https://www.onda-dias.eu/cms>`_,
+- `Sobloo <https://sobloo.eu>`_,
 - `WEkEO <https://wekeo.eu>`_.
 
 .. _Fig_DIAS:

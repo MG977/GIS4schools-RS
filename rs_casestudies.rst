@@ -4,14 +4,13 @@
 4. Hands-on exercises
 =======================
 
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-
-
-
 4.1. Monitoring lake’s trophic state
 ------------------------------------
+.. important:: **DATA FOR THE EXERCISE** |br|
+   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+
+
+
 4.1.1 The environmental problem
 ````````````````````````````````
 The trophic state of a water body describes the amount of nutrients (mainly phosphorus and nitrogen) available to grow aquatic vegetation and phytoplankton. However, when water becomes rich with nutrients, phytoplankton’s rapid growth (called **algae bloom**) could cause negative impacts on the marine environment, like:
@@ -38,9 +37,13 @@ Lakes are usually classified into 4 trophic states, according to chlorophyll’s
 .. Warning:: **The role of climate change** |br|
    Climate change may indirectly cause eutrophication by increasing runoff from the land, affecting nutrient load, due to increased precipitation resulting from global warming.
 
+
+
 4.1.2 Scope of the exercise
 ````````````````````````````
 This exercise shows a very simple method to monitor the eutrophic level of a lake with satellites.
+
+
 
 4.1.3 Satellite images
 ````````````````````````
@@ -62,6 +65,7 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 
    Atmospheric correction is an advanced topic not covered in training. Thus, this exercise uses the most simple atmospheric compensation technique, called Dark Object Subtraction (DOS), to derive pseudo ``L2A`` products.
 
+
 .. _The-modelling-WQ:
 
 4.1.4 The modelling
@@ -79,6 +83,8 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 .. math:: Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b
    :label: eqWQ2
 
+
+
 4.1.5 Chlorophyll’s concentration data
 ````````````````````````````````````````
 The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`.
@@ -95,6 +101,8 @@ The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentratio
 .. figure:: /Figure/Fig1_WQ.png
 
    Lake Trasimeno with superimposed the sampling locations (green dots).
+
+
 
 4.1.6 QGIS set-up
 `````````````````
@@ -118,6 +126,8 @@ In QGIS main window, select ``New Empty Project`` (:numref:`Fig2_WQ_New_Project`
 .. figure:: /Figure/Fig2_WQ_New_Project.png
 
    Sample screenshot.
+
+
 
 4.1.7 Prepare the satellite images
 ````````````````````````````````````
@@ -175,6 +185,7 @@ The image is loaded in QGIS. However, its colours are not what we expect because
 
 To solve this problem, we need to tell QGIS which spectral bands correspond to Red, Green and Blue.
 
+
 .. _Load-the-satellite-images-with-the-correct-colours:
 
 4.1.8 Load the satellite images with the correct colours
@@ -198,6 +209,8 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig11_WQ_T
 .. figure:: /Figure/Fig11_WQ_True_Color.png
 
    Sample screenshot.
+
+
 
 4.1.9 Resize the image
 ````````````````````````
@@ -258,6 +271,8 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig17_WQ_L
 
    Sample screenshot.
 
+
+
 4.1.10 Calculate the Ratio Vegetation Index
 ````````````````````````````````````````````
 Remember we use the spectral model described in (:any:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:any:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
@@ -272,7 +287,7 @@ Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...``
 
 Now, we have to write Equation :eq:`eqWQ3` using QGIS syntax, so the software can understand it.
 
-.. math:: RVI=frac{\rho_{Band 4}}{\rho_{Band 3}}
+.. math:: RVI=\frac{\rho_{Band 4}}{\rho_{Band 3}}
    :label: eqWQ3
 
 With the help of the calculator buttons, write the following expression in ``Raster Calculator Expression``:
@@ -302,6 +317,8 @@ The output is a grayscale image, where each pixel contains its RVI value just co
 .. figure:: /Figure/Fig20_WQ_B4_b3_Index.png
 
    Sample screenshot.
+
+
 
 4.1.11 Sample the RVI in the calibration sites
 ````````````````````````````````````````````````
@@ -353,18 +370,337 @@ The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i
 
    Sample screenshot.
 
-4.1.12 Build the spectral model
-````````````````````````````````````````````````
+
+
+4.1.12 Calibrate the spectral model
+````````````````````````````````````
+To transform the spectral information of satellites into chlorophyll concentrations, we use the simple linear model of Equation :eq:`eqWQ4`:
+
+.. math:: Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b
+   :label: eqWQ4
+
+Where *a* and *b* are coefficients (i.e. numbers) we have to compute using the on-site chlorophyll measures. This task is called **model calibration.**
+
+We only have data for 5 calibration sites (very few). Thus we use the strategy:
+
+- Build 5 different calibration sets of chlorophyll measures, using only 4 out of the 5 measures available,
+- For each calibration set:
+
+   - Calculate the coefficients *a* and *b* in Equation :eq:`eqWQ4`,
+   - Predict the chlorophyll concentration for the fifth calibration site using Equation :eq:`eqWQ4` and the previously computed coefficients *a* and *b*,
+   - Compare the estimated concentration with the on-site measure (i.e. the fifth measure left out).
+
+- Select the coefficients *a* and *b* which give the best result.
+
+For this task, we use a pre-compiled spreadsheet (:numref:`Fig25_WQ_Excel`). Open the file ``Regression.xls``,
+
+.. _Fig25_WQ_Excel:
+.. figure:: /Figure/Fig25_WQ_Excel.png
+
+   Sample screenshot.
+
+In cells **B2-B6** copy the RVI values for the 5 calibration sites (four decimal digit are enough) (:numref:`Fig26_WQ_Excel_2`).
+
+In cells **C2-C6** copy the on-site measures of chlorophyll concentration (:numref:`Fig26_WQ_Excel_2`).
+
+The spreadsheet automatically calculates the following data:
+
+- Cells **E2** and **F2** show the estimated values for *a* and *b* using only the first 4 points,
+- Cells **H2-H6** show the estimated values of chlorophyll concentration for the fifth point that was left out,
+- Cells **I2-I6** show the difference between the estimated (column H) and the on-site measured (column C) chlorophyll concentration.
+
+.. note:: The lower cell **I6**, the better the model. This cell shows the difference to the fifth data that was not used for the model calibration. Thus, it describes the accuracy of our model.
+
+.. _Fig26_WQ_Excel_2:
+.. figure:: /Figure/Fig26_WQ_Excel_2.png
+
+   Sample screenshot.
+
+Now copy the values of cells **B2-C6** in the other four boxes, but changing their order according to column **A**. This way, the fifth data used for testing the model accuracy is always different (:numref:`Fig27_WQ_Excel_3`).
+
+.. _Fig27_WQ_Excel_3:
+.. figure:: /Figure/Fig27_WQ_Excel_3.png
+
+   Sample screenshot.
+
+We see that out of the five repetitions, the second one is the best because it has the lowest difference between estimated and measured chlorophyll concentration (:numref:`Fig27_WQ_Excel_3`).
+
+Consequently, the calibrated model becames Equation :eq:`eqWQ5`:
+
+.. math:: Chl\ \left[mg/m^3\right]=155\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-123
+   :label: eqWQ5
 
 
 
+4.1.13 Create an automatic workflow
+````````````````````````````````````
+Remove all the layers from QGIS and import all the Sentinel-2 images.
+
+Now we need to repeat the same data processing for ALL the 10 satellite images. This task is very time consuming and also prone to errors. Thus, we automate data processing.
+
+.. important:: QGIS can be programmed with *Python scripts*. However, for most common tasks QGIS can be programmed using a Graphical Modeler that **does not require any programming knowledge.** |br|
+
+Open the Graphical Modeler tool: ``Processing`` → ``Graphical Modeler`` (:numref:`Fig28_WQ_Processing`).
+
+.. _Fig28_WQ_Processing:
+.. figure:: /Figure/Fig28_WQ_Processing.png
+
+   Sample screenshot.
+
+The Model Designer window opens (:numref:`Fig29_WQ_Graphical_modeler`). This tool links together single processing steps into a processing workflow.
+
+.. _Fig29_WQ_Graphical_modeler:
+.. figure:: /Figure/Fig29_WQ_Graphical_modeler.png
+
+   Sample screenshot.
+
+First, we need to tell the Graphical Modeler that our **Inputs** are Sentinel-2 images. Search for ``Raster Layer`` in the left-side panel and double click it (:numref:`Fig30_WQ_Input_Raster_Layer`).
+
+.. _Fig30_WQ_Input_Raster_Layer:
+.. figure:: /Figure/Fig30_WQ_Input_Raster_Layer.png
+
+   Sample screenshot.
+
+The **Raster Layer Parameter Definition** window opens. Type ``Sentinel-2`` in the Description textbox (:numref:`Fig31_WQ_Raster_Layer_Definition`) and click the button ``OK``.
+
+.. _Fig31_WQ_Raster_Layer_Definition:
+.. figure:: /Figure/Fig31_WQ_Raster_Layer_Definition.png
+
+   Sample screenshot.
+
+The first “block” of our processing chain is created (:numref:`Fig32_WQ_First_Block`).
+
+.. _Fig32_WQ_First_Block:
+.. figure:: /Figure/Fig32_WQ_First_Block.png
+
+   Sample screenshot.
+
+Now we need to build the processing “blocks” to automate:
+
+1. The estimation of chlorophyll concentration,
+2. The resizing of data to the study area,
+3. The processing of all the satellite images.
+
+In the left-side panel click on the tab ``Algorithms``. The list of available command changes. Search for ``Raster Calculator`` and select the tool ``Raster Calculator`` from the **Raster analysis package** (:numref:`Fig33_WQ_Algorithms_Raster_Calculator`).
+
+.. _Fig33_WQ_Algorithms_Raster_Calculator:
+.. figure:: /Figure/Fig33_WQ_Algorithms_Raster_Calculator.png
+
+   Sample screenshot.
+
+The **Raster calculator** window opens (:numref:`Fig34_WQ_Model_Raster_Calculator_Expression`). With the help of the calculator buttons, write the following expression:
+
+155*(“Sentinel-2@4”/”Sentinel-2@3”) - 123
+
+And set the following parameters (:numref:`Fig34_WQ_Model_Raster_Calculator_Expression`):
+
+- ``Reference layer(s):`` click on the button ``[123]`` and select **Model input** ``Sentinel-2```,
+- ``Cell size:`` keep the default value,
+- ``Output extent:`` keep the default value,
+- ``Output CRS:`` keep the default value,
+- ``Output:`` click on the drop-down list and select ``Value``. Type ``_Chl.tif`` and click the button ``OK``.
+
+.. _Fig34_WQ_Model_Raster_Calculator_Expression:
+.. figure:: /Figure/Fig34_WQ_Model_Raster_Calculator_Expression.png
+
+   Sample screenshot.
+
+The second “block” appears in the Model Designer window (:numref:`Fig35_WQ_Second_Block`).
+
+.. _Fig35_WQ_Second_Block:
+.. figure:: /Figure/Fig35_WQ_Second_Block.png
+
+   Sample screenshot.
+
+We now want to resize (clip) the output of our data processing to match the study area of Lake Trasimano.
+
+Search again in the tab ``Algorithms`` for the command ``Clip``. Click on ``Clip raster by mask layer`` from the **GDAL package**  (:numref:`Fig36_WQ_Algorithms_Clip`).
+
+.. _Fig36_WQ_Algorithms_Clip:
+.. figure:: /Figure/Fig36_WQ_Algorithms_Clip.png
+
+   Sample screenshot.
+
+The **Clip raster by mask layer** window opens. Set the following parameters (:numref:`Fig37_WQ_Model_Clip_parameters`):
+
+- ``Input layer:`` click on the button ``[123]`` and select ``Algorithm Output``, and ``“Output” form algorithm “Raster calculator”``,
+- ``Mask layer: `` click the dots ``[…]`` and select the file ``../Study_area/trasimeno_proj.shp``,
+- ``Source CRS:`` leave it empty,
+- ``Target CRS:`` leave it empty,
+- ``Assign a specified nodata value to output bands:`` not set,
+- ``Create an output alpha band:`` set **no**,
+- ``Match the extent of the clipped raster to the extent of the mask layer:`` set **yes**,
+- ``Keep resolution of input raster:`` set **yes**,
+- ``Set output file resolution:`` set **no**,
+- ``X Resolution to output bands:`` not set,
+- ``Clipped:`` click on the drop-down list and select ``Model Output``. Type ``_clip.tif`` and click the button ``OK``.
+
+.. _Fig37_WQ_Model_Clip_parameters:
+.. figure:: /Figure/Fig37_WQ_Model_Clip_parameters.png
+
+   Sample screenshot.
+
+The last “block” appears in the Model Designer window (:numref:`Fig38_WQ_Third_Block`).
+
+.. _Fig38_WQ_Third_Block:
+.. figure:: /Figure/Fig38_WQ_Third_Block.png
+
+   Sample screenshot.
+
+Let’s call our workflow *Chl_Concentration*. In the Model Designer window, type ``Chl_Concentration`` in **Model Properties** (:numref:`Fig39_WQ_Model_Name`).
+
+.. _Fig39_WQ_Model_Name:
+.. figure:: /Figure/Fig39_WQ_Model_Name.png
+
+   Sample screenshot.
+
+Finally, save the model: ``Model`` → ``Save model as``, select a folder and save as ``Chl_Concentration`` (:numref:`Fig40_WQ_Save_Model`).
+
+.. _Fig40_WQ_Save_Model:
+.. figure:: /Figure/Fig40_WQ_Save_Model.png
+
+   Sample screenshot.
+
+We have created the processing workflow (like if we have written a script) and are ready to launch it.
+
+.. note:: Internally, QGIS transforms the graphical model into a Python code.
 
 
 
+4.1.14 Create a batch processing to manipulate all the satellite images at once
+````````````````````````````````````````````````````````````````````````````````
+We want to monitor the eutrophic level of Lake Trasimeno with Sentinel-2 images. Thus we have to run the processing workflow several times, each one with a different satellite image. This task is called **batch processing.**
+
+To run the model, select ``Model`` → ``Run Model``.
+
+In the bottom-left corner select ``Run as Batch Process``. That means the processing is not started immediately but is qued (:numref:`Fig41_WQ_Run_As_Batch`)
+
+.. _Fig41_WQ_Run_As_Batch:
+.. figure:: /Figure/Fig41_WQ_Run_As_Batch.png
+
+   Sample screenshot.
+
+The **Batch Processing** window opens (:numref:`Fig42_WQ_Batch_Processing_Paramters`).
+
+.. _Fig42_WQ_Batch_Processing_Paramters:
+.. figure:: /Figure/Fig42_WQ_Batch_Processing_Paramters.png
+
+   Sample screenshot.
+
+Select ``Sentinel-2`` → ``Autofill`` → ``Select from open layers``. In the ``Multiple selection`` window, select ``Select All`` and click the button ``OK`` (:numref:`Fig43_WQ_Select_Images`).
+
+.. _Fig43_WQ_Select_Images:
+.. figure:: /Figure/Fig43_WQ_Select_Images.png
+
+   Sample screenshot.
+
+We QGIS knows we want to apply the data processing to ALL the Sentinel-2 images listed in (:numref:`Fig44_WQ_Batch_Processing_Paramters_2`).
+
+.. _Fig44_WQ_Batch_Processing_Paramters_2:
+.. figure:: /Figure/Fig44_WQ_Batch_Processing_Paramters_2.png
+
+   Sample screenshot.
+
+But QGIS still don’t know how to save the results.
+
+Select ``_Clip.tif`` → ``Autofill`` → ``Calculate by Expression``. In the window ``Expression String Builder`` type (:numref:`Fig45_WQ_Expression_String_Builder`):
+
+concat('[file path]\\', left(@Sentinel2,15), '_Chl_clip.tif')
+
+where [file path] is the path where you want to save the data processing results.
+.. important:: **Be careful to double-up all the backslashes (“\\”) in the path! (e.g. c:\\exercise\\output\\)**
+
+.. hint:: **What does it means concat('[file path]\\', left(@Sentinel2,15), '_Chl_clip.tif')?** |br|
+   The ``concat`` command concatenates multiple strings.
+
+Click the button ``OK``.
+
+.. _Fig45_WQ_Expression_String_Builder:
+.. figure:: /Figure/Fig45_WQ_Expression_String_Builder.png
+
+   Sample screenshot.
+
+Now, QGIS knows how to save the results (:numref:`Fig46_WQ_Batch_processing_parameters_3`).
+
+.. _Fig46_WQ_Batch_processing_parameters_3:
+.. figure:: /Figure/Fig46_WQ_Batch_processing_parameters_3.png
+
+   Sample screenshot.
 
 
 
+4.1.15 Estimate the trophic state of Lake Trasimeno
+````````````````````````````````````````````````````
+Click the button ``Run``. QGIS runs the processing workflow for each satellite image and saves the results in the output folder.
 
+Remove all the layer from QGIS and import the outputs of the automatic data processing. Each image describes the map of the estimated chlorophyll concentration. (:numref:`Fig47_WQ_Chl_Concentration_images`) shows an example 
+
+.. _Fig47_WQ_Chl_Concentration_images:
+.. figure:: /Figure/Fig47_WQ_Chl_Concentration_images.png
+
+   Sample screenshot.
+
+Order the maps from the most recent (top) to the oldest (bottom) (:numref:`Fig48_WQ_Images_Order`).
+
+.. _Fig48_WQ_Images_Order:
+.. figure:: /Figure/Fig48_WQ_Images_Order.png
+
+   Sample screenshot.
+
+Let’s compare the temporal changes of the chlorophyll load.
+
+Right-click on the map estimated for 27 August 2016 (layer **T32TQN_20160827_Chl_Clip**) and select ``Properties`` (:numref:`Fig49_WQ_Chl_Properties`).
+
+.. _Fig49_WQ_Chl_Properties:
+.. figure:: /Figure/Fig49_WQ_Chl_Properties.png
+
+   Sample screenshot.
+
+In the left-side panel select **Symbology** and set the following parameters (:numref:`Fig50_WQ_Chl_Symbology`):
+
+- ``Render type:`` set ``Singleband pseudocolor``. *This option colourize the map,*
+- ``Band:`` set ``Band 1 (Gray)``,
+- ``Min and Max:`` keep the default values,
+- ``Interpolation:`` set ``Discrete``. *This option assigns a unique colour to all values included in the same class,*
+- ``Color ramp:`` click on the arrow and:
+
+   - Select the color ramp ``RdYIGn``. If the color ramp RdYIGn is not listed, click on ``Expand All Color Ramps``,
+   - Click ``Invert Color Ramp``. *This option shows a higher concentration in red and a lower concentration in green,*
+
+- ``Classes:`` set ``7``. *This option creates 7 ranges of chlorophyll concentration.*
+
+Click the button ``Export color map to file`` and save to disk with file name ``colour_ramp``. Now we can to apply the same colour ramp to all the maps.
+
+.. _Fig50_WQ_Chl_Symbology:
+.. figure:: /Figure/Fig50_WQ_Chl_Symbology.png
+
+   Sample screenshot.
+
+Click the button ``Classify``, ``Apply`` and ``OK``. The map now shows chlorophyll concentration values about 55 mg/m3, making Lake Trasimeno on edge between eutrophic and hypereutrophic states in summer (:numref:`Fig52_WQ_Chl_Map`).
+
+.. _Fig52_WQ_Chl_Map:
+.. figure:: /Figure/Fig52_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+Now apply the saved color ramp to all the other maps. For each map, right-click on the map, select ``Properties`` and go to the **Symbology** menu (:numref:`Fig52_WQ_Loading_Color_Map`).
+
+Set the ``render type:`` as ``singleband pseudocolor``, click the button ``Load color map from file`` and load the file ``colour_ramp``.
+
+.. _Fig52_WQ_Loading_Color_Map:
+.. figure:: /Figure/Fig52_WQ_Loading_Color_Map.png
+
+   Sample screenshot.
+
+Click the button ``Apply`` and ``OK``.
+
+Now all the maps have the same colour ramp, and the eutrophic states can be compared.
+
+
+
+4.1.16 Simple analysis of results
+````````````````````````````````````
+Let’s discuss our findings.
 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 <--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
@@ -372,20 +708,13 @@ The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 4.2 Mapping crop types
 ------------------------
+.. important:: **DATA FOR THE EXERCISE** |br|
+   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+
+
+
 4.2.1 The environmental problem
 `````````````````````````````````
 Agriculture is highly dependent on the climate. For any crop type, the effect of climate change will depend on the crop’s optimal temperature and water availability for growth and reproduction.
@@ -395,14 +724,19 @@ The temperature increase will change farming practices. In some countries, warmi
 .. Warning:: **The role of climate change.** |br|
    Overall, climate change may make it difficult to grow crops the same ways and in the same places as in the past.
 
+
+
 4.2.2 Scope of the exercise
 `````````````````````````````
 This exercise shows a very simple method to map crop types with satellites.
+
+
 
 4.2.3 Study area
 ````````````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
+
 
 
 4.2.4 Satellite images
@@ -413,6 +747,8 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 - 27 June 2018.
 
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
+
+
 
 4.2.5 Land cover information
 ````````````````````````````````
@@ -434,9 +770,13 @@ In the study area are cultivated the following main crops:
 
    Farmlands in the Wallonia region.
 
+
+
 4.2.6 Methods
 ````````````````
 The mapping process uses the **Minimum Distance** supervised classification algorithm. The training samples, called *Region Of Interest (ROI)* in QGIS, are extracted from available land cover polygons.
+
+
 
 4.2.7 QGIS set-up
 ````````````````````
@@ -446,6 +786,8 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_CRO
 .. figure:: /Figure/Fig2_WQ_New_Project.png
 
    Sample screenshot.
+
+
 
 .. _Prepare-multiband-files-for-10-meter-satellite-images:
 
@@ -540,6 +882,8 @@ Select the following parameters in the **Merge window**:
 
    Sample screenshot.
 
+
+
 4.2.9 Prepare multiband files for 20-meter satellite images
 `````````````````````````````````````````````````````````````
 Repeat the same data processing done for the 10-meter satellite images, and create multiband files for the 20-meter satellite images.
@@ -591,6 +935,8 @@ Select the following parameters in the **Merge window**:
 .. figure:: /Figure/Fig106_Merge_Settings_20m.png
 
    Sample screenshot.
+
+
 
 4.2.10 Resize the image
 ````````````````````````
@@ -665,6 +1011,8 @@ The new clipped image will appear in QGIS (:numref:`Fig113_Clipped_image`). Now 
    Sample screenshot.
 
 Remove all the layers from QGIS.
+
+
 
 4.2.11 Create the training samples for image classification
 `````````````````````````````````````````````````````````````
@@ -773,6 +1121,8 @@ Click the ``Import vector`` icon (:numref:`Fig17_v2_CROP_ROI_Creation`).
 .. important:: Wait until the importing is finished! |br|
    This process might take some minutes, depending on your PC performances.
 
+
+
 4.2.12 Automatic mapping of crop types
 ````````````````````````````````````````
 Let’s start the classification process.
@@ -803,6 +1153,8 @@ The data processing transforms the input satellite image into a land cover map o
 
    Sample screenshot.
 
+
+
 4.2.13 Simple analysis of results
 ````````````````````````````````````
 If we want to estimate the most farmed crop, right-click on the classification layer ``20180627_Classification`` and select ``Properties`` (:numref:`Fig20_CROP_Classification_properties`).
@@ -826,8 +1178,13 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 .. hint:: If we have some information on the land cover and satellite images for the same period, but in a different location, we can compare how crop types are farmed in other places.
 
 
+
 4.3 Monitoring crops’ vegetative stage
 ----------------------------------------
+.. important:: **DATA FOR THE EXERCISE** |br|
+   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+
+
 .. _The-environmental-problem-agricultural-productivity:
 
 4.3.1 The environmental problem
@@ -844,14 +1201,20 @@ Agricultural productivity is strictly related to environmental factors. For exam
 .. Warning:: **The role of climate change** |br|
    Climate change is modifying the temperature and the precipitation regimes, intensifying extreme weather, and increasing desertification in many fragile territories. That has an impact on the health of vegetation and crops.
 
-3.2 Scope of the exercise
+
+
+4.3.2 Scope of the exercise
 ````````````````````````````
 This exercise shows satellites’ use to evaluate Barley and Potatoes’ vegetative stage in different periods of the year.
+
+
 
 4.3.3 Study area
 ````````````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
+
+
 
 4.3.4 Satellite images
 ````````````````````````
@@ -861,6 +1224,8 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 - 27 June 2018.
 
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
+
+
 
 4.3.5 Land cover information
 ````````````````````````````````
@@ -882,11 +1247,15 @@ In the study area are cultivated the following main crops:
 
    Farmlands in the Wallonia region.
 
+
+
 4.3.6 Methods
 ````````````````
 The monitoring of vegetative stage is done using the **Normalized Difference Vegetation Index (NDVI)** (:any:`Examples-of-spectral-indices-for-studying-vegetation`) described by Equation :eq:`eqSI2`:
 
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
+
+
 
 4.3.7 QGIS set-up
 ````````````````````
@@ -898,6 +1267,8 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDV
    Sample screenshot.
 
 .. _Calculate_NDVI:
+
+
 
 4.3.8 Calculate NDVI
 ````````````````````````
@@ -967,6 +1338,8 @@ Now repeat the data processing again for the satellite image collected on 27 Jun
 Remember to use **"S2A_20180627_10m@3"** and **"S2A_20180627_10m@4"** in the expression for calculating NDVI on 27 June 2018. Save results as ``..\NDVI\2018_06_27_NDVI``.
 
 .. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:any:`Calculate_NDVI`).
+
+
 
 3.9 Select the NDVI information for Barley and Potato
 ````````````````````````````````````````````````````````
@@ -1041,6 +1414,8 @@ A window opens. Select the following parameters (:numref:`Fig11_NDVI_Save_Vector
 
    Sample screenshot.
 
+
+
 4.3.10 Compare winter crops and summer crops
 ````````````````````````````````````````````````
 Now we want to compare the different vegetative stage of Barley and Potato. For this task, we use the **Zonal statistics** tool. |br|
@@ -1096,7 +1471,9 @@ Remember to set the **Raster layer** to ``2018_06_27_NDVI``, and **Output column
 
    Sample screenshot.
 
-s4.3.11 Simple analysis of results
+
+
+4.3.11 Simple analysis of results
 ````````````````````````````````````
 Let’s discuss our findings.
 
