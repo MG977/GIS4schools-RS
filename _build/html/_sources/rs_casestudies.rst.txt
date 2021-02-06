@@ -89,18 +89,25 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 ````````````````````````````````````````
 The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`.
 
-
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-
-
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
 
 .. _Fig1_WQ:
 .. figure:: /Figure/Fig1_WQ.png
 
    Lake Trasimeno with superimposed the sampling locations (green dots).
+
+.. _Tab2_WQ:
+.. table:: Lake Trasimeno: chlorophyll concentration sampled on 18 July 2016.
+
+   ======  ===================
+   Site #  Chlorophyll [mg/m3]
+   ======  ===================
+   1       20.5
+   2       12.5
+   3       19.0
+   4       15.0
+   5       18.0
+   ======  ===================
 
 
 
