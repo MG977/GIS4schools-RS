@@ -23,8 +23,10 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 
 	Log in to the Sentinel Hub EO Browser.
 
-2.1.1. Selecting the correct products with Sentinel Hub EO Browser
-````````````````````````````````````````````````````````````````````
+
+
+2.1.1. How to select the correct products with Sentinel Hub EO Browser
+````````````````````````````````````````````````````````````````````````
 Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_, configure the search criteria (:numref:`Fig3_EObrowser`):
 
 1. In this example, we look for Sentinel-2 images. Thus, select ``Sentinel-2`` as a data source,
@@ -49,8 +51,10 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
 	Sentinel-2 data provided as ``L1C`` products are uncorrected images. Sentinel-2 data provided as ``L2A`` products are atmospherically corrected images. |br|
 	**Only** ``L2A`` **products are ready for image processing!**
 
-2.1.2. Viewing the satellite images with Sentinel Hub EO Browser
-````````````````````````````````````````````````````````````````
+
+
+2.1.2. How to view the satellite images with Sentinel Hub EO Browser
+````````````````````````````````````````````````````````````````````
 Select your image tile in the main window and click ``Visualize``. Alternatively, you can load your image by clicking ``Visualize`` in the left panel (:numref:`Fig6_EObrowser`).
 
 .. _Fig6_EObrowser:
@@ -58,16 +62,21 @@ Select your image tile in the main window and click ``Visualize``. Alternatively
 
 	Select your satellite image archived in the Sentinel Hub EO Browser.
 
-By default, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ opens a true colour image of the selected area (:numref:`Fig7_EObrowser`). For `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_, the red, green and blue colours are recorded by spectral band 4, band 3, and band 2. Therefore, the Earth’s surface is shown as humans would see it naturally.
+By default, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ opens a *true colour image* of the selected area (:numref:`Fig7_EObrowser`). For `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_, the Red, Green and Blue colours are recorded by spectral band 4, band 3, and band 2. Therefore, the Earth’s surface is shown as humans would see it naturally.
 
 .. _Fig7_EObrowser:
 .. figure:: /Figure/Fig7_EObrowser.png
 
 	The satellite image(s) are displayed.
 
+.. note:: **True colour synthesis:** |br|
+	Red band → Red colour |br|
+	Green band → Green colour |br|
+	Blue band → Blue colour
+
 However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ shows the following additional pre-built colour composites:
 
-- False colour (:numref:`Fig8_EObrowser`). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), red, and green spectral bands, represented as red, green and blue colours respectively:
+- **False colour** (:numref:`Fig8_EObrowser`). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), Red, and Green spectral bands, represented as Red, Green and Blue colours respectively:
 
 	- Vegetation is from dark red to light red,
 	- Urban areas are cyan or tan,
@@ -81,7 +90,12 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 	False colour composite.
 
-- False colour (urban) (:numref:`Fig15_EObrowser`). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the red spectral bands, represented as red, green and blue colours respectively:
+.. note:: **False colour synthesis:** |br|
+	NIR band → Red colour |br|
+	Red band → Green colour |br|
+	Green band → Blue colour
+
+- **False colour (urban)** (:numref:`Fig15_EObrowser`). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the Red spectral bands, represented as Red, Green and Blue colours respectively:
 
 	- Vegetation is green,
 	- Urban areas are white, grey, or purple,
@@ -94,7 +108,12 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 	False colour (urban) composite.
 
-- SWIR (:numref:`Fig16_EObrowser`). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:
+.. note:: **False colour (urban) synthesis:** |br|
+	SWIR band 1 → Red colour |br|
+	SWIR band 2 → Green colour |br|
+	Red band → Blue colour
+
+- **SWIR** (:numref:`Fig16_EObrowser`). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:
 
 	- Vegetation is red,
 	- Urban areas are cyan,
@@ -108,37 +127,48 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 	Shortwave infrared (SWIR) composite.
 
+.. note:: **SWIR colour synthesis:** |br|
+	SWIR band → Red colour |br|
+	NIR band → Green colour |br|
+	Red band → Blue colour
+
 `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ also shows the maps of some basic spectral indices. These parameters are useful to recognize different land cover types and monitor the status of vegetated land. Specifically:
 
-- NDVI (:numref:`Fig9_EObrowser`). This is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands:
+- **NDVI** (:numref:`Fig9_EObrowser`). The *Normalized Difference Vegetation Index (NDVI)* is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands:
 
 	- Dense and healthy vegetation is dark green,
 	- Sparse or unhealthy vegetation is light green.
+
+.. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
 
 .. _Fig9_EObrowser:
 .. figure:: /Figure/Fig9_EObrowser.png
 
 	Map of the Normalized Difference Vegetation Index (NDVI).
 
-- Moisture index (:numref:`Fig17_EObrowser`). This index is used to estimate vegetation water content and monitor droughts. The index is calculated using a combination of the near infrared (NIR) and shortwave infrared (SWIR) spectral bands.
+- **Moisture index** (:numref:`Fig17_EObrowser`). The *Normalized Difference Moisture Index (NDMI)* is used to estimate vegetation water content and monitor droughts. The index is calculated using a combination of the near infrared (NIR) and shortwave infrared (SWIR) spectral bands:
 
 	- Vegetation (on land) without water stress is dark blue.
+
+.. math:: NDMI=\frac{\rho_{NIR}-\rho_{SWIR}}{\rho_{NIR}+\rho_{SWIR}}
 
 .. _Fig17_EObrowser:
 .. figure:: /Figure/Fig17_EObrowser.png
 
 	Map of the Normalized Difference Moisture Index (NDMI).
 
-- NDWI (:numref:`Fig18_EObrowser`). This index is used to map water bodies. The index is calculated using a combination of the near infrared (NIR) and green spectral bands:
+- **NDWI** (:numref:`Fig18_EObrowser`). The *Normalized Difference Water Index (NDWI)* is used to map water bodies. The index is calculated using a combination of the near infrared (NIR) and green spectral bands:
 
 	- Water bodies are blue.
+
+.. math:: NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}
 
 .. _Fig18_EObrowser:
 .. figure:: /Figure/Fig18_EObrowser.png
 
 	Map of the Normalized Difference Water Index (NDWI).
 
-- NDSI (:numref:`Fig19_EObrowser`). This index is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands:
+- **NDSI** (:numref:`Fig19_EObrowser`). The *Normalised Difference Snow Index (NDSI)* is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands:
 
 	- Clouds are white,
 	- Snow (and water) is light blue.
@@ -148,15 +178,23 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 	Map of the Normalised Difference Snow Index (NDSI).
 
-Additionally, there is a simple scene classification map with nine land cover classes (:numref:`Fig10_EObrowser`).
+.. math:: NDSI=\frac{\rho_{Green}-\rho_{SWIR}}{\rho_{Green}+\rho_{SWIR}}
+
+Additionally, there is a simple scene classification map with 9 land cover classes (:numref:`Fig10_EObrowser`).
 
 .. _Fig10_EObrowser:
 .. figure:: /Figure/Fig10_EObrowser.png
 
 	Scene classification map.
 
-2.1.3. Downloading the data with Sentinel Hub EO Browser
-`````````````````````````````````````````````````````````
+.. hint:: **Looking for a specific spectral index?** |br|
+	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
+	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
+
+
+
+2.1.3. How to download the data with Sentinel Hub EO Browser
+````````````````````````````````````````````````````````````
 .. warning:: **Sign up for Copernicus Open Access Hub.** |br|
 	The images searched with `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are downloaded from the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_. `Sign up for a free account! <https://scihub.copernicus.eu/dhus/#/home>`_
 
@@ -171,12 +209,14 @@ Additionally, there is a simple scene classification map with nine land cover cl
 
 3. If you are already logged in the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_, the download starts immediately. Otherwise, you will be prompted for user name and password of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_.
 
-.. caution:: username & password for `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ is different from that of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_!
+.. caution:: username & password for `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are different from that of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_!
 
 .. hint:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
 
-2.2. Alternative repositories
------------------------------
+
+
+2.2. Some alternative repositories
+----------------------------------
 Alternative European repositories are the Copernicus Open Access Hub (:numref:`Fig1_scihub`) and the DIASs (:numref:`Fig_DIAS`) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. |br|
 Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_
 
@@ -198,4 +238,4 @@ and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
 
 	Data and Information Access Services (DIAS).
 
-.. caution:: Sentinel images could also be downloaded from the US repository `EarthExplorer <https://earthexplorer.usgs.gov/>`_. However, this repository mirrors only ``L1C`` products (i.e. images which are NOT atmospherically corrected)!
+.. caution:: Sentinel images could also be downloaded from the US repositories `EarthExplorer <https://earthexplorer.usgs.gov/>`_ and `GloVis <https://glovis.usgs.gov/app?fullscreen=0>`_. However, this repository mirrors only ``L1C`` products (i.e. images which are NOT atmospherically corrected)!

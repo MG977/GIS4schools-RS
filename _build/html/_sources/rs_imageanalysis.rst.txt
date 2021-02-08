@@ -6,6 +6,7 @@
 
 3.1. Spectral indices for environmental monitoring
 --------------------------------------------------
+
 3.1.1. What is a spectral index
 ````````````````````````````````
 A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. Spectral indices combine the reflectance information from multiple spectral bands into one numeric value; thus, they turn satellite images from a qualitative visual inspection tool into a quantitative numerical analysis of environmental phenomena. :numref:`Tab1_SI` shows the most common mathematical formulas.
@@ -48,6 +49,8 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 .. figure:: /Figure/Fig2_SI.png
 
 	Spectral signatures of healthy and senescing leaves.
+
+
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
@@ -105,8 +108,11 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
+
+
 3.2. Automatic land cover mapping
 ---------------------------------
+
 3.2.1 Land cover maps vs land use maps
 ````````````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
@@ -135,6 +141,8 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 	Land cover map vs land use map for the city of Toronto (Canada).
 
+
+
 3.2.2 From spectral signatures to spectral classes
 ````````````````````````````````````````````````````
 
@@ -143,18 +151,29 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
+
 3.2.3 Supervised image classification
 `````````````````````````````````````
 Automatic mapping of different land cover types is done with supervised image classification. The basic idea is to label each image pixel based on their spectral signature’s similarity with some known land cover locations, called the *training samples*. |br|
-The training samples define the map’s legend and define the spectral classes.
+The training samples define the map’s legend and define the spectral classes, and must be selected for ALL land cover classes!
+
+.. note:: **What are the training samples?** |br|
+	To predict each image pixel’s most probable land cover, we must train the classifier to recognise spectral signatures. This is done using the training samples, which are image pixels collected by the map maker **those actual land cover is known**.
+
+	**GUIDELINE:** |br|
+	**For multispectral images like Sentinel-2 or Landsat and statistical classification methods, a starting point could be about 200 training samples (i.e. image pixels) for each class.**
+	Unfortunately, different classification techniques require a different number of (optimal) training samples!
+
 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 <--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
+
 3.3. Map validation
 -------------------
+
 3.3.1 Precision, bias and accuracy
 ````````````````````````````````````
 To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy.

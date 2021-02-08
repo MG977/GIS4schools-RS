@@ -1,7 +1,7 @@
 .. include:: html_lat.txt
 
 
--- DEBUG --
+ver.
 ===========
 
-version: 06/02/2021, 18:15
+Document version: 06/02/2021, 18:15
