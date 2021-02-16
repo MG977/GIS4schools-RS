@@ -9,7 +9,7 @@
 The `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ (:numref:`Fig1_EObrowser`) is the first place to look for the archive of the European Space Agency’s `Sentinel-1 <https://sentinel.esa.int/web/sentinel/missions/sentinel-1>`_, `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_, `Sentinel-3 <https://sentinel.esa.int/web/sentinel/missions/sentinel-3>`_, `Sentinel-5P <https://sentinel.esa.int/web/sentinel/missions/sentinel-5p>`_, `PROBA-V <https://earth.esa.int/eogateway/missions/proba-v>`_, and `MERIS <https://earth.esa.int/eogateway/instruments/meris>`_ imagery. |br|
 This repository also gives access to the images collected by NASA’s `Landsat-5 <https://landsat.gsfc.nasa.gov/landsat-4-5>`_, `Landsat-7 <https://landsat.gsfc.nasa.gov/landsat-7>`_, `Landsat-8 <https://landsat.gsfc.nasa.gov/landsat-8>`_, and `MODIS <https://modis.gsfc.nasa.gov/>`_ satellites, and even NASA’s `global imagery browse services (GIBS) <https://earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/gibs>`_ products in one single place.
 
-.. tip:: **Registered users have access to more features!** |br|
+.. note:: **Registered users have access to more features!** |br|
 	The `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ also offers some basic tools to explore Earth observation data, develop custom scripts for simple image analysis and also use third-party scripts. |br|
 	Before browsing the image archives, sign up for a `free account on Sentinel Hub EO Browser <https://apps.sentinel-hub.com/>`_ and then log in (:numref:`Fig2_EObrowser`).
 
@@ -209,9 +209,9 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 3. If you are already logged in the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_, the download starts immediately. Otherwise, you will be prompted for user name and password of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_.
 
-.. caution:: username & password for `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are different from that of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_!
+.. caution:: Username & password for `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are different from that of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_!
 
-.. hint:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
+.. note:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
 
 
 

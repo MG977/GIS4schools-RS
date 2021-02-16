@@ -4,6 +4,8 @@
 4. Hands-on exercises
 =======================
 
+.. _Monitoring-lake-trophic-state:
+
 4.1. Monitoring lake’s trophic state
 ------------------------------------
 .. important:: **DATA FOR THE EXERCISE** |br|
@@ -52,7 +54,6 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 - 18 July 2016,
 - 4 August 2016,
 - 14 August 2016,
-- 17 August 2016,
 - 24 August 2016,
 - 27 August 2016,
 - 3 September 2016,
@@ -61,7 +62,7 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 - 26 September 2016.
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
-   Today (February 2021), Sentinel-2 data collected on 2016 are only provided only as ``L1C`` products. That means these satellite images are NOT corrected for the atmospheric disturbance. Thus, **they are NOT ready for image processing!**
+   Today (February 2021), Sentinel-2 data collected on 2016 are only provided as ``L1C`` products. That means these satellite images are NOT corrected for the atmospheric disturbance. Thus, **they are NOT ready for image processing!**
 
    Atmospheric correction is an advanced topic not covered in training. Thus, this exercise uses the most simple atmospheric compensation technique, called Dark Object Subtraction (DOS), to derive pseudo ``L2A`` products.
 
@@ -154,7 +155,7 @@ In the left-side window open ``Preprocessing`` → ``Sentinel-2`` (:numref:`Fig6
 
 Select the following parameters (:numref:`Fig7_WQ_Import_Sentinel2_part2`):
 
-- ``Directory containing Sentinel-2 bands:`` open the folder where you saved the Sentinel-2 image ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``GRANULE`` → ``L1C_T32TQN_A005596_20160718T101028`` → ``IMG_DATA``,
+- ``Directory containing Sentinel-2 bands:`` open the folder ``..\GIS_4_School\4.1_Monitoring_lake_trophic_state`` → ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``GRANULE`` → ``L1C_T32TQN_A005596_20160718T101028`` → ``IMG_DATA``,
 - ``Select metadata file (MTD_MSI):`` select the file **MTD_MSIL1C** in the folder ``S2A_MSIL1C_20160718T101032_N0204_R022_T32TQN_20160718T101028.SAFE`` → ``MTD_MSIL1C``,
 - ``Apply DOS1 atmospheric correction:`` select this option. This command applies the simple DOS atmospheric correction to the satellite images.
 
@@ -174,7 +175,7 @@ Now we want to merge all the spectral bands in a single image. This is called **
 
 In the Semi-Automatic Classification Plugin window, select **Band set** (Upper left corner) and flag the option **Create raster of band set (stack bands)** (:numref:`Fig8_CROP_20m_wrong_band_order`).
 
-Click the button **RUN** and select the output directory (:numref:`Fig8_WQ_Create_Stack`). Name the output file with the name of the input image followed by ``stack_raster``. For example ``RT_T32TQN_20160718T101032_B0stack_raster``.
+Click the button **RUN** and select the output directory (:numref:`Fig8_WQ_Create_Stack`). The output file will be named as the input bands followed by ``stack_raster``.
 
 .. _Fig8_WQ_Create_Stack:
 .. figure:: /Figure/Fig8_WQ_Create_Stack.png
@@ -285,7 +286,7 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig17_WQ_L
 Remember we use the spectral model described in (:any:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:any:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
 
 Now we do some calculations with images using the **Raster Calculator**. This tool allows evaluating equations based on the image pixel values. |br|
-Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:` Fig18_WQ_Raster_Calculator`).
+Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:`Fig18_WQ_Raster_Calculator`).
 
 .. _Fig18_WQ_Raster_Calculator:
 .. figure:: /Figure/Fig18_WQ_Raster_Calculator.png
@@ -311,7 +312,7 @@ With the help of the calculator buttons, write the following expression in ``Ras
 
    **Equations are calculated on a pixel basis. Thus the same equation is computed for each image pixel individually. The results are shown in a new image.**
 
-In **Result Layer** click on the three dots ``[...]`` next to ``Output layer`` and select where you want to save the classification results. Name the file ``Ratio_b4_b3.tif`` (:numref:`Fig19_WQ_Raster_Calculator_expression`).
+In **Result Layer** click on the three dots ``[...]`` next to ``Output layer`` and select where you want to save the results. Name the file ``Ratio_b4_b3.tif`` (:numref:`Fig19_WQ_Raster_Calculator_expression`).
 
 .. _Fig19_WQ_Raster_Calculator_expression:
 .. figure:: /Figure/Fig19_WQ_Raster_Calculator_expression.png
@@ -441,7 +442,7 @@ Consequently, the calibrated model becames Equation :eq:`eqWQ5`:
 
 4.1.13 Create an automatic workflow
 ````````````````````````````````````
-Remove all the layers from QGIS and import all the Sentinel-2 images.
+Remove all the layers from QGIS and import all the Sentinel-2 images from the folder ``..\GIS_4_School\4.1_Monitoring_lake_trophic_state\Pre-processed``. These images are already corrected for the atmospheric disturbance with the DOS algorithm and are, thus, ready for the processing.
 
 Now we need to repeat the same data processing for ALL the 10 satellite images. This task is very time consuming and also prone to errors. Thus, we automate data processing.
 
@@ -612,12 +613,12 @@ But QGIS still don’t know how to save the results.
 
 Select ``_Clip.tif`` → ``Autofill`` → ``Calculate by Expression``. In the window ``Expression String Builder`` type (:numref:`Fig45_WQ_Expression_String_Builder`):
 
-concat('[file path]\\', left(@Sentinel2,15), '_Chl_clip.tif')
+concat('[file path]\\', left(@Sentinel2 ,18), '_Chl_clip.tif')
 
 where [file path] is the path where you want to save the data processing results.
 .. important:: **Be careful to double-up all the backslashes (“\\”) in the path! (e.g. c:\\exercise\\output\\)**
 
-.. hint:: **What does it means concat('[file path]\\', left(@Sentinel2,15), '_Chl_clip.tif')?** |br|
+.. hint:: **What does it means concat('[file path]\\', left(@Sentinel2 ,18), '_Chl_clip.tif')?** |br|
    The ``concat`` command concatenates multiple strings.
 
 Click the button ``OK``.
@@ -674,16 +675,17 @@ In the left-side panel select **Symbology** and set the following parameters (:n
    - Select the color ramp ``RdYIGn``. If the color ramp RdYIGn is not listed, click on ``Expand All Color Ramps``,
    - Click ``Invert Color Ramp``. *This option shows a higher concentration in red and a lower concentration in green,*
 
+- ``Mode:`` set ``Quantile``,
 - ``Classes:`` set ``7``. *This option creates 7 ranges of chlorophyll concentration.*
 
-Click the button ``Export color map to file`` and save to disk with file name ``colour_ramp``. Now we can to apply the same colour ramp to all the maps.
+Click the button ``Classify``. Then click the button ``Export color map to file`` and save to disk with file name ``colour_ramp``. Now we can to apply the same colour ramp to all the maps.
 
 .. _Fig50_WQ_Chl_Symbology:
 .. figure:: /Figure/Fig50_WQ_Chl_Symbology.png
 
    Sample screenshot.
 
-Click the button ``Classify``, ``Apply`` and ``OK``. The map now shows chlorophyll concentration values about 55 mg/m3, making Lake Trasimeno on edge between eutrophic and hypereutrophic states in summer (:numref:`Fig52_WQ_Chl_Map`).
+Click the button ``Apply`` and then ``OK``. The map now shows chlorophyll concentration values about 55 mg/m3, making Lake Trasimeno on edge between eutrophic and hypereutrophic states in summer (:numref:`Fig52_WQ_Chl_Map`).
 
 .. _Fig52_WQ_Chl_Map:
 .. figure:: /Figure/Fig52_WQ_Chl_Map.png
@@ -714,6 +716,7 @@ Let’s discuss our findings.
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
+.. _Mapping-crop-types:
 
 4.2 Mapping crop types
 ------------------------
@@ -945,6 +948,8 @@ Select the following parameters in the **Merge window**:
 
 
 
+.. _Resize-the-image:
+
 4.2.10 Resize the image
 ````````````````````````
 The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the classification process.
@@ -1025,7 +1030,7 @@ Remove all the layers from QGIS.
 `````````````````````````````````````````````````````````````
 In our study area, farmlands are much more extensive than 20 m x 20 m. Thus, we use the 20-meters Sentinel-2 image to perform the classification process. On the one hand we do not need greater detail, and on the other hand the 20-meters images have much more spectral bands, thus allowing a better recognition of crop types.
 
-Import in QGIS the Sentinel-2 multiband image of 27 June 2018 ``S2_20180627_20m_clip.tif`` (:numref:`Fig114_Import_Clipped_Image`).
+Import in QGIS the Sentinel-2 multiband image of 27 June 2018 from the folder ``..\Sentinel-2\20m`` (:numref:`Fig114_Import_Clipped_Image`). This image is already merged and resized as described in :any:`Prepare-multiband-files-for-10-meter-satellite-images` and :any:`Resize-the-image`.
 
 .. _Fig114_Import_Clipped_Image:
 .. figure:: /Figure/Fig114_Import_Clipped_Image.png
@@ -1146,7 +1151,7 @@ Open the ``SCP window`` and go to the ``Band processing`` panel. Select ``Classi
 
    Sample screenshot.
 
-Click the button ``RUN`` and select the folder where you want to save the classification map. Name the folder ``20180627_Classification`` (:numref:`Fig115_Save_Classification`).
+Click the button ``RUN`` and select the folder where you want to save the classification map. Name the file ``20180627_Classification`` (:numref:`Fig115_Save_Classification`).
 
 .. _Fig115_Save_Classification: 
 .. figure:: /Figure/Fig115_Save_Classification.png

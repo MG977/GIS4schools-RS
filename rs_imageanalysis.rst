@@ -4,6 +4,8 @@
 3. Principles of image analysis 
 ===============================
 
+.. _Spectral-indices-for-environmental-monitoring:
+
 3.1. Spectral indices for environmental monitoring
 --------------------------------------------------
 
@@ -100,7 +102,7 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 
-.. hint:: **Monitoring crops.** |br|
+.. hint:: **Small activity** |br|
 	Most satellite-based crop monitoring systems use NDVI, and similar spectral indices, to show farmers which parts of their fields have more stressed vegetation. |br|
 	See `CropSAT <https://cropsat.com/>`_ for a free online demo.
 
@@ -109,6 +111,7 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
 
+.. _Automatic-land-cover-mapping:
 
 3.2. Automatic land cover mapping
 ---------------------------------
@@ -293,5 +296,6 @@ Thus, the classifier is predicting the map’s class A with lower accuracy.
 
 Typically, user’s and producer’s accuracy for a given land cover class are different. In our example, 86.7% of the testing samples for real-world class A are correctly identified as class A in the map (producer’s accuracy). However, only 56.5% of the areas identified as class A in the map are actually being class A on the ground.
 
-.. hint:: **Which is the accuracy of your map?** |br|
+.. hint:: **Small activity** |br|
+	Which is the accuracy of your map? |br|
 	Calculate the overall accuracy and the per-class producer’s accuracy and user’s accuracy of your own map. Try the free `Confusion matrix online calculator <http://www.marcovanetti.com/pages/cfmatrix/>`_.

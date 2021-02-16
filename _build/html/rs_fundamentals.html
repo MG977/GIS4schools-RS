@@ -86,25 +86,37 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Fundamentals of remote sensing and Earth observation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-are-remote-sensing-and-earth-observation">1.1. What are remote sensing and Earth observation?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-is-earth-observation-related-to-geographic-information-systems">1.2. How is Earth observation related to geographic information systems?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#optical-satellites-for-earth-observation">1.3. Optical satellites for Earth observation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-electromagnetic-spectrum">1.3.1. The electromagnetic spectrum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spectral-signatures">1.3.2. Spectral signatures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multispectral-images">1.3.3. Multispectral images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copernicus-and-the-sentinels">1.3.4. Copernicus and the Sentinels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems">1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#satellites-for-earth-observation">1.2. Satellites for Earth observation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#satellite-orbits-and-revisit-time">1.2.1. Satellite orbits and revisit time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imaging-cameras">1.2.2. Imaging cameras</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-resolution-and-swath-width">1.2.3. Spatial resolution and swath width</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#copernicus-and-the-sentinels">1.3. Copernicus and the Sentinels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-copernicus-programme">1.3.1. The Copernicus programme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-sentinel-2-satellites">1.3.2. The Sentinel-2 satellites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#beyond-satellite-images">1.4. Beyond satellite images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-atmosphere-monitoring-service">1.4.1. Copernicus Atmosphere Monitoring Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-marine-environment-monitoring-service">1.4.2. Copernicus Marine Environment Monitoring Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-land-monitoring-service">1.4.3. Copernicus Land Monitoring Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-climate-change-service">1.4.4. Copernicus Climate Change Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-security-service">1.4.5. Copernicus Security Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-emergency-management-service">1.4.6. Copernicus Emergency Management Service</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rs_satelliteimages.html">2. Access to Copernicus satellite images for free</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rs_satelliteimages.html#sentinel-hub-eo-browser">2.1. Sentinel Hub EO Browser</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#selecting-the-correct-products-with-sentinel-hub-eo-browser">2.1.1. Selecting the correct products with Sentinel Hub EO Browser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#viewing-the-satellite-images-with-sentinel-hub-eo-browser">2.1.2. Viewing the satellite images with Sentinel Hub EO Browser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#downloading-the-data-with-sentinel-hub-eo-browser">2.1.3. Downloading the data with Sentinel Hub EO Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#how-to-select-the-correct-products-with-sentinel-hub-eo-browser">2.1.1. How to select the correct products with Sentinel Hub EO Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#how-to-view-the-satellite-images-with-sentinel-hub-eo-browser">2.1.2. How to view the satellite images with Sentinel Hub EO Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_satelliteimages.html#how-to-download-the-data-with-sentinel-hub-eo-browser">2.1.3. How to download the data with Sentinel Hub EO Browser</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rs_satelliteimages.html#alternative-repositories">2.2. Alternative repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_satelliteimages.html#some-alternative-repositories">2.2. Some alternative repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rs_imageanalysis.html">3. Principles of image analysis</a><ul>
@@ -140,42 +152,46 @@
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#resize-the-image">4.1.9 Resize the image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#calculate-the-ratio-vegetation-index">4.1.10 Calculate the Ratio Vegetation Index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#sample-the-rvi-in-the-calibration-sites">4.1.11 Sample the RVI in the calibration sites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#build-the-spectral-model">4.1.12 Build the spectral model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#calibrate-the-spectral-model">4.1.12 Calibrate the spectral model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#create-an-automatic-workflow">4.1.13 Create an automatic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#create-a-batch-processing-to-manipulate-all-the-satellite-images-at-once">4.1.14 Create a batch processing to manipulate all the satellite images at once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#estimate-the-trophic-state-of-lake-trasimeno">4.1.15 Estimate the trophic state of Lake Trasimeno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#simple-analysis-of-results">4.1.16 Simple analysis of results</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_casestudies.html#mapping-crop-types">4.2 Mapping crop types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id2">4.2.1 The environmental problem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id3">4.2.2 Scope of the exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id4">4.2.1 The environmental problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id5">4.2.2 Scope of the exercise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#study-area">4.2.3 Study area</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id4">4.2.4 Satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id6">4.2.4 Satellite images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#land-cover-information">4.2.5 Land cover information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#methods">4.2.6 Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id5">4.2.7 QGIS set-up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id7">4.2.7 QGIS set-up</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#prepare-multiband-files-for-10-meter-satellite-images">4.2.8 Prepare multiband files for 10-meter satellite images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#prepare-multiband-files-for-20-meter-satellite-images">4.2.9 Prepare multiband files for 20-meter satellite images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id7">4.2.10 Resize the image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id9">4.2.10 Resize the image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#create-the-training-samples-for-image-classification">4.2.11 Create the training samples for image classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#automatic-mapping-of-crop-types">4.2.12 Automatic mapping of crop types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#simple-analysis-of-results">4.2.13 Simple analysis of results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id11">4.2.13 Simple analysis of results</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_casestudies.html#monitoring-crops-vegetative-stage">4.3 Monitoring crops’ vegetative stage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#the-environmental-problem-agricultural-productivity">4.3.1 The environmental problem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id9">3.2 Scope of the exercise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id10">4.3.3 Study area</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id11">4.3.4 Satellite images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id12">4.3.5 Land cover information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id13">4.3.6 Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id14">4.3.7 QGIS set-up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id14">4.3.2 Scope of the exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id15">4.3.3 Study area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id16">4.3.4 Satellite images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id17">4.3.5 Land cover information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id18">4.3.6 Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id19">4.3.7 QGIS set-up</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#calculate-ndvi">4.3.8 Calculate NDVI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#select-the-ndvi-information-for-barley-and-potato">3.9 Select the NDVI information for Barley and Potato</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#compare-winter-crops-and-summer-crops">4.3.10 Compare winter crops and summer crops</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#s4-3-11-simple-analysis-of-results">s4.3.11 Simple analysis of results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_casestudies.html#id21">4.3.11 Simple analysis of results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="debug.html">– DEBUG –</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rs_version.html">ver.</a></li>
 </ul>
 
             
@@ -243,8 +259,8 @@
             
   <div class="section" id="fundamentals-of-remote-sensing-and-earth-observation">
 <h1>1. Fundamentals of remote sensing and Earth observation<a class="headerlink" href="#fundamentals-of-remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-are-remote-sensing-and-earth-observation">
-<h2>1.1. What are remote sensing and Earth observation?<a class="headerlink" href="#what-are-remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems">
+<h2>1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?<a class="headerlink" href="#what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems" title="Permalink to this headline">¶</a></h2>
 <p>Remote sensing is defined as:</p>
 <blockquote>
 <div><p><em>“The use of an instrument, such as a radar device or camera, to scan the earth or another planet from space in order to collect data about some aspect of it.”</em>  <br />
@@ -256,38 +272,320 @@
 <blockquote>
 <div><em>“The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment.”</em>  <br />
 (Source: <a class="reference external" href="https://ec.europa.eu/jrc/en/research-topic/earth-observation" rel="noopener noreferrer" target="_blank">European Commission</a>).</div></blockquote>
-<p>Thus, <em>Earth observation</em> <strong>is the process</strong> of collecting information on our planet using <strong>non-contact</strong> <em>remote sensing</em> <strong>technologies</strong>.</p>
+<p>That means <em>Earth observation</em> <strong>is the process</strong> of collecting information on our planet using <strong>non-contact</strong> <em>remote sensing</em> <strong>technologies</strong>.</p>
+<p>Thus, <em>Earth observation</em> provides <strong>raw data</strong> and a set of methods for their <strong>processing</strong> and <strong>analysis</strong>, while <em>geographic information systems (GISs)</em> offer a framework for the <strong>management</strong>, <strong>manipulation</strong>, <strong>query</strong> and <strong>representation</strong> of the geospatial information.</p>
 </div>
-<div class="section" id="how-is-earth-observation-related-to-geographic-information-systems">
-<h2>1.2. How is Earth observation related to geographic information systems?<a class="headerlink" href="#how-is-earth-observation-related-to-geographic-information-systems" title="Permalink to this headline">¶</a></h2>
-<p><em>Earth observation</em> provides <strong>raw data</strong> and a set of methods for their <strong>processing</strong> and <strong>analysis</strong>, while <em>geographic information systems (GISs)</em> offer a framework for the <strong>management</strong>, <strong>manipulation</strong>, <strong>query</strong> and <strong>representation</strong> of the geospatial information.</p>
+<div class="section" id="satellites-for-earth-observation">
+<h2>1.2. Satellites for Earth observation<a class="headerlink" href="#satellites-for-earth-observation" title="Permalink to this headline">¶</a></h2>
+<p>Today, hundreds of satellites are orbiting or planet. They differ for:</p>
+<ul class="simple">
+<li>Orbits and revisit time,</li>
+<li>Imaging cameras,</li>
+<li>Spatial resolution and swath width,</li>
+<li>Spectral characteristics,</li>
+</ul>
+<p>All these characteristics are defined during the mission design, depending on the satellite mission’s specific applications.</p>
+<p>For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands.</p>
+<p>On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See the real-time location of about 19,300 manmade objects orbiting the Earth: <a class="reference external" href="https://maps.esri.com/rc/sat2/index.html#" rel="noopener noreferrer" target="_blank">ESRI Satellite Map</a> (update to 14 July 2020).</p>
 </div>
-<div class="section" id="optical-satellites-for-earth-observation">
-<h2>1.3. Optical satellites for Earth observation<a class="headerlink" href="#optical-satellites-for-earth-observation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-electromagnetic-spectrum">
-<h3>1.3.1. The electromagnetic spectrum<a class="headerlink" href="#the-electromagnetic-spectrum" title="Permalink to this headline">¶</a></h3>
-<p>&lt;—————————————————————————————————————————————-&gt; <br />
-&lt;————————————————— TO BE COMPLETED ————————————————-&gt; <br />
-&lt;—————————————————————————————————————————————-&gt; <br /></p>
+<div class="section" id="satellite-orbits-and-revisit-time">
+<h3>1.2.1. Satellite orbits and revisit time<a class="headerlink" href="#satellite-orbits-and-revisit-time" title="Permalink to this headline">¶</a></h3>
+<p><strong>Geostationary orbit (GEO)</strong> <br />
+Satellites in geostationary orbit circle Earth above the equator from west to east following Earth’s rotation at an <em>altitude of 35,800 km</em> and a <em>speed of about 3 km/s</em>. This makes geostationary satellites to be ‘stationary’ over a fixed location. <br />
+These satellites can image the portion of the Earth’s surface they are looking at every 30 minutes or less. <strong>Most of the satellites used for weather forecasts have a geostationary orbit.</strong></p>
+<p><strong>Medium Earth orbit (MEO)</strong> <br />
+Satellites in a medium Earth orbit circle the Earth at an <em>altitude between 1,000 km and 35,800 km</em>, with <em>revisit times defined by their orbital altitude</em>. <br />
+Satellites for Earth observation do not use this orbit. However <strong>navigation satellites, like the European Galileo system or the American GPS, have a medium Earth orbit.</strong></p>
+<p><strong>Low Earth orbit (LEO)</strong> <br />
+Satellites in a low Earth orbit circle close to Earth’s surface, at an <em>altitude between 200 km and 1,000 km</em> and a <em>speed of about 7.8 km/s</em>. At this speed, a satellite takes approximately 90 minutes to circle Earth. Thus, travels around Earth about 16 times a day.</p>
+<p><strong>Sun-synchronous orbit (SSO)</strong> <br />
+This is a particular kind of Low Earth Orbit, where satellites circle from north to south and are always in the same ‘fixed’ position relative to the Sun. This means that the satellites still visits the same geographic location at the same local time. <br />
+<strong>Most of satellites for Earth observation have a Sun-synchronous low Earth orbit, with an altitude between 600 km and 800 km and a speed of approximately 7.5 km/s.</strong></p>
+<div class="figure align-default" id="id7">
+<span id="fig1-sat"></span><img alt="_images/Fig1_SAT.png" src="_images/Fig1_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Satellite orbits.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="spectral-signatures">
-<h3>1.3.2. Spectral signatures<a class="headerlink" href="#spectral-signatures" title="Permalink to this headline">¶</a></h3>
-<p>&lt;—————————————————————————————————————————————-&gt; <br />
-&lt;————————————————— TO BE COMPLETED ————————————————-&gt; <br />
-&lt;—————————————————————————————————————————————-&gt; <br /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Depending on the time for revisiting the same geographic location, satellites are classified as:</p>
+<ul class="last simple">
+<li><strong>High revisit time:</strong> &lt; 3 days</li>
+<li><strong>Medium revisit time:</strong> 4 - 16 days</li>
+<li><strong>Low revisit time:</strong> &gt; 16 days</li>
+</ul>
 </div>
-<div class="section" id="multispectral-images">
-<h3>1.3.3. Multispectral images<a class="headerlink" href="#multispectral-images" title="Permalink to this headline">¶</a></h3>
-<p>&lt;—————————————————————————————————————————————-&gt; <br />
-&lt;————————————————— TO BE COMPLETED ————————————————-&gt; <br />
-&lt;—————————————————————————————————————————————-&gt; <br /></p>
+</div>
+<div class="section" id="imaging-cameras">
+<h3>1.2.2. Imaging cameras<a class="headerlink" href="#imaging-cameras" title="Permalink to this headline">¶</a></h3>
+<p>Remote sensing satellites use special “cameras” to explore our planet. They can be <strong>active</strong> or <strong>passive</strong> instruments. <br />
+Active devices emit a signal (light or microwaves) and record the reflected response. Passive devices record the sunlight reflected by Earth.</p>
+<p><strong>Passive imaging cameras</strong> produce greyscale digital images (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 2</span></a>). <br />
+They are <strong>matrices</strong> (i.e. tables) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular range of wavelengths of the electomegnatic spectrum (called <strong>spectral band</strong> or just <strong>band</strong>).</p>
+<div class="figure align-default" id="id8">
+<span id="fig3-sat"></span><img alt="_images/Fig3_SAT.png" src="_images/Fig3_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">The digital image as a table of numbers.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>But what are the electromagnetic spectrum and wavelengths?</strong></p>
+<p>Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (<a class="reference internal" href="#fig4-sat"><span class="std std-numref">Fig. 3</span></a>): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). Different wavelengths correspond to different “colours”.</p>
+<div class="figure align-default" id="id9">
+<span id="fig4-sat"></span><img alt="_images/Fig4_SAT.png" src="_images/Fig4_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The electromagnetic spectrum.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>We define:</p>
+<ul class="simple">
+<li><strong>VISIBLE:</strong> light with wavelengths from 400 nm to 700 nm,</li>
+<li><strong>NEAR INFRARED:</strong> light with wavelengths from 700 nm to 1,100 nm,</li>
+<li><strong>SHORT-WAVE INFRARED:</strong> light with wavelengths from 1,100 nm to 3,000 nm.</li>
+</ul>
+<p>Unfortunately, most of these “colours” and “light” are invisible to our eyes! <br />
+We humans can see only the colours of the <strong>VISIBLE</strong> light. However, many other “colours” exists, and some animals can see them. <br />
+<a class="reference internal" href="#fig5-sat"><span class="std std-numref">Fig. 4</span></a> and <a class="reference internal" href="#fig6-sat"><span class="std std-numref">Fig. 5</span></a> show how human eyes and animal eyes sense different wavelengths of the electromagnetic spectrum.</p>
+<div class="figure align-default" id="id10">
+<span id="fig5-sat"></span><img alt="_images/Fig5_SAT.png" src="_images/Fig5_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The electromagnetic spectrum sensed by humans, cats and snakes.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id11">
+<span id="fig6-sat"></span><img alt="_images/Fig6_SAT.png" src="_images/Fig6_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum sensed humans and bees.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Each natural and manmade material reflects the sunlight depending on its <em>chemical composition</em>, <em>physical properties</em>, <em>texture</em>, <em>moisture</em>, <em>surface roughness</em>, and <em>alteration/degradation state</em>.</p>
+<p>This reflectance property is called <strong>spectral signature</strong> and it is specific for any material, like a fingerprint. Thus:</p>
+<ul class="simple">
+<li>If we sense the spectral signatures, we can recognise an object’s material (see <a class="reference internal" href="rs_imageanalysis.html#automatic-land-cover-mapping"><span class="std std-ref">3.2. Automatic land cover mapping</span></a> and <a class="reference internal" href="rs_casestudies.html#mapping-crop-types"><span class="std std-ref">4.2 Mapping crop types</span></a>),</li>
+<li>If we know the object material, we can detect its status of health, or degradation (see <a class="reference internal" href="rs_imageanalysis.html#spectral-indices-for-environmental-monitoring"><span class="std std-ref">3.1. Spectral indices for environmental monitoring</span></a> and <a class="reference internal" href="rs_casestudies.html#monitoring-lake-trophic-state"><span class="std std-ref">4.1. Monitoring lake’s trophic state</span></a>).</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of spectral signatures are the principles of multispectral Earth observation.</strong></p>
+</div>
+</div>
+<div class="section" id="spatial-resolution-and-swath-width">
+<h3>1.2.3. Spatial resolution and swath width<a class="headerlink" href="#spatial-resolution-and-swath-width" title="Permalink to this headline">¶</a></h3>
+<p>The spatial resolution specifies the pixel size of satellite images at the Earth surface. It describes the ability to separate small spatial details. <br />
+Depending on their image pixel size, remote sensing cameras are classified as:</p>
+<ul class="simple">
+<li><strong>Very high spatial resolution:</strong> &lt; 1 m,</li>
+<li><strong>High spatial resolution:</strong> 1 -5 m,</li>
+<li><strong>Medium spatial resolution:</strong> 5 - 100 m,</li>
+<li><strong>Low spatial resolution:</strong> &gt; 100 m.</li>
+</ul>
+<p>The area imaged on the surface is called <strong>swath</strong>. Thus, the swath defines the geographic extent of a single satellite image. <br />
+Generally speaking:</p>
+<ul class="simple">
+<li><strong>Low resolution</strong> imaging cameras have a <strong>large swath</strong>: up to thousands of km,</li>
+<li><strong>Very high resolution</strong> imaging cameras have a <strong>small swath</strong>: about dozen of km.</li>
+</ul>
+<div class="figure align-default" id="id12">
+<span id="fig2-sat"></span><img alt="_images/Fig2_SAT.png" src="_images/Fig2_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">London (UK). The effect of spatial resolution on image detail and swath.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.</p>
+<p>On the opposite, Geostationary satellites have low resolution cameras with wide swath. In such an orbit, images over the area of interest are acquired continuously. These satellites are suitable for continental and global studies.</p>
+<p><em>Medium resolution cameras with pixel size between 10 m and 30 m usually have a swath of about 200-300 km. They are often a good compromise for many application needs.</em></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Spatial resolution vs orbital altitude</strong> <br />
+The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.</p>
+</div>
+<p>Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:</p>
+<ul class="simple">
+<li><strong>Multispectral:</strong> usually 2 - 30 bands,</li>
+<li><strong>Hyperspectral:</strong> usually &gt; 100 bands.</li>
+</ul>
+<p>Multispectral and hyperspectral cameras produce multiband images. That is to say, a multitude of greyscale images - <em>collected at the same time</em> - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (<a class="reference internal" href="#fig7-sat"><span class="std std-numref">Fig. 7</span></a>). <br />
+<strong>In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE to SHORT-WAVE INFRARED.</strong></p>
+<div class="figure align-default" id="id13">
+<span id="fig7-sat"></span><img alt="_images/Fig7_SAT.png" src="_images/Fig7_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A multispectral image.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In photography, spectral bands are usually called colour channels. But they are the same.</p>
+<p class="last">A smartphone takes pictures in only 3 VISIBLE channels: Blue channel, Green channel, and Red channel. But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+Try <a class="reference external" href="https://www.dcode.fr/rgb-channels" rel="noopener noreferrer" target="_blank">RGB channels splitter</a> with a photo taken with your smartphone! (<a class="reference internal" href="#fig8-sat"><span class="std std-numref">Fig. 8</span></a>) <br />
+Try using both output “as greyscale”, and “with their own colour”.</p>
+</div>
+<div class="figure align-default" id="id14">
+<span id="fig8-sat"></span><img alt="_images/Fig8_SAT.png" src="_images/Fig8_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Colour channels splitter.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 <div class="section" id="copernicus-and-the-sentinels">
-<h3>1.3.4. Copernicus and the Sentinels<a class="headerlink" href="#copernicus-and-the-sentinels" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.copernicus.eu" rel="noopener noreferrer" target="_blank">Copernicus</a> is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects vast amounts of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.</p>
+<h2>1.3. Copernicus and the Sentinels<a class="headerlink" href="#copernicus-and-the-sentinels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-copernicus-programme">
+<h3>1.3.1. The Copernicus programme<a class="headerlink" href="#the-copernicus-programme" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.copernicus.eu" rel="noopener noreferrer" target="_blank">Copernicus</a> is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects a large amount of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.</p>
+<p>Copernicus’s information can be used by end-users for a wide range of applications and various subject areas, including:</p>
+<ul class="simple">
+<li>Urban area management,</li>
+<li>Sustainable development and nature protection,</li>
+<li>Regional and local planning,</li>
+<li>Agriculture,</li>
+<li>Forestry,</li>
+<li>Fisheries,</li>
+<li>Health,</li>
+<li>Civil protection,</li>
+<li>Infrastructure,</li>
+<li>Transport and mobility,</li>
+<li>Tourism.</li>
+</ul>
+</div>
+<div class="section" id="the-sentinel-2-satellites">
+<h3>1.3.2. The Sentinel-2 satellites<a class="headerlink" href="#the-sentinel-2-satellites" title="Permalink to this headline">¶</a></h3>
+<p>Copernicus is served by its own dedicated satellites (called Sentinels) and complemented by contributing missions.</p>
+<p>The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes.</p>
+<p>Sentinel-2 images are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Discover the <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites" rel="noopener noreferrer" target="_blank">Sentinel satellites</a></p>
+</div>
 <p>&lt;—————————————————————————————————————————————-&gt; <br />
 &lt;————————————————— TO BE COMPLETED ————————————————-&gt; <br />
 &lt;—————————————————————————————————————————————-&gt; <br /></p>
+</div>
+</div>
+<div class="section" id="beyond-satellite-images">
+<h2>1.4. Beyond satellite images<a class="headerlink" href="#beyond-satellite-images" title="Permalink to this headline">¶</a></h2>
+<p>Copernicus is not only satellite images. It also collects information from many sensors on the ground, sea, and air and transforms all these data into useful information to monitor changes and create forecasts.</p>
+<p>These value-added products are delivered to users through the six thematic Copernicus services:</p>
+<ul class="simple">
+<li>Atmosphere,</li>
+<li>Marine,</li>
+<li>Land,</li>
+<li>Climate change,</li>
+<li>Security,</li>
+<li>Emergency,</li>
+</ul>
+<div class="section" id="copernicus-atmosphere-monitoring-service">
+<h3>1.4.1. Copernicus Atmosphere Monitoring Service<a class="headerlink" href="#copernicus-atmosphere-monitoring-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Atmosphere Monitoring Service</a> provides data and information on atmospheric composition. It describes the current situation, forecasts a few days ahead, and analyses consistently retrospective data records for recent years.</p>
+<p>For example, the Copernicus Atmosphere Monitoring Service provides daily information on the global atmospheric composition by monitoring and forecasting constituents such as greenhouse gases, reactive gases, ozone and aerosols. The service also delivers information on the solar radiation at the Earth’s surface (which is essential for health, agriculture and renewable energies), near-real-time analysis, 4-day forecasts, and reanalysis of the European air quality.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?category=ensemble&amp;subensemble=hourly_ensemble&amp;date=LAST&amp;calculation-model=ENSEMBLE&amp;species=o3&amp;level=SFC&amp;offset=000" rel="noopener noreferrer" target="_blank">today’s air quality forecasts in Europe</a>.</p>
+</div>
+<p>Overall, the service focuses on five main areas:</p>
+<ul class="simple">
+<li>Air quality and atmospheric composition,</li>
+<li>Ozone layer and ultra-violet radiation,</li>
+<li>Emissions and surface fluxes,</li>
+<li>Solar radiation,</li>
+<li>Climate forcing.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Atmosphere Monitoring Service web site</a>.</p>
+</div>
+</div>
+<div class="section" id="copernicus-marine-environment-monitoring-service">
+<h3>1.4.2. Copernicus Marine Environment Monitoring Service<a class="headerlink" href="#copernicus-marine-environment-monitoring-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Marine Environment Monitoring Service</a> provides regular and systematic information on the physical and biogeochemical state, variability and dynamics of the ocean and marine ecosystems.</p>
+<p>For example, the Copernicus Marine Environment Monitoring Service improves ship routing services, offshore operations or search and rescue operations. The service also contributes to the protection and sustainable management of living marine resources. And the physical and biogeochemical components are useful for water quality monitoring, pollution control, or coastal erosion assessment.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See past, present and future quality of the marine environment: <a class="reference external" href="https://cmems.lobelia.earth/data?view=viewer&amp;crs=epsg%3A4326&amp;t=1607385600000&amp;z=0&amp;center=-20%2C29&amp;zoom=11&amp;layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&amp;initial=1" rel="noopener noreferrer" target="_blank">My Ocean</a>.</p>
+</div>
+<p>Overall, the service focuses on four main areas:</p>
+<ul class="simple">
+<li>Marine safety,</li>
+<li>Marine resources,</li>
+<li>Coastal and marine environment,</li>
+<li>Weather, seasonal forecasting and climate.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Marine Environment Monitoring Service web site</a>.</p>
+</div>
+</div>
+<div class="section" id="copernicus-land-monitoring-service">
+<h3>1.4.3. Copernicus Land Monitoring Service<a class="headerlink" href="#copernicus-land-monitoring-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Land Monitoring Service</a> provides geographical information on land cover and its changes, land use, vegetation state, water cycle and Earth’s surface energy variables.</p>
+<p>For example, the Copernicus Land Monitoring Service supports applications such as spatial and urban planning, forest management, water management, agriculture and food security, nature conservation and restoration, rural development, ecosystem accounting and mitigation/adaptation to climate change.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See the <a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe for 2018</a>.</p>
+</div>
+<p>Overall, the service focuses on five main areas:</p>
+<ul class="simple">
+<li>The systematic monitoring of biophysical parameters,</li>
+<li>Land cover and land use mapping,</li>
+<li>Thematic hot-spot mapping,</li>
+<li>Imagery and reference data,</li>
+<li>European ground motion activity.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Land Monitoring Service web site</a>.</p>
+</div>
+</div>
+<div class="section" id="copernicus-climate-change-service">
+<h3>1.4.4. Copernicus Climate Change Service<a class="headerlink" href="#copernicus-climate-change-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Climate Change Service</a> provides information about the past, present and future climate in Europe and the rest of the World.</p>
+<p>For example, The Copernicus Climate Change Service provides scientists, consultants, planners, policymakers, media and the general public free and open access to climate data and tools to assess climate change impacts on biodiversity.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See Copernicus <a class="reference external" href="https://climate.copernicus.eu/data-action" rel="noopener noreferrer" target="_blank">climate data in action</a>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Climate Change Service web site</a>.</p>
+</div>
+</div>
+<div class="section" id="copernicus-security-service">
+<h3>1.4.5. Copernicus Security Service<a class="headerlink" href="#copernicus-security-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Security Service</a> provides information in response to Europe’s security challenges.</p>
+<p>For example, the Copernicus Security Service supports the reduction of illegal immigrants’ death at sea, increases the European Union’s internal security, and fights against cross-border crime. It also increases navigation safety, supports fisheries control, combats marine pollution, and law enforcement at sea. Besides, the Copernicus Security Service provides decision-makers with geo-information on remote and difficult to access areas, where security issues are at stake.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See how Copernicus Security can <a class="reference external" href="https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/" rel="noopener noreferrer" target="_blank">support evacuation plans</a>.</p>
+</div>
+<p>Overall, the service focuses on three main areas:</p>
+<ul class="simple">
+<li>Border surveillance,</li>
+<li>Maritime surveillance,</li>
+<li>Support to EU external action.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Security Service web site</a>.</p>
+</div>
+</div>
+<div class="section" id="copernicus-emergency-management-service">
+<h3>1.4.6. Copernicus Emergency Management Service<a class="headerlink" href="#copernicus-emergency-management-service" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Emergency Management Service</a> provides all actors involved in managing natural disasters, man-made emergency situations, and humanitarian crises with timely and accurate satellite-based geospatial information completed by available on-site data or open data sources.</p>
+<p>For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See the Copernicus Emergency Management system for` flood monitoring and forecast &lt;<a class="reference external" href="https://www.efas.eu/efas_frontend/#/home" rel="noopener noreferrer" target="_blank">https://www.efas.eu/efas_frontend/#/home</a>&gt;`_.</p>
+</div>
+<p>Overall, the service focuses on two main areas (and four systems):</p>
+<ul class="simple">
+<li>The mapping component,</li>
+<li>The early warning component:</li>
+<li>The European Flood Awareness System, which provides overviews on ongoing and forecasted floods in Europe up to 10 days in advance,</li>
+<li>The European Forest Fire Information System, which provides near real-time and historical information on forest fires and forest fire regimes in the European, Middle Eastern and North African regions,</li>
+<li>The European Drought Observatory, which provides drought-relevant information and early-warnings for Europe,</li>
+<li>Global Flood Awareness System, Global Wildfire Information System and Global Drought Observatory complete the previous three systems globally.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional information see <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Emergency Management Service web site</a>.</p>
+</div>
 </div>
 </div>
 </div>

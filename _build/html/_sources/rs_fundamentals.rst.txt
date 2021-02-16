@@ -4,8 +4,8 @@
 1. Fundamentals of remote sensing and Earth observation
 =======================================================
 
-1.1. What are remote sensing and Earth observation?
----------------------------------------------------
+1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?
+------------------------------------------------------------------------------------------------------------------
 Remote sensing is defined as:
 
 	*"The use of an instrument, such as a radar device or camera, to scan the earth or another planet from space in order to collect data about some aspect of it."*  |br|
@@ -19,42 +19,334 @@ while Earth observation (EO) is defined as:
 	*"The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment."*  |br|
 	(Source: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
 
-Thus, *Earth observation* **is the process** of collecting information on our planet using **non-contact** *remote sensing* **technologies**.
+That means *Earth observation* **is the process** of collecting information on our planet using **non-contact** *remote sensing* **technologies**.
+
+Thus, *Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GISs)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
 
 
-1.2. How is Earth observation related to geographic information systems?
----------------------------------------------------------------------------------
-*Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GISs)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
+
+1.2. Satellites for Earth observation
+-------------------------------------
+Today, hundreds of satellites are orbiting or planet. They differ for:
+
+- Orbits and revisit time,
+- Imaging cameras,
+- Spatial resolution and swath width,
+- Spectral characteristics,
+
+All these characteristics are defined during the mission design, depending on the satellite mission’s specific applications.
+
+For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands.
+
+On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.
+
+.. hint:: **Small activity** |br|
+	See the real-time location of about 19,300 manmade objects orbiting the Earth: `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (update to 14 July 2020).
+
+1.2.1. Satellite orbits and revisit time
+`````````````````````````````````````````
+**Geostationary orbit (GEO)** |br|
+Satellites in geostationary orbit circle Earth above the equator from west to east following Earth’s rotation at an *altitude of 35,800 km* and a *speed of about 3 km/s*. This makes geostationary satellites to be ‘stationary’ over a fixed location. |br|
+These satellites can image the portion of the Earth's surface they are looking at every 30 minutes or less. **Most of the satellites used for weather forecasts have a geostationary orbit.**
+
+**Medium Earth orbit (MEO)** |br|
+Satellites in a medium Earth orbit circle the Earth at an *altitude between 1,000 km and 35,800 km*, with *revisit times defined by their orbital altitude*. |br|
+Satellites for Earth observation do not use this orbit. However **navigation satellites, like the European Galileo system or the American GPS, have a medium Earth orbit.**
+
+**Low Earth orbit (LEO)** |br|
+Satellites in a low Earth orbit circle close to Earth’s surface, at an *altitude between 200 km and 1,000 km* and a *speed of about 7.8 km/s*. At this speed, a satellite takes approximately 90 minutes to circle Earth. Thus, travels around Earth about 16 times a day.
+
+**Sun-synchronous orbit (SSO)** |br|
+This is a particular kind of Low Earth Orbit, where satellites circle from north to south and are always in the same ‘fixed’ position relative to the Sun. This means that the satellites still visits the same geographic location at the same local time. |br|
+**Most of satellites for Earth observation have a Sun-synchronous low Earth orbit, with an altitude between 600 km and 800 km and a speed of approximately 7.5 km/s.**
+
+.. _Fig1_SAT:
+.. figure:: /Figure/Fig1_SAT.png
+
+	Satellite orbits.
+
+.. note:: Depending on the time for revisiting the same geographic location, satellites are classified as:
+	
+	- **High revisit time:** < 3 days
+	- **Medium revisit time:** 4 - 16 days
+	- **Low revisit time:** > 16 days
+
+1.2.2. Imaging cameras
+````````````````````````
+Remote sensing satellites use special “cameras” to explore our planet. They can be **active** or **passive** instruments. |br|
+Active devices emit a signal (light or microwaves) and record the reflected response. Passive devices record the sunlight reflected by Earth.
+
+**Passive imaging cameras** produce greyscale digital images (:numref:`Fig3_SAT`). |br|
+They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular range of wavelengths of the electomegnatic spectrum (called **spectral band** or just **band**).
+
+.. _Fig3_SAT:
+.. figure:: /Figure/Fig3_SAT.png
+
+	The digital image as a table of numbers.
+
+**But what are the electromagnetic spectrum and wavelengths?**
+
+Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (:numref:`Fig4_SAT`): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). Different wavelengths correspond to different “colours”.
+
+.. _Fig4_SAT:
+.. figure:: /Figure/Fig4_SAT.png
+
+	The electromagnetic spectrum.
+
+We define:
+
+- **VISIBLE:** light with wavelengths from 400 nm to 700 nm,
+- **NEAR INFRARED:** light with wavelengths from 700 nm to 1,100 nm,
+- **SHORT-WAVE INFRARED:** light with wavelengths from 1,100 nm to 3,000 nm.
+
+Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
+We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. |br|
+:numref:`Fig5_SAT` and :numref:`Fig6_SAT` show how human eyes and animal eyes sense different wavelengths of the electromagnetic spectrum.
+
+.. _Fig5_SAT:
+.. figure:: /Figure/Fig5_SAT.png
+
+	The electromagnetic spectrum sensed by humans, cats and snakes.
+
+.. _Fig6_SAT:
+.. figure:: /Figure/Fig6_SAT.png
+
+	The electromagnetic spectrum sensed humans and bees.
+
+Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration/degradation state*.
+
+This reflectance property is called **spectral signature** and it is specific for any material, like a fingerprint. Thus:
+
+- If we sense the spectral signatures, we can recognise an object’s material (see :any:`Automatic-land-cover-mapping` and :any:`Mapping-crop-types`),
+- If we know the object material, we can detect its status of health, or degradation (see :any:`Spectral-indices-for-environmental-monitoring` and :any:`Monitoring-lake-trophic-state`).
+
+.. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of spectral signatures are the principles of multispectral Earth observation.**
 
 
-1.3. Optical satellites for Earth observation
----------------------------------------------
 
-1.3.1. The electromagnetic spectrum
+1.2.3. Spatial resolution and swath width
+`````````````````````````````````````````
+The spatial resolution specifies the pixel size of satellite images at the Earth surface. It describes the ability to separate small spatial details. |br|
+Depending on their image pixel size, remote sensing cameras are classified as:
+
+- **Very high spatial resolution:** < 1 m,
+- **High spatial resolution:** 1 -5 m,
+- **Medium spatial resolution:** 5 - 100 m,
+- **Low spatial resolution:** > 100 m.
+
+The area imaged on the surface is called **swath**. Thus, the swath defines the geographic extent of a single satellite image. |br|
+Generally speaking:
+
+- **Low resolution** imaging cameras have a **large swath**: up to thousands of km,
+- **Very high resolution** imaging cameras have a **small swath**: about dozen of km.
+
+.. _Fig2_SAT:
+.. figure:: /Figure/Fig2_SAT.png
+
+	London (UK). The effect of spatial resolution on image detail and swath.
+
+Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.
+
+On the opposite, Geostationary satellites have low resolution cameras with wide swath. In such an orbit, images over the area of interest are acquired continuously. These satellites are suitable for continental and global studies.
+
+*Medium resolution cameras with pixel size between 10 m and 30 m usually have a swath of about 200-300 km. They are often a good compromise for many application needs.*
+
+.. tip:: **Spatial resolution vs orbital altitude** |br|
+	The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.
+
+Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:
+
+- **Multispectral:** usually 2 - 30 bands,
+- **Hyperspectral:** usually > 100 bands.
+
+Multispectral and hyperspectral cameras produce multiband images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
+**In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE to SHORT-WAVE INFRARED.**
+
+.. _Fig7_SAT:
+.. figure:: /Figure/Fig7_SAT.png
+
+	A multispectral image.
+
+.. note:: In photography, spectral bands are usually called colour channels. But they are the same.
+
+	A smartphone takes pictures in only 3 VISIBLE channels: Blue channel, Green channel, and Red channel. But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!
+
+.. hint:: **Small activity** |br|
+	Try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
+	Try using both output "as greyscale", and "with their own colour".
+
+.. _Fig8_SAT:
+.. figure:: /Figure/Fig8_SAT.png
+
+	Colour channels splitter.
+
+
+
+1.3. Copernicus and the Sentinels
+---------------------------------
+
+1.3.1. The Copernicus programme
+````````````````````````````````
+`Copernicus <https://www.copernicus.eu>`_ is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects a large amount of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.
+
+Copernicus’s information can be used by end-users for a wide range of applications and various subject areas, including:
+
+- Urban area management,
+- Sustainable development and nature protection,
+- Regional and local planning,
+- Agriculture,
+- Forestry,
+- Fisheries,
+- Health,
+- Civil protection,
+- Infrastructure,
+- Transport and mobility,
+- Tourism.
+
+
+
+1.3.2. The Sentinel-2 satellites
+````````````````````````````````
+Copernicus is served by its own dedicated satellites (called Sentinels) and complemented by contributing missions.
+
+The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes.
+
+Sentinel-2 images are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.
+
+.. note:: Discover the `Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
+
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
+<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+
+
+
+1.4. Beyond satellite images
+----------------------------
+Copernicus is not only satellite images. It also collects information from many sensors on the ground, sea, and air and transforms all these data into useful information to monitor changes and create forecasts.
+
+These value-added products are delivered to users through the six thematic Copernicus services:
+
+- Atmosphere,
+- Marine,
+- Land,
+- Climate change,
+- Security,
+- Emergency,
+
+
+
+1.4.1. Copernicus Atmosphere Monitoring Service
+````````````````````````````````````````````````
+The `Copernicus Atmosphere Monitoring Service <https://atmosphere.copernicus.eu/>`_ provides data and information on atmospheric composition. It describes the current situation, forecasts a few days ahead, and analyses consistently retrospective data records for recent years. 
+
+For example, the Copernicus Atmosphere Monitoring Service provides daily information on the global atmospheric composition by monitoring and forecasting constituents such as greenhouse gases, reactive gases, ozone and aerosols. The service also delivers information on the solar radiation at the Earth’s surface (which is essential for health, agriculture and renewable energies), near-real-time analysis, 4-day forecasts, and reanalysis of the European air quality.
+
+.. hint:: **Small activity** |br|
+	See `today’s air quality forecasts in Europe <http://macc-raq-op.meteo.fr/index.php?category=ensemble&subensemble=hourly_ensemble&date=LAST&calculation-model=ENSEMBLE&species=o3&level=SFC&offset=000>`_.
+
+Overall, the service focuses on five main areas:
+
+- Air quality and atmospheric composition,
+- Ozone layer and ultra-violet radiation,
+- Emissions and surface fluxes,
+- Solar radiation,
+- Climate forcing.
+
+.. note:: For additional information see `the Copernicus Atmosphere Monitoring Service web site <https://atmosphere.copernicus.eu/>`_.
+
+
+
+1.4.2. Copernicus Marine Environment Monitoring Service
+````````````````````````````````````````````````````````
+The `Copernicus Marine Environment Monitoring Service <https://marine.copernicus.eu/>`_ provides regular and systematic information on the physical and biogeochemical state, variability and dynamics of the ocean and marine ecosystems.
+
+For example, the Copernicus Marine Environment Monitoring Service improves ship routing services, offshore operations or search and rescue operations. The service also contributes to the protection and sustainable management of living marine resources. And the physical and biogeochemical components are useful for water quality monitoring, pollution control, or coastal erosion assessment.
+
+.. hint:: **Small activity** |br|
+	See past, present and future quality of the marine environment: `My Ocean <https://cmems.lobelia.earth/data?view=viewer&crs=epsg%3A4326&t=1607385600000&z=0&center=-20%2C29&zoom=11&layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&initial=1>`_.
+
+Overall, the service focuses on four main areas:
+
+- Marine safety,
+- Marine resources,
+- Coastal and marine environment,
+- Weather, seasonal forecasting and climate.
+
+.. note:: For additional information see `the Copernicus Marine Environment Monitoring Service web site <https://marine.copernicus.eu/>`_.
+
+
+
+1.4.3. Copernicus Land Monitoring Service
+`````````````````````````````````````````
+The `Copernicus Land Monitoring Service <https://land.copernicus.eu/>`_ provides geographical information on land cover and its changes, land use, vegetation state, water cycle and Earth’s surface energy variables.
+
+For example, the Copernicus Land Monitoring Service supports applications such as spatial and urban planning, forest management, water management, agriculture and food security, nature conservation and restoration, rural development, ecosystem accounting and mitigation/adaptation to climate change.
+
+.. hint:: **Small activity** |br|
+	See the `CORINE land cover map of Europe for 2018 <https://land.copernicus.eu/pan-european/corine-land-cover/clc2018>`_.
+
+Overall, the service focuses on five main areas:
+
+- The systematic monitoring of biophysical parameters,
+- Land cover and land use mapping,
+- Thematic hot-spot mapping,
+- Imagery and reference data,
+- European ground motion activity.
+
+.. note:: For additional information see `the Copernicus Land Monitoring Service web site <https://land.copernicus.eu/>`_.
+
+
+
+1.4.4. Copernicus Climate Change Service
+````````````````````````````````````````
+The `Copernicus Climate Change Service <https://climate.copernicus.eu/>`_ provides information about the past, present and future climate in Europe and the rest of the World.
+
+For example, The Copernicus Climate Change Service provides scientists, consultants, planners, policymakers, media and the general public free and open access to climate data and tools to assess climate change impacts on biodiversity.
+
+.. hint:: **Small activity** |br|
+	See Copernicus `climate data in action <https://climate.copernicus.eu/data-action>`_.
+
+.. note:: For additional information see `the Copernicus Climate Change Service web site <https://climate.copernicus.eu/>`_.
+
+
+
+1.4.5. Copernicus Security Service
 ````````````````````````````````````
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+The `Copernicus Security Service <https://climate.copernicus.eu/>`_ provides information in response to Europe’s security challenges.
+
+For example, the Copernicus Security Service supports the reduction of illegal immigrants’ death at sea, increases the European Union’s internal security, and fights against cross-border crime. It also increases navigation safety, supports fisheries control, combats marine pollution, and law enforcement at sea. Besides, the Copernicus Security Service provides decision-makers with geo-information on remote and difficult to access areas, where security issues are at stake.
+
+.. hint:: **Small activity** |br|
+	See how Copernicus Security can `support evacuation plans <https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/>`_.
+
+Overall, the service focuses on three main areas:
+
+- Border surveillance,
+- Maritime surveillance,
+- Support to EU external action.
+
+.. note:: For additional information see `the Copernicus Security Service web site <https://climate.copernicus.eu/>`_.
 
 
-1.3.2. Spectral signatures
-````````````````````````````
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
+1.4.6. Copernicus Emergency Management Service
+````````````````````````````````````````````````````````
+The `Copernicus Emergency Management Service <https://emergency.copernicus.eu/>`_ provides all actors involved in managing natural disasters, man-made emergency situations, and humanitarian crises with timely and accurate satellite-based geospatial information completed by available on-site data or open data sources.
 
-1.3.3. Multispectral images
-````````````````````````````
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.
 
+.. hint:: **Small activity** |br|
+	See the Copernicus Emergency Management system for` flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
 
-1.3.4. Copernicus and the Sentinels
-````````````````````````````````````
-`Copernicus <https://www.copernicus.eu>`_ is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects vast amounts of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.
+Overall, the service focuses on two main areas (and four systems):
 
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+- The mapping component,
+- The early warning component:
+
+- The European Flood Awareness System, which provides overviews on ongoing and forecasted floods in Europe up to 10 days in advance,
+- The European Forest Fire Information System, which provides near real-time and historical information on forest fires and forest fire regimes in the European, Middle Eastern and North African regions,
+- The European Drought Observatory, which provides drought-relevant information and early-warnings for Europe,
+- Global Flood Awareness System, Global Wildfire Information System and Global Drought Observatory complete the previous three systems globally.
+
+.. note:: For additional information see `the Copernicus Emergency Management Service web site <https://emergency.copernicus.eu/>`_.
