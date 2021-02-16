@@ -91,6 +91,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#satellite-orbits-and-revisit-time">1.2.1. Satellite orbits and revisit time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#imaging-cameras">1.2.2. Imaging cameras</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spatial-resolution-and-swath-width">1.2.3. Spatial resolution and swath width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spectral-characteristics">1.2.4. Spectral characteristics</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#copernicus-and-the-sentinels">1.3. Copernicus and the Sentinels</a><ul>
@@ -321,26 +322,19 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 </div>
 <div class="section" id="imaging-cameras">
 <h3>1.2.2. Imaging cameras<a class="headerlink" href="#imaging-cameras" title="Permalink to this headline">¶</a></h3>
-<p>Remote sensing satellites use special “cameras” to explore our planet. They can be <strong>active</strong> or <strong>passive</strong> instruments. <br />
-Active devices emit a signal (light or microwaves) and record the reflected response. Passive devices record the sunlight reflected by Earth.</p>
-<p><strong>Passive imaging cameras</strong> produce greyscale digital images (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 2</span></a>). <br />
-They are <strong>matrices</strong> (i.e. tables) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular range of wavelengths of the electomegnatic spectrum (called <strong>spectral band</strong> or just <strong>band</strong>).</p>
+<p>Remote sensing satellites use special “cameras” that produce greyscale digital images (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 2</span></a>). <br />
+They are <strong>matrices</strong> (i.e. tables) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular <strong>range of wavelengths of the electomegnatic spectrum</strong> (called <strong>spectral band</strong>, or just <strong>band</strong>).</p>
 <div class="figure align-default" id="id8">
 <span id="fig3-sat"></span><img alt="_images/Fig3_SAT.png" src="_images/Fig3_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">The digital image as a table of numbers.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>But what are the electromagnetic spectrum and wavelengths?</strong></p>
-<p>Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (<a class="reference internal" href="#fig4-sat"><span class="std std-numref">Fig. 3</span></a>): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). Different wavelengths correspond to different “colours”.</p>
+<p>Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (<a class="reference internal" href="#fig4-sat"><span class="std std-numref">Fig. 3</span></a>): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). <br />
+We can think of the different wavelengths as different “colours”.</p>
 <div class="figure align-default" id="id9">
 <span id="fig4-sat"></span><img alt="_images/Fig4_SAT.png" src="_images/Fig4_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The electromagnetic spectrum.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<p>We define:</p>
-<ul class="simple">
-<li><strong>VISIBLE:</strong> light with wavelengths from 400 nm to 700 nm,</li>
-<li><strong>NEAR INFRARED:</strong> light with wavelengths from 700 nm to 1,100 nm,</li>
-<li><strong>SHORT-WAVE INFRARED:</strong> light with wavelengths from 1,100 nm to 3,000 nm.</li>
-</ul>
 <p>Unfortunately, most of these “colours” and “light” are invisible to our eyes! <br />
 We humans can see only the colours of the <strong>VISIBLE</strong> light. However, many other “colours” exists, and some animals can see them. <br />
 <a class="reference internal" href="#fig5-sat"><span class="std std-numref">Fig. 4</span></a> and <a class="reference internal" href="#fig6-sat"><span class="std std-numref">Fig. 5</span></a> show how human eyes and animal eyes sense different wavelengths of the electromagnetic spectrum.</p>
@@ -351,16 +345,6 @@ We humans can see only the colours of the <strong>VISIBLE</strong> light. Howeve
 <div class="figure align-default" id="id11">
 <span id="fig6-sat"></span><img alt="_images/Fig6_SAT.png" src="_images/Fig6_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum sensed humans and bees.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-<p>Each natural and manmade material reflects the sunlight depending on its <em>chemical composition</em>, <em>physical properties</em>, <em>texture</em>, <em>moisture</em>, <em>surface roughness</em>, and <em>alteration/degradation state</em>.</p>
-<p>This reflectance property is called <strong>spectral signature</strong> and it is specific for any material, like a fingerprint. Thus:</p>
-<ul class="simple">
-<li>If we sense the spectral signatures, we can recognise an object’s material (see <a class="reference internal" href="rs_imageanalysis.html#automatic-land-cover-mapping"><span class="std std-ref">2.2. Automatic land cover mapping</span></a> and <a class="reference internal" href="rs_casestudies.html#mapping-crop-types"><span class="std std-ref">4.2 Mapping crop types</span></a>),</li>
-<li>If we know the object material, we can detect its status of health, or degradation (see <a class="reference internal" href="rs_imageanalysis.html#spectral-indices-for-environmental-monitoring"><span class="std std-ref">2.1. Spectral indices for environmental monitoring</span></a> and <a class="reference internal" href="rs_casestudies.html#monitoring-lake-trophic-state"><span class="std std-ref">4.1. Monitoring lake’s trophic state</span></a>).</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of spectral signatures are the principles of multispectral Earth observation.</strong></p>
 </div>
 </div>
 <div class="section" id="spatial-resolution-and-swath-width">
@@ -391,31 +375,47 @@ Generally speaking:</p>
 <p class="last"><strong>Spatial resolution vs orbital altitude</strong> <br />
 The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.</p>
 </div>
+</div>
+<div class="section" id="spectral-characteristics">
+<h3>1.2.4. Spectral characteristics<a class="headerlink" href="#spectral-characteristics" title="Permalink to this headline">¶</a></h3>
 <p>Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:</p>
 <ul class="simple">
 <li><strong>Multispectral:</strong> usually 2 - 30 bands,</li>
 <li><strong>Hyperspectral:</strong> usually &gt; 100 bands.</li>
 </ul>
 <p>Multispectral and hyperspectral cameras produce multiband images. That is to say, a multitude of greyscale images - <em>collected at the same time</em> - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (<a class="reference internal" href="#fig7-sat"><span class="std std-numref">Fig. 7</span></a>). <br />
-<strong>In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE to SHORT-WAVE INFRARED.</strong></p>
+<strong>In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE (400 nm) to SHORT-WAVE INFRARED (3,000 nm).</strong></p>
 <div class="figure align-default" id="id13">
 <span id="fig7-sat"></span><img alt="_images/Fig7_SAT.png" src="_images/Fig7_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A multispectral image.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>In photography, spectral bands are usually called colour channels. But they are the same.</p>
-<p class="last">A smartphone takes pictures in only 3 VISIBLE channels: Blue channel, Green channel, and Red channel. But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!</p>
+<p>In photography, spectral bands are usually called <strong>colour channels</strong>. But they are the same. <br />
+A smartphone takes pictures in only 3 VISIBLE channels:</p>
+<ul class="simple">
+<li>The Blue channel,</li>
+<li>The Green channel,</li>
+<li>The Red channel.</li>
+</ul>
+<p class="last">But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!</p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
-Try <a class="reference external" href="https://www.dcode.fr/rgb-channels" rel="noopener noreferrer" target="_blank">RGB channels splitter</a> with a photo taken with your smartphone! (<a class="reference internal" href="#fig8-sat"><span class="std std-numref">Fig. 8</span></a>) <br />
+To see the colour channels (the satellite spectral bands), try <a class="reference external" href="https://www.dcode.fr/rgb-channels" rel="noopener noreferrer" target="_blank">RGB channels splitter</a> with a photo taken with your smartphone! (<a class="reference internal" href="#fig8-sat"><span class="std std-numref">Fig. 8</span></a>) <br />
 Try using both outputs “as greyscale”, and “with their own colour”.</p>
 </div>
 <div class="figure align-default" id="id14">
 <span id="fig8-sat"></span><img alt="_images/Fig8_SAT.png" src="_images/Fig8_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Colour channels splitter.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>The combination of different greyscale spectral bands produces the colours of satellite images.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html" rel="noopener noreferrer" target="_blank">Combine RGB channels</a>. <br />
+<em>What happens if you mix up the channels?</em></p>
 </div>
 </div>
 </div>

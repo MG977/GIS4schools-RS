@@ -43,6 +43,8 @@ On the opposite, to monitor each small field’s agricultural productivity, we n
 .. hint:: **Small activity** |br|
 	See the real-time location of about 19,300 manmade objects orbiting the Earth: `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (update to 14 July 2020).
 
+
+
 1.2.1. Satellite orbits and revisit time
 `````````````````````````````````````````
 **Geostationary orbit (GEO)** |br|
@@ -71,13 +73,12 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 	- **Medium revisit time:** 4 - 16 days
 	- **Low revisit time:** > 16 days
 
+
+
 1.2.2. Imaging cameras
 ````````````````````````
-Remote sensing satellites use special “cameras” to explore our planet. They can be **active** or **passive** instruments. |br|
-Active devices emit a signal (light or microwaves) and record the reflected response. Passive devices record the sunlight reflected by Earth.
-
-**Passive imaging cameras** produce greyscale digital images (:numref:`Fig3_SAT`). |br|
-They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular range of wavelengths of the electomegnatic spectrum (called **spectral band** or just **band**).
+Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig3_SAT`). |br|
+They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electomegnatic spectrum** (called **spectral band**, or just **band**).
 
 .. _Fig3_SAT:
 .. figure:: /Figure/Fig3_SAT.png
@@ -86,18 +87,13 @@ They are **matrices** (i.e. tables) of individual elements (called **pixels**) r
 
 **But what are the electromagnetic spectrum and wavelengths?**
 
-Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (:numref:`Fig4_SAT`): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). Different wavelengths correspond to different “colours”.
+Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (:numref:`Fig4_SAT`): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). |br|
+We can think of the different wavelengths as different “colours”.
 
 .. _Fig4_SAT:
 .. figure:: /Figure/Fig4_SAT.png
 
 	The electromagnetic spectrum.
-
-We define:
-
-- **VISIBLE:** light with wavelengths from 400 nm to 700 nm,
-- **NEAR INFRARED:** light with wavelengths from 700 nm to 1,100 nm,
-- **SHORT-WAVE INFRARED:** light with wavelengths from 1,100 nm to 3,000 nm.
 
 Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
 We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. |br|
@@ -112,15 +108,6 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 .. figure:: /Figure/Fig6_SAT.png
 
 	The electromagnetic spectrum sensed humans and bees.
-
-Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration/degradation state*.
-
-This reflectance property is called **spectral signature** and it is specific for any material, like a fingerprint. Thus:
-
-- If we sense the spectral signatures, we can recognise an object’s material (see :any:`Automatic-land-cover-mapping` and :any:`Mapping-crop-types`),
-- If we know the object material, we can detect its status of health, or degradation (see :any:`Spectral-indices-for-environmental-monitoring` and :any:`Monitoring-lake-trophic-state`).
-
-.. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of spectral signatures are the principles of multispectral Earth observation.**
 
 
 
@@ -154,31 +141,46 @@ On the opposite, Geostationary satellites have low resolution cameras with wide 
 .. tip:: **Spatial resolution vs orbital altitude** |br|
 	The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.
 
+
+
+1.2.4. Spectral characteristics
+````````````````````````````````
 Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:
 
 - **Multispectral:** usually 2 - 30 bands,
 - **Hyperspectral:** usually > 100 bands.
 
 Multispectral and hyperspectral cameras produce multiband images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
-**In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE to SHORT-WAVE INFRARED.**
+**In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE (400 nm) to SHORT-WAVE INFRARED (3,000 nm).**
 
 .. _Fig7_SAT:
 .. figure:: /Figure/Fig7_SAT.png
 
 	A multispectral image.
 
-.. note:: In photography, spectral bands are usually called colour channels. But they are the same.
+.. note:: In photography, spectral bands are usually called **colour channels**. But they are the same. |br|
+	A smartphone takes pictures in only 3 VISIBLE channels:
 
-	A smartphone takes pictures in only 3 VISIBLE channels: Blue channel, Green channel, and Red channel. But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!
+	- The Blue channel,
+	- The Green channel,
+	- The Red channel.
+	
+	But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!
 
 .. hint:: **Small activity** |br|
-	Try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
+	To see the colour channels (the satellite spectral bands), try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
 	Try using both outputs "as greyscale", and "with their own colour".
 
 .. _Fig8_SAT:
 .. figure:: /Figure/Fig8_SAT.png
 
 	Colour channels splitter.
+
+The combination of different greyscale spectral bands produces the colours of satellite images.
+
+.. hint:: **Small activity** |br|
+	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_. |br|
+	*What happens if you mix up the channels?*
 
 
 
