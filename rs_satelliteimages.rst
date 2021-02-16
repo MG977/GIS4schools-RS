@@ -1,10 +1,10 @@
 .. include:: html_lat.txt
 
 
-2. Access to Copernicus satellite images for free
+3. Access to Copernicus satellite images for free
 =================================================
 
-2.1. Sentinel Hub EO Browser
+3.1. Sentinel Hub EO Browser
 -----------------------------
 The `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ (:numref:`Fig1_EObrowser`) is the first place to look for the archive of the European Space Agency’s `Sentinel-1 <https://sentinel.esa.int/web/sentinel/missions/sentinel-1>`_, `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_, `Sentinel-3 <https://sentinel.esa.int/web/sentinel/missions/sentinel-3>`_, `Sentinel-5P <https://sentinel.esa.int/web/sentinel/missions/sentinel-5p>`_, `PROBA-V <https://earth.esa.int/eogateway/missions/proba-v>`_, and `MERIS <https://earth.esa.int/eogateway/instruments/meris>`_ imagery. |br|
 This repository also gives access to the images collected by NASA’s `Landsat-5 <https://landsat.gsfc.nasa.gov/landsat-4-5>`_, `Landsat-7 <https://landsat.gsfc.nasa.gov/landsat-7>`_, `Landsat-8 <https://landsat.gsfc.nasa.gov/landsat-8>`_, and `MODIS <https://modis.gsfc.nasa.gov/>`_ satellites, and even NASA’s `global imagery browse services (GIBS) <https://earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/gibs>`_ products in one single place.
@@ -25,7 +25,7 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 
 
 
-2.1.1. How to select the correct products with Sentinel Hub EO Browser
+3.1.1. How to select the correct products with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````````````````
 Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_, configure the search criteria (:numref:`Fig3_EObrowser`):
 
@@ -53,7 +53,7 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
 
 
 
-2.1.2. How to view the satellite images with Sentinel Hub EO Browser
+3.1.2. How to view the satellite images with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````````````
 Select your image tile in the main window and click ``Visualize``. Alternatively, you can load your image by clicking ``Visualize`` in the left panel (:numref:`Fig6_EObrowser`).
 
@@ -193,7 +193,7 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 
 
-2.1.3. How to download the data with Sentinel Hub EO Browser
+3.1.3. How to download the data with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````
 .. warning:: **Sign up for Copernicus Open Access Hub.** |br|
 	The images searched with `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are downloaded from the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_. `Sign up for a free account! <https://scihub.copernicus.eu/dhus/#/home>`_
@@ -215,7 +215,7 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 
 
-2.2. Some alternative repositories
+3.2. Some alternative repositories
 ----------------------------------
 Alternative European repositories are the Copernicus Open Access Hub (:numref:`Fig1_scihub`) and the DIASs (:numref:`Fig_DIAS`) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. |br|
 Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_

@@ -1,15 +1,15 @@
 .. include:: html_lat.txt
 
 
-3. Principles of image analysis 
+2. Principles of image analysis 
 ===============================
 
 .. _Spectral-indices-for-environmental-monitoring:
 
-3.1. Spectral indices for environmental monitoring
+2.1. Spectral indices for environmental monitoring
 --------------------------------------------------
 
-3.1.1. What is a spectral index
+2.1.1. What is a spectral index
 ````````````````````````````````
 A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. Spectral indices combine the reflectance information from multiple spectral bands into one numeric value; thus, they turn satellite images from a qualitative visual inspection tool into a quantitative numerical analysis of environmental phenomena. :numref:`Tab1_SI` shows the most common mathematical formulas.
 
@@ -34,7 +34,7 @@ The most popular spectral indices are those to retrieve the status of vegetation
 - Estimate the abundance of minerals or lithotypes,
 - Evaluate the snow cover.
 
-3.1.2. How are designed the spectral indices
+2.1.2. How are designed the spectral indices
 ````````````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, abundance, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
 
@@ -56,7 +56,7 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
-3.1.3. Examples of spectral indices for studying vegetation
+2.1.3. Examples of spectral indices for studying vegetation
 ````````````````````````````````````````````````````````````
 **Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
@@ -113,10 +113,10 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 
 .. _Automatic-land-cover-mapping:
 
-3.2. Automatic land cover mapping
+2.2. Automatic land cover mapping
 ---------------------------------
 
-3.2.1 Land cover maps vs land use maps
+2.2.1 Land cover maps vs land use maps
 ````````````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
 Example of land cover classes are:
@@ -146,7 +146,7 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 
 
-3.2.2 From spectral signatures to spectral classes
+2.2.2 From spectral signatures to spectral classes
 ````````````````````````````````````````````````````
 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
@@ -155,7 +155,7 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 
 
-3.2.3 Supervised image classification
+2.2.3 Supervised image classification
 `````````````````````````````````````
 Automatic mapping of different land cover types is done with supervised image classification. The basic idea is to label each image pixel based on their spectral signature’s similarity with some known land cover locations, called the *training samples*. |br|
 The training samples define the map’s legend and define the spectral classes, and must be selected for ALL land cover classes!
@@ -174,7 +174,7 @@ The training samples define the map’s legend and define the spectral classes, 
 
 
 
-3.3. Map validation
+2.3. Map validation
 -------------------
 
 3.3.1 Precision, bias and accuracy

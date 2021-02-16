@@ -173,7 +173,7 @@ Multispectral and hyperspectral cameras produce multiband images. That is to say
 
 .. hint:: **Small activity** |br|
 	Try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
-	Try using both output "as greyscale", and "with their own colour".
+	Try using both outputs "as greyscale", and "with their own colour".
 
 .. _Fig8_SAT:
 .. figure:: /Figure/Fig8_SAT.png
