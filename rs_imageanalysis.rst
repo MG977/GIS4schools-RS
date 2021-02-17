@@ -111,11 +111,12 @@ The most popular spectral indices are those to retrieve the status of vegetation
 - Estimate the abundance of minerals or lithotypes,
 - Evaluate the snow cover.
 
+
+.. _Examples-of-spectral-indices-for-studying-vegetation:
+
 2.2.2. How spectral indices are designed 
 ````````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, abundance, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
-
-.. _Examples-of-spectral-indices-for-studying-vegetation:
 
 Let's see some examples for vegetation.
 

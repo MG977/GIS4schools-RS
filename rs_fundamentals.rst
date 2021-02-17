@@ -4,8 +4,8 @@
 1. Fundamentals of remote sensing and Earth observation
 =======================================================
 
-1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?
-------------------------------------------------------------------------------------------------------------------
+1.1. What is Earth observation?
+-------------------------------
 Remote sensing is defined as:
 
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
@@ -177,7 +177,7 @@ Multispectral and hyperspectral cameras produce multiband grayscale images. That
 The combination of different greyscale spectral bands produces the colours of satellite images.
 
 .. hint:: **Small activity** |br|
-	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_. |br|
+	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale images into a colour image. |br|
 	*What happens if you mix up the channels?*
 
 
@@ -211,6 +211,28 @@ Copernicus is served by its own dedicated satellites (called Sentinels) and comp
 
 The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
 They are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.
+
+.. _Tab1_S2:
+.. table:: Sentinel-2 spectral bands.
+
+   ====  ==========================  ==================  ===========  ===========================================================================
+   Band  "Light" (colour)            Spatial resolution  Swath width  Application
+   ====  ==========================  ==================  ===========  ===========================================================================
+   1     Visible (Violet)            60 m                x            Estimation of atmospheric aerosol
+   2     Visible (Blue)              10 m                x            Mapping reflected Blue light
+   3     Visible (Green)             10 m                x            Mapping reflected Green light
+   4     Visible (Red)               10 m                x            Mapping reflected Red light
+   5     Near Infrared 1 (red edge)  20 m                x            Classification of vegetation
+   6     Near Infrared 2 (red edge)  20 m                x            Classification of vegetation
+   7     Near Infrared 3 (red edge)  20 m                x            Classification of vegetation
+   8     Near Infrared 4             10 m                x            Sensitive to chlorophyll and biomass
+   8A    Near Infrared 5 (red edge)  20 m                x            Classification of vegetation
+   9     Near Infrared 6             60 m                x            Estimation of atmospheric water vapor
+   10    Short-wave infrared 1       60 m                x            Detection of clouds (cirrus)
+   11    Short-wave infrared 2       20 m                x            Sensitive to lignin, discrimination of snow / ice / clouds
+   12    Short-wave infrared 3       20 m                x            Distinction of live and dead biomass, discrimination of snow / ice / clouds
+   ================================  ==================  ===========  ===========================================================================
+
 
 .. note:: Discover the `Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 

@@ -86,7 +86,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Fundamentals of remote sensing and Earth observation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems">1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-earth-observation">1.1. What is Earth observation?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#satellites-for-earth-observation">1.2. Satellites for Earth observation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#satellite-orbits-and-revisit-time">1.2.1. Satellite orbits and revisit time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#imaging-cameras">1.2.2. Imaging cameras</a></li>
@@ -266,8 +266,8 @@
             
   <div class="section" id="fundamentals-of-remote-sensing-and-earth-observation">
 <h1>1. Fundamentals of remote sensing and Earth observation<a class="headerlink" href="#fundamentals-of-remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems">
-<h2>1.1. What are remote sensing and Earth observation? And how they are related to geographic information systems?<a class="headerlink" href="#what-are-remote-sensing-and-earth-observation-and-how-they-are-related-to-geographic-information-systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-earth-observation">
+<h2>1.1. What is Earth observation?<a class="headerlink" href="#what-is-earth-observation" title="Permalink to this headline">¶</a></h2>
 <p>Remote sensing is defined as:</p>
 <blockquote>
 <div><em>“The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography.”</em>  <br />
@@ -417,7 +417,7 @@ Try using both outputs “as greyscale”, and “with their own colour”.</p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
-Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html" rel="noopener noreferrer" target="_blank">Combine RGB channels</a>. <br />
+Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html" rel="noopener noreferrer" target="_blank">Combine RGB channels</a> to combine greyscale images into a colour image. <br />
 <em>What happens if you mix up the channels?</em></p>
 </div>
 </div>
@@ -447,6 +447,103 @@ Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combi
 <p>Copernicus is served by its own dedicated satellites (called Sentinels) and complemented by contributing missions.</p>
 <p>The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. <br />
 They are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.</p>
+<span id="tab1-s2"></span><table border="1" class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sentinel-2 spectral bands.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="3%" />
+<col width="19%" />
+<col width="13%" />
+<col width="8%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Band</th>
+<th class="head">“Light” (colour)</th>
+<th class="head">Spatial resolution</th>
+<th class="head">Swath width</th>
+<th class="head">Application</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Visible (Violet)</td>
+<td>60 m</td>
+<td>x</td>
+<td>Estimation of atmospheric aerosol</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Visible (Blue)</td>
+<td>10 m</td>
+<td>x</td>
+<td>Mapping reflected Blue light</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Visible (Green)</td>
+<td>10 m</td>
+<td>x</td>
+<td>Mapping reflected Green light</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Visible (Red)</td>
+<td>10 m</td>
+<td>x</td>
+<td>Mapping reflected Red light</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Near Infrared 1 (red edge)</td>
+<td>20 m</td>
+<td>x</td>
+<td>Classification of vegetation</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>Near Infrared 2 (red edge)</td>
+<td>20 m</td>
+<td>x</td>
+<td>Classification of vegetation</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>Near Infrared 3 (red edge)</td>
+<td>20 m</td>
+<td>x</td>
+<td>Classification of vegetation</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>Near Infrared 4</td>
+<td>10 m</td>
+<td>x</td>
+<td>Sensitive to chlorophyll and biomass</td>
+</tr>
+<tr class="row-even"><td>8A</td>
+<td>Near Infrared 5 (red edge)</td>
+<td>20 m</td>
+<td>x</td>
+<td>Classification of vegetation</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>Near Infrared 6</td>
+<td>60 m</td>
+<td>x</td>
+<td>Estimation of atmospheric water vapor</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>Short-wave infrared 1</td>
+<td>60 m</td>
+<td>x</td>
+<td>Detection of clouds (cirrus)</td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td>Short-wave infrared 2</td>
+<td>20 m</td>
+<td>x</td>
+<td>Sensitive to lignin, discrimination of snow / ice / clouds</td>
+</tr>
+<tr class="row-even"><td colspan="2">12    Short-wave infrared 3</td>
+<td>20 m</td>
+<td>x</td>
+<td>Distinction of live and dead biomass, discrimination of snow / ice / clouds</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Discover the <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites" rel="noopener noreferrer" target="_blank">Sentinel satellites</a></p>
