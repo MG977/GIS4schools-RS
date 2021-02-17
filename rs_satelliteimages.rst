@@ -47,7 +47,7 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
  Set the searching criteria.
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
-	Optical satellite images capture the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. |br|
+	Optical satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. |br|
 	Sentinel-2 data provided as ``L1C`` products are uncorrected images. Sentinel-2 data provided as ``L2A`` products are atmospherically corrected images. |br|
 	**Only** ``L2A`` **products are ready for image processing!**
 

@@ -8,8 +8,11 @@
 
 4.1. Monitoring lake’s trophic state
 ------------------------------------
+
+4.1.0 Download the data
+````````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
-   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+   `Click here to download the data for this exercise (1.2 GB). <https://drive.google.com/file/d/1fVFf_5HaIPZ6Ckh84M6BiNKUpEvqjmYH/view?usp=sharing>`_
 
 
 
@@ -720,8 +723,11 @@ Let’s discuss our findings.
 
 4.2 Mapping crop types
 ------------------------
+
+4.2.0 Download the data
+````````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
-   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+   `Click here to download the data for this exercise (2.5 GB). <https://drive.google.com/file/d/145Lh5o4do7niR6YDtlXOjEMcLI2cpqcI/view?usp=sharing>`_
 
 
 
@@ -1190,11 +1196,15 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 .. hint:: If we have some information on the land cover and satellite images for the same period, but in a different location, we can compare how crop types are farmed in other places.
 
 
+.. _Monitoring-crops-vegetative-stage:
 
 4.3 Monitoring crops’ vegetative stage
 ----------------------------------------
+
+4.3.0 Download the data
+````````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
-   `Click here to download the data used for this exercise. <https://www.download-data.com>`_
+   `Click here to download the data for this exercise (270 MB). <https://drive.google.com/file/d/1iyZDXhl4NnlTixUk2BVecHNT6q2uJd0u/view?usp=sharing>`_
 
 
 .. _The-environmental-problem-agricultural-productivity:
@@ -1353,7 +1363,7 @@ Remember to use **"S2A_20180627_10m@3"** and **"S2A_20180627_10m@4"** in the exp
 
 
 
-3.9 Select the NDVI information for Barley and Potato
+4.3.9 Select the NDVI information for Barley and Potato
 ````````````````````````````````````````````````````````
 Once computed the NDVI for both the satellite images, we want to compare Barley and Potato’s vegetative stage in April and June.
 

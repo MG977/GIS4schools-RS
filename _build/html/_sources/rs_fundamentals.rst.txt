@@ -8,9 +8,6 @@
 ------------------------------------------------------------------------------------------------------------------
 Remote sensing is defined as:
 
-	*"The use of an instrument, such as a radar device or camera, to scan the earth or another planet from space in order to collect data about some aspect of it."*  |br|
-	(Source: `Collins English Dictionary. © HarperCollins Publishers <https://www.collinsdictionary.com/us/dictionary/english/remote-sensing>`_).
-
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
 	(Source: `Oxford Dictionary of Earth Sciences. © Oxford University Press <https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100413590>`_).
 
@@ -21,7 +18,7 @@ while Earth observation (EO) is defined as:
 
 That means *Earth observation* **is the process** of collecting information on our planet using **non-contact** *remote sensing* **technologies**.
 
-Thus, *Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GISs)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
+Thus, *Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GIS)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
 
 
 
@@ -78,7 +75,7 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 1.2.2. Imaging cameras
 ````````````````````````
 Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig3_SAT`). |br|
-They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electomegnatic spectrum** (called **spectral band**, or just **band**).
+They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**).
 
 .. _Fig3_SAT:
 .. figure:: /Figure/Fig3_SAT.png
@@ -142,6 +139,7 @@ On the opposite, Geostationary satellites have low resolution cameras with wide 
 	The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.
 
 
+.. _Spectral-characteristics:
 
 1.2.4. Spectral characteristics
 ````````````````````````````````
@@ -150,13 +148,13 @@ Depending on the number of spectral bands, imaging cameras for Earth observation
 - **Multispectral:** usually 2 - 30 bands,
 - **Hyperspectral:** usually > 100 bands.
 
-Multispectral and hyperspectral cameras produce multiband images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
-**In other words, a multiband image describes the intensity of the different “colours” sensed, from VISIBLE (400 nm) to SHORT-WAVE INFRARED (3,000 nm).**
+Multispectral and hyperspectral cameras produce multiband grayscale images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
+**In other words, a multiband image describes the intensity of the different “colours” sensed in different regions of the electromagnetic spectrum.**
 
 .. _Fig7_SAT:
 .. figure:: /Figure/Fig7_SAT.png
 
-	A multispectral image.
+	Example of multiband image.
 
 .. note:: In photography, spectral bands are usually called **colour channels**. But they are the same. |br|
 	A smartphone takes pictures in only 3 VISIBLE channels:
@@ -165,7 +163,7 @@ Multispectral and hyperspectral cameras produce multiband images. That is to say
 	- The Green channel,
 	- The Red channel.
 	
-	But satellites allow extending our visual perception to many more “colours”, even in NEAR INFRARED and SHORT-WAVE INFRARED where our eyes are blind!
+	But satellites allow extending our visual perception to many more “colours”, even to wavelengths  where our eyes are blind!
 
 .. hint:: **Small activity** |br|
 	To see the colour channels (the satellite spectral bands), try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
@@ -211,9 +209,8 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 ````````````````````````````````
 Copernicus is served by its own dedicated satellites (called Sentinels) and complemented by contributing missions.
 
-The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes.
-
-Sentinel-2 images are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.
+The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
+They are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.
 
 .. note:: Discover the `Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 

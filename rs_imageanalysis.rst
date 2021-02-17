@@ -4,14 +4,91 @@
 2. Principles of image analysis 
 ===============================
 
+2.1. The spectral signatures
+----------------------------
+
+2.1.1. What is a spectral signature
+````````````````````````````````````
+Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration/degradation state*. |br|
+This reflected sunlight is called **reflectance** and is represented with the symbol :math:`\rho`.
+
+In other words, the material’s properties and status define the brightness (i.e. the **reflectance**) of the “colours” (i.e. the **wavelengths**) sensed in the different “lights” (i.e. the **spectral bands**). |br|
+This variation of reflectance with wavelengths is called **spectral signature**.
+
+Since each material has a unique spectral signature (like a fingerprint), that means:
+
+- If we know the object material, we can use its spectral signature to monitor health status or degradation (for more details see :any:`Spectral-indices-for-environmental-monitoring`. For exercises see :any:`Monitoring-lake-trophic-state` and :any:`Monitoring-crops-vegetative-stage`),
+- If we don’t know the object material, we can use its spectral signature for its identification (for more details see :any:`Automatic-land-cover-mapping`. For exercises see :any:`Mapping-crop-types`).
+
+.. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of their spectral signatures is the principles of multispectral Earth observation.**
+
+When studying the Earth’s ecosystems, we are interested in monitoring our planet’s changes. :numref:`Fig1_signature` shows the distribution of the main land covers on Earth.
+
+.. _Fig1_signature:
+.. figure:: /Figure/Fig1_signature.png
+
+	Distribution of main land covers on Earth.
+
+Thus, we use satellites to study how such land covers’ spectral signatures change in time (:numref:`Fig2_signature` - :numref:`Fig7_signature`).
+
+.. _Fig2_signature:
+.. figure:: /Figure/Fig2_signature.png
+
+	Typical spectral signature of clear water (open Ocean).
+
+.. _Fig3_signature:
+.. figure:: /Figure/Fig3_signature.png
+
+	Typical spectral signatures of snow and ice.
+
+.. _Fig4_signature:
+.. figure:: /Figure/Fig4_signature.png
+
+	Typical spectral signature of clouds.
+
+.. _Fig5_signature:
+.. figure:: /Figure/Fig5_signature.png
+
+	Typical spectral signature of bare soil (unvegetated).
+
+.. _Fig6_signature:
+.. figure:: /Figure/Fig6_signature.png
+
+	Typical spectral signature of healthy vegetation.
+
+.. _Fig7_signature:
+.. figure:: /Figure/Fig7_signature.png
+
+	Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).
+
+
+
+2.1.2. How to measure spectral signatures with satellites
+`````````````````````````````````````````````````````````
+Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:any:`Spectral-characteristics`).
+
+Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we calculate its spectral signature** (:numref:`Fig8_signature`).
+
+.. _Fig8_signature:
+.. figure:: /Figure/Fig8_signature.png
+
+	How to calculate the spectral signature with satellite images.
+
+.. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
+	Optical satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
+
+
 .. _Spectral-indices-for-environmental-monitoring:
 
-2.1. Spectral indices for environmental monitoring
+2.2. Spectral indices for environmental monitoring
 --------------------------------------------------
 
-2.1.1. What is a spectral index
+2.2.1. What is a spectral index
 ````````````````````````````````
-A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. Spectral indices combine the reflectance information from multiple spectral bands into one numeric value; thus, they turn satellite images from a qualitative visual inspection tool into a quantitative numerical analysis of environmental phenomena. :numref:`Tab1_SI` shows the most common mathematical formulas.
+A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. |br|
+Spectral indices combine the reflectance information from multiple spectral bands into **ONE** numeric value. Thus, they turn satellite images *from a qualitative visual inspection tool into a quantitative numerical analysis.*
+
+:numref:`Tab1_SI` shows the most common mathematical formulas.
 
 .. _Tab1_SI:
 .. table:: Spectral indices.
@@ -34,11 +111,15 @@ The most popular spectral indices are those to retrieve the status of vegetation
 - Estimate the abundance of minerals or lithotypes,
 - Evaluate the snow cover.
 
-2.1.2. How are designed the spectral indices
-````````````````````````````````````````````
+2.2.2. How spectral indices are designed 
+````````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, abundance, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
 
-Concerning vegetation, the gap between the low reflectance in the red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere (:numref:`Fig1_SI`).
+.. _Examples-of-spectral-indices-for-studying-vegetation:
+
+Let's see some examples for vegetation.
+
+The gap between the low reflectance in the red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere (:numref:`Fig1_SI`).
 
 .. _Fig1_SI:
 .. figure:: /Figure/Fig1_SI.png
@@ -52,12 +133,6 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 
 	Spectral signatures of healthy and senescing leaves.
 
-
-
-.. _Examples-of-spectral-indices-for-studying-vegetation:
-
-2.1.3. Examples of spectral indices for studying vegetation
-````````````````````````````````````````````````````````````
 **Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
 
@@ -95,28 +170,23 @@ While NDVI is meaningful only for vegetated areas, it can be calculated for all 
 - NDVI close to 0 is a typical value for clouds,
 - Slightly positive NDVI (0<NDVI<0.2) are typical values for bare soil (i.e. soil without vegetation).
 
-
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<------------------------------------------------- ADDITIONAL EXAMPLE -------------------------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-
-
 .. hint:: **Small activity** |br|
 	Most satellite-based crop monitoring systems use NDVI, and similar spectral indices, to show farmers which parts of their fields have more stressed vegetation. |br|
 	See `CropSAT <https://cropsat.com/>`_ for a free online demo.
 
-.. hint:: **Looking for a specific spectral index?** |br|
+The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance.
+
+.. tip:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
 
 .. _Automatic-land-cover-mapping:
 
-2.2. Automatic land cover mapping
+2.3. Automatic land cover mapping
 ---------------------------------
 
-2.2.1 Land cover maps vs land use maps
+2.3.1 Land cover maps vs land use maps
 ````````````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
 Example of land cover classes are:
@@ -146,26 +216,45 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 
 
-2.2.2 From spectral signatures to spectral classes
-````````````````````````````````````````````````````
-
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-
-
-
-2.2.3 Supervised image classification
+2.3.2 Supervised image classification
 `````````````````````````````````````
-Automatic mapping of different land cover types is done with supervised image classification. The basic idea is to label each image pixel based on their spectral signature’s similarity with some known land cover locations, called the *training samples*. |br|
-The training samples define the map’s legend and define the spectral classes, and must be selected for ALL land cover classes!
+Automatic mapping of land cover classes is done with supervised image classification.
 
-.. note:: **What are the training samples?** |br|
-	To predict each image pixel’s most probable land cover, we must train the classifier to recognise spectral signatures. This is done using the training samples, which are image pixels collected by the map maker **those actual land cover is known**.
+The basic idea is to train a mathematical model to recognise spectral signatures. This is done using the spectral signatures of the **training samples**, which are image pixels selected in sites with **KNOWN land cover** (called *training sites*).
 
-	**GUIDELINE:** |br|
-	**For multispectral images like Sentinel-2 or Landsat and statistical classification methods, a starting point could be about 200 training samples (i.e. image pixels) for each class.**
-	Unfortunately, different classification techniques require a different number of (optimal) training samples!
+For each class, pick some training samples on the satellite image and label with their actual land cover (:numref:`Fig9_signature`). Thus, all the categories have a *reference spectral signature* defined by their training samples (often their mean value) and a *label* (i.e. the land cover class). |br|
+**Remember to collect training samples for ALL land cover classes you want to map.** Otherwise, some categories will not be recognised!
+
+.. _Fig9_signature:
+.. figure:: /Figure/Fig9_signature.png
+
+	Training sites and training samples..
+
+Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** (calculated from the multiband satellite images) with the **KNOWN training samples**. The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
+
+**In other words, a classification map is a prediction based on the knowledge of some (limited) training sites.**
+
+.. _Fig10_signature:
+.. figure:: /Figure/Fig10_signature.png
+
+	Prediction of the land cover.
+
+.. note:: **How many training samples?** |br|
+	Unfortunately, different classification techniques require a different number of (optimal) training samples! |br|
+	**A starting point for multispectral images like Sentinel-2 or Landsat could be about 200 training samples (i.e. image pixels) for each class.**
+
+A massive number of classification strategies are used in remote sensing. They have different requirements, constraints and accuracy. |br|
+The subject is so vast that we cannot generalize, and it is out-of-scope for this training.
+
+A simple and popular method is the **Minimum Distance (to Means)** classifier. This technique:
+
+1. Calculates the mean spectral signature of each class’ training samples (with KNOWN land cover),
+2. Calculates the spectral signature of each image pixels with UNKNOWN land cover,
+3. Compares (1) and (2),
+4. Assigns each image pixel to the land cover class with the “closest” spectral signature.
+
+.. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
+
 
 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
@@ -174,10 +263,10 @@ The training samples define the map’s legend and define the spectral classes, 
 
 
 
-2.3. Map validation
+2.4. Map validation
 -------------------
 
-3.3.1 Precision, bias and accuracy
+2.4.1 Precision, bias and accuracy
 ````````````````````````````````````
 To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy.
 
@@ -213,7 +302,7 @@ Bias refers to *systematic errors* of the archer’s shots. We can define **bias
 The third archer is **accurate**. His arrows are all grouped together and placed in the target’s centre. |br|
 Accuracy refers to the *closeness* of the archer’s shots to the target centre. We can define **accuracy** as the degree to which repeated attempts (under unchanged conditions) are close to the true value. Thus an accurate attempt is both precise and unbiased.
 
-3.3.2 How much is accurate a map?
+2.4.2 How much is accurate a map?
 `````````````````````````````````
 Referring to the mapping process, **accuracy** is the most used performance metric and tells *“how many sites were mapped correctly.”*
 

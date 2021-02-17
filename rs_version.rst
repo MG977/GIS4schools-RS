@@ -1,7 +1,7 @@
 .. include:: html_lat.txt
 
 
-ver.
+v.
 ===========
 
-Document version: 16/02/2021, 18:16
+Document version: 17/02/2021, 19:19
