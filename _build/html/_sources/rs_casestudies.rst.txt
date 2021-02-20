@@ -6,8 +6,8 @@
 
 .. _Monitoring-lake-trophic-state:
 
-4.1. Monitoring lake’s trophic state
-------------------------------------
+4.1. Monitoring lake’s trophic state (difficulty: hard)
+-------------------------------------------------------
 
 4.1.0 Download the data
 ````````````````````````
@@ -49,8 +49,16 @@ Lakes are usually classified into 4 trophic states, according to chlorophyll’s
 This exercise shows a very simple method to monitor the eutrophic level of a lake with satellites.
 
 
+.. _Study-area:
 
-4.1.3 Satellite images
+4.1.3 Study area
+`````````````````
+Lake Trasimeno is located in central Italy, in the Umbria region on the border with Tuscany. The lake is the fourth for surface area in Italy (mean surface area 121 km2), has two minor tributaries but none natural emissaries, and is surrounded by a natural park. |br|
+The lake is very shallow (4-5 m average depth). Its water level is usually at the highest level in April/May (less than 6 m) and at the minimum level in September/October. For its peculiar characteristics, in summer Lake Trasimeno is prone to eutrophication.
+
+
+
+4.1.4 Satellite images
 ````````````````````````
 The analysis is done using ten cloud-free Sentinel-2 images collected in the following dates of Summer 2016:
 
@@ -72,7 +80,7 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 
 .. _The-modelling-WQ:
 
-4.1.4 The modelling
+4.1.5 The modelling
 ````````````````````
 The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. |br|
 Phytoplankton are microorganisms that float on the water body and contain chlorophyll. Thus, they could be detected with RVI.
@@ -89,8 +97,8 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 
 
 
-4.1.5 Chlorophyll’s concentration data
-````````````````````````````````````````
+4.1.6 Chlorophyll’s concentration and water level
+`````````````````````````````````````````````````
 The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`.
 
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
@@ -103,19 +111,33 @@ The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentratio
 .. _Tab2_WQ:
 .. table:: Lake Trasimeno: chlorophyll concentration sampled on 18 July 2016.
 
-   ======  ===================
-   Site #  Chlorophyll [mg/m3]
-   ======  ===================
-   1       20.5
-   2       12.5
-   3       19.0
-   4       15.0
-   5       18.0
-   ======  ===================
+   ======  ===============================================  ===================
+   Site #  Coordinates E, N (WGS84 - UTM 32N (EPSG:32632))  Chlorophyll [mg/m3]
+   ======  ===============================================  ===================
+   1       754795, 4783085                                  20.5
+   2       751675, 4778175                                  12.5
+   3       753995, 4781525                                  19.0
+   4       755425, 4776475                                  15.0
+   5       747955, 4784225                                  18.0
+   ======  ===============================================  ===================
+
+.. _Tab3_WQ:
+.. table:: Lake Trasimeno: water level changes in summer 2016.
+
+   =========  ====================================================
+   Month      Water level changes (compared to the previous month)
+   =========  ====================================================
+   May        +2 m
+   June       -2 m
+   July       -12 m
+   August     -16 m
+   September  -5 m
+   October    +2 m
+   =========  ====================================================
 
 
 
-4.1.6 QGIS set-up
+4.1.7 QGIS set-up
 `````````````````
 Open QGIS. Go to the menu bar and click ``Plugins`` → ``Manage and Install Plugins...`` (:numref:`Fig3_WQ_Plugins`).
 
@@ -140,7 +162,7 @@ In QGIS main window, select ``New Empty Project`` (:numref:`Fig2_WQ_New_Project`
 
 
 
-4.1.7 Prepare the satellite images
+4.1.8 Prepare the satellite images
 ````````````````````````````````````
 Open the Semi-Automatic Classification Plugin (SCP) (:numref:`Fig5_WQ_Open_SCP`).
 
@@ -199,7 +221,7 @@ To solve this problem, we need to tell QGIS which spectral bands correspond to R
 
 .. _Load-the-satellite-images-with-the-correct-colours:
 
-4.1.8 Load the satellite images with the correct colours
+4.1.9 Load the satellite images with the correct colours
 `````````````````````````````````````````````````````````
 Right-click on the image name → ``Properties`` → ``Symbology`` and set (:numref:`Fig10_WQ_Layer_Symbology`):
 
@@ -223,7 +245,7 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig11_WQ_T
 
 
 
-4.1.9 Resize the image
+4.1.10 Resize the image
 ````````````````````````
 The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the data processing.
 
@@ -284,7 +306,7 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig17_WQ_L
 
 
 
-4.1.10 Calculate the Ratio Vegetation Index
+4.1.11 Calculate the Ratio Vegetation Index
 ````````````````````````````````````````````
 Remember we use the spectral model described in (:any:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:any:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
 
@@ -331,7 +353,7 @@ The output is a grayscale image, where each pixel contains its RVI value just co
 
 
 
-4.1.11 Sample the RVI in the calibration sites
+4.1.12 Sample the RVI in the calibration sites
 ````````````````````````````````````````````````
 We know chlorophyll’s concentration in the five calibration sites because it was measured *on site*. But also we need the satellite-derived RVI.
 
@@ -383,7 +405,7 @@ The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i
 
 
 
-4.1.12 Calibrate the spectral model
+4.1.13 Calibrate the spectral model
 ````````````````````````````````````
 To transform the spectral information of satellites into chlorophyll concentrations, we use the simple linear model of Equation :eq:`eqWQ4`:
 
@@ -443,7 +465,7 @@ Consequently, the calibrated model becames Equation :eq:`eqWQ5`:
 
 
 
-4.1.13 Create an automatic workflow
+4.1.14 Create an automatic workflow
 ````````````````````````````````````
 Remove all the layers from QGIS and import all the Sentinel-2 images from the folder ``..\GIS_4_School\4.1_Monitoring_lake_trophic_state\Pre-processed``. These images are already corrected for the atmospheric disturbance with the DOS algorithm and are, thus, ready for the processing.
 
@@ -578,7 +600,7 @@ We have created the processing workflow (like if we have written a script) and a
 
 
 
-4.1.14 Create a batch processing to manipulate all the satellite images at once
+4.1.15 Create a batch processing to manipulate all the satellite images at once
 ````````````````````````````````````````````````````````````````````````````````
 We want to monitor the eutrophic level of Lake Trasimeno with Sentinel-2 images. Thus we have to run the processing workflow several times, each one with a different satellite image. This task is called **batch processing.**
 
@@ -639,9 +661,10 @@ Now, QGIS knows how to save the results (:numref:`Fig46_WQ_Batch_processing_para
    Sample screenshot.
 
 
+.. _Estimate-the-chlorophyll-concentration-in-Lake-Trasimeno:
 
-4.1.15 Estimate the trophic state of Lake Trasimeno
-````````````````````````````````````````````````````
+4.1.16 Estimate the chlorophyll's concentration in Lake Trasimeno
+`````````````````````````````````````````````````````````````````
 Click the button ``Run``. QGIS runs the processing workflow for each satellite image and saves the results in the output folder.
 
 Remove all the layer from QGIS and import the outputs of the automatic data processing. Each image describes the map of the estimated chlorophyll concentration. (:numref:`Fig47_WQ_Chl_Concentration_images`) shows an example 
@@ -695,12 +718,12 @@ Click the button ``Apply`` and then ``OK``. The map now shows chlorophyll concen
 
    Sample screenshot.
 
-Now apply the saved color ramp to all the other maps. For each map, right-click on the map, select ``Properties`` and go to the **Symbology** menu (:numref:`Fig52_WQ_Loading_Color_Map`).
+Now apply the saved color ramp to all the other maps. For each map, right-click on the map, select ``Properties`` and go to the **Symbology** menu (:numref:`Fig53_WQ_Loading_Color_Map`).
 
 Set the ``render type:`` as ``singleband pseudocolor``, click the button ``Load color map from file`` and load the file ``colour_ramp``.
 
-.. _Fig52_WQ_Loading_Color_Map:
-.. figure:: /Figure/Fig52_WQ_Loading_Color_Map.png
+.. _Fig53_WQ_Loading_Color_Map:
+.. figure:: /Figure/Fig53_WQ_Loading_Color_Map.png
 
    Sample screenshot.
 
@@ -710,19 +733,77 @@ Now all the maps have the same colour ramp, and the eutrophic states can be comp
 
 
 
-4.1.16 Simple analysis of results
-````````````````````````````````````
-Let’s discuss our findings.
+4.1.17 Simple analysis of results
+`````````````````````````````````
+Let’s analyze the trophic level dynamics of Lake Trasimeno in summer 2016.
 
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+Keep the maps of chlorophyll load estimated for 18 July 2016 (layer **T32TQN_20160718_Chl_Clip**), 4 August 2016 (layer **T32TQN_20160804_Chl_Clip**), 27 August 2016 (layer **T32TQN_20160827_Chl_Clip**), 13 September 2016 (layer **T32TQN_20160913_Chl_Clip**), 26 September 2016 (layer **T32TQN_20160926_Chl_Clip**), and close the other maps.
+
+As done in :any:`Estimate-the-chlorophyll-concentration-in-Lake-Trasimeno`, right-click on each map and select ``Properties``. In the left-side panel select **Symbology** and set the following parameters (:numref:`Fig54_WQ_Chl_Map`):
+
+- ``Render type:`` set ``Singleband pseudocolor``,
+- ``Band:`` set ``Band 1 (Gray)``,
+- ``Min and Max:`` keep the default values,
+- ``Interpolation:`` set ``Discrete``,
+- ``Mode:`` set ``Equal Interval``,
+- ``Classes:`` set ``4``.
+
+Double-click and edit the class value, colour and label as shown in :numref:`Fig54_WQ_Chl_Map`.
+
+Click the button ``Export color map to file`` and save to disk with file name ``colour_levels``. Now we can load apply the same colour scheme to all the maps.
+
+.. _Fig54_WQ_Chl_Map:
+.. figure:: /Figure/Fig54_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+**18 July 2016** |br|
+In mid-July, the north of Lake Trasimeno and some south shores are eutrophic, while the central lake is mesotrophic (:numref:`Fig55_WQ_Chl_Map`).
+
+.. _Fig55_WQ_Chl_Map:
+.. figure:: /Figure/Fig55_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+**4 August 2016** |br|
+Two weeks later, most of Lake Trasimeno is eutrophic. Only the southern lake is still mesotrophic (:numref:`Fig56_WQ_Chl_Map`).
+
+.. _Fig56_WQ_Chl_Map:
+.. figure:: /Figure/Fig56_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+**27 August 2016** |br|
+At the end of August, all Lake Trasimeno is eutrophic (:numref:`Fig57_WQ_Chl_Map`).
+
+.. _Fig57_WQ_Chl_Map:
+.. figure:: /Figure/Fig57_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+**13 September 2016** |br|
+Two weeks later, in mid-September, the chlorophyll concentration increases to more than 56 mg/m3, and all Lake Trasimeno becomes hypereutrophic (:numref:`Fig58_WQ_Chl_Map`).
+
+.. _Fig58_WQ_Chl_Map:
+.. figure:: /Figure/Fig58_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+**26 September 2016** |br|
+Finally, after two weeks, the trophic level decreases again to eutrophic (:numref:`Fig59_WQ_Chl_Map`).
+
+.. _Fig59_WQ_Chl_Map:
+.. figure:: /Figure/Fig59_WQ_Chl_Map.png
+
+   Sample screenshot.
+
+Overall, our results are consistent with the characteristics and habitat of Lake Trasimeno (see :any:`Study-area`).
 
 
 .. _Mapping-crop-types:
 
-4.2 Mapping crop types
-------------------------
+4.2 Mapping crop types (difficulty: intermediate)
+-------------------------------------------------
 
 4.2.0 Download the data
 ````````````````````````
@@ -1198,8 +1279,8 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 
 .. _Monitoring-crops-vegetative-stage:
 
-4.3 Monitoring crops’ vegetative stage
-----------------------------------------
+4.3 Monitoring crops’ vegetative stage (difficulty: easy)
+---------------------------------------------------------
 
 4.3.0 Download the data
 ````````````````````````
