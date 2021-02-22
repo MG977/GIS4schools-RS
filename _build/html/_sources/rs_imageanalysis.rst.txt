@@ -29,7 +29,8 @@ When studying the Earth’s ecosystems, we are interested in monitoring our plan
 
 	Distribution of main land covers on Earth.
 
-Thus, we use satellites to study how such land covers’ spectral signatures change in time (:numref:`Fig2_signature` - :numref:`Fig7_signature`).
+Thus, we use satellites to study how such land covers’ spectral signatures change in time. |br|
+:numref:`Fig2_signature` - :numref:`Fig7_signature` show the typical spectral signatures of the main land covers.
 
 .. _Fig2_signature:
 .. figure:: /Figure/Fig2_signature.png
@@ -67,7 +68,7 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 `````````````````````````````````````````````````````````
 Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:any:`Spectral-characteristics`).
 
-Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we calculate its spectral signature** (:numref:`Fig8_signature`).
+Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we extract its spectral signature** (:numref:`Fig8_signature`).
 
 .. _Fig8_signature:
 .. figure:: /Figure/Fig8_signature.png
@@ -75,7 +76,7 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 	How to calculate the spectral signature with satellite images.
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
-	Optical satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
+	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
 
 
 .. _Spectral-indices-for-environmental-monitoring:
@@ -85,9 +86,9 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 
 2.2.1. What is a spectral index
 ````````````````````````````````
-A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health. |br|
-Spectral indices combine the reflectance information from multiple spectral bands into **ONE** numeric value. Thus, they turn satellite images *from a qualitative visual inspection tool into a quantitative numerical analysis.*
+A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health.
 
+Spectral indices combine the reflectance information from multiple spectral bands into **ONE** numeric value. Thus, they turn satellite images *from a qualitative visual inspection tool into a quantitative numerical analysis tool.* |br|
 :numref:`Tab1_SI` shows the most common mathematical formulas.
 
 .. _Tab1_SI:
@@ -109,7 +110,8 @@ The most popular spectral indices are those to retrieve the status of vegetation
 - Monitor built-up features,
 - Map water bodies,
 - Estimate the abundance of minerals or lithotypes,
-- Evaluate the snow cover.
+- Evaluate the snow cover,
+- And many others.
 
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
@@ -127,7 +129,7 @@ The gap between the low reflectance in the red band (due to chlorophylls), and t
 
 	Spectral signature of a decidous tree with highlighted the gap between the red and NIR.
 
-Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Therefore, the difference between NIR and red reflectances is used as a proxy for overall amount + health of green vegetation.
+Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Therefore, the difference between NIR and red reflectances is used as a proxy for overall "amount + health" of green vegetation.
 
 .. _Fig2_SI:
 .. figure:: /Figure/Fig2_SI.png

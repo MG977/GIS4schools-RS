@@ -37,6 +37,11 @@ For example, to monitor the weather at a global scale and in real-time, we need 
 
 On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.
 
+.. _Fig_intro_SAT:
+.. figure:: /Figure/Fig_intro_SAT.png
+
+	Earth observation missions developed by the European Space Agency.
+
 
 
 1.2.1. Satellite orbits and revisit time
@@ -56,19 +61,19 @@ Satellites in a low Earth orbit circle close to Earth’s surface, at an *altitu
 This is a particular kind of Low Earth Orbit, where satellites circle from north to south and are always in the same ‘fixed’ position relative to the Sun. This means that the satellites still visits the same geographic location at the same local time. |br|
 **Most of satellites for Earth observation have a Sun-synchronous low Earth orbit, with an altitude between 600 km and 800 km and a speed of approximately 7.5 km/s.**
 
-.. _Fig1_SAT:
-.. figure:: /Figure/Fig1_SAT.png
-
-	Satellite orbits.
-
 .. note:: Depending on the time for revisiting the same geographic location, satellites are classified as:
 	
 	- **High revisit time:** < 3 days
 	- **Medium revisit time:** 4 - 16 days
 	- **Low revisit time:** > 16 days
 
+.. _Fig1_SAT:
+.. figure:: /Figure/Fig1_SAT.png
+
+	Satellite orbits.
+
 .. hint:: **Small activity** |br|
-	See the real-time location of about 19,300 manmade objects orbiting the Earth: `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (update to 14 July 2020).
+	See the real-time location of about 19,300 manmade objects orbiting the Earth with `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (updated on 14 July 2020).
 
 .. hint:: **Small activity** |br|
 	Search for a specific satellite with the `live real time satellite tracking and predictions <https://www.n2yo.com/>`_ (up to date).
@@ -77,8 +82,14 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 
 1.2.2. Imaging cameras
 ````````````````````````
-Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig3_SAT`). |br|
-They are **matrices** (i.e. tables) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**).
+Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig_camera_SAT`).
+
+A greyscale digital image is a **matrix** (i.e. table) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**) (:numref:`Fig3_SAT`).
+
+.. _Fig_camera_SAT:
+.. figure:: /Figure/Fig_camera_SAT.png
+
+	The imaging camera of the Sentinel-2 satellite.
 
 .. _Fig3_SAT:
 .. figure:: /Figure/Fig3_SAT.png
@@ -96,7 +107,7 @@ We can think of the different wavelengths as different “colours”.
 	The electromagnetic spectrum.
 
 Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
-We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. |br|
+We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. |br|
 :numref:`Fig5_SAT` and :numref:`Fig6_SAT` show how human eyes and animal eyes sense different wavelengths of the electromagnetic spectrum.
 
 .. _Fig5_SAT:
@@ -110,7 +121,7 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 	The electromagnetic spectrum sensed humans and bees.
 
 .. hint:: **Small activity** |br|
-	See planet Earth live from the International Space Station with the `External High Definition Camera (VISIBLE) <https://www.n2yo.com/space-station/>`_ (real time streaming).
+	See planet Earth live from the International Space Station with the `External High Definition Camera <https://www.n2yo.com/space-station/>`_ (real time streaming).
 
 
 
@@ -133,7 +144,7 @@ Generally speaking:
 .. _Fig2_SAT:
 .. figure:: /Figure/Fig2_SAT.png
 
-	London (UK). The effect of spatial resolution on image detail and swath.
+	The London Eye (UK). The effect of spatial resolution on image detail and swath.
 
 Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.
 
@@ -142,7 +153,7 @@ On the opposite, Geostationary satellites have low resolution cameras with wide 
 *Medium resolution cameras with pixel size between 10 m and 30 m usually have a swath of about 200-300 km. They are often a good compromise for many application needs.*
 
 .. tip:: **Spatial resolution vs orbital altitude** |br|
-	The spatial resolution is proportional to the orbital altitude. Thus, geostationary satellites have a low spatial resolution, while low Earth orbit satellites could achieve very high spatial resolution.
+	The spatial resolution is proportional to the orbital altitude. Thus, Geostationary satellites have a low spatial resolution, while Low Earth Orbit satellites could achieve very high spatial resolution.
 
 
 .. _Spectral-characteristics:
@@ -155,36 +166,46 @@ Depending on the number of spectral bands, imaging cameras for Earth observation
 - **Hyperspectral:** usually > 100 bands.
 
 Multispectral and hyperspectral cameras produce multiband grayscale images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
-**In other words, a multiband image describes the intensity of the different “colours” sensed in different regions of the electromagnetic spectrum.**
+**In other words, a multiband image describes the intensity of the different “colours” sensed in the different “lights” of the electromagnetic spectrum.**
 
 .. _Fig7_SAT:
 .. figure:: /Figure/Fig7_SAT.png
 
 	Example of multiband image.
 
-.. note:: In photography, spectral bands are usually called **colour channels**. But they are the same. |br|
-	A smartphone takes pictures in only 3 VISIBLE channels:
+.. note:: In photography, spectral bands are usually called **colour channels**. |br|
+	A smartphone takes pictures in only 3 VISIBLE colour channels:
 
-	- The Blue channel,
-	- The Green channel,
-	- The Red channel.
+	- Blue channel,
+	- Green channel,
+	- Red channel.
 	
 	But satellites allow extending our visual perception to many more “colours”, even to wavelengths  where our eyes are blind!
 
 .. hint:: **Small activity** |br|
-	To see the colour channels (the satellite spectral bands), try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone! (:numref:`Fig8_SAT`) |br|
-	Try using both outputs "as greyscale", and "with their own colour".
+	To see the colour channels, try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone (:numref:`Fig8_SAT`)! Try using both outputs "as greyscale", and "with their own colour". |br|
+	You might also use this `test picture <https://drive.google.com/file/d/1B5RIfx63mQq3O908Etstn5zeHTKBkPQu/view?usp=sharing>`_.
 
 .. _Fig8_SAT:
 .. figure:: /Figure/Fig8_SAT.png
 
 	Colour channels splitter.
 
-The combination of different greyscale spectral bands produces the colours of satellite images.
+The combination of different greyscale spectral bands produces the colours of satellite images (:numref:`Fig_Venezia_SAT`).
+
+.. _Fig_Venezia_SAT:
+.. figure:: /Figure/Fig_Venezia_SAT.png
+
+	Satellite colour image of Venice (Italy).
 
 .. hint:: **Small activity** |br|
-	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale images into a colour image. |br|
-	*What happens if you mix up the channels?*
+	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale satellite images into a satellite colour image:
+
+	- Download Sentinel-2 image of Venice `(Blue band) <https://drive.google.com/file/d/10rNhnS-okkBZekTnDR5CDjcZ9PztkADW/view?usp=sharing>`_,
+	- Download Sentinel-2 image of Venice `(Green band) <https://drive.google.com/file/d/1SakQNI3DDrisNKqoh1jfjxD5ffA31HQN/view?usp=sharing>`_,
+	- Download Sentinel-2 image of Venice `(Red band) <https://drive.google.com/file/d/1UWXjSDw-UZCC5nERktAOBFO-pst2buzM/view?usp=sharing>`_,
+
+	*What happens to colours if you mix up the bands?*
 
 
 
@@ -246,7 +267,7 @@ The mission objectives for Sentinel-2 are systematic:
    12    Short-wave infrared 3       20 m                290 km       Distinction of live and dead biomass, discrimination of snow / ice / clouds
    ================================  ==================  ===========  ===========================================================================
 
-.. hint:: `See Sentinel-2 Multispectral images in action <https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action>`_
+.. hint:: See how Sentinel-2 `collects multispectral images <https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action>`_
 
 **SENTINEL-3** |br|
 The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide **multispectral low resolution imagery** for ocean and land services. |br|
@@ -271,7 +292,7 @@ The mission objectives for Sentinel-3 are global coverage of:
 
 .. hint:: `Look inside Sentinel-3 <http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission>`_
 
-.. note:: For additional information `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
+.. note:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 
 
 
