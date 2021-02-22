@@ -6,12 +6,12 @@
 
 1.1. What is Earth observation?
 -------------------------------
-Remote sensing is defined as:
+Remote sensing could be defined as:
 
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
 	(Source: `Oxford Dictionary of Earth Sciences. © Oxford University Press <https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100413590>`_).
 
-while Earth observation (EO) is defined as:
+while Earth observation (EO) could be defined as:
 
 	*"The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment."*  |br|
 	(Source: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
@@ -36,9 +36,6 @@ All these characteristics are defined during the mission design, depending on th
 For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands.
 
 On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.
-
-.. hint:: **Small activity** |br|
-	See the real-time location of about 19,300 manmade objects orbiting the Earth: `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (update to 14 July 2020).
 
 
 
@@ -69,6 +66,12 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 	- **High revisit time:** < 3 days
 	- **Medium revisit time:** 4 - 16 days
 	- **Low revisit time:** > 16 days
+
+.. hint:: **Small activity** |br|
+	See the real-time location of about 19,300 manmade objects orbiting the Earth: `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (update to 14 July 2020).
+
+.. hint:: **Small activity** |br|
+	Search for a specific satellite with the `live real time satellite tracking and predictions <https://www.n2yo.com/>`_ (up to date).
 
 
 
@@ -105,6 +108,9 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 .. figure:: /Figure/Fig6_SAT.png
 
 	The electromagnetic spectrum sensed humans and bees.
+
+.. hint:: **Small activity** |br|
+	See planet Earth live from the International Space Station with the `External High Definition Camera (VISIBLE) <https://www.n2yo.com/space-station/>`_ (real time streaming).
 
 
 
@@ -205,12 +211,19 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 
 
 
-1.3.2. The Sentinel-2 satellites
-````````````````````````````````
-Copernicus is served by its own dedicated satellites (called Sentinels) and complemented by contributing missions.
+1.3.2. Multispectral Sentinel satellites
+````````````````````````````````````````
+**SENTINEL-2** |br|
+The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide **multispectral medium resolution imagery** for land services. |br|
+Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
 
-The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide medium resolution (from 10 m to 60 m) multispectral imagery (13 bands) for land services. Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
-They are used to monitor vegetation, soil, urban areas, glaciers, inland waters, coastal areas, and much more.
+The mission objectives for Sentinel-2 are systematic:
+
+- Land observation of vegetation and soil and water cover, inland waterways and coastal areas,
+- Land use and change detection maps,
+- Providing support in generating land cover,
+- Disaster relief support,
+- Climate change monitoring.
 
 .. _Tab1_S2:
 .. table:: Sentinel-2 spectral bands.
@@ -218,27 +231,47 @@ They are used to monitor vegetation, soil, urban areas, glaciers, inland waters,
    ====  ==========================  ==================  ===========  ===========================================================================
    Band  "Light" (colour)            Spatial resolution  Swath width  Application
    ====  ==========================  ==================  ===========  ===========================================================================
-   1     Visible (Violet)            60 m                x            Estimation of atmospheric aerosol
-   2     Visible (Blue)              10 m                x            Mapping reflected Blue light
-   3     Visible (Green)             10 m                x            Mapping reflected Green light
-   4     Visible (Red)               10 m                x            Mapping reflected Red light
-   5     Near Infrared 1 (red edge)  20 m                x            Classification of vegetation
-   6     Near Infrared 2 (red edge)  20 m                x            Classification of vegetation
-   7     Near Infrared 3 (red edge)  20 m                x            Classification of vegetation
-   8     Near Infrared 4             10 m                x            Sensitive to chlorophyll and biomass
-   8A    Near Infrared 5 (red edge)  20 m                x            Classification of vegetation
-   9     Near Infrared 6             60 m                x            Estimation of atmospheric water vapor
-   10    Short-wave infrared 1       60 m                x            Detection of clouds (cirrus)
-   11    Short-wave infrared 2       20 m                x            Sensitive to lignin, discrimination of snow / ice / clouds
-   12    Short-wave infrared 3       20 m                x            Distinction of live and dead biomass, discrimination of snow / ice / clouds
+   1     Visible (Violet)            60 m                290 km       Estimation of atmospheric aerosol
+   2     Visible (Blue)              10 m                290 km       Mapping reflected Blue light
+   3     Visible (Green)             10 m                290 km       Mapping reflected Green light
+   4     Visible (Red)               10 m                290 km       Mapping reflected Red light
+   5     Near Infrared 1 (red edge)  20 m                290 km       Classification of vegetation
+   6     Near Infrared 2 (red edge)  20 m                290 km       Classification of vegetation
+   7     Near Infrared 3 (red edge)  20 m                290 km       Classification of vegetation
+   8     Near Infrared 4             10 m                290 km       Sensitive to chlorophyll and biomass
+   8A    Near Infrared 5 (red edge)  20 m                290 km       Classification of vegetation
+   9     Near Infrared 6             60 m                290 km       Estimation of atmospheric water vapor
+   10    Short-wave infrared 1       60 m                290 km       Detection of clouds (cirrus)
+   11    Short-wave infrared 2       20 m                290 km       Sensitive to lignin, discrimination of snow / ice / clouds
+   12    Short-wave infrared 3       20 m                290 km       Distinction of live and dead biomass, discrimination of snow / ice / clouds
    ================================  ==================  ===========  ===========================================================================
 
+.. hint:: `See Sentinel-2 Multispectral images in action <https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action>`_
 
-.. note:: Discover the `Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
+**SENTINEL-3** |br|
+The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide **multispectral low resolution imagery** for ocean and land services. |br|
+Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of fewer than 2 days. |br|
 
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
+The *Ocean and Land Colour Instrument (OLCI)* has a 300-meters spatial resolution in 21 spectral bands, with a swath width of 1,270 km. |br|
+The *Sea and Land Surface Temperature Radiometer (SLSTR)* instrument record the surface temperature with 1 km spatial resolution.
+
+The mission objectives for Sentinel-3 are global coverage of:
+
+- Ocean and land-surface temperature,
+- Ocean and land-surface colour,
+- Sea-water quality and pollution monitoring,
+- Inland water monitoring, including rivers and lakes,
+- Aid ocean forecasts with acquired data,
+- Climate monitoring and modelling,
+- Land-use change monitoring,
+- Forest cover mapping,
+- Fire detection,
+- Weather forecasting,
+- Measuring Earth’s thermal radiation for atmospheric applications.
+
+.. hint:: `Look inside Sentinel-3 <http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission>`_
+
+.. note:: For additional information `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 
 
 
@@ -358,7 +391,7 @@ The `Copernicus Emergency Management Service <https://emergency.copernicus.eu/>`
 For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.
 
 .. hint:: **Small activity** |br|
-	See the Copernicus Emergency Management system for` flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
+	See the Copernicus Emergency Management system for `flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
 
 Overall, the service focuses on two main areas (and four systems):
 

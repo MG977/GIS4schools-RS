@@ -152,7 +152,9 @@ This is the most known and used greenness vegetation index. Equation :eq:`eqSI2`
 NDVI is a normalized index ranging from -1 to 1, but it assumes only positive values for vegetated lands. Thus, threshold **NDVI=0.2** is often used to differentiate bare ground (NDVI<0.2) from vegetated land (NDVI>0.2). |br|
 The larger the ratio, the more “amount of green and healthy vegetation” is present in the image. Moderate values (0.2<NDVI<0.6) are typical for shrubs, grass and crops, while higher values (NDVI>0.6) are typical for temperate and tropical forests.
 
-Conversely to RVI, NDVI is bounded from below (0, or more often 0.2) and bounded from above (1). Thus, it is useful to compare different vegetation covers. If we are looking at healthy vegetation, then:
+Conversely to RVI, NDVI is bounded from below (0, or more often 0.2) and bounded from above (1). Thus, it is useful to compare different vegetation covers.
+
+If we are looking at healthy vegetation, then:
 
 - Moderate values (0.2<NDVI<0.4) are typical for sparse vegetation,
 - Intermediate values (0.4<NDVI<0.6) are typical for moderately-density vegetation,
