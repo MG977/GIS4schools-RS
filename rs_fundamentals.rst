@@ -105,7 +105,7 @@ We can think of the different wavelengths as different “colours”.
 .. _Fig4_SAT:
 .. figure:: /Figure/Fig4_SAT.png
 
-	The electromagnetic spectrum (credit: unknown author).
+	The electromagnetic spectrum (credit: NASA).
 
 Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
 We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. |br|
