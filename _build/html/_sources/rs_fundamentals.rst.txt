@@ -20,7 +20,8 @@ That means *Earth observation* **is the process** of collecting information on o
 
 Thus, *Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GIS)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
 
-
+|br|
+|br|
 
 1.2. Satellites for Earth observation
 -------------------------------------
@@ -40,29 +41,29 @@ On the opposite, to monitor each small field’s agricultural productivity, we n
 .. _Fig_intro_SAT:
 .. figure:: /Figure/Fig_intro_SAT.png
 
-	Earth observation missions developed by the European Space Agency.
+	Earth observation missions developed by the European Space Agency (credit: ESA).
 
-
+|br|
 
 1.2.1. Satellite orbits and revisit time
 `````````````````````````````````````````
-**Geostationary orbit (GEO)** |br|
+**a. Geostationary orbit (GEO)** |br|
 Satellites in geostationary orbit circle Earth above the equator from west to east following Earth’s rotation at an *altitude of 35,800 km* and a *speed of about 3 km/s*. This makes geostationary satellites to be ‘stationary’ over a fixed location. |br|
 These satellites can image the portion of the Earth's surface they are looking at every 30 minutes or less. **Most of the satellites used for weather forecasts have a geostationary orbit.**
 
-**Medium Earth orbit (MEO)** |br|
+**b. Medium Earth orbit (MEO)** |br|
 Satellites in a medium Earth orbit circle the Earth at an *altitude between 1,000 km and 35,800 km*, with *revisit times defined by their orbital altitude*. |br|
 Satellites for Earth observation do not use this orbit. However **navigation satellites, like the European Galileo system or the American GPS, have a medium Earth orbit.**
 
-**Low Earth orbit (LEO)** |br|
+**c. Low Earth orbit (LEO)** |br|
 Satellites in a low Earth orbit circle close to Earth’s surface, at an *altitude between 200 km and 1,000 km* and a *speed of about 7.8 km/s*. At this speed, a satellite takes approximately 90 minutes to circle Earth. Thus, travels around Earth about 16 times a day.
 
-**Sun-synchronous orbit (SSO)** |br|
+**d. Sun-synchronous orbit (SSO)** |br|
 This is a particular kind of Low Earth Orbit, where satellites circle from north to south and are always in the same ‘fixed’ position relative to the Sun. This means that the satellites still visits the same geographic location at the same local time. |br|
 **Most of satellites for Earth observation have a Sun-synchronous low Earth orbit, with an altitude between 600 km and 800 km and a speed of approximately 7.5 km/s.**
 
 .. note:: Depending on the time for revisiting the same geographic location, satellites are classified as:
-	
+
 	- **High revisit time:** < 3 days
 	- **Medium revisit time:** 4 - 16 days
 	- **Low revisit time:** > 16 days
@@ -70,7 +71,7 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 .. _Fig1_SAT:
 .. figure:: /Figure/Fig1_SAT.png
 
-	Satellite orbits.
+	Satellite orbits (credit: adapted from Mark Mercer, 2011).
 
 .. hint:: **Small activity** |br|
 	See the real-time location of about 19,300 manmade objects orbiting the Earth with `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (updated on 14 July 2020).
@@ -78,18 +79,18 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 .. hint:: **Small activity** |br|
 	Search for a specific satellite with the `live real time satellite tracking and predictions <https://www.n2yo.com/>`_ (up to date).
 
-
+|br|
 
 1.2.2. Imaging cameras
 ````````````````````````
 Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig_camera_SAT`).
 
-A greyscale digital image is a **matrix** (i.e. table) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**) (:numref:`Fig3_SAT`).
-
 .. _Fig_camera_SAT:
 .. figure:: /Figure/Fig_camera_SAT.png
 
-	The imaging camera of the Sentinel-2 satellite.
+	The imaging camera of the Sentinel-2 satellite (credit: ESA).
+
+A greyscale digital image is a **matrix** (i.e. table) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**) (:numref:`Fig3_SAT`).
 
 .. _Fig3_SAT:
 .. figure:: /Figure/Fig3_SAT.png
@@ -104,7 +105,7 @@ We can think of the different wavelengths as different “colours”.
 .. _Fig4_SAT:
 .. figure:: /Figure/Fig4_SAT.png
 
-	The electromagnetic spectrum.
+	The electromagnetic spectrum (credit: unknown author).
 
 Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
 We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. |br|
@@ -123,7 +124,7 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 .. hint:: **Small activity** |br|
 	See planet Earth live from the International Space Station with the `External High Definition Camera <https://www.n2yo.com/space-station/>`_ (real time streaming).
 
-
+|br|
 
 1.2.3. Spatial resolution and swath width
 `````````````````````````````````````````
@@ -155,6 +156,7 @@ On the opposite, Geostationary satellites have low resolution cameras with wide 
 .. tip:: **Spatial resolution vs orbital altitude** |br|
 	The spatial resolution is proportional to the orbital altitude. Thus, Geostationary satellites have a low spatial resolution, while Low Earth Orbit satellites could achieve very high spatial resolution.
 
+|br|
 
 .. _Spectral-characteristics:
 
@@ -196,7 +198,7 @@ The combination of different greyscale spectral bands produces the colours of sa
 .. _Fig_Venezia_SAT:
 .. figure:: /Figure/Fig_Venezia_SAT.png
 
-	Satellite colour image of Venice (Italy).
+	Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.
 
 .. hint:: **Small activity** |br|
 	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale satellite images into a satellite colour image:
@@ -207,7 +209,8 @@ The combination of different greyscale spectral bands produces the colours of sa
 
 	*What happens to colours if you mix up the bands?*
 
-
+|br|
+|br|
 
 1.3. Copernicus and the Sentinels
 ---------------------------------
@@ -230,11 +233,11 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 - Transport and mobility,
 - Tourism.
 
-
+|br|
 
 1.3.2. Multispectral Sentinel satellites
 ````````````````````````````````````````
-**SENTINEL-2** |br|
+**Sentinel-2** |br|
 The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide **multispectral medium resolution imagery** for land services. |br|
 Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
 
@@ -265,11 +268,17 @@ The mission objectives for Sentinel-2 are systematic:
    10    Short-wave infrared 1       60 m                290 km       Detection of clouds (cirrus)
    11    Short-wave infrared 2       20 m                290 km       Sensitive to lignin, discrimination of snow / ice / clouds
    12    Short-wave infrared 3       20 m                290 km       Distinction of live and dead biomass, discrimination of snow / ice / clouds
-   ================================  ==================  ===========  ===========================================================================
+   ====  ==========================  ==================  ===========  ===========================================================================
 
 .. hint:: See how Sentinel-2 `collects multispectral images <https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action>`_
 
-**SENTINEL-3** |br|
+.. raw:: html
+
+	<iframe src="https://www.esa.int/content/view/embedjw/473936" width="640" height="360" frameborder="0"></iframe>
+
+*(Credit: ESA/ATG medialab).*
+
+**Sentinel-3** |br|
 The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide **multispectral low resolution imagery** for ocean and land services. |br|
 Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of fewer than 2 days. |br|
 
@@ -292,9 +301,16 @@ The mission objectives for Sentinel-3 are global coverage of:
 
 .. hint:: `Look inside Sentinel-3 <http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission>`_
 
+.. raw:: html
+
+	<iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe>
+
+*(Credit: ESA/ATG medialab).*
+
 .. note:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 
-
+|br|
+|br|
 
 1.4. Beyond satellite images
 ----------------------------
@@ -309,16 +325,13 @@ These value-added products are delivered to users through the six thematic Coper
 - Security,
 - Emergency,
 
-
+|br|
 
 1.4.1. Copernicus Atmosphere Monitoring Service
 ````````````````````````````````````````````````
 The `Copernicus Atmosphere Monitoring Service <https://atmosphere.copernicus.eu/>`_ provides data and information on atmospheric composition. It describes the current situation, forecasts a few days ahead, and analyses consistently retrospective data records for recent years. 
 
 For example, the Copernicus Atmosphere Monitoring Service provides daily information on the global atmospheric composition by monitoring and forecasting constituents such as greenhouse gases, reactive gases, ozone and aerosols. The service also delivers information on the solar radiation at the Earth’s surface (which is essential for health, agriculture and renewable energies), near-real-time analysis, 4-day forecasts, and reanalysis of the European air quality.
-
-.. hint:: **Small activity** |br|
-	See `today’s air quality forecasts in Europe <http://macc-raq-op.meteo.fr/index.php?category=ensemble&subensemble=hourly_ensemble&date=LAST&calculation-model=ENSEMBLE&species=o3&level=SFC&offset=000>`_.
 
 Overall, the service focuses on five main areas:
 
@@ -328,18 +341,18 @@ Overall, the service focuses on five main areas:
 - Solar radiation,
 - Climate forcing.
 
+.. hint:: **Small activity** |br|
+	See `today’s air quality forecasts in Europe <http://macc-raq-op.meteo.fr/index.php?category=ensemble&subensemble=hourly_ensemble&date=LAST&calculation-model=ENSEMBLE&species=o3&level=SFC&offset=000>`_.
+
 .. note:: For additional information see `the Copernicus Atmosphere Monitoring Service web site <https://atmosphere.copernicus.eu/>`_.
 
-
+|br|
 
 1.4.2. Copernicus Marine Environment Monitoring Service
 ````````````````````````````````````````````````````````
 The `Copernicus Marine Environment Monitoring Service <https://marine.copernicus.eu/>`_ provides regular and systematic information on the physical and biogeochemical state, variability and dynamics of the ocean and marine ecosystems.
 
 For example, the Copernicus Marine Environment Monitoring Service improves ship routing services, offshore operations or search and rescue operations. The service also contributes to the protection and sustainable management of living marine resources. And the physical and biogeochemical components are useful for water quality monitoring, pollution control, or coastal erosion assessment.
-
-.. hint:: **Small activity** |br|
-	See past, present and future quality of the marine environment: `My Ocean <https://cmems.lobelia.earth/data?view=viewer&crs=epsg%3A4326&t=1607385600000&z=0&center=-20%2C29&zoom=11&layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&initial=1>`_.
 
 Overall, the service focuses on four main areas:
 
@@ -348,18 +361,18 @@ Overall, the service focuses on four main areas:
 - Coastal and marine environment,
 - Weather, seasonal forecasting and climate.
 
+.. hint:: **Small activity** |br|
+	See past, present and future quality of the marine environment: `My Ocean <https://cmems.lobelia.earth/data?view=viewer&crs=epsg%3A4326&t=1607385600000&z=0&center=-20%2C29&zoom=11&layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&initial=1>`_.
+
 .. note:: For additional information see `the Copernicus Marine Environment Monitoring Service web site <https://marine.copernicus.eu/>`_.
 
-
+|br|
 
 1.4.3. Copernicus Land Monitoring Service
 `````````````````````````````````````````
 The `Copernicus Land Monitoring Service <https://land.copernicus.eu/>`_ provides geographical information on land cover and its changes, land use, vegetation state, water cycle and Earth’s surface energy variables.
 
 For example, the Copernicus Land Monitoring Service supports applications such as spatial and urban planning, forest management, water management, agriculture and food security, nature conservation and restoration, rural development, ecosystem accounting and mitigation/adaptation to climate change.
-
-.. hint:: **Small activity** |br|
-	See the `CORINE land cover map of Europe for 2018 <https://land.copernicus.eu/pan-european/corine-land-cover/clc2018>`_.
 
 Overall, the service focuses on five main areas:
 
@@ -369,9 +382,12 @@ Overall, the service focuses on five main areas:
 - Imagery and reference data,
 - European ground motion activity.
 
+.. hint:: **Small activity** |br|
+	See the `CORINE land cover map of Europe for 2018 <https://land.copernicus.eu/pan-european/corine-land-cover/clc2018>`_.
+
 .. note:: For additional information see `the Copernicus Land Monitoring Service web site <https://land.copernicus.eu/>`_.
 
-
+|br|
 
 1.4.4. Copernicus Climate Change Service
 ````````````````````````````````````````
@@ -384,7 +400,7 @@ For example, The Copernicus Climate Change Service provides scientists, consulta
 
 .. note:: For additional information see `the Copernicus Climate Change Service web site <https://climate.copernicus.eu/>`_.
 
-
+|br|
 
 1.4.5. Copernicus Security Service
 ````````````````````````````````````
@@ -392,27 +408,24 @@ The `Copernicus Security Service <https://climate.copernicus.eu/>`_ provides inf
 
 For example, the Copernicus Security Service supports the reduction of illegal immigrants’ death at sea, increases the European Union’s internal security, and fights against cross-border crime. It also increases navigation safety, supports fisheries control, combats marine pollution, and law enforcement at sea. Besides, the Copernicus Security Service provides decision-makers with geo-information on remote and difficult to access areas, where security issues are at stake.
 
-.. hint:: **Small activity** |br|
-	See how Copernicus Security can `support evacuation plans <https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/>`_.
-
 Overall, the service focuses on three main areas:
 
 - Border surveillance,
 - Maritime surveillance,
 - Support to EU external action.
 
+.. hint:: **Small activity** |br|
+	See how Copernicus Security can `support evacuation plans <https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/>`_.
+
 .. note:: For additional information see `the Copernicus Security Service web site <https://climate.copernicus.eu/>`_.
 
-
+|br|
 
 1.4.6. Copernicus Emergency Management Service
 ````````````````````````````````````````````````````````
 The `Copernicus Emergency Management Service <https://emergency.copernicus.eu/>`_ provides all actors involved in managing natural disasters, man-made emergency situations, and humanitarian crises with timely and accurate satellite-based geospatial information completed by available on-site data or open data sources.
 
 For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.
-
-.. hint:: **Small activity** |br|
-	See the Copernicus Emergency Management system for `flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
 
 Overall, the service focuses on two main areas (and four systems):
 
@@ -423,5 +436,8 @@ Overall, the service focuses on two main areas (and four systems):
 - The European Forest Fire Information System, which provides near real-time and historical information on forest fires and forest fire regimes in the European, Middle Eastern and North African regions,
 - The European Drought Observatory, which provides drought-relevant information and early-warnings for Europe,
 - Global Flood Awareness System, Global Wildfire Information System and Global Drought Observatory complete the previous three systems globally.
+
+.. hint:: **Small activity** |br|
+	See the Copernicus Emergency Management system for `flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
 
 .. note:: For additional information see `the Copernicus Emergency Management Service web site <https://emergency.copernicus.eu/>`_.

@@ -199,6 +199,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="rs_authors.html">5. About us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#marco-gianinetto-theoretical-topics">5.1 Marco GIANINETTO (theoretical topics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#francesco-niccolo-polinelli-hands-on-exercises">5.2 Francesco Niccolò POLINELLI (hands-on exercises)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="rs_version.html">v.</a></li>
 </ul>
 
@@ -285,16 +290,17 @@ Before browsing the image archives, sign up for a <a class="reference external" 
 <span id="fig2-eobrowser"></span><img alt="_images/Fig2_EObrowser.png" src="_images/Fig2_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Log in to the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="section" id="how-to-select-the-correct-products-with-sentinel-hub-eo-browser">
 <h3>3.1.1. How to select the correct products with Sentinel Hub EO Browser<a class="headerlink" href="#how-to-select-the-correct-products-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
 <p>Once logged in the <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a>, configure the search criteria (<a class="reference internal" href="#fig3-eobrowser"><span class="std std-numref">Fig. 32</span></a>):</p>
 <ol class="arabic simple">
-<li>In this example, we look for Sentinel-2 images. Thus, select <code class="docutils literal notranslate"><span class="pre">Sentinel-2</span></code> as a data source,</li>
-<li>Set <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">search</span></code> and select <code class="docutils literal notranslate"><span class="pre">L2A</span> <span class="pre">(atmospherically</span> <span class="pre">corrected)</span></code>. This option limits the search to atmospherically corrected Sentinel-2 images only,</li>
-<li>Optionally, set the <code class="docutils literal notranslate"><span class="pre">Max.</span> <span class="pre">cloud</span> <span class="pre">coverage</span></code> to the desired level of maximum cloud cover accepted,</li>
-<li>Select the starting and ending <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">range</span> <span class="pre">[UTC]</span></code> by clicking the calendars,</li>
-<li>Optionally, select <code class="docutils literal notranslate"><span class="pre">filter</span> <span class="pre">by</span> <span class="pre">months</span></code> to limit the search to specific months in the time range,</li>
-<li>Click the <code class="docutils literal notranslate"><span class="pre">Search</span></code> button to search the archive.</li>
+<li>In this example, we look for Sentinel-2 images. Thus, select <span class="guilabel">Sentinel-2</span> as a data source,</li>
+<li>Set <span class="guilabel">Advanced search</span> and select <span class="guilabel">L2A (atmospherically corrected)</span>. This option limits the search to atmospherically corrected Sentinel-2 images only,</li>
+<li>Optionally, set the <span class="guilabel">Max. cloud coverage</span> to the desired level of maximum cloud cover accepted,</li>
+<li>Select the starting and ending <span class="guilabel">Time range [UTC]</span> by clicking the calendars,</li>
+<li>Optionally, select <span class="guilabel">filter by months</span> to limit the search to specific months in the time range,</li>
+<li>Click the <span class="guilabel">Search</span> button to search the archive.</li>
 </ol>
 <div class="figure align-default" id="id16">
 <span id="fig3-eobrowser"></span><img alt="_images/Fig3_EObrowser-2.png" src="_images/Fig3_EObrowser-2.png" />
@@ -303,14 +309,15 @@ Before browsing the image archives, sign up for a <a class="reference external" 
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last"><strong>Remember to use ONLY atmospherically corrected images!</strong> <br />
-Optical satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. <br />
+Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. <br />
 Sentinel-2 data provided as <code class="docutils literal notranslate"><span class="pre">L1C</span></code> products are uncorrected images. Sentinel-2 data provided as <code class="docutils literal notranslate"><span class="pre">L2A</span></code> products are atmospherically corrected images. <br />
 <strong>Only</strong> <code class="docutils literal notranslate"><span class="pre">L2A</span></code> <strong>products are ready for image processing!</strong></p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="how-to-view-the-satellite-images-with-sentinel-hub-eo-browser">
 <h3>3.1.2. How to view the satellite images with Sentinel Hub EO Browser<a class="headerlink" href="#how-to-view-the-satellite-images-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
-<p>Select your image tile in the main window and click <code class="docutils literal notranslate"><span class="pre">Visualize</span></code>. Alternatively, you can load your image by clicking <code class="docutils literal notranslate"><span class="pre">Visualize</span></code> in the left panel (<a class="reference internal" href="#fig6-eobrowser"><span class="std std-numref">Fig. 33</span></a>).</p>
+<p>Select your image tile in the main window and click <span class="guilabel">Visualize</span>. Alternatively, you can load your image by clicking <span class="guilabel">Visualize</span> in the left panel (<a class="reference internal" href="#fig6-eobrowser"><span class="std std-numref">Fig. 33</span></a>).</p>
 <div class="figure align-default" id="id17">
 <span id="fig6-eobrowser"></span><img alt="_images/Fig6_EObrowser-2.png" src="_images/Fig6_EObrowser-2.png" />
 <p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Select your satellite image archived in the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
@@ -323,9 +330,9 @@ Sentinel-2 data provided as <code class="docutils literal notranslate"><span cla
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>True colour synthesis:</strong> <br />
-Red band → Red colour <br />
-Green band → Green colour <br />
-Blue band → Blue colour</p>
+Satellite Red band → Image Red colour channel <br />
+Satellite Green band → Image Green colour channel <br />
+Satellite Blue band → Image Blue colour channel</p>
 </div>
 <p>However, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> shows the following additional pre-built colour composites:</p>
 <ul>
@@ -349,9 +356,9 @@ Blue band → Blue colour</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>False colour synthesis:</strong> <br />
-NIR band → Red colour <br />
-Red band → Green colour <br />
-Green band → Blue colour</p>
+Satellite NIR band → Image Red colour channel <br />
+Satellite Red band → Image Green colour channel <br />
+Satellite Green band → Image Blue colour channel</p>
 </div>
 <ul>
 <li><p class="first"><strong>False colour (urban)</strong> (<a class="reference internal" href="#fig15-eobrowser"><span class="std std-numref">Fig. 36</span></a>). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the Red spectral bands, represented as Red, Green and Blue colours respectively:</p>
@@ -373,9 +380,9 @@ Green band → Blue colour</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>False colour (urban) synthesis:</strong> <br />
-SWIR band 1 → Red colour <br />
-SWIR band 2 → Green colour <br />
-Red band → Blue colour</p>
+Satellite SWIR band 1 → Image Red colour channel <br />
+Satellite SWIR band 2 → Image Green colour channel <br />
+Satellite Red band → Image Blue colour channel</p>
 </div>
 <ul>
 <li><p class="first"><strong>SWIR</strong> (<a class="reference internal" href="#fig16-eobrowser"><span class="std std-numref">Fig. 37</span></a>). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:</p>
@@ -398,9 +405,9 @@ Red band → Blue colour</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>SWIR colour synthesis:</strong> <br />
-SWIR band → Red colour <br />
-NIR band → Green colour <br />
-Red band → Blue colour</p>
+Satellite SWIR band → Image Red colour channel <br />
+Satellite NIR band → Image Green colour channel <br />
+Satellite Red band → Image Blue colour channel</p>
 </div>
 <p><a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> also shows the maps of some basic spectral indices. These parameters are useful to recognize different land cover types and monitor the status of vegetated land. Specifically:</p>
 <ul>
@@ -476,6 +483,7 @@ Red band → Blue colour</p>
 The <a class="reference external" href="https://www.indexdatabase.de/" rel="noopener noreferrer" target="_blank">Index DataBase</a> is a collection of spectral indices for different applications and sensors. Here you find a selection of <a class="reference external" href="https://www.indexdatabase.de/db/is.php?sensor_id=96" rel="noopener noreferrer" target="_blank">250 spectral indices designed to fit the images of the Sentinel-2 satellite</a>. <br />
 If you like to import these spectral indices into Sentinel Hub EO Browser, try these <a class="reference external" href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/" rel="noopener noreferrer" target="_blank">javascript</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="how-to-download-the-data-with-sentinel-hub-eo-browser">
 <h3>3.1.3. How to download the data with Sentinel Hub EO Browser<a class="headerlink" href="#how-to-download-the-data-with-sentinel-hub-eo-browser" title="Permalink to this headline">¶</a></h3>
@@ -485,7 +493,7 @@ If you like to import these spectral indices into Sentinel Hub EO Browser, try t
 The images searched with <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> are downloaded from the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>. <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Sign up for a free account!</a></p>
 </div>
 <ol class="arabic simple">
-<li>Click the green chain symbol to show the download link at the bottom of the image (<code class="docutils literal notranslate"><span class="pre">SciHub</span> <span class="pre">link:</span></code>),</li>
+<li>Click the green chain symbol to show the download link at the bottom of the image (<span class="guilabel">SciHub link:</span>),</li>
 <li>Click the link to download the data.</li>
 </ol>
 <div class="figure align-default" id="id27">
@@ -503,17 +511,14 @@ The images searched with <a class="reference external" href="https://www.sentine
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information, see the <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/user-guide/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser user guide</a></p>
 </div>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="some-alternative-repositories">
 <h2>3.2. Some alternative repositories<a class="headerlink" href="#some-alternative-repositories" title="Permalink to this headline">¶</a></h2>
 <p>Alternative European repositories are the Copernicus Open Access Hub (<a class="reference internal" href="#fig1-scihub"><span class="std std-numref">Fig. 44</span></a>) and the DIASs (<a class="reference internal" href="#fig-dias"><span class="std std-numref">Fig. 45</span></a>) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. <br />
-Discover more information on the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a></p>
-<div class="figure align-default" id="id28">
-<span id="fig1-scihub"></span><img alt="_images/Fig1_scihub.png" src="_images/Fig1_scihub.png" />
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Copernicus Open Access Hub</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
-</div>
-<p>and on the five <a class="reference external" href="https://www.copernicus.eu/en/access-data/dias" rel="noopener noreferrer" target="_blank">DIASs</a>:</p>
+Discover more information on the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a> and on the five <a class="reference external" href="https://www.copernicus.eu/en/access-data/dias" rel="noopener noreferrer" target="_blank">DIASs</a>:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://creodias.eu" rel="noopener noreferrer" target="_blank">CREO DIAS</a>,</li>
 <li><a class="reference external" href="https://mundiwebservices.com" rel="noopener noreferrer" target="_blank">MUNDI web services</a>,</li>
@@ -521,9 +526,13 @@ Discover more information on the <a class="reference external" href="https://sci
 <li><a class="reference external" href="https://sobloo.eu" rel="noopener noreferrer" target="_blank">Sobloo</a>,</li>
 <li><a class="reference external" href="https://wekeo.eu" rel="noopener noreferrer" target="_blank">WEkEO</a>.</li>
 </ul>
+<div class="figure align-default" id="id28">
+<span id="fig1-scihub"></span><img alt="_images/Fig1_scihub.png" src="_images/Fig1_scihub.png" />
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Copernicus Open Access Hub.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
 <div class="figure align-default" id="id29">
 <span id="fig-dias"></span><img alt="_images/Fig_DIAS.png" src="_images/Fig_DIAS.png" />
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Data and Information Access Services (DIAS).</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Data and Information Access Services (credit: European Commission).</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition caution">
 <p class="first admonition-title">Caution</p>

@@ -23,23 +23,23 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 
 	Log in to the Sentinel Hub EO Browser.
 
-
+|br|
 
 3.1.1. How to select the correct products with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````````````````
 Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_, configure the search criteria (:numref:`Fig3_EObrowser`):
 
-1. In this example, we look for Sentinel-2 images. Thus, select ``Sentinel-2`` as a data source,
+1. In this example, we look for Sentinel-2 images. Thus, select :guilabel:`Sentinel-2` as a data source,
 
-2. Set ``Advanced search`` and select ``L2A (atmospherically corrected)``. This option limits the search to atmospherically corrected Sentinel-2 images only,
+2. Set :guilabel:`Advanced search` and select :guilabel:`L2A (atmospherically corrected)`. This option limits the search to atmospherically corrected Sentinel-2 images only,
 
-3. Optionally, set the ``Max. cloud coverage`` to the desired level of maximum cloud cover accepted,
+3. Optionally, set the :guilabel:`Max. cloud coverage` to the desired level of maximum cloud cover accepted,
 
-4. Select the starting and ending ``Time range [UTC]`` by clicking the calendars,
+4. Select the starting and ending :guilabel:`Time range [UTC]` by clicking the calendars,
 
-5. Optionally, select ``filter by months`` to limit the search to specific months in the time range,
+5. Optionally, select :guilabel:`filter by months` to limit the search to specific months in the time range,
 
-6. Click the ``Search`` button to search the archive.
+6. Click the :guilabel:`Search` button to search the archive.
 
 .. _Fig3_EObrowser:
 .. figure:: /Figure/Fig3_EObrowser-2.png
@@ -47,15 +47,15 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
  Set the searching criteria.
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
-	Optical satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. |br|
+	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. |br|
 	Sentinel-2 data provided as ``L1C`` products are uncorrected images. Sentinel-2 data provided as ``L2A`` products are atmospherically corrected images. |br|
 	**Only** ``L2A`` **products are ready for image processing!**
 
-
+|br|
 
 3.1.2. How to view the satellite images with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````````````
-Select your image tile in the main window and click ``Visualize``. Alternatively, you can load your image by clicking ``Visualize`` in the left panel (:numref:`Fig6_EObrowser`).
+Select your image tile in the main window and click :guilabel:`Visualize`. Alternatively, you can load your image by clicking :guilabel:`Visualize` in the left panel (:numref:`Fig6_EObrowser`).
 
 .. _Fig6_EObrowser:
 .. figure:: /Figure/Fig6_EObrowser-2.png
@@ -70,9 +70,9 @@ By default, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobro
 	The satellite image(s) are displayed.
 
 .. note:: **True colour synthesis:** |br|
-	Red band → Red colour |br|
-	Green band → Green colour |br|
-	Blue band → Blue colour
+	Satellite Red band → Image Red colour channel |br|
+	Satellite Green band → Image Green colour channel |br|
+	Satellite Blue band → Image Blue colour channel
 
 However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ shows the following additional pre-built colour composites:
 
@@ -91,9 +91,9 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 	False colour composite.
 
 .. note:: **False colour synthesis:** |br|
-	NIR band → Red colour |br|
-	Red band → Green colour |br|
-	Green band → Blue colour
+	Satellite NIR band → Image Red colour channel |br|
+	Satellite Red band → Image Green colour channel |br|
+	Satellite Green band → Image Blue colour channel
 
 - **False colour (urban)** (:numref:`Fig15_EObrowser`). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the Red spectral bands, represented as Red, Green and Blue colours respectively:
 
@@ -109,9 +109,9 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 	False colour (urban) composite.
 
 .. note:: **False colour (urban) synthesis:** |br|
-	SWIR band 1 → Red colour |br|
-	SWIR band 2 → Green colour |br|
-	Red band → Blue colour
+	Satellite SWIR band 1 → Image Red colour channel |br|
+	Satellite SWIR band 2 → Image Green colour channel |br|
+	Satellite Red band → Image Blue colour channel
 
 - **SWIR** (:numref:`Fig16_EObrowser`). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:
 
@@ -128,9 +128,9 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 	Shortwave infrared (SWIR) composite.
 
 .. note:: **SWIR colour synthesis:** |br|
-	SWIR band → Red colour |br|
-	NIR band → Green colour |br|
-	Red band → Blue colour
+	Satellite SWIR band → Image Red colour channel |br|
+	Satellite NIR band → Image Green colour channel |br|
+	Satellite Red band → Image Blue colour channel
 
 `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ also shows the maps of some basic spectral indices. These parameters are useful to recognize different land cover types and monitor the status of vegetated land. Specifically:
 
@@ -191,14 +191,14 @@ Additionally, there is a simple scene classification map with 9 land cover class
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
-
+|br|
 
 3.1.3. How to download the data with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````
 .. warning:: **Sign up for Copernicus Open Access Hub.** |br|
 	The images searched with `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are downloaded from the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_. `Sign up for a free account! <https://scihub.copernicus.eu/dhus/#/home>`_
 
-1. Click the green chain symbol to show the download link at the bottom of the image (``SciHub link:``),
+1. Click the green chain symbol to show the download link at the bottom of the image (:guilabel:`SciHub link:`),
 
 2. Click the link to download the data.
 
@@ -213,19 +213,13 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 .. note:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
 
-
+|br|
+|br|
 
 3.2. Some alternative repositories
 ----------------------------------
 Alternative European repositories are the Copernicus Open Access Hub (:numref:`Fig1_scihub`) and the DIASs (:numref:`Fig_DIAS`) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. |br|
-Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_
-
-.. _Fig1_scihub:
-.. figure:: /Figure/Fig1_scihub.png
-
-	Copernicus Open Access Hub
-
-and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
+Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_ and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
 
 - `CREO DIAS <https://creodias.eu>`_,
 - `MUNDI web services <https://mundiwebservices.com>`_,
@@ -233,9 +227,14 @@ and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
 - `Sobloo <https://sobloo.eu>`_,
 - `WEkEO <https://wekeo.eu>`_.
 
+.. _Fig1_scihub:
+.. figure:: /Figure/Fig1_scihub.png
+
+	Copernicus Open Access Hub.
+
 .. _Fig_DIAS:
 .. figure:: /Figure/Fig_DIAS.png
 
-	Data and Information Access Services (DIAS).
+	Data and Information Access Services (credit: European Commission).
 
 .. caution:: Sentinel images could also be downloaded from the US repositories `EarthExplorer <https://earthexplorer.usgs.gov/>`_ and `GloVis <https://glovis.usgs.gov/app?fullscreen=0>`_. However, this repository mirrors only ``L1C`` products (i.e. images which are NOT atmospherically corrected)!

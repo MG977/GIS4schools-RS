@@ -199,6 +199,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="rs_authors.html">5. About us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#marco-gianinetto-theoretical-topics">5.1 Marco GIANINETTO (theoretical topics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#francesco-niccolo-polinelli-hands-on-exercises">5.2 Francesco Niccolò POLINELLI (hands-on exercises)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="rs_version.html">v.</a></li>
 </ul>
 
@@ -315,6 +320,7 @@ This variation of reflectance with wavelengths is called <strong>spectral signat
 <span id="fig7-signature"></span><img alt="_images/Fig7_signature.png" src="_images/Fig7_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="how-to-measure-spectral-signatures-with-satellites">
 <h3>2.1.2. How to measure spectral signatures with satellites<a class="headerlink" href="#how-to-measure-spectral-signatures-with-satellites" title="Permalink to this headline">¶</a></h3>
@@ -329,6 +335,8 @@ This variation of reflectance with wavelengths is called <strong>spectral signat
 <p class="last"><strong>Remember to use ONLY atmospherically corrected images!</strong> <br />
 Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, <strong>atmospheric scattering is a noise</strong> that must be removed before image manipulation or analysis.</p>
 </div>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="spectral-indices-for-environmental-monitoring">
@@ -386,6 +394,7 @@ Multispectral satellite images capture both the sunlight reflected by the Earth�
 <li>Evaluate the snow cover,</li>
 <li>And many others.</li>
 </ul>
+<p><br /></p>
 </div>
 <div class="section" id="how-spectral-indices-are-designed">
 <span id="examples-of-spectral-indices-for-studying-vegetation"></span><h3>2.2.2. How spectral indices are designed<a class="headerlink" href="#how-spectral-indices-are-designed" title="Permalink to this headline">¶</a></h3>
@@ -450,6 +459,8 @@ See <a class="reference external" href="https://cropsat.com/" rel="noopener nore
 The <a class="reference external" href="https://www.indexdatabase.de/" rel="noopener noreferrer" target="_blank">Index DataBase</a> is a collection of spectral indices for different applications and sensors. Here you find a selection of <a class="reference external" href="https://www.indexdatabase.de/db/is.php?sensor_id=96" rel="noopener noreferrer" target="_blank">250 spectral indices designed to fit the images of the Sentinel-2 satellite</a>. <br />
 If you like to import these spectral indices into Sentinel Hub EO Browser, try these <a class="reference external" href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/" rel="noopener noreferrer" target="_blank">javascript</a>.</p>
 </div>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="automatic-land-cover-mapping">
@@ -477,8 +488,9 @@ Some examples of land use classes are:</p>
 <p>Remote sensing systems can provide information on physical coverages. Thus <em>land use cannot be determined by analysing satellite images.</em><a class="reference internal" href="#fig1-maps"><span class="std std-numref">Fig. 22</span></a> shows the difference between land cover and land use.</p>
 <div class="figure align-default" id="id14">
 <span id="fig1-maps"></span><img alt="_images/Fig1_Maps.png" src="_images/Fig1_Maps.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Land cover map vs land use map for the city of Toronto (Canada).</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="supervised-image-classification">
 <h3>2.3.2 Supervised image classification<a class="headerlink" href="#supervised-image-classification" title="Permalink to this headline">¶</a></h3>
@@ -488,7 +500,7 @@ Some examples of land use classes are:</p>
 <strong>Remember to collect training samples for ALL land cover classes you want to map.</strong> Otherwise, some categories will not be recognised!</p>
 <div class="figure align-default" id="id15">
 <span id="fig9-signature"></span><img alt="_images/Fig9_signature.png" src="_images/Fig9_signature.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Training sites and training samples..</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Training sites and training samples.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now we want the classification algorithm to <strong>predict</strong> each image pixel’s <strong>UNKNOWN land cover</strong> based on their spectral signature’s <strong>similarity</strong> (calculated from the multiband satellite images) with the <strong>KNOWN training samples</strong>. The output is a classification map with all the classes defined by the training samples (<a class="reference internal" href="#fig10-signature"><span class="std std-numref">Fig. 24</span></a>).</p>
 <p><strong>In other words, a classification map is a prediction based on the knowledge of some (limited) training sites.</strong></p>
@@ -515,51 +527,66 @@ The subject is so vast that we cannot generalize, and it is out-of-scope for thi
 <p class="first admonition-title">Note</p>
 <p class="last">See <a class="reference internal" href="rs_casestudies.html#mapping-crop-types"><span class="std std-ref">4.2 Mapping crop types (difficulty: intermediate)</span></a> to check how the Minimum Distance (to Means) classifier works.</p>
 </div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+Navigate the <a class="reference external" href="https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&amp;source=sd" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe</a>.</p>
+</div>
 <p>&lt;—————————————————————————————————————————————-&gt; <br />
 &lt;————————————————— TO BE COMPLETED ————————————————-&gt; <br />
 &lt;—————————————————————————————————————————————-&gt; <br /></p>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="map-validation">
 <h2>2.4. Map validation<a class="headerlink" href="#map-validation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="precision-bias-and-accuracy">
 <h3>2.4.1 Precision, bias and accuracy<a class="headerlink" href="#precision-bias-and-accuracy" title="Permalink to this headline">¶</a></h3>
-<p>To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy.</p>
-<p>Assume that three archers are participating in a tournament. <br />
-The first archer always hit the same spot, but his arrows are systematically displaced from the target’s centre (<a class="reference internal" href="#fig1-validation"><span class="std std-numref">Fig. 25</span></a>).</p>
+<p>To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy. <br />
+Assume that three archers are participating in a tournament.</p>
+<p>The first archer always hit the same spot, but his arrows are systematically displaced from the target’s centre (<a class="reference internal" href="#fig1-validation"><span class="std std-numref">Fig. 25</span></a>).</p>
 <div class="figure align-default" id="id17">
-<span id="fig1-validation"></span><img alt="_images/Fig1_validation.png" src="_images/Fig1_validation.png" />
+<span id="fig1-validation"></span><a class="reference internal image-reference" href="_images/Fig1_validation.png"><img alt="_images/Fig1_validation.png" src="_images/Fig1_validation.png" style="width: 328.5px; height: 285.3px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">The first archer’s shots.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second archer fires his arrows close to the target’s centre, but scattered (<a class="reference internal" href="#fig2-validation"><span class="std std-numref">Fig. 26</span></a>).</p>
 <div class="figure align-default" id="id18">
-<span id="fig2-validation"></span><img alt="_images/Fig2_validation.png" src="_images/Fig2_validation.png" />
+<span id="fig2-validation"></span><a class="reference internal image-reference" href="_images/Fig2_validation.png"><img alt="_images/Fig2_validation.png" src="_images/Fig2_validation.png" style="width: 285.3px; height: 285.3px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">The second archer’s shots.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
-<p>Finally, the third archer fires his arrows all grouped in the target’s centre (<a class="reference internal" href="#fig3-validation"><span class="std std-numref">Fig. 27</span></a>).</p>
+<p>The third archer fires his arrows all grouped in the target’s centre (<a class="reference internal" href="#fig3-validation"><span class="std std-numref">Fig. 27</span></a>).</p>
 <div class="figure align-default" id="id19">
-<span id="fig3-validation"></span><img alt="_images/Fig3_validation.png" src="_images/Fig3_validation.png" />
+<span id="fig3-validation"></span><a class="reference internal image-reference" href="_images/Fig3_validation.png"><img alt="_images/Fig3_validation.png" src="_images/Fig3_validation.png" style="width: 285.3px; height: 285.3px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">The third archer’s shots.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
-<p>The first archer is <strong>precise</strong> because his arrows always hit the same spot. Precision refers to the <em>reproducibility</em> of the archer’s shots. <br />
-We can define precision as the degree to which repeated attempts (under unchanged conditions) give the same result. Thus, precision describes the <em>reliability</em> of a measure and lack of precision implies random errors.
-Nevertheless, the first archer is not accurate because his arrows are systematically displaced from the target’s centre.</p>
-<p>The second archer is <strong>unbiased</strong> but imprecise. His arrows do not have a systematic displacement from the target’s centre, but are not close to each other. Bias refers to <em>systematic errors</em> of the archer’s shots. <br />
-We can define <strong>bias</strong> as the tendency of repeated attempts (under unchanged conditions) to systematically shift in one direction from the true value.</p>
-<p>The third archer is <strong>accurate</strong>. His arrows are all grouped together and placed in the target’s centre. Accuracy refers to the <em>closeness</em> of the archer’s shots to the target centre. <br />
+<p>How do the archers perform?</p>
+<p>The first archer is <strong>precise</strong> because his arrows always hit the same spot. <br />
+We can define precision as the degree to which repeated attempts (under unchanged conditions) give the same result. Thus, precision describes the <em>reliability</em> of the archer’s shots, and lack of precision implies random errors. <br />
+<em>The first archer is not accurate because his arrows are systematically displaced from the target’s centre.</em></p>
+<p>The second archer’s arrows do not have a systematic displacement from the target’s centre but are not close to each other. Thus, the archer is <strong>unbiased</strong> but <strong>imprecise</strong>. <br />
+We can define <strong>bias</strong> as the tendency of repeated attempts (under unchanged conditions) to systematically shift in one direction from the true value. Thus, bias describes <em>systematic errors</em> of the archer’s shots (like the first archer). <br />
+<em>Also, the second archer is not accurate.</em></p>
+<p>The third archer is <strong>accurate</strong> because his arrows are all grouped together and placed in the target’s centre. <br />
 We can define <strong>accuracy</strong> as the degree to which repeated attempts (under unchanged conditions) are close to the true value. <strong>Thus, an accurate archer is both precise and unbiased.</strong></p>
+<p><br /></p>
 </div>
 <div class="section" id="how-much-is-accurate-a-map">
 <h3>2.4.2 How much is accurate a map?<a class="headerlink" href="#how-much-is-accurate-a-map" title="Permalink to this headline">¶</a></h3>
-<p>Referring to the mapping process, <strong>accuracy</strong> is the most used performance metric and tells <em>“how many sites were mapped correctly.”</em></p>
-<p>Map accuracy is estimated using the <strong>confusion matrix</strong>, a table that relates the actual land cover of some KNOWN reference locations, called the <em>testing samples</em>, with their predicted values in the map. <br />
-In this table, rows represent the instances of testing samples in the predicted land cover class, columns represent the instances of testing samples in the actual land cover class. <br />
-<a class="reference internal" href="#fig1-confmatrix"><span class="std std-numref">Fig. 28</span></a> shows an example of a confusion matrix computed for a 4-class thematic map. Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly. <br />
-<a class="reference internal" href="#fig2-confmatrix"><span class="std std-numref">Fig. 29</span></a> highlights the number of misclassified testing samples (red cells). Overall, the confusion matrix has 434 testing samples.</p>
+<p>Referring to the mapping process, <strong>accuracy</strong> is the most used performance metric and tells <em>“how many sites are mapped correctly.”</em></p>
+<p>Map accuracy is estimated using the <strong>confusion matrix</strong>, a table that relates the actual land cover of some KNOWN reference locations, called the <em>testing samples</em>, with their predicted values in the map. <br /></p>
+<p><a class="reference internal" href="#fig1-confmatrix"><span class="std std-numref">Fig. 28</span></a> shows an example of a confusion matrix computed for a 4-class thematic map. In this table:</p>
+<ul class="simple">
+<li>Columns represent the instances of testing samples in the actual land cover class,</li>
+<li>Rows represent the instances of testing samples in the predicted land cover class,</li>
+<li>Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly.</li>
+</ul>
 <div class="figure align-default" id="id20">
 <span id="fig1-confmatrix"></span><img alt="_images/Fig1_confmatrix.png" src="_images/Fig1_confmatrix.png" />
 <p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Confusion matrix. Number of testing samples correctly classified.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
+<p><a class="reference internal" href="#fig2-confmatrix"><span class="std std-numref">Fig. 29</span></a> highlights the number of misclassified testing samples (red cells). <br />
+Overall, the confusion matrix has <strong>434 testing samples.</strong></p>
 <div class="figure align-default" id="id21">
 <span id="fig2-confmatrix"></span><img alt="_images/Fig2_confmatrix.png" src="_images/Fig2_confmatrix.png" />
 <p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Confusion matrix. Number of misclassified testing samples.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
@@ -570,7 +597,7 @@ In this table, rows represent the instances of testing samples in the predicted 
 To evaluate the map’s accuracy, we must compare predicted land cover classes with actual land cover classes. This is done using the testing samples, which are image pixels randomly collected, but those actual land cover is KNOWN. Results are then extended from the testing samples to the full map.</p>
 <p class="last"><strong>GUIDELINE: testing samples must be randomly collected for ALL land cover classes. There should be no less than 50 testing samples for each land cover class.</strong></p>
 </div>
-<p><strong>Overall accuracy</strong> <br />
+<p><strong>a. Overall accuracy</strong> <br />
 Suppose we want to quantify the proportion of correct predictions, without giving any insight into the single accuracy of land cover classes. <em>In other words, how many testing samples are globally labelled correctly in the classified map?</em> <br />
 It is called <strong>overall accuracy</strong> and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:</p>
 <div class="math notranslate nohighlight" id="equation-eqacc1">
@@ -578,9 +605,9 @@ It is called <strong>overall accuracy</strong> and is usually expressed as a per
 <p>In our example (<a class="reference internal" href="#fig1-confmatrix"><span class="std std-numref">Fig. 28</span></a>):</p>
 <div class="math notranslate nohighlight" id="equation-eqacc2">
 <span class="eqno">(4)<a class="headerlink" href="#equation-eqacc2" title="Permalink to this equation">¶</a></span>\[Overall\ accuracy=\frac{65+81+85+90}{434}=74.0 \%\]</div>
-<p><strong>Producer’s accuracy</strong> <br />
+<p><strong>b. Producer’s accuracy</strong> <br />
 Suppose we want to quantify the proportion of correct predictions for each of the real-world land cover class. <em>In other words, for a given land cover class in the real world, how many testing samples are labelled correctly in the classified map?</em> <br />
-This is the accuracy from the point of view of the mapmaker (the producer). It called is called <strong>producer’s accuracy</strong> (also recall) and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:</p>
+This is the accuracy from the point of view of the mapmaker (the producer). It called is called <strong>producer’s accuracy</strong> and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:</p>
 <div class="math notranslate nohighlight" id="equation-eqacc3">
 <span class="eqno">(5)<a class="headerlink" href="#equation-eqacc3" title="Permalink to this equation">¶</a></span>\[Producer\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ column\ i}\]</div>
 <p>In our example (<a class="reference internal" href="#fig1-confmatrix"><span class="std std-numref">Fig. 28</span></a>):</p>
@@ -593,9 +620,9 @@ This is the accuracy from the point of view of the mapmaker (the producer). It c
 <div class="math notranslate nohighlight" id="equation-eqacc7">
 <span class="eqno">(9)<a class="headerlink" href="#equation-eqacc7" title="Permalink to this equation">¶</a></span>\[Producer\prime s\ accuracy\ for\ class\ D=\frac{90}{24+8+19+90}=63.8 \%\]</div>
 <p>Thus, the classifier is mapping real world class A with higher accuracy.</p>
-<p><strong>User’s accuracy</strong> <br />
+<p><strong>c. User’s accuracy</strong> <br />
 Suppose we want to quantify the proportion of correct predictions for each of the mapped classes. <em>In other words, for a given class in the map, how many testing samples are really present on the ground?</em> <br />
-This is the accuracy from the point of view of the map user. It called is called <strong>user’s accuracy</strong> (also precision) and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:</p>
+This is the accuracy from the point of view of the map user. It called is called <strong>user’s accuracy</strong> and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:</p>
 <div class="math notranslate nohighlight" id="equation-eqacc8">
 <span class="eqno">(10)<a class="headerlink" href="#equation-eqacc8" title="Permalink to this equation">¶</a></span>\[User\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ row\ i}\]</div>
 <p>In our example (<a class="reference internal" href="#fig1-confmatrix"><span class="std std-numref">Fig. 28</span></a>):</p>

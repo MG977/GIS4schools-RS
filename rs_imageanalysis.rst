@@ -62,7 +62,7 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 	Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).
 
-
+|br|
 
 2.1.2. How to measure spectral signatures with satellites
 `````````````````````````````````````````````````````````
@@ -78,7 +78,8 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
 	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
 
-
+|br|
+|br|
 
 .. _Spectral-indices-for-environmental-monitoring:
 
@@ -114,6 +115,7 @@ The most popular spectral indices are those to retrieve the status of vegetation
 - Evaluate the snow cover,
 - And many others.
 
+|br|
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
@@ -190,6 +192,8 @@ The list of existing spectral indices is very long, but you could build your own
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
+|br|
+|br|
 
 .. _Automatic-land-cover-mapping:
 
@@ -222,9 +226,9 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 .. _Fig1_Maps:
 .. figure:: /Figure/Fig1_Maps.png
 
-	Land cover map vs land use map for the city of Toronto (Canada).
+	Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).
 
-
+|br|
 
 2.3.2 Supervised image classification
 `````````````````````````````````````
@@ -238,7 +242,7 @@ For each class, pick some training samples on the satellite image and label with
 .. _Fig9_signature:
 .. figure:: /Figure/Fig9_signature.png
 
-	Training sites and training samples..
+	Training sites and training samples.
 
 Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** (calculated from the multiband satellite images) with the **KNOWN training samples**. The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
 
@@ -265,26 +269,30 @@ A simple and popular method is the **Minimum Distance (to Means)** classifier. T
 
 .. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
 
+.. hint:: **Small activity** |br|
+	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
 
 
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 <--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
 <----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
-
+|br|
+|br|
 
 2.4. Map validation
 -------------------
 
 2.4.1 Precision, bias and accuracy
 ````````````````````````````````````
-To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy.
+To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy. |br|
+Assume that three archers are participating in a tournament.
 
-Assume that three archers are participating in a tournament. |br|
 The first archer always hit the same spot, but his arrows are systematically displaced from the target’s centre (:numref:`Fig1_validation`).
 
 .. _Fig1_validation:
 .. figure:: /Figure/Fig1_validation.png
+	:scale: 30%
 
 	The first archer's shots.
 
@@ -292,39 +300,53 @@ The second archer fires his arrows close to the target’s centre, but scattered
 
 .. _Fig2_validation:
 .. figure:: /Figure/Fig2_validation.png
+	:scale: 30%
 
 	The second archer's shots.
 
-Finally, the third archer fires his arrows all grouped in the target’s centre (:numref:`Fig3_validation`).
+The third archer fires his arrows all grouped in the target’s centre (:numref:`Fig3_validation`).
 
 .. _Fig3_validation:
 .. figure:: /Figure/Fig3_validation.png
+	:scale: 30%
 
 	The third archer's shots.
 
-The first archer is **precise** because his arrows always hit the same spot. Precision refers to the *reproducibility* of the archer’s shots. |br|
-We can define precision as the degree to which repeated attempts (under unchanged conditions) give the same result. Thus, precision describes the *reliability* of a measure and lack of precision implies random errors.
-Nevertheless, the first archer is not accurate because his arrows are systematically displaced from the target’s centre.
+How do the archers perform?
 
-The second archer is **unbiased** but imprecise. His arrows do not have a systematic displacement from the target’s centre, but are not close to each other. Bias refers to *systematic errors* of the archer’s shots. |br|
-We can define **bias** as the tendency of repeated attempts (under unchanged conditions) to systematically shift in one direction from the true value.
+The first archer is **precise** because his arrows always hit the same spot. |br|
+We can define precision as the degree to which repeated attempts (under unchanged conditions) give the same result. Thus, precision describes the *reliability* of the archer’s shots, and lack of precision implies random errors. |br|
+*The first archer is not accurate because his arrows are systematically displaced from the target’s centre.*
 
-The third archer is **accurate**. His arrows are all grouped together and placed in the target’s centre. Accuracy refers to the *closeness* of the archer’s shots to the target centre. |br|
+The second archer's arrows do not have a systematic displacement from the target's centre but are not close to each other. Thus, the archer is **unbiased** but **imprecise**. |br|
+We can define **bias** as the tendency of repeated attempts (under unchanged conditions) to systematically shift in one direction from the true value. Thus, bias describes *systematic errors* of the archer's shots (like the first archer). |br|
+*Also, the second archer is not accurate.*
+
+The third archer is **accurate** because his arrows are all grouped together and placed in the target’s centre. |br|
 We can define **accuracy** as the degree to which repeated attempts (under unchanged conditions) are close to the true value. **Thus, an accurate archer is both precise and unbiased.**
+
+|br|
 
 2.4.2 How much is accurate a map?
 `````````````````````````````````
-Referring to the mapping process, **accuracy** is the most used performance metric and tells *“how many sites were mapped correctly.”*
+Referring to the mapping process, **accuracy** is the most used performance metric and tells *“how many sites are mapped correctly.”*
 
 Map accuracy is estimated using the **confusion matrix**, a table that relates the actual land cover of some KNOWN reference locations, called the *testing samples*, with their predicted values in the map. |br|
-In this table, rows represent the instances of testing samples in the predicted land cover class, columns represent the instances of testing samples in the actual land cover class. |br|
-:numref:`Fig1_confmatrix` shows an example of a confusion matrix computed for a 4-class thematic map. Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly. |br|
-:numref:`Fig2_confmatrix` highlights the number of misclassified testing samples (red cells). Overall, the confusion matrix has 434 testing samples.
+
+:numref:`Fig1_confmatrix` shows an example of a confusion matrix computed for a 4-class thematic map. In this table:
+
+- Columns represent the instances of testing samples in the actual land cover class,
+- Rows represent the instances of testing samples in the predicted land cover class,
+- Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly.
 
 .. _Fig1_confmatrix:
 .. figure:: /Figure/Fig1_confmatrix.png
 
 	Confusion matrix. Number of testing samples correctly classified.
+
+
+:numref:`Fig2_confmatrix` highlights the number of misclassified testing samples (red cells). |br|
+Overall, the confusion matrix has **434 testing samples.**
 
 .. _Fig2_confmatrix:
 .. figure:: /Figure/Fig2_confmatrix.png
@@ -336,7 +358,7 @@ In this table, rows represent the instances of testing samples in the predicted 
 
 	**GUIDELINE: testing samples must be randomly collected for ALL land cover classes. There should be no less than 50 testing samples for each land cover class.**
 
-**Overall accuracy** |br|
+**a. Overall accuracy** |br|
 Suppose we want to quantify the proportion of correct predictions, without giving any insight into the single accuracy of land cover classes. *In other words, how many testing samples are globally labelled correctly in the classified map?* |br|
 It is called **overall accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
 
@@ -348,9 +370,9 @@ In our example (:numref:`Fig1_confmatrix`):
 .. math:: Overall\ accuracy=\frac{65+81+85+90}{434}=74.0 \%
 	:label: eqacc2
 
-**Producer’s accuracy** |br|
+**b. Producer’s accuracy** |br|
 Suppose we want to quantify the proportion of correct predictions for each of the real-world land cover class. *In other words, for a given land cover class in the real world, how many testing samples are labelled correctly in the classified map?* |br|
-This is the accuracy from the point of view of the mapmaker (the producer). It called is called **producer’s accuracy** (also recall) and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
+This is the accuracy from the point of view of the mapmaker (the producer). It called is called **producer’s accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
 
 .. math:: Producer\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ column\ i}
 	:label: eqacc3
@@ -371,9 +393,9 @@ In our example (:numref:`Fig1_confmatrix`):
 
 Thus, the classifier is mapping real world class A with higher accuracy.
 
-**User’s accuracy** |br|
+**c. User’s accuracy** |br|
 Suppose we want to quantify the proportion of correct predictions for each of the mapped classes. *In other words, for a given class in the map, how many testing samples are really present on the ground?* |br|
-This is the accuracy from the point of view of the map user. It called is called **user’s accuracy** (also precision) and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
+This is the accuracy from the point of view of the map user. It called is called **user’s accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
 
 .. math:: User\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ row\ i}
 	:label: eqacc8

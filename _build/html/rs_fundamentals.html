@@ -199,6 +199,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="rs_authors.html">5. About us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#marco-gianinetto-theoretical-topics">5.1 Marco GIANINETTO (theoretical topics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#francesco-niccolo-polinelli-hands-on-exercises">5.2 Francesco Niccolò POLINELLI (hands-on exercises)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="rs_version.html">v.</a></li>
 </ul>
 
@@ -279,6 +284,8 @@
 (Source: <a class="reference external" href="https://ec.europa.eu/jrc/en/research-topic/earth-observation" rel="noopener noreferrer" target="_blank">European Commission</a>).</div></blockquote>
 <p>That means <em>Earth observation</em> <strong>is the process</strong> of collecting information on our planet using <strong>non-contact</strong> <em>remote sensing</em> <strong>technologies</strong>.</p>
 <p>Thus, <em>Earth observation</em> provides <strong>raw data</strong> and a set of methods for their <strong>processing</strong> and <strong>analysis</strong>, while <em>geographic information systems (GIS)</em> offer a framework for the <strong>management</strong>, <strong>manipulation</strong>, <strong>query</strong> and <strong>representation</strong> of the geospatial information.</p>
+<p><br />
+<br /></p>
 </div>
 <div class="section" id="satellites-for-earth-observation">
 <h2>1.2. Satellites for Earth observation<a class="headerlink" href="#satellites-for-earth-observation" title="Permalink to this headline">¶</a></h2>
@@ -294,19 +301,20 @@
 <p>On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.</p>
 <div class="figure align-default" id="id8">
 <span id="fig-intro-sat"></span><img alt="_images/Fig_intro_SAT.png" src="_images/Fig_intro_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Earth observation missions developed by the European Space Agency.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Earth observation missions developed by the European Space Agency (credit: ESA).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="section" id="satellite-orbits-and-revisit-time">
 <h3>1.2.1. Satellite orbits and revisit time<a class="headerlink" href="#satellite-orbits-and-revisit-time" title="Permalink to this headline">¶</a></h3>
-<p><strong>Geostationary orbit (GEO)</strong> <br />
+<p><strong>a. Geostationary orbit (GEO)</strong> <br />
 Satellites in geostationary orbit circle Earth above the equator from west to east following Earth’s rotation at an <em>altitude of 35,800 km</em> and a <em>speed of about 3 km/s</em>. This makes geostationary satellites to be ‘stationary’ over a fixed location. <br />
 These satellites can image the portion of the Earth’s surface they are looking at every 30 minutes or less. <strong>Most of the satellites used for weather forecasts have a geostationary orbit.</strong></p>
-<p><strong>Medium Earth orbit (MEO)</strong> <br />
+<p><strong>b. Medium Earth orbit (MEO)</strong> <br />
 Satellites in a medium Earth orbit circle the Earth at an <em>altitude between 1,000 km and 35,800 km</em>, with <em>revisit times defined by their orbital altitude</em>. <br />
 Satellites for Earth observation do not use this orbit. However <strong>navigation satellites, like the European Galileo system or the American GPS, have a medium Earth orbit.</strong></p>
-<p><strong>Low Earth orbit (LEO)</strong> <br />
+<p><strong>c. Low Earth orbit (LEO)</strong> <br />
 Satellites in a low Earth orbit circle close to Earth’s surface, at an <em>altitude between 200 km and 1,000 km</em> and a <em>speed of about 7.8 km/s</em>. At this speed, a satellite takes approximately 90 minutes to circle Earth. Thus, travels around Earth about 16 times a day.</p>
-<p><strong>Sun-synchronous orbit (SSO)</strong> <br />
+<p><strong>d. Sun-synchronous orbit (SSO)</strong> <br />
 This is a particular kind of Low Earth Orbit, where satellites circle from north to south and are always in the same ‘fixed’ position relative to the Sun. This means that the satellites still visits the same geographic location at the same local time. <br />
 <strong>Most of satellites for Earth observation have a Sun-synchronous low Earth orbit, with an altitude between 600 km and 800 km and a speed of approximately 7.5 km/s.</strong></p>
 <div class="admonition note">
@@ -320,7 +328,7 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 </div>
 <div class="figure align-default" id="id9">
 <span id="fig1-sat"></span><img alt="_images/Fig1_SAT.png" src="_images/Fig1_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Satellite orbits.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Satellite orbits (credit: adapted from Mark Mercer, 2011).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -332,15 +340,16 @@ See the real-time location of about 19,300 manmade objects orbiting the Earth wi
 <p class="last"><strong>Small activity</strong> <br />
 Search for a specific satellite with the <a class="reference external" href="https://www.n2yo.com/" rel="noopener noreferrer" target="_blank">live real time satellite tracking and predictions</a> (up to date).</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="imaging-cameras">
 <h3>1.2.2. Imaging cameras<a class="headerlink" href="#imaging-cameras" title="Permalink to this headline">¶</a></h3>
 <p>Remote sensing satellites use special “cameras” that produce greyscale digital images (<a class="reference internal" href="#fig-camera-sat"><span class="std std-numref">Fig. 3</span></a>).</p>
-<p>A greyscale digital image is a <strong>matrix</strong> (i.e. table) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular <strong>range of wavelengths of the electromagnetic spectrum</strong> (called <strong>spectral band</strong>, or just <strong>band</strong>) (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 4</span></a>).</p>
 <div class="figure align-default" id="id10">
 <span id="fig-camera-sat"></span><img alt="_images/Fig_camera_SAT.png" src="_images/Fig_camera_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The imaging camera of the Sentinel-2 satellite.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The imaging camera of the Sentinel-2 satellite (credit: ESA).</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
+<p>A greyscale digital image is a <strong>matrix</strong> (i.e. table) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular <strong>range of wavelengths of the electromagnetic spectrum</strong> (called <strong>spectral band</strong>, or just <strong>band</strong>) (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 4</span></a>).</p>
 <div class="figure align-default" id="id11">
 <span id="fig3-sat"></span><img alt="_images/Fig3_SAT.png" src="_images/Fig3_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The digital image as a table of numbers.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
@@ -350,7 +359,7 @@ Search for a specific satellite with the <a class="reference external" href="htt
 We can think of the different wavelengths as different “colours”.</p>
 <div class="figure align-default" id="id12">
 <span id="fig4-sat"></span><img alt="_images/Fig4_SAT.png" src="_images/Fig4_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum (credit: unknown author).</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>Unfortunately, most of these “colours” and “light” are invisible to our eyes! <br />
 We humans can see only the colours of the <strong>VISIBLE</strong> light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. <br />
@@ -368,6 +377,7 @@ We humans can see only the colours of the <strong>VISIBLE</strong> light. Howeve
 <p class="last"><strong>Small activity</strong> <br />
 See planet Earth live from the International Space Station with the <a class="reference external" href="https://www.n2yo.com/space-station/" rel="noopener noreferrer" target="_blank">External High Definition Camera</a> (real time streaming).</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="spatial-resolution-and-swath-width">
 <h3>1.2.3. Spatial resolution and swath width<a class="headerlink" href="#spatial-resolution-and-swath-width" title="Permalink to this headline">¶</a></h3>
@@ -397,6 +407,7 @@ Generally speaking:</p>
 <p class="last"><strong>Spatial resolution vs orbital altitude</strong> <br />
 The spatial resolution is proportional to the orbital altitude. Thus, Geostationary satellites have a low spatial resolution, while Low Earth Orbit satellites could achieve very high spatial resolution.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="spectral-characteristics">
 <span id="id1"></span><h3>1.2.4. Spectral characteristics<a class="headerlink" href="#spectral-characteristics" title="Permalink to this headline">¶</a></h3>
@@ -435,7 +446,7 @@ You might also use this <a class="reference external" href="https://drive.google
 <p>The combination of different greyscale spectral bands produces the colours of satellite images (<a class="reference internal" href="#fig-venezia-sat"><span class="std std-numref">Fig. 11</span></a>).</p>
 <div class="figure align-default" id="id18">
 <span id="fig-venezia-sat"></span><img alt="_images/Fig_Venezia_SAT.png" src="_images/Fig_Venezia_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Satellite colour image of Venice (Italy).</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -448,6 +459,8 @@ Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combi
 </ul>
 <p class="last"><em>What happens to colours if you mix up the bands?</em></p>
 </div>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="copernicus-and-the-sentinels">
@@ -469,10 +482,11 @@ Try <a class="reference external" href="http://flaticon.sodhanalibrary.com/combi
 <li>Transport and mobility,</li>
 <li>Tourism.</li>
 </ul>
+<p><br /></p>
 </div>
 <div class="section" id="multispectral-sentinel-satellites">
 <h3>1.3.2. Multispectral Sentinel satellites<a class="headerlink" href="#multispectral-sentinel-satellites" title="Permalink to this headline">¶</a></h3>
-<p><strong>SENTINEL-2</strong> <br />
+<p><strong>Sentinel-2</strong> <br />
 The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide <strong>multispectral medium resolution imagery</strong> for land services. <br />
 Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. <br /></p>
 <p>The mission objectives for Sentinel-2 are systematic:</p>
@@ -573,7 +587,8 @@ Their orbit is Sun-synchronous, and the constellation (2 identical satellites) h
 <td>290 km</td>
 <td>Sensitive to lignin, discrimination of snow / ice / clouds</td>
 </tr>
-<tr class="row-even"><td colspan="2">12    Short-wave infrared 3</td>
+<tr class="row-even"><td>12</td>
+<td>Short-wave infrared 3</td>
 <td>20 m</td>
 <td>290 km</td>
 <td>Distinction of live and dead biomass, discrimination of snow / ice / clouds</td>
@@ -584,7 +599,8 @@ Their orbit is Sun-synchronous, and the constellation (2 identical satellites) h
 <p class="first admonition-title">Hint</p>
 <p class="last">See how Sentinel-2 <a class="reference external" href="https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action" rel="noopener noreferrer" target="_blank">collects multispectral images</a></p>
 </div>
-<p><strong>SENTINEL-3</strong> <br />
+<iframe src="https://www.esa.int/content/view/embedjw/473936" width="640" height="360" frameborder="0"></iframe><p><em>(Credit: ESA/ATG medialab).</em></p>
+<p><strong>Sentinel-3</strong> <br />
 The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide <strong>multispectral low resolution imagery</strong> for ocean and land services. <br />
 Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of fewer than 2 days. <br /></p>
 <p>The <em>Ocean and Land Colour Instrument (OLCI)</em> has a 300-meters spatial resolution in 21 spectral bands, with a swath width of 1,270 km. <br />
@@ -607,10 +623,13 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 <p class="first admonition-title">Hint</p>
 <p class="last"><a class="reference external" href="http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission" rel="noopener noreferrer" target="_blank">Look inside Sentinel-3</a></p>
 </div>
+<iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe><p><em>(Credit: ESA/ATG medialab).</em></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information, <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites" rel="noopener noreferrer" target="_blank">discover all the Sentinel satellites</a></p>
 </div>
+<p><br />
+<br /></p>
 </div>
 </div>
 <div class="section" id="beyond-satellite-images">
@@ -625,15 +644,11 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 <li>Security,</li>
 <li>Emergency,</li>
 </ul>
+<p><br /></p>
 <div class="section" id="copernicus-atmosphere-monitoring-service">
 <h3>1.4.1. Copernicus Atmosphere Monitoring Service<a class="headerlink" href="#copernicus-atmosphere-monitoring-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Atmosphere Monitoring Service</a> provides data and information on atmospheric composition. It describes the current situation, forecasts a few days ahead, and analyses consistently retrospective data records for recent years.</p>
 <p>For example, the Copernicus Atmosphere Monitoring Service provides daily information on the global atmospheric composition by monitoring and forecasting constituents such as greenhouse gases, reactive gases, ozone and aerosols. The service also delivers information on the solar radiation at the Earth’s surface (which is essential for health, agriculture and renewable energies), near-real-time analysis, 4-day forecasts, and reanalysis of the European air quality.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last"><strong>Small activity</strong> <br />
-See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?category=ensemble&amp;subensemble=hourly_ensemble&amp;date=LAST&amp;calculation-model=ENSEMBLE&amp;species=o3&amp;level=SFC&amp;offset=000" rel="noopener noreferrer" target="_blank">today’s air quality forecasts in Europe</a>.</p>
-</div>
 <p>Overall, the service focuses on five main areas:</p>
 <ul class="simple">
 <li>Air quality and atmospheric composition,</li>
@@ -642,20 +657,21 @@ See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?ca
 <li>Solar radiation,</li>
 <li>Climate forcing.</li>
 </ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?category=ensemble&amp;subensemble=hourly_ensemble&amp;date=LAST&amp;calculation-model=ENSEMBLE&amp;species=o3&amp;level=SFC&amp;offset=000" rel="noopener noreferrer" target="_blank">today’s air quality forecasts in Europe</a>.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Atmosphere Monitoring Service web site</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="copernicus-marine-environment-monitoring-service">
 <h3>1.4.2. Copernicus Marine Environment Monitoring Service<a class="headerlink" href="#copernicus-marine-environment-monitoring-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Marine Environment Monitoring Service</a> provides regular and systematic information on the physical and biogeochemical state, variability and dynamics of the ocean and marine ecosystems.</p>
 <p>For example, the Copernicus Marine Environment Monitoring Service improves ship routing services, offshore operations or search and rescue operations. The service also contributes to the protection and sustainable management of living marine resources. And the physical and biogeochemical components are useful for water quality monitoring, pollution control, or coastal erosion assessment.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last"><strong>Small activity</strong> <br />
-See past, present and future quality of the marine environment: <a class="reference external" href="https://cmems.lobelia.earth/data?view=viewer&amp;crs=epsg%3A4326&amp;t=1607385600000&amp;z=0&amp;center=-20%2C29&amp;zoom=11&amp;layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&amp;initial=1" rel="noopener noreferrer" target="_blank">My Ocean</a>.</p>
-</div>
 <p>Overall, the service focuses on four main areas:</p>
 <ul class="simple">
 <li>Marine safety,</li>
@@ -663,20 +679,21 @@ See past, present and future quality of the marine environment: <a class="refere
 <li>Coastal and marine environment,</li>
 <li>Weather, seasonal forecasting and climate.</li>
 </ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See past, present and future quality of the marine environment: <a class="reference external" href="https://cmems.lobelia.earth/data?view=viewer&amp;crs=epsg%3A4326&amp;t=1607385600000&amp;z=0&amp;center=-20%2C29&amp;zoom=11&amp;layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&amp;initial=1" rel="noopener noreferrer" target="_blank">My Ocean</a>.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Marine Environment Monitoring Service web site</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="copernicus-land-monitoring-service">
 <h3>1.4.3. Copernicus Land Monitoring Service<a class="headerlink" href="#copernicus-land-monitoring-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Land Monitoring Service</a> provides geographical information on land cover and its changes, land use, vegetation state, water cycle and Earth’s surface energy variables.</p>
 <p>For example, the Copernicus Land Monitoring Service supports applications such as spatial and urban planning, forest management, water management, agriculture and food security, nature conservation and restoration, rural development, ecosystem accounting and mitigation/adaptation to climate change.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last"><strong>Small activity</strong> <br />
-See the <a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe for 2018</a>.</p>
-</div>
 <p>Overall, the service focuses on five main areas:</p>
 <ul class="simple">
 <li>The systematic monitoring of biophysical parameters,</li>
@@ -685,10 +702,16 @@ See the <a class="reference external" href="https://land.copernicus.eu/pan-europ
 <li>Imagery and reference data,</li>
 <li>European ground motion activity.</li>
 </ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See the <a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe for 2018</a>.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Land Monitoring Service web site</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="copernicus-climate-change-service">
 <h3>1.4.4. Copernicus Climate Change Service<a class="headerlink" href="#copernicus-climate-change-service" title="Permalink to this headline">¶</a></h3>
@@ -703,36 +726,33 @@ See Copernicus <a class="reference external" href="https://climate.copernicus.eu
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Climate Change Service web site</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="copernicus-security-service">
 <h3>1.4.5. Copernicus Security Service<a class="headerlink" href="#copernicus-security-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Security Service</a> provides information in response to Europe’s security challenges.</p>
 <p>For example, the Copernicus Security Service supports the reduction of illegal immigrants’ death at sea, increases the European Union’s internal security, and fights against cross-border crime. It also increases navigation safety, supports fisheries control, combats marine pollution, and law enforcement at sea. Besides, the Copernicus Security Service provides decision-makers with geo-information on remote and difficult to access areas, where security issues are at stake.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last"><strong>Small activity</strong> <br />
-See how Copernicus Security can <a class="reference external" href="https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/" rel="noopener noreferrer" target="_blank">support evacuation plans</a>.</p>
-</div>
 <p>Overall, the service focuses on three main areas:</p>
 <ul class="simple">
 <li>Border surveillance,</li>
 <li>Maritime surveillance,</li>
 <li>Support to EU external action.</li>
 </ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See how Copernicus Security can <a class="reference external" href="https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/" rel="noopener noreferrer" target="_blank">support evacuation plans</a>.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Security Service web site</a>.</p>
 </div>
+<p><br /></p>
 </div>
 <div class="section" id="copernicus-emergency-management-service">
 <h3>1.4.6. Copernicus Emergency Management Service<a class="headerlink" href="#copernicus-emergency-management-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Emergency Management Service</a> provides all actors involved in managing natural disasters, man-made emergency situations, and humanitarian crises with timely and accurate satellite-based geospatial information completed by available on-site data or open data sources.</p>
 <p>For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last"><strong>Small activity</strong> <br />
-See the Copernicus Emergency Management system for <a class="reference external" href="https://www.efas.eu/efas_frontend/#/home" rel="noopener noreferrer" target="_blank">flood monitoring and forecast</a>.</p>
-</div>
 <p>Overall, the service focuses on two main areas (and four systems):</p>
 <ul class="simple">
 <li>The mapping component,</li>
@@ -742,6 +762,11 @@ See the Copernicus Emergency Management system for <a class="reference external"
 <li>The European Drought Observatory, which provides drought-relevant information and early-warnings for Europe,</li>
 <li>Global Flood Awareness System, Global Wildfire Information System and Global Drought Observatory complete the previous three systems globally.</li>
 </ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>Small activity</strong> <br />
+See the Copernicus Emergency Management system for <a class="reference external" href="https://www.efas.eu/efas_frontend/#/home" rel="noopener noreferrer" target="_blank">flood monitoring and forecast</a>.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For additional information see <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Emergency Management Service web site</a>.</p>
