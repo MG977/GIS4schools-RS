@@ -85,20 +85,36 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 2.1.3. How to compare spectral signatures
 `````````````````````````````````````````
 Spectral signatures are curves that describe the variation of reflectance with wavelengths :any:`What-is-a-spectral-signature`. The closer the curves are, the more they are similar. |br|
-Unfortunately, it is difficult to calculate a “distance” between curves.
+Unfortunately, it is difficult to calculate the “distance” between curves.
 
-Let’s build a reference system made of orthogonal axes that reproduce reflectances in each satellite's spectral band. This reference system is called **feature space**.
+Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called **feature space** and has **ONE AXIS FOR EACH SPECTRAL BAND**. |br|
+In the feature space, the spectral signatures become points (:numref:`Fig8bis_signature`).
 
-In the feature space, the spectral signatures become points (:numref:`Fig9_signature`). Thus, the closer the points are, the more they are similar.
+.. _Fig8bis_signature:
+.. figure:: /Figure/Fig8bis_signature.png
 
-Now, it is simple to calculate the “distance” between points. |br|
-The *Euclidean distance* is often used. Equation :eq:`eqSIG1` shows the formula for two points in 3-D feature space:
+	Top: Multispectral satellite image. Centre: spectral signatures extracted from the satellite image. Bottom: spectral signatures plotted in the feature space.
+
+Now, it is simple to calculate the spectarl signatures' **similarity**: the closer the points are, the more they are similar. |br|
+The *Euclidean distance* is often used. Equation :eq:`eqSIG1` shows the formula for two points (1 and 2) in 3-D feature space:
 
 .. math:: \sqrt{\left|x_2-x_1\right|^2+\left|y_2-y_1\right|^2+\left|z_2-z_1\right|^2}
    :label: eqSIG1
 
+where: |br|
+1 is the first spectral signature, |br|
+2 is the second spectral signature, |br|
+x is the axis for spectral band 1, |br|
+y is the axis for spectral band 2, |br|
+z is the axis for spectral band 3.
 
+.. note:: Usually, satellite images have more than 3 spectral bands. Thus, the feature space has more than 3 axes.
 
+.. note:: About spectral signatures in the feature space:
+
+	- Spectral signatures (curves) are transformed into points, |br|
+	- Similar spectral signatures are points close to each, |br|
+	- Image pixels with similar spectral signatures are grouped into a **cluster** (called **spectral class**).
 
 |br|
 |br|
