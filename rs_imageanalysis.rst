@@ -70,7 +70,7 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 `````````````````````````````````````````````````````````
 Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:any:`Spectral-characteristics`).
 
-Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we extract its spectral signature** (:numref:`Fig8_signature`).
+Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we approximate its continuous spectral signature with a polyline** *(a line made of segments)*. :numref:`Fig8_signature` shows an example.
 
 .. _Fig8_signature:
 .. figure:: /Figure/Fig8_signature.png
@@ -81,6 +81,8 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
 
 |br|
+
+.. _How-to-compare-spectral-signatures:
 
 2.1.3. How to compare spectral signatures
 `````````````````````````````````````````
@@ -282,7 +284,8 @@ For each class, pick some training samples on the satellite image and label them
 
 	Training sites and training samples.
 
-Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** (calculated from the multiband satellite images) with the **KNOWN training samples**. The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
+Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** with the **KNOWN training samples** (see :any:`How-to-compare-spectral-signatures`). |br|
+The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
 
 **In other words, the classification map is a prediction based on the knowledge of some limited training sites.**
 
@@ -293,29 +296,36 @@ Now we want the classification algorithm to **predict** each image pixel’s **U
 
 .. note:: **How many training samples?** |br|
 	Unfortunately, different classification techniques require a different number of (optimal) training samples! |br|
-	**A starting point for multispectral images like Sentinel-2 or Landsat could be about 200 training samples (i.e. image pixels) for each class.**
 
+	**SUGGESTION:** |br|
+	**A starting point for multispectral images like Sentinel-2 or Landsat could be about 200 image pixels for each class.**
 
+|br|
 
+2.3.3 Classification strategies
+````````````````````````````````
 A massive number of classification strategies are used in remote sensing. They have different requirements, constraints and accuracy. |br|
-The subject is so vast that we cannot generalize, and it is out-of-scope for this training.
+The subject is so vast that we cannot generalize and is out-of-scope for this training.
 
 A simple and popular method is the **Minimum Distance (to Means)** classifier. This technique:
 
-1. Calculates the mean spectral signature of each class’ training samples (with KNOWN land cover),
-2. Calculates the spectral signature of each image pixels with UNKNOWN land cover,
-3. Compares (1) and (2),
-4. Assigns each image pixel to the land cover class with the “closest” spectral signature.
+1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class,
+2. Measures the spectral signature of each image pixels with UNKNOWN land cover,
+3. Compares 1. and 2.,
+4. Assigns each image pixel to the land cover class with the “closest” *(minimum EUCLIDEAN distance)* spectral signature.
 
 .. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
+
+Another simple yet popular method is the **Spectral Angle Mapper** classifier. This technique:
+
+1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class,
+2. Measures the spectral signature of each image pixels with UNKNOWN land cover,
+3. Compares 1. and 2.,
+4. Assigns each image pixel to the land cover class with the “closest” spectral signature (minimum ANGULAR distance).
 
 .. hint:: **Small activity** |br|
 	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
 
-
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
-<--------------------------------------------------- TO BE COMPLETED -------------------------------------------------> |br|
-<----------------------------------------------------------------------------------------------------------------------------------------> |br|
 
 |br|
 |br|
