@@ -4,12 +4,14 @@
 2. Principles of image analysis 
 ===============================
 
-2.1. The spectral signatures
-----------------------------
+2.1. The spectral signature
+---------------------------
+
+.. _What-is-a-spectral-signature:
 
 2.1.1. What is a spectral signature
 ````````````````````````````````````
-Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration/degradation state*. |br|
+Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration or degradation state*. |br|
 This reflected sunlight is called **reflectance** and is represented with the symbol :math:`\rho`.
 
 In other words, the material’s properties and status define the brightness (i.e. the **reflectance**) of the “colours” (i.e. the **wavelengths**) sensed in the different “lights” (i.e. the **spectral bands**). |br|
@@ -77,6 +79,26 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
 	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, **atmospheric scattering is a noise** that must be removed before image manipulation or analysis.
+
+|br|
+
+2.1.3. How to compare spectral signatures
+`````````````````````````````````````````
+Spectral signatures are curves that describe the variation of reflectance with wavelengths :any:`What-is-a-spectral-signature`. The closer the curves are, the more they are similar. |br|
+Unfortunately, it is difficult to calculate a “distance” between curves.
+
+Let’s build a reference system made of orthogonal axes that reproduce reflectances in each satellite's spectral band. This reference system is called **feature space**.
+
+In the feature space, the spectral signatures become points (:numref:`Fig9_signature`). Thus, the closer the points are, the more they are similar.
+
+Now, it is simple to calculate the “distance” between points. |br|
+The *Euclidean distance* is often used. Equation :eq:`eqSIG1` shows the formula for two points in 3-D feature space:
+
+.. math:: \sqrt{\left|x_2-x_1\right|^2+\left|y_2-y_1\right|^2+\left|z_2-z_1\right|^2}
+   :label: eqSIG1
+
+
+
 
 |br|
 |br|
@@ -200,7 +222,7 @@ The list of existing spectral indices is very long, but you could build your own
 2.3. Automatic land cover mapping
 ---------------------------------
 
-2.3.1 Land cover maps vs land use maps
+2.3.1. Land cover maps vs land use maps
 ````````````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
 Example of land cover classes are:
@@ -230,13 +252,13 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 |br|
 
-2.3.2 Supervised image classification
-`````````````````````````````````````
+2.3.2. Supervised image classification
+````````````````````````````````````````
 Automatic mapping of land cover classes is done with supervised image classification.
 
 The basic idea is to train a mathematical model to recognise spectral signatures. This is done using the spectral signatures of the **training samples**, which are image pixels selected in sites with **KNOWN land cover** (called *training sites*).
 
-For each class, pick some training samples on the satellite image and label with their actual land cover (:numref:`Fig9_signature`). Thus, all the categories have a *reference spectral signature* defined by their training samples (often their mean value) and a *label* (i.e. the land cover class). |br|
+For each class, pick some training samples on the satellite image and label them with their actual land cover (:numref:`Fig9_signature`). Thus, all the categories have a *reference spectral signature* defined by their training samples (often their mean value) and a *label* (i.e. the land cover class). |br|
 **Remember to collect training samples for ALL land cover classes you want to map.** Otherwise, some categories will not be recognised!
 
 .. _Fig9_signature:
@@ -246,7 +268,7 @@ For each class, pick some training samples on the satellite image and label with
 
 Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** (calculated from the multiband satellite images) with the **KNOWN training samples**. The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
 
-**In other words, a classification map is a prediction based on the knowledge of some (limited) training sites.**
+**In other words, the classification map is a prediction based on the knowledge of some limited training sites.**
 
 .. _Fig10_signature:
 .. figure:: /Figure/Fig10_signature.png
@@ -256,6 +278,8 @@ Now we want the classification algorithm to **predict** each image pixel’s **U
 .. note:: **How many training samples?** |br|
 	Unfortunately, different classification techniques require a different number of (optimal) training samples! |br|
 	**A starting point for multispectral images like Sentinel-2 or Landsat could be about 200 training samples (i.e. image pixels) for each class.**
+
+
 
 A massive number of classification strategies are used in remote sensing. They have different requirements, constraints and accuracy. |br|
 The subject is so vast that we cannot generalize, and it is out-of-scope for this training.
@@ -283,7 +307,7 @@ A simple and popular method is the **Minimum Distance (to Means)** classifier. T
 2.4. Map validation
 -------------------
 
-2.4.1 Precision, bias and accuracy
+2.4.1. Precision, bias and accuracy
 ````````````````````````````````````
 To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy. |br|
 Assume that three archers are participating in a tournament.
@@ -327,8 +351,8 @@ We can define **accuracy** as the degree to which repeated attempts (under uncha
 
 |br|
 
-2.4.2 How much is accurate a map?
-`````````````````````````````````
+2.4.2. How much is accurate a map?
+````````````````````````````````````
 Referring to the mapping process, **accuracy** is the most used performance metric and tells *“how many sites are mapped correctly.”*
 
 Map accuracy is estimated using the **confusion matrix**, a table that relates the actual land cover of some KNOWN reference locations, called the *testing samples*, with their predicted values in the map. |br|

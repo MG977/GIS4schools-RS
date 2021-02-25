@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="v." href="rs_version.html" />
+    <link rel="next" title="5. About us" href="rs_authors.html" />
     <link rel="prev" title="3. Access to Copernicus satellite images for free" href="rs_satelliteimages.html" /> 
 </head>
 
@@ -111,9 +111,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rs_imageanalysis.html">2. Principles of image analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#the-spectral-signatures">2.1. The spectral signatures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#the-spectral-signature">2.1. The spectral signature</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#what-is-a-spectral-signature">2.1.1. What is a spectral signature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#how-to-measure-spectral-signatures-with-satellites">2.1.2. How to measure spectral signatures with satellites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#how-to-compare-spectral-signatures">2.1.3. How to compare spectral signatures</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#spectral-indices-for-environmental-monitoring">2.2. Spectral indices for environmental monitoring</a><ul>
@@ -122,13 +123,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#automatic-land-cover-mapping">2.3. Automatic land cover mapping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#land-cover-maps-vs-land-use-maps">2.3.1 Land cover maps vs land use maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">2.3.2 Supervised image classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#land-cover-maps-vs-land-use-maps">2.3.1. Land cover maps vs land use maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">2.3.2. Supervised image classification</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#map-validation">2.4. Map validation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#precision-bias-and-accuracy">2.4.1 Precision, bias and accuracy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#how-much-is-accurate-a-map">2.4.2 How much is accurate a map?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#precision-bias-and-accuracy">2.4.1. Precision, bias and accuracy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#how-much-is-accurate-a-map">2.4.2. How much is accurate a map?</a></li>
 </ul>
 </li>
 </ul>
@@ -197,6 +198,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#id22">4.3.11 Simple analysis of results</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">4.4. Additional resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rs_authors.html">5. About us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#marco-gianinetto-theoretical-topics">5.1 Marco GIANINETTO (theoretical topics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_authors.html#francesco-niccolo-polinelli-hands-on-exercises">5.2 Francesco Niccolò POLINELLI (hands-on exercises)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rs_version.html">v.</a></li>
@@ -359,16 +366,16 @@ Today (February 2021), Sentinel-2 data collected on 2016 are only provided as <c
 <span id="the-modelling-wq"></span><h3>4.1.5 The modelling<a class="headerlink" href="#the-modelling" title="Permalink to this headline">¶</a></h3>
 <p>The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. <br />
 Phytoplankton are microorganisms that float on the water body and contain chlorophyll. Thus, they could be detected with RVI.</p>
-<p>In this exercise we use a simple linear regression model described by equation <a class="reference internal" href="#equation-eqwq1">(15)</a>:</p>
+<p>In this exercise we use a simple linear regression model described by equation <a class="reference internal" href="#equation-eqwq1">(16)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqwq1">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eqwq1" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times RVI+b\]</div>
-<p>For Sentinel-2 images, we calculate Equation <a class="reference internal" href="#equation-eqwq1">(15)</a> as follows:</p>
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqwq1" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times RVI+b\]</div>
+<p>For Sentinel-2 images, we calculate Equation <a class="reference internal" href="#equation-eqwq1">(16)</a> as follows:</p>
 <div class="math notranslate nohighlight" id="equation-eqwq2">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eqwq2" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqwq2" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b\]</div>
 </div>
 <div class="section" id="chlorophylls-concentration-and-water-level">
 <h3>4.1.6 Chlorophyll’s concentration and water level<a class="headerlink" href="#chlorophylls-concentration-and-water-level" title="Permalink to this headline">¶</a></h3>
-<p>The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation <a class="reference internal" href="#equation-eqwq2">(16)</a>.</p>
+<p>The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation <a class="reference internal" href="#equation-eqwq2">(17)</a>.</p>
 <p><a class="reference internal" href="#fig1-wq"><span class="std std-numref">Fig. 46</span></a> shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.</p>
 <div class="figure align-default" id="id24">
 <span id="fig1-wq"></span><img alt="_images/Fig1_WQ.png" src="_images/Fig1_WQ.png" />
@@ -582,9 +589,9 @@ Open <strong>Raster Calculator</strong> from the menu <code class="docutils lite
 <span id="fig18-wq-raster-calculator"></span><img alt="_images/Fig18_WQ_Raster_Calculator.png" src="_images/Fig18_WQ_Raster_Calculator.png" />
 <p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
 </div>
-<p>Now, we have to write Equation <a class="reference internal" href="#equation-eqwq3">(17)</a> using QGIS syntax, so the software can understand it.</p>
+<p>Now, we have to write Equation <a class="reference internal" href="#equation-eqwq3">(18)</a> using QGIS syntax, so the software can understand it.</p>
 <div class="math notranslate nohighlight" id="equation-eqwq3">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eqwq3" title="Permalink to this equation">¶</a></span>\[RVI=\frac{\rho_{Band 4}}{\rho_{Band 3}}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqwq3" title="Permalink to this equation">¶</a></span>\[RVI=\frac{\rho_{Band 4}}{\rho_{Band 3}}\]</div>
 <p>With the help of the calculator buttons, write the following expression in <code class="docutils literal notranslate"><span class="pre">Raster</span> <span class="pre">Calculator</span> <span class="pre">Expression</span></code>:</p>
 <p>“RT_T32TQN_20160718T101032_Clip&#64;4/RT_T32TQN_20160718T101032_Clip&#64;3”</p>
 <div class="admonition hint">
@@ -660,9 +667,9 @@ The new attribute <strong>Ratio_b4_b3</strong> contains the RVI mean value of ea
 </div>
 <div class="section" id="calibrate-the-spectral-model">
 <h3>4.1.13 Calibrate the spectral model<a class="headerlink" href="#calibrate-the-spectral-model" title="Permalink to this headline">¶</a></h3>
-<p>To transform the spectral information of satellites into chlorophyll concentrations, we use the simple linear model of Equation <a class="reference internal" href="#equation-eqwq4">(18)</a>:</p>
+<p>To transform the spectral information of satellites into chlorophyll concentrations, we use the simple linear model of Equation <a class="reference internal" href="#equation-eqwq4">(19)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqwq4">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eqwq4" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqwq4" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b\]</div>
 <p>Where <em>a</em> and <em>b</em> are coefficients (i.e. numbers) we have to compute using the on-site chlorophyll measures. This task is called <strong>model calibration.</strong></p>
 <p>We only have data for 5 calibration sites (very few). Thus we use the strategy:</p>
 <ul>
@@ -671,8 +678,8 @@ The new attribute <strong>Ratio_b4_b3</strong> contains the RVI mean value of ea
 <li><p class="first">For each calibration set:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Calculate the coefficients <em>a</em> and <em>b</em> in Equation <a class="reference internal" href="#equation-eqwq4">(18)</a>,</li>
-<li>Predict the chlorophyll concentration for the fifth calibration site using Equation <a class="reference internal" href="#equation-eqwq4">(18)</a> and the previously computed coefficients <em>a</em> and <em>b</em>,</li>
+<li>Calculate the coefficients <em>a</em> and <em>b</em> in Equation <a class="reference internal" href="#equation-eqwq4">(19)</a>,</li>
+<li>Predict the chlorophyll concentration for the fifth calibration site using Equation <a class="reference internal" href="#equation-eqwq4">(19)</a> and the previously computed coefficients <em>a</em> and <em>b</em>,</li>
 <li>Compare the estimated concentration with the on-site measure (i.e. the fifth measure left out).</li>
 </ul>
 </div></blockquote>
@@ -707,9 +714,9 @@ The new attribute <strong>Ratio_b4_b3</strong> contains the RVI mean value of ea
 <p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
 </div>
 <p>We see that out of the five repetitions, the second one is the best because it has the lowest difference between estimated and measured chlorophyll concentration (<a class="reference internal" href="#fig27-wq-excel-3"><span class="std std-numref">Fig. 71</span></a>).</p>
-<p>Consequently, the calibrated model becames Equation <a class="reference internal" href="#equation-eqwq5">(19)</a>:</p>
+<p>Consequently, the calibrated model becames Equation <a class="reference internal" href="#equation-eqwq5">(20)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqwq5">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eqwq5" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=155\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-123\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-eqwq5" title="Permalink to this equation">¶</a></span>\[Chl\ \left[mg/m^3\right]=155\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-123\]</div>
 </div>
 <div class="section" id="create-an-automatic-workflow">
 <h3>4.1.14 Create an automatic workflow<a class="headerlink" href="#create-an-automatic-workflow" title="Permalink to this headline">¶</a></h3>
@@ -1480,7 +1487,7 @@ The soil is loamy and moderately well-drained; thus, it does not require irrigat
 </div>
 <div class="section" id="id19">
 <h3>4.3.6 Methods<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<p>The monitoring of vegetative stage is done using the <strong>Normalized Difference Vegetation Index (NDVI)</strong> (<a class="reference internal" href="rs_imageanalysis.html#examples-of-spectral-indices-for-studying-vegetation"><span class="std std-ref">2.2.2. How spectral indices are designed</span></a>) described by Equation <a class="reference internal" href="rs_imageanalysis.html#equation-eqsi2">(2)</a>:</p>
+<p>The monitoring of vegetative stage is done using the <strong>Normalized Difference Vegetation Index (NDVI)</strong> (<a class="reference internal" href="rs_imageanalysis.html#examples-of-spectral-indices-for-studying-vegetation"><span class="std std-ref">2.2.2. How spectral indices are designed</span></a>) described by Equation <a class="reference internal" href="rs_imageanalysis.html#equation-eqsi2">(3)</a>:</p>
 <div class="math notranslate nohighlight">
 \[NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}\]</div>
 </div>
@@ -1510,16 +1517,16 @@ Open <strong>Raster Calculator</strong> from the menu <code class="docutils lite
 <div class="math notranslate nohighlight">
 \[NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}\]</div>
 <p>Before writing the calculation formula for NDVI, we need to know which are the Red and NIR spectral bands. <br />
-Remember that Sentinel-2’s 10-meters resolution Red band is band 3 (B3), and its 10-meters resolution NIR band is band 4 (B4). Thus, the NDVI equation written for Sentinel-2 images becomes Equation <a class="reference internal" href="#equation-eqndvi1">(20)</a>:</p>
+Remember that Sentinel-2’s 10-meters resolution Red band is band 3 (B3), and its 10-meters resolution NIR band is band 4 (B4). Thus, the NDVI equation written for Sentinel-2 images becomes Equation <a class="reference internal" href="#equation-eqndvi1">(21)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqndvi1">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eqndvi1" title="Permalink to this equation">¶</a></span>\[NDVI=\frac{\rho_{Band\ 4}-\rho_{Band\ 3}}{\rho_{Band\ 4}+\rho_{Band\ 3}}\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqndvi1">(20)</a> can also be written as follows:</p>
+<span class="eqno">(21)<a class="headerlink" href="#equation-eqndvi1" title="Permalink to this equation">¶</a></span>\[NDVI=\frac{\rho_{Band\ 4}-\rho_{Band\ 3}}{\rho_{Band\ 4}+\rho_{Band\ 3}}\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqndvi1">(21)</a> can also be written as follows:</p>
 <div class="math notranslate nohighlight" id="equation-eqndvi2">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eqndvi2" title="Permalink to this equation">¶</a></span>\[NDVI=(B4-B3)/(B4+B3)\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-eqndvi2" title="Permalink to this equation">¶</a></span>\[NDVI=(B4-B3)/(B4+B3)\]</div>
 <p>where: <br />
 B3 are the pixel values in Band 3 (i.e. the Red band), <br />
 B4 are the pixel values in Band 4 (i.e. the NIR band).</p>
-<p>Now, we have to write Equation <a class="reference internal" href="#equation-eqndvi2">(21)</a> using QGIS syntax, so the software can understand it. <br />
+<p>Now, we have to write Equation <a class="reference internal" href="#equation-eqndvi2">(22)</a> using QGIS syntax, so the software can understand it. <br />
 With the help of the calculator buttons, write the following expression in <code class="docutils literal notranslate"><span class="pre">Raster</span> <span class="pre">Calculator</span> <span class="pre">Expression</span></code>:</p>
 <p>(“S2A_20180418_10m&#64;4” - “S2A_20180418_10m&#64;3”)/(“S2A_20180418_10m&#64;4”+”S2A_20180418_10m&#64;3”)</p>
 <div class="admonition hint">
@@ -1688,7 +1695,19 @@ In contrast, we <strong>deduce</strong> that <em>Potato is cultivated as a summe
 <p>It is interesting to notice that, unlike one may expect, not all the fields with the same crop have the same NDVI values in the period of full growth. This phenomenon is easily explained because the seedlings’ health and vigour may vary due to non-optimal environmental conditions.</p>
 <p class="last">Thus, fields cultivated with Barley in winter, or fields cultivated with Potato in summer, showing abnormal low NDVI values could have productivity issues related to environmental factors, as recalled in <a class="reference internal" href="#the-environmental-problem-agricultural-productivity"><span class="std std-ref">4.3.1 The environmental problem</span></a>.</p>
 </div>
+<p><br />
+<br /></p>
 </div>
+</div>
+<div class="section" id="additional-resources">
+<h2>4.4. Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<p>For additional hands-on, have a look at the following recommended practices by the <a class="reference external" href="https://un-spider.org/" rel="noopener noreferrer" target="_blank">United Nations Office for Outer Space Affairs</a> using QGIS and open data:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://un-spider.org/advisory-support/recommended-practices/flood-mapping-and-damage-assessment-using-s2-data/step-by-step" rel="noopener noreferrer" target="_blank">Flood mapping and damage assessment</a> using Sentinel-2 data (UN-SPIDER).</li>
+<li>Use of digital elevation data for <a class="reference external" href="https://un-spider.org/advisory-support/recommended-practices/dem-storm-surge-coastal-monitoring-airbus" rel="noopener noreferrer" target="_blank">storm surge coastal flood modelling</a> (UN-SPIDER).</li>
+<li><a class="reference external" href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-disaster-preparedness-software-extensions/step-by-step-overview" rel="noopener noreferrer" target="_blank">Disaster preparedness</a> using free software extensions (UN-SPIDER).</li>
+<li><a class="reference external" href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-exposure-mapping" rel="noopener noreferrer" target="_blank">Exposure Mapping</a> (UN-SPIDER).</li>
+</ul>
 </div>
 </div>
 
@@ -1700,7 +1719,7 @@ In contrast, we <strong>deduce</strong> that <em>Potato is cultivated as a summe
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rs_version.html" class="btn btn-neutral float-right" title="v." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rs_authors.html" class="btn btn-neutral float-right" title="5. About us" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="rs_satelliteimages.html" class="btn btn-neutral float-left" title="3. Access to Copernicus satellite images for free" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

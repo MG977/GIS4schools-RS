@@ -1598,3 +1598,15 @@ In contrast, we **deduce** that *Potato is cultivated as a summer crop* in the s
    It is interesting to notice that, unlike one may expect, not all the fields with the same crop have the same NDVI values in the period of full growth. This phenomenon is easily explained because the seedlings’ health and vigour may vary due to non-optimal environmental conditions.
 
    Thus, fields cultivated with Barley in winter, or fields cultivated with Potato in summer, showing abnormal low NDVI values could have productivity issues related to environmental factors, as recalled in :any:`The-environmental-problem-agricultural-productivity`.
+
+|br|
+|br|
+
+4.4. Additional resources
+-------------------------
+For additional hands-on, have a look at the following recommended practices by the `United Nations Office for Outer Space Affairs <https://un-spider.org/>`_ using QGIS and open data:
+
+- `Flood mapping and damage assessment <https://un-spider.org/advisory-support/recommended-practices/flood-mapping-and-damage-assessment-using-s2-data/step-by-step>`_ using Sentinel-2 data (UN-SPIDER).
+- Use of digital elevation data for `storm surge coastal flood modelling <https://un-spider.org/advisory-support/recommended-practices/dem-storm-surge-coastal-monitoring-airbus>`_ (UN-SPIDER).
+- `Disaster preparedness <https://un-spider.org/advisory-support/recommended-practices/recommended-practice-disaster-preparedness-software-extensions/step-by-step-overview>`_ using free software extensions (UN-SPIDER).
+- `Exposure Mapping <https://un-spider.org/advisory-support/recommended-practices/recommended-practice-exposure-mapping>`_ (UN-SPIDER).

@@ -20,5 +20,9 @@ Marco Gianinetto has been a scientific advisor for the study ‘Space Market Upt
 
 5.2 Francesco Niccolò POLINELLI (hands-on exercises)
 ----------------------------------------------------
-**Francesco Niccolò POLINELLI** (MSc in ) is a research assistant at Politecnico di Milano (Italy). |br|
-His research interests are ...
+.. figure:: /Figure/Fig_FrancescoP.png
+	:width: 200px
+
+**Francesco Niccolò POLINELLI** (MSc in Environmental and Land Planning Engineering) is a research assistant at Politecnico di Milano (Italy) and PhD candidate in Environmental and Infrastructure Engineering.
+
+His research interests are Remote Sensing technologies for Earth Observation, Geosciences and Machine Learning. The main field of application are the monitoring and mapping of vegetation, soil erosion analysis and the effects of climate change on land cover evolution.

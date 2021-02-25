@@ -9,12 +9,12 @@
 Remote sensing could be defined as:
 
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
-	(Source: `Oxford Dictionary of Earth Sciences. © Oxford University Press <https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100413590>`_).
+	(Credit: `Oxford Dictionary of Earth Sciences. © Oxford University Press <https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100413590>`_).
 
 while Earth observation (EO) could be defined as:
 
 	*"The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment."*  |br|
-	(Source: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
+	(Credit: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
 
 That means *Earth observation* **is the process** of collecting information on our planet using **non-contact** *remote sensing* **technologies**.
 
@@ -41,7 +41,7 @@ On the opposite, to monitor each small field’s agricultural productivity, we n
 .. _Fig_intro_SAT:
 .. figure:: /Figure/Fig_intro_SAT.png
 
-	Earth observation missions developed by the European Space Agency (credit: ESA).
+	Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).
 
 |br|
 
@@ -71,7 +71,7 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 .. _Fig1_SAT:
 .. figure:: /Figure/Fig1_SAT.png
 
-	Satellite orbits (credit: adapted from Mark Mercer, 2011).
+	Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).
 
 .. hint:: **Small activity** |br|
 	See the real-time location of about 19,300 manmade objects orbiting the Earth with `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (updated on 14 July 2020).
@@ -88,7 +88,7 @@ Remote sensing satellites use special “cameras” that produce greyscale digit
 .. _Fig_camera_SAT:
 .. figure:: /Figure/Fig_camera_SAT.png
 
-	The imaging camera of the Sentinel-2 satellite (credit: ESA).
+	The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).
 
 A greyscale digital image is a **matrix** (i.e. table) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**) (:numref:`Fig3_SAT`).
 
@@ -105,7 +105,7 @@ We can think of the different wavelengths as different “colours”.
 .. _Fig4_SAT:
 .. figure:: /Figure/Fig4_SAT.png
 
-	The electromagnetic spectrum (credit: NASA).
+	The electromagnetic spectrum (credit: NASA – CC BY-SA 3.0).
 
 Unfortunately, most of these “colours” and “light” are invisible to our eyes! |br|
 We humans can see only the colours of the **VISIBLE** light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. |br|
@@ -276,7 +276,7 @@ The mission objectives for Sentinel-2 are systematic:
 
 	<iframe src="https://www.esa.int/content/view/embedjw/473936" width="640" height="360" frameborder="0"></iframe>
 
-*(Credit: ESA/ATG medialab).*
+*(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).*
 
 **Sentinel-3** |br|
 The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide **multispectral low resolution imagery** for ocean and land services. |br|
@@ -305,7 +305,7 @@ The mission objectives for Sentinel-3 are global coverage of:
 
 	<iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe>
 
-*(Credit: ESA/ATG medialab).*
+*(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).*
 
 .. note:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 
