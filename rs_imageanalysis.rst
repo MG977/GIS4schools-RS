@@ -64,6 +64,9 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 	Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).
 
+.. hint:: **Small activity** |br|
+	Try the `Remote Sensing Virtual Lab <https://remotesensinglab.com/measuring.html>`_ to see the spectral signatures of the land covers (cretits: Karen Joyce).
+
 |br|
 
 2.1.2. How to measure spectral signatures with satellites
@@ -316,6 +319,9 @@ A simple and popular method is the **Minimum Distance (to Means)** classifier. T
 
 .. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
 
+.. hint:: **Small activity** |br|
+	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
+
 Another simple yet popular method is the **Spectral Angle Mapper** classifier. This technique:
 
 1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class,
@@ -324,8 +330,11 @@ Another simple yet popular method is the **Spectral Angle Mapper** classifier. T
 4. Assigns each image pixel to the land cover class with the “closest” spectral signature (minimum ANGULAR distance).
 
 .. hint:: **Small activity** |br|
-	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
+	See how the Spectral Angle Mapper classifier works (Credit: `rdrr.io <https://rdrr.io/>`_).
 
+.. raw:: html
+
+	<iframe width="100%" height="500px" src="https://rdrr.io/snippets/embed/?code=%23%23%20Load%20libraries%0Alibrary(RStoolbox)%0Alibrary(raster)%0Alibrary(ggplot2)%0A%0A%23%23%20Load%20test%20image%0Adata(lsat)%20%0A%0A%23%23%20Collect%20training%20samples%20%0A%23%23%20First%20location%20is%20water%2C%20second%20is%20open%20agricultural%20vegetation%0Apts%20%3C-%20data.frame(x%20%3D%20c(624720%2C%20627480)%2C%20y%20%3D%20c(-414690%2C%20-411090))%0Atraining_samples%20%3C-%20extract(lsat%2C%20pts)%0Arownames(training_samples)%20%3C-%20c(%22water%22%2C%20%22vegetation%22)%0A%0A%23%23%20Calculate%20spectral%20angles%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20TRUE)%0A%0A%23%23%20Plot%20spectral%20angles%20(spectral%20signatures'%20similarity)%0Aplot(lsat_sam)%0A%0A%23%23%20Classify%20based%20on%20minimum%20angle%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20FALSE)%0A%0A%23%23%20Show%20classification%20map%0AggR(lsat_sam%2C%20forceCat%20%3D%20TRUE%2C%20geom_raster%3DTRUE)%20%2B%20%0A%20%20%20%20%20%20%20%20scale_fill_manual(values%20%3D%20c(%22blue%22%2C%20%22green%22)%2C%20labels%20%3D%20c(%22water%22%2C%20%22vegetation%22))%0A%0A%23%23%20Show%20test%20image%0AggRGB(lsat%2C%20stretch%20%3D%20%22lin%22)" frameborder="0"></iframe>
 
 |br|
 |br|

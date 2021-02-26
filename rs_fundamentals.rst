@@ -201,6 +201,9 @@ The combination of different greyscale spectral bands produces the colours of sa
 	Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.
 
 .. hint:: **Small activity** |br|
+	Try the `Remote Sensing Virtual Lab <https://remotesensinglab.com/visualising.html>`_ to see how the land looks like in different wavelengths (cretits: Karen Joyce).
+
+.. hint:: **Small activity** |br|
 	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale satellite images into a satellite colour image:
 
 	- Download Sentinel-2 image of Venice `(Blue band) <https://drive.google.com/file/d/10rNhnS-okkBZekTnDR5CDjcZ9PztkADW/view?usp=sharing>`_,
