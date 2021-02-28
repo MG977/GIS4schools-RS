@@ -2,12 +2,12 @@
 
 
 4. Hands-on exercises
-=======================
+======================
 
 .. _Monitoring-lake-trophic-state:
 
-4.1. Monitoring lake’s trophic state (difficulty: hard)
--------------------------------------------------------
+4.1. Monitoring lake’s trophic state (difficulty: advanced)
+------------------------------------------------------------
 
 4.1.0 Download the data
 ````````````````````````
@@ -802,8 +802,8 @@ Overall, our results are consistent with the characteristics and habitat of Lake
 
 .. _Mapping-crop-types:
 
-4.2 Mapping crop types (difficulty: intermediate)
--------------------------------------------------
+4.2. Mapping crop types (difficulty: intermediate)
+---------------------------------------------------
 
 4.2.0 Download the data
 ````````````````````````
@@ -1279,8 +1279,8 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 
 .. _Monitoring-crops-vegetative-stage:
 
-4.3 Monitoring crops’ vegetative stage (difficulty: easy)
----------------------------------------------------------
+4.3. Monitoring crops’ vegetative stage (difficulty: easy)
+-----------------------------------------------------------
 
 4.3.0 Download the data
 ````````````````````````

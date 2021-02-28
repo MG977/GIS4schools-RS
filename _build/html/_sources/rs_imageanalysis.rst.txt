@@ -169,14 +169,16 @@ Every land feature reflects the sunlight differently (the spectral signature), d
 Let's see some examples for vegetation.
 
 Look at the spectral signature of a vegetated image pixel (:numref:`Fig1_SI`). |br|
-The gap between the low reflectance in the red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.
+The gap between the low reflectance in the Red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.
 
 .. _Fig1_SI:
 .. figure:: /Figure/Fig1_SI.png
 
-	Spectral signature of a decidous tree with highlighted the gap between the red and NIR.
+	Spectral signature of a decidous tree with highlighted the gap between the Red and NIR.
 
-Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and red reflectances is used as a proxy for overall "amount and health" of green vegetation.
+In the example of :numref:`Fig1_SI`, we have  :math:`\rho_{Red}=0.05` and :math:`\rho_{NIR}=0.55`.
+
+Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and Red reflectances is used as a proxy for overall "amount and health" of green vegetation.
 
 .. _Fig2_SI:
 .. figure:: /Figure/Fig2_SI.png
@@ -186,11 +188,18 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 **Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and it is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
 
-.. math:: RVI=\frac{\rho_{NIR}}{\rho_{red}}
+.. math:: RVI=\frac{\rho_{NIR}}{\rho_{Red}}
    :label: eqSI1
 
-RVI is a positive index. The larger the ratio, the more “amount of green and healthy vegetation” is present in the image pixel. |br|
-Typical values for vegetation cover range from **RVI=4** (parse or sick vegetation) to **RVI=30** (very dense and healthy vegetation). |br|
+RVI is a positive index (:math:`RVI\geq0`). The larger the ratio, the more “amount of green and healthy vegetation” is present in the image pixel.
+
+In the example of :numref:`Fig1_SI`, we have:
+
+.. math:: RVI=\frac{0.55}{0.05}=11
+
+Typical values for vegetation cover range from **RVI=4** (parse or sick vegetation) up to **RVI=30** (very dense and very healthy vegetation). |br|
+Healthy vegetation generally falls between values of 4 to 10.
+
 Unfortunately, RVI is not bounded from above, making it difficult to compare different vegetation covers.
 
 **Normalized Difference Vegetation Index (NDVI)** |br|
@@ -199,24 +208,31 @@ This is the most known and used greenness vegetation index. Equation :eq:`eqSI2`
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
 	:label: eqSI2
 
-NDVI is a normalized index ranging from -1 to 1, but for vegetated lands it has positive values. The larger the ratio, the more “amount of green and healthy vegetation” is present in the image pixel. |br|
-The threshold **NDVI=0.2** is often used to differentiate bare ground (NDVI<0.2) from vegetated land (NDVI>0.2). |br|
-Moderate values (**0.2<NDVI<0.6**) are typical for shrubs, grass and crops. |br|
-Higher values (**NDVI>0.6**) are typical for temperate and tropical forests.
+NDVI is a normalized index ranging from -1 to 1, but for **VEGETATED LANDS** it has positive values. The larger the ratio, the more “amount of green and healthy vegetation” is present in the image pixel.
 
-Conversely to RVI, for vegetation cover NDVI is bounded from below (often 0.2) and bounded from above (1). Thus, it is a useful index to compare different vegetation covers and types.
+In the example of :numref:`Fig1_SI`, we have:
 
-If we are looking at a mixed image pixel with healthy vegetation, then:
+.. math:: NDVI=\frac{0.55-0.05}{0.55+0.05}=0.83
 
-- Moderate values (**0.2<NDVI<0.4**) are typical for sparse vegetation,
-- Intermediate values (**0.4<NDVI<0.6**) are typical for moderately-density vegetation,
-- And higher values (**NDVI>0.6**) are typical for high-density vegetation.
+The threshold **NDVI=0.2** is often used to differentiate bare ground (NDVI<0.2) from vegetated land (NDVI>0.2). Thus:
 
-On the other hand, if we are looking at a fully covered vegetated image pixel:
+- Moderate values (**0.2<NDVI<0.6**) are typical for shrubs, grass and crops,
+- Higher values (**NDVI>0.6**) are typical for forests.
 
-- Moderate values (**0<NDVI<0.2**) are typical for very sick vegetation,
-- Intermediate values (**0.2<NDVI<0.6**) are typical for moderately healthy vegetation,
-- And higher values (**NDVI>0.6**) are typical for very healthy vegetation.
+Opposite to RVI, **FOR VEGETATION COVER** NDVI is bounded from below (often NDVI=0.2) and bounded from above (NDVI=1). Thus, it is a useful index to compare different vegetation covers and types.
+
+.. tip:: **Vegetation amount vs health** |br|
+	If we are looking at a mixed image pixel with healthy vegetation, then:
+
+	- Moderate values (**0.2<NDVI<0.4**) are typical for sparse vegetation,
+	- Intermediate values (**0.4<NDVI<0.6**) are typical for moderately-density vegetation,
+	- And higher values (**NDVI>0.6**) are typical for high-density vegetation.
+
+	On the other hand, if we are looking at a fully covered vegetated image pixel:
+
+	- Moderate values (**0<NDVI<0.2**) are typical for very sick vegetation,
+	- Intermediate values (**0.2<NDVI<0.6**) are typical for moderately healthy vegetation,
+	- And higher values (**NDVI>0.6**) are typical for very healthy vegetation.
 
 While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all land covers. In this case, NDVI will have the following values:
 
@@ -231,7 +247,7 @@ While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all 
 
 The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance.
 
-.. tip:: **Looking for a specific spectral index?** |br|
+.. hint:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
 
@@ -299,9 +315,7 @@ The output is a classification map with all the classes defined by the training 
 
 .. note:: **How many training samples?** |br|
 	Unfortunately, different classification techniques require a different number of (optimal) training samples! |br|
-
-	**SUGGESTION:** |br|
-	**A starting point for multispectral images like Sentinel-2 or Landsat could be about 200 image pixels for each class.**
+	**SUGGESTION: a starting point for multispectral images like Sentinel-2 or Landsat could be about 200 image pixels for each class.**
 
 |br|
 
@@ -310,24 +324,30 @@ The output is a classification map with all the classes defined by the training 
 A massive number of classification strategies are used in remote sensing. They have different requirements, constraints and accuracy. |br|
 The subject is so vast that we cannot generalize and is out-of-scope for this training.
 
+**Minimum Distance (to Means)** |br|
 A simple and popular method is the **Minimum Distance (to Means)** classifier. This technique:
 
 1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class,
 2. Measures the spectral signature of each image pixels with UNKNOWN land cover,
 3. Compares 1. and 2.,
-4. Assigns each image pixel to the land cover class with the “closest” *(minimum EUCLIDEAN distance)* spectral signature.
+4. Assigns each image pixel to the land cover class with the “closest” *(with minimum EUCLIDEAN distance)* spectral signature.
+
+Thus, the Minimum Distance (to Means) classifier labels the image pixels based their “global” distance with the training samples.
 
 .. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
 
 .. hint:: **Small activity** |br|
 	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
 
+**Spectral Angle Mapper** |br|
 Another simple yet popular method is the **Spectral Angle Mapper** classifier. This technique:
 
-1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class,
+1. Use the training samples (with KNOWN land cover) to calculate a mean spectral signature for each land cover class. *Training samples might be just ONE spectral signature for each land cover class (called endmembers),*
 2. Measures the spectral signature of each image pixels with UNKNOWN land cover,
 3. Compares 1. and 2.,
-4. Assigns each image pixel to the land cover class with the “closest” spectral signature (minimum ANGULAR distance).
+4. Assigns each image pixel to the land cover class with the “closest” spectral signature (with minimum ANGULAR distance).
+
+Thus, the Spectral Angle Mapper classifier labels the image pixels based their "angulal" distance with the training samples.
 
 .. hint:: **Small activity** |br|
 	See how the Spectral Angle Mapper classifier works (Credit: `rdrr.io <https://rdrr.io/>`_).
@@ -342,12 +362,17 @@ Another simple yet popular method is the **Spectral Angle Mapper** classifier. T
 2.4. Map validation
 -------------------
 
-2.4.1. Precision, bias and accuracy
-````````````````````````````````````
-To understand the differences between precision, bias and accuracy, let’s see the archer’s analogy. |br|
-Assume that three archers are participating in a tournament.
+2.4.1. Precision or accuracy?
+`````````````````````````````
+Precision and accuracy are often used as synonyms. **But they are not!**
 
-The first archer always hit the same spot, but his arrows are systematically displaced from the target’s centre (:numref:`Fig1_validation`).
+- **Precision** refers to the degree to which repeated attempts (under unchanged conditions) *are close to each other*, independent of their true value. Thus, a precise quantity might be completely wrong because biased!,
+- **Accuracy** refers to the degree to which repeated attempts (under unchanged conditions) *are close to the true value.* **Thus, an accurate attempt is precise and not biased.**
+
+Let’s see how precision and accuracy work. Assume that two archers are participating in a tournament.
+
+The first archer always hit the same spot. He is **precise**. |br|
+However, his arrows are systematically displaced from the target’s centre (:numref:`Fig1_validation`). Thus, the second archer is **inaccurate**.
 
 .. _Fig1_validation:
 .. figure:: /Figure/Fig1_validation.png
@@ -355,34 +380,20 @@ The first archer always hit the same spot, but his arrows are systematically dis
 
 	The first archer's shots.
 
-The second archer fires his arrows close to the target’s centre, but scattered (:numref:`Fig2_validation`).
-
-.. _Fig2_validation:
-.. figure:: /Figure/Fig2_validation.png
-	:scale: 30%
-
-	The second archer's shots.
-
-The third archer fires his arrows all grouped in the target’s centre (:numref:`Fig3_validation`).
+The second archer fires all his arrows grouped in the target’s centre (:numref:`Fig3_validation`). |br|
+The archer is precise and unbiased. Thus, the first archer is **accurate**.
 
 .. _Fig3_validation:
 .. figure:: /Figure/Fig3_validation.png
 	:scale: 30%
 
-	The third archer's shots.
+	The second archer's shots.
 
-How do the archers perform?
+.. hint:: For land cover mapping:
 
-The first archer is **precise** because his arrows always hit the same spot. |br|
-We can define precision as the degree to which repeated attempts (under unchanged conditions) give the same result. Thus, precision describes the *reliability* of the archer’s shots, and lack of precision implies random errors. |br|
-*The first archer is not accurate because his arrows are systematically displaced from the target’s centre.*
+	- **Accuracy** refers to the degree to which the information on the map matches the real world, |br|
+	- **Precision** refers to how exactly is the data used to create the map. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :any:`Fundamentals-of-remote-sensing-and-Earth-observation`).
 
-The second archer's arrows do not have a systematic displacement from the target's centre but are not close to each other. Thus, the archer is **unbiased** but **imprecise**. |br|
-We can define **bias** as the tendency of repeated attempts (under unchanged conditions) to systematically shift in one direction from the true value. Thus, bias describes *systematic errors* of the archer's shots (like the first archer). |br|
-*Also, the second archer is not accurate.*
-
-The third archer is **accurate** because his arrows are all grouped together and placed in the target’s centre. |br|
-We can define **accuracy** as the degree to which repeated attempts (under unchanged conditions) are close to the true value. **Thus, an accurate archer is both precise and unbiased.**
 
 |br|
 
@@ -402,7 +413,6 @@ Map accuracy is estimated using the **confusion matrix**, a table that relates t
 .. figure:: /Figure/Fig1_confmatrix.png
 
 	Confusion matrix. Number of testing samples correctly classified.
-
 
 :numref:`Fig2_confmatrix` highlights the number of misclassified testing samples (red cells). |br|
 Overall, the confusion matrix has **434 testing samples.**
@@ -424,19 +434,23 @@ It is called **overall accuracy** and is usually expressed as a percent, with 0%
 .. math:: Overall\ accuracy=\frac{sum\ of\ testing\ samples\ being\ correctly\ classified}{total\ number\ of\ testing\ sample}
 	:label: eqacc1
 
-In our example (:numref:`Fig1_confmatrix`):
+In the example of :numref:`Fig1_confmatrix` we have:
 
 .. math:: Overall\ accuracy=\frac{65+81+85+90}{434}=74.0 \%
 	:label: eqacc2
 
+.. note:: The overall accuracy is the primary indicator used to evaluate maps.
+
+|br|
+
 **b. Producer’s accuracy** |br|
 Suppose we want to quantify the proportion of correct predictions for each of the real-world land cover class. *In other words, for a given land cover class in the real world, how many testing samples are labelled correctly in the classified map?* |br|
-This is the accuracy from the point of view of the mapmaker (the producer). It called is called **producer’s accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
+This is the accuracy from the point of view of the mapmaker (the producer). It is called **producer’s accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
 
 .. math:: Producer\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ column\ i}
 	:label: eqacc3
 
-In our example (:numref:`Fig1_confmatrix`):
+In the example of :numref:`Fig1_confmatrix` we have:
 
 .. math:: Producer\prime s\ accuracy\ for\ class\ A=\frac{65}{65+6+0+4}=86.7 \%
 	:label: eqacc4
@@ -452,6 +466,10 @@ In our example (:numref:`Fig1_confmatrix`):
 
 Thus, the classifier is mapping real world class A with higher accuracy.
 
+.. note:: The producer's accuracy is an indicator of how well the actual land cover information is mapped.
+
+|br|
+
 **c. User’s accuracy** |br|
 Suppose we want to quantify the proportion of correct predictions for each of the mapped classes. *In other words, for a given class in the map, how many testing samples are really present on the ground?* |br|
 This is the accuracy from the point of view of the map user. It called is called **user’s accuracy** and is usually expressed as a percent, with 0% being a perfect misclassification and 100% being a perfect classification:
@@ -459,7 +477,7 @@ This is the accuracy from the point of view of the map user. It called is called
 .. math:: User\prime s\ accuracy\ for\ class\ i=\frac{number\ of\ testing\ samples\ being\ correctly\ classified\ in\ class\ i}{total\ number\ of\ testing\ sample\ in\ row\ i}
 	:label: eqacc8
 
-In our example (:numref:`Fig1_confmatrix`):
+In the example of :numref:`Fig1_confmatrix` we have:
 
 .. math:: User\prime s\ accuracy\ for\ class\ A=\frac{65}{65+4+22+24}=56.5 \%
 	:label: eqacc9
@@ -475,8 +493,12 @@ In our example (:numref:`Fig1_confmatrix`):
 
 Thus, the classifier is predicting the map’s class A with lower accuracy.
 
-Typically, user’s and producer’s accuracy for a given land cover class are different. In our example (:numref:`Fig1_confmatrix`), 86.7% of the testing samples for real-world class A are correctly identified as class A in the map (producer’s accuracy). However, only 56.5% of the areas identified as class A in the map are actually being class A on the ground.
+Typically, user’s and producer’s accuracy for a given land cover class are different. In the example of :numref:`Fig1_confmatrix`, 86.7% of the testing samples for real-world class A are correctly identified as class A in the map (producer’s accuracy). However, only 56.5% of the areas identified as class A in the map are actually being class A on the ground.
+
+.. note:: The user's accuracy is an indicator of how well the map describes the actual land covers.
 
 .. hint:: **Small activity** |br|
 	Which is the accuracy of your map? |br|
 	Calculate the overall accuracy and the per-class producer’s accuracy and user’s accuracy of your own map. Try the free `Confusion matrix online calculator <http://www.marcovanetti.com/pages/cfmatrix/>`_.
+
+.. seealso:: For additional information, see the practical guide on `Map Accuracy Assessment and Area Estimation <http://www.fao.org/3/i5601e/i5601e.pdf>`_ of `FAO <http://www.fao.org/home/en/>`_.

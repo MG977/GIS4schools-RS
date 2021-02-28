@@ -129,7 +129,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html#map-validation">2.4. Map validation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#precision-bias-and-accuracy">2.4.1. Precision, bias and accuracy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#precision-or-accuracy">2.4.1. Precision or accuracy?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#how-much-is-accurate-a-map">2.4.2. How much is accurate a map?</a></li>
 </ul>
 </li>
@@ -207,7 +207,6 @@
 <li class="toctree-l2"><a class="reference internal" href="rs_authors.html#francesco-niccolo-polinelli-hands-on-exercises">5.2 Francesco Niccolò POLINELLI (hands-on exercises)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rs_version.html">v.</a></li>
 </ul>
 
             
@@ -274,7 +273,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fundamentals-of-remote-sensing-and-earth-observation">
-<h1>1. Fundamentals of remote sensing and Earth observation<a class="headerlink" href="#fundamentals-of-remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>1. Fundamentals of remote sensing and Earth observation<a class="headerlink" href="#fundamentals-of-remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-earth-observation">
 <h2>1.1. What is Earth observation?<a class="headerlink" href="#what-is-earth-observation" title="Permalink to this headline">¶</a></h2>
 <p>Remote sensing could be defined as:</p>
@@ -302,9 +301,9 @@
 <p>All these characteristics are defined during the mission design, depending on the satellite mission’s specific applications.</p>
 <p>For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands.</p>
 <p>On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.</p>
-<div class="figure align-default" id="id8">
+<div class="figure align-default" id="id9">
 <span id="fig-intro-sat"></span><img alt="_images/Fig_intro_SAT.png" src="_images/Fig_intro_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p><br /></p>
 <div class="section" id="satellite-orbits-and-revisit-time">
@@ -329,9 +328,9 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 <li><strong>Low revisit time:</strong> &gt; 16 days</li>
 </ul>
 </div>
-<div class="figure align-default" id="id9">
+<div class="figure align-default" id="id10">
 <span id="fig1-sat"></span><img alt="_images/Fig1_SAT.png" src="_images/Fig1_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -348,32 +347,32 @@ Search for a specific satellite with the <a class="reference external" href="htt
 <div class="section" id="imaging-cameras">
 <h3>1.2.2. Imaging cameras<a class="headerlink" href="#imaging-cameras" title="Permalink to this headline">¶</a></h3>
 <p>Remote sensing satellites use special “cameras” that produce greyscale digital images (<a class="reference internal" href="#fig-camera-sat"><span class="std std-numref">Fig. 3</span></a>).</p>
-<div class="figure align-default" id="id10">
+<div class="figure align-default" id="id11">
 <span id="fig-camera-sat"></span><img alt="_images/Fig_camera_SAT.png" src="_images/Fig_camera_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>A greyscale digital image is a <strong>matrix</strong> (i.e. table) of individual elements (called <strong>pixels</strong>) representing the <strong>brightness</strong> of a specific geographic location recorded in a particular <strong>range of wavelengths of the electromagnetic spectrum</strong> (called <strong>spectral band</strong>, or just <strong>band</strong>) (<a class="reference internal" href="#fig3-sat"><span class="std std-numref">Fig. 4</span></a>).</p>
-<div class="figure align-default" id="id11">
+<div class="figure align-default" id="id12">
 <span id="fig3-sat"></span><img alt="_images/Fig3_SAT.png" src="_images/Fig3_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The digital image as a table of numbers.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The digital image as a table of numbers.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>But what are the electromagnetic spectrum and wavelengths?</strong></p>
 <p>Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (<a class="reference internal" href="#fig4-sat"><span class="std std-numref">Fig. 5</span></a>): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). <br />
 We can think of the different wavelengths as different “colours”.</p>
-<div class="figure align-default" id="id12">
+<div class="figure align-default" id="id13">
 <span id="fig4-sat"></span><img alt="_images/Fig4_SAT.png" src="_images/Fig4_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum (credit: NASA – CC BY-SA 3.0).</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The electromagnetic spectrum (credit: NASA – CC BY-SA 3.0).</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Unfortunately, most of these “colours” and “light” are invisible to our eyes! <br />
 We humans can see only the colours of the <strong>VISIBLE</strong> light. However, many other “colours” exists, and some animals can see them. For instance, snakes can sense the INFRARED (i.e. the heat) and some insects can see the ULTRAVIOLET. <br />
 <a class="reference internal" href="#fig5-sat"><span class="std std-numref">Fig. 6</span></a> and <a class="reference internal" href="#fig6-sat"><span class="std std-numref">Fig. 7</span></a> show how human eyes and animal eyes sense different wavelengths of the electromagnetic spectrum.</p>
-<div class="figure align-default" id="id13">
-<span id="fig5-sat"></span><img alt="_images/Fig5_SAT.png" src="_images/Fig5_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The electromagnetic spectrum sensed by humans, cats and snakes.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-default" id="id14">
+<span id="fig5-sat"></span><img alt="_images/Fig5_SAT.png" src="_images/Fig5_SAT.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The electromagnetic spectrum sensed by humans, cats and snakes.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id15">
 <span id="fig6-sat"></span><img alt="_images/Fig6_SAT.png" src="_images/Fig6_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The electromagnetic spectrum sensed humans and bees.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The electromagnetic spectrum sensed humans and bees.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -398,9 +397,9 @@ Generally speaking:</p>
 <li><strong>Low resolution</strong> imaging cameras have a <strong>large swath</strong>: up to thousands of km,</li>
 <li><strong>Very high resolution</strong> imaging cameras have a <strong>small swath</strong>: about dozen of km.</li>
 </ul>
-<div class="figure align-default" id="id15">
+<div class="figure align-default" id="id16">
 <span id="fig2-sat"></span><img alt="_images/Fig2_SAT.png" src="_images/Fig2_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The London Eye (UK). The effect of spatial resolution on image detail and swath.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The London Eye (UK). The effect of spatial resolution on image detail and swath.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.</p>
 <p>On the opposite, Geostationary satellites have low resolution cameras with wide swath. In such an orbit, images over the area of interest are acquired continuously. These satellites are suitable for continental and global studies.</p>
@@ -413,7 +412,7 @@ The spatial resolution is proportional to the orbital altitude. Thus, Geostation
 <p><br /></p>
 </div>
 <div class="section" id="spectral-characteristics">
-<span id="id1"></span><h3>1.2.4. Spectral characteristics<a class="headerlink" href="#spectral-characteristics" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>1.2.4. Spectral characteristics<a class="headerlink" href="#spectral-characteristics" title="Permalink to this headline">¶</a></h3>
 <p>Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:</p>
 <ul class="simple">
 <li><strong>Multispectral:</strong> usually 2 - 30 bands,</li>
@@ -421,9 +420,9 @@ The spatial resolution is proportional to the orbital altitude. Thus, Geostation
 </ul>
 <p>Multispectral and hyperspectral cameras produce multiband grayscale images. That is to say, a multitude of greyscale images - <em>collected at the same time</em> - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (<a class="reference internal" href="#fig7-sat"><span class="std std-numref">Fig. 9</span></a>). <br />
 <strong>In other words, a multiband image describes the intensity of the different “colours” sensed in the different “lights” of the electromagnetic spectrum.</strong></p>
-<div class="figure align-default" id="id16">
+<div class="figure align-default" id="id17">
 <span id="fig7-sat"></span><img alt="_images/Fig7_SAT.png" src="_images/Fig7_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Example of multiband image.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Example of multiband image.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -442,14 +441,14 @@ A smartphone takes pictures in only 3 VISIBLE colour channels:</p>
 To see the colour channels, try <a class="reference external" href="https://www.dcode.fr/rgb-channels" rel="noopener noreferrer" target="_blank">RGB channels splitter</a> with a photo taken with your smartphone (<a class="reference internal" href="#fig8-sat"><span class="std std-numref">Fig. 10</span></a>)! Try using both outputs “as greyscale”, and “with their own colour”. <br />
 You might also use this <a class="reference external" href="https://drive.google.com/file/d/1B5RIfx63mQq3O908Etstn5zeHTKBkPQu/view?usp=sharing" rel="noopener noreferrer" target="_blank">test picture</a>.</p>
 </div>
-<div class="figure align-default" id="id17">
+<div class="figure align-default" id="id18">
 <span id="fig8-sat"></span><img alt="_images/Fig8_SAT.png" src="_images/Fig8_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Colour channels splitter.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Colour channels splitter.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>The combination of different greyscale spectral bands produces the colours of satellite images (<a class="reference internal" href="#fig-venezia-sat"><span class="std std-numref">Fig. 11</span></a>).</p>
-<div class="figure align-default" id="id18">
+<div class="figure align-default" id="id19">
 <span id="fig-venezia-sat"></span><img alt="_images/Fig_Venezia_SAT.png" src="_images/Fig_Venezia_SAT.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -505,8 +504,8 @@ Their orbit is Sun-synchronous, and the constellation (2 identical satellites) h
 <li>Disaster relief support,</li>
 <li>Climate change monitoring.</li>
 </ul>
-<span id="tab1-s2"></span><table border="1" class="docutils align-default" id="id19">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sentinel-2 spectral bands.</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<span id="tab1-s2"></span><table border="1" class="docutils align-default" id="id20">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sentinel-2 spectral bands.</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="3%" />
 <col width="19%" />
@@ -632,8 +631,8 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 <p class="last"><a class="reference external" href="http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission" rel="noopener noreferrer" target="_blank">Look inside Sentinel-3</a></p>
 </div>
 <iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe><p><em>(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).</em></p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
 <p class="last">For additional information, <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites" rel="noopener noreferrer" target="_blank">discover all the Sentinel satellites</a></p>
 </div>
 <p><br />
@@ -670,9 +669,9 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 <p class="last"><strong>Small activity</strong> <br />
 See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?category=ensemble&amp;subensemble=hourly_ensemble&amp;date=LAST&amp;calculation-model=ENSEMBLE&amp;species=o3&amp;level=SFC&amp;offset=000" rel="noopener noreferrer" target="_blank">today’s air quality forecasts in Europe</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Atmosphere Monitoring Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://atmosphere.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Atmosphere Monitoring Service web site</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -692,9 +691,9 @@ See <a class="reference external" href="http://macc-raq-op.meteo.fr/index.php?ca
 <p class="last"><strong>Small activity</strong> <br />
 See past, present and future quality of the marine environment: <a class="reference external" href="https://cmems.lobelia.earth/data?view=viewer&amp;crs=epsg%3A4326&amp;t=1607385600000&amp;z=0&amp;center=-20%2C29&amp;zoom=11&amp;layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&amp;initial=1" rel="noopener noreferrer" target="_blank">My Ocean</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Marine Environment Monitoring Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://marine.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Marine Environment Monitoring Service web site</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -715,9 +714,9 @@ See past, present and future quality of the marine environment: <a class="refere
 <p class="last"><strong>Small activity</strong> <br />
 See the <a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe for 2018</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Land Monitoring Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://land.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Land Monitoring Service web site</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -730,9 +729,9 @@ See the <a class="reference external" href="https://land.copernicus.eu/pan-europ
 <p class="last"><strong>Small activity</strong> <br />
 See Copernicus <a class="reference external" href="https://climate.copernicus.eu/data-action" rel="noopener noreferrer" target="_blank">climate data in action</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Climate Change Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Climate Change Service web site</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -751,9 +750,9 @@ See Copernicus <a class="reference external" href="https://climate.copernicus.eu
 <p class="last"><strong>Small activity</strong> <br />
 See how Copernicus Security can <a class="reference external" href="https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/" rel="noopener noreferrer" target="_blank">support evacuation plans</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Security Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://climate.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Security Service web site</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -775,9 +774,9 @@ See how Copernicus Security can <a class="reference external" href="https://sea.
 <p class="last"><strong>Small activity</strong> <br />
 See the Copernicus Emergency Management system for <a class="reference external" href="https://www.efas.eu/efas_frontend/#/home" rel="noopener noreferrer" target="_blank">flood monitoring and forecast</a>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For additional information see <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">the Copernicus Emergency Management Service web site</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For additional information, see the <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Emergency Management Service web site</a>.</p>
 </div>
 </div>
 </div>

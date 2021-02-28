@@ -211,7 +211,7 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 .. caution:: Username & password for `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_ are different from that of `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_!
 
-.. note:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
+.. seealso:: For additional information, see the `Sentinel Hub EO Browser user guide <https://www.sentinel-hub.com/explore/eobrowser/user-guide/>`_
 
 |br|
 |br|

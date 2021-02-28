@@ -1,6 +1,8 @@
 .. include:: html_lat.txt
 
 
+.. _Fundamentals-of-remote-sensing-and-Earth-observation:
+
 1. Fundamentals of remote sensing and Earth observation
 =======================================================
 
@@ -310,7 +312,7 @@ The mission objectives for Sentinel-3 are global coverage of:
 
 *(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).*
 
-.. note:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
+.. seealso:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 
 |br|
 |br|
@@ -347,7 +349,7 @@ Overall, the service focuses on five main areas:
 .. hint:: **Small activity** |br|
 	See `today’s air quality forecasts in Europe <http://macc-raq-op.meteo.fr/index.php?category=ensemble&subensemble=hourly_ensemble&date=LAST&calculation-model=ENSEMBLE&species=o3&level=SFC&offset=000>`_.
 
-.. note:: For additional information see `the Copernicus Atmosphere Monitoring Service web site <https://atmosphere.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Atmosphere Monitoring Service web site <https://atmosphere.copernicus.eu/>`_.
 
 |br|
 
@@ -367,7 +369,7 @@ Overall, the service focuses on four main areas:
 .. hint:: **Small activity** |br|
 	See past, present and future quality of the marine environment: `My Ocean <https://cmems.lobelia.earth/data?view=viewer&crs=epsg%3A4326&t=1607385600000&z=0&center=-20%2C29&zoom=11&layers=W3siaWQiOiJjMCIsImxheWVySWQiOiJHTE9CQUxfQU5BTFlTSVNfRk9SRUNBU1RfQklPXzAwMV8wMjgvZ2xvYmFsLWFuYWx5c2lzLWZvcmVjYXN0LWJpby0wMDEtMDI4LWRhaWx5L2NobCIsInpJbmRleCI6MCwiaXNIaWRkZW4iOnRydWUsImxvZ1NjYWxlIjp0cnVlfSx7ImlkIjoiYzEiLCJsYXllcklkIjoiR0xPQkFMX0FOQUxZU0lTX0ZPUkVDQVNUX1BIWV8wMDFfMDI0L2dsb2JhbC1hbmFseXNpcy1mb3JlY2FzdC1waHktMDAxLTAyNC90aGV0YW8iLCJ6SW5kZXgiOjEwLCJsb2dTY2FsZSI6ZmFsc2V9XQ%3D%3D&initial=1>`_.
 
-.. note:: For additional information see `the Copernicus Marine Environment Monitoring Service web site <https://marine.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Marine Environment Monitoring Service web site <https://marine.copernicus.eu/>`_.
 
 |br|
 
@@ -388,7 +390,7 @@ Overall, the service focuses on five main areas:
 .. hint:: **Small activity** |br|
 	See the `CORINE land cover map of Europe for 2018 <https://land.copernicus.eu/pan-european/corine-land-cover/clc2018>`_.
 
-.. note:: For additional information see `the Copernicus Land Monitoring Service web site <https://land.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Land Monitoring Service web site <https://land.copernicus.eu/>`_.
 
 |br|
 
@@ -401,7 +403,7 @@ For example, The Copernicus Climate Change Service provides scientists, consulta
 .. hint:: **Small activity** |br|
 	See Copernicus `climate data in action <https://climate.copernicus.eu/data-action>`_.
 
-.. note:: For additional information see `the Copernicus Climate Change Service web site <https://climate.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Climate Change Service web site <https://climate.copernicus.eu/>`_.
 
 |br|
 
@@ -420,7 +422,7 @@ Overall, the service focuses on three main areas:
 .. hint:: **Small activity** |br|
 	See how Copernicus Security can `support evacuation plans <https://sea.security.copernicus.eu/categories/support-to-evacuation-plan/>`_.
 
-.. note:: For additional information see `the Copernicus Security Service web site <https://climate.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Security Service web site <https://climate.copernicus.eu/>`_.
 
 |br|
 
@@ -443,4 +445,4 @@ Overall, the service focuses on two main areas (and four systems):
 .. hint:: **Small activity** |br|
 	See the Copernicus Emergency Management system for `flood monitoring and forecast <https://www.efas.eu/efas_frontend/#/home>`_.
 
-.. note:: For additional information see `the Copernicus Emergency Management Service web site <https://emergency.copernicus.eu/>`_.
+.. seealso:: For additional information, see the `Copernicus Emergency Management Service web site <https://emergency.copernicus.eu/>`_.

@@ -15,7 +15,6 @@ Welcome to Gis4Schools's documentation!
    rs_satelliteimages.rst
    rs_casestudies.rst
    rs_authors.rst
-   rs_version.rst
 
 
 ..
