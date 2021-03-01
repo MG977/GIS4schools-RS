@@ -9,6 +9,7 @@ Welcome to Gis4Schools's documentation!
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
+   :numbered:
 
    rs_fundamentals.rst
    rs_imageanalysis.rst

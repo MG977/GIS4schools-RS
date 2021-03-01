@@ -3,17 +3,17 @@
 
 .. _Fundamentals-of-remote-sensing-and-Earth-observation:
 
-1. Fundamentals of remote sensing and Earth observation
-=======================================================
+Fundamentals of Earth observation
+==================================
 
-1.1. What is Earth observation?
--------------------------------
-Remote sensing could be defined as:
+Remote sensing and Earth observation
+-------------------------------------
+**Remote sensing** is the
 
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
 	(Credit: `Oxford Dictionary of Earth Sciences. © Oxford University Press <https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100413590>`_).
 
-while Earth observation (EO) could be defined as:
+while **Earth observation** (EO) is the
 
 	*"The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment."*  |br|
 	(Credit: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
@@ -25,8 +25,8 @@ Thus, *Earth observation* provides **raw data** and a set of methods for their *
 |br|
 |br|
 
-1.2. Satellites for Earth observation
--------------------------------------
+Satellites for Earth observation
+---------------------------------
 Today, hundreds of satellites are orbiting or planet. They differ for:
 
 - Orbits and revisit time,
@@ -47,8 +47,8 @@ On the opposite, to monitor each small field’s agricultural productivity, we n
 
 |br|
 
-1.2.1. Satellite orbits and revisit time
-`````````````````````````````````````````
+Satellite orbits and revisit time
+````````````````````````````````````
 **a. Geostationary orbit (GEO)** |br|
 Satellites in geostationary orbit circle Earth above the equator from west to east following Earth’s rotation at an *altitude of 35,800 km* and a *speed of about 3 km/s*. This makes geostationary satellites to be ‘stationary’ over a fixed location. |br|
 These satellites can image the portion of the Earth's surface they are looking at every 30 minutes or less. **Most of the satellites used for weather forecasts have a geostationary orbit.**
@@ -83,15 +83,8 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 
 |br|
 
-1.2.2. Imaging cameras
-````````````````````````
-Remote sensing satellites use special “cameras” that produce greyscale digital images (:numref:`Fig_camera_SAT`).
-
-.. _Fig_camera_SAT:
-.. figure:: /Figure/Fig_camera_SAT.png
-
-	The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).
-
+Digital images and the EM spectrum
+````````````````````````````````````
 A greyscale digital image is a **matrix** (i.e. table) of individual elements (called **pixels**) representing the **brightness** of a specific geographic location recorded in a particular **range of wavelengths of the electromagnetic spectrum** (called **spectral band**, or just **band**) (:numref:`Fig3_SAT`).
 
 .. _Fig3_SAT:
@@ -128,48 +121,18 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 
 |br|
 
-1.2.3. Spatial resolution and swath width
-`````````````````````````````````````````
-The spatial resolution specifies the pixel size of satellite images at the Earth surface. It describes the ability to separate small spatial details. |br|
-Depending on their image pixel size, remote sensing cameras are classified as:
-
-- **Very high spatial resolution:** < 1 m,
-- **High spatial resolution:** 1 -5 m,
-- **Medium spatial resolution:** 5 - 100 m,
-- **Low spatial resolution:** > 100 m.
-
-The area imaged on the surface is called **swath**. Thus, the swath defines the geographic extent of a single satellite image. |br|
-Generally speaking:
-
-- **Low resolution** imaging cameras have a **large swath**: up to thousands of km,
-- **Very high resolution** imaging cameras have a **small swath**: about dozen of km.
-
-.. _Fig2_SAT:
-.. figure:: /Figure/Fig2_SAT.png
-
-	The London Eye (UK). The effect of spatial resolution on image detail and swath.
-
-Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.
-
-On the opposite, Geostationary satellites have low resolution cameras with wide swath. In such an orbit, images over the area of interest are acquired continuously. These satellites are suitable for continental and global studies.
-
-*Medium resolution cameras with pixel size between 10 m and 30 m usually have a swath of about 200-300 km. They are often a good compromise for many application needs.*
-
-.. tip:: **Spatial resolution vs orbital altitude** |br|
-	The spatial resolution is proportional to the orbital altitude. Thus, Geostationary satellites have a low spatial resolution, while Low Earth Orbit satellites could achieve very high spatial resolution.
-
-|br|
-
 .. _Spectral-characteristics:
 
-1.2.4. Spectral characteristics
-````````````````````````````````
-Depending on the number of spectral bands, imaging cameras for Earth observation are classified as:
+Spectral characteristics
+`````````````````````````
+Optical satellites use special “cameras”, called **multispectral cameras** (:numref:`Fig_camera_SAT`).
 
-- **Multispectral:** usually 2 - 30 bands,
-- **Hyperspectral:** usually > 100 bands.
+.. _Fig_camera_SAT:
+.. figure:: /Figure/Fig_camera_SAT.png
 
-Multispectral and hyperspectral cameras produce multiband grayscale images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
+	The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).
+
+Multispectral cameras produce multispectral (=multiband) grayscale images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
 **In other words, a multiband image describes the intensity of the different “colours” sensed in the different “lights” of the electromagnetic spectrum.**
 
 .. _Fig7_SAT:
@@ -215,13 +178,45 @@ The combination of different greyscale spectral bands produces the colours of sa
 	*What happens to colours if you mix up the bands?*
 
 |br|
+
+Spatial resolution and swath width
+````````````````````````````````````
+The spatial resolution specifies the pixel size of satellite images at the Earth surface. It describes the ability to separate small spatial details. |br|
+Depending on their image pixel size, remote sensing cameras are classified as:
+
+- **Very high spatial resolution:** < 1 m,
+- **High spatial resolution:** 1 -5 m,
+- **Medium spatial resolution:** 5 - 100 m,
+- **Low spatial resolution:** > 100 m.
+
+The area imaged on the surface is called **swath**. Thus, the swath defines the geographic extent of a single satellite image. |br|
+Generally speaking:
+
+- **Low resolution** imaging cameras have a **large swath**: up to thousands of km,
+- **Very high resolution** imaging cameras have a **small swath**: about dozen of km.
+
+.. _Fig2_SAT:
+.. figure:: /Figure/Fig2_SAT.png
+
+	The London Eye (UK). The effect of spatial resolution on image detail and swath.
+
+Very high resolution cameras are typically needed for applications requiring great spatial detail of a particular site, such as mapping buildings damaged by an earthquake. Such cameras would generally be onboard of a Low Earth Orbit satellite and have a narrow swath. In such an orbit, images can only be acquired when the satellite passes over the area of interest.
+
+On the opposite, Geostationary satellites have low resolution cameras with wide swath. In such an orbit, images over the area of interest are acquired continuously. These satellites are suitable for continental and global studies.
+
+*Medium resolution cameras with pixel size between 10 m and 30 m usually have a swath of about 200-300 km. They are often a good compromise for many application needs.*
+
+.. tip:: **Spatial resolution vs orbital altitude** |br|
+	The spatial resolution is proportional to the orbital altitude. Thus, Geostationary satellites have a low spatial resolution, while Low Earth Orbit satellites could achieve very high spatial resolution.
+
+|br|
 |br|
 
-1.3. Copernicus and the Sentinels
----------------------------------
+Copernicus and the Sentinels
+-----------------------------
 
-1.3.1. The Copernicus programme
-````````````````````````````````
+The Copernicus programme
+`````````````````````````
 `Copernicus <https://www.copernicus.eu>`_ is the flagship European Union’s Earth Observation Programme, looking at our planet and its environment. Every day, Copernicus collects a large amount of global data from ground stations, satellites, airborne and seaborne systems. Then, transforms these data into information to support public authorities, international organisations and the industry in improving the quality of life for all European citizens.
 
 Copernicus’s information can be used by end-users for a wide range of applications and various subject areas, including:
@@ -240,8 +235,8 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 
 |br|
 
-1.3.2. Multispectral Sentinel satellites
-````````````````````````````````````````
+Multispectral Sentinel satellites
+````````````````````````````````````
 **Sentinel-2** |br|
 The Sentinel-2 satellites (twin satellites Sentinel-2A and Sentinel-2B) provide **multispectral medium resolution imagery** for land services. |br|
 Their orbit is Sun-synchronous, and the constellation (2 identical satellites) has an overall revisit time of 5 days at the equator and about 2-3 days at mid-latitudes. |br|
@@ -317,8 +312,8 @@ The mission objectives for Sentinel-3 are global coverage of:
 |br|
 |br|
 
-1.4. Beyond satellite images
-----------------------------
+Beyond satellite images
+------------------------
 Copernicus is not only satellite images. It also collects information from many sensors on the ground, sea, and air and transforms all these data into useful information to monitor changes and create forecasts.
 
 These value-added products are delivered to users through the six thematic Copernicus services:
@@ -332,8 +327,8 @@ These value-added products are delivered to users through the six thematic Coper
 
 |br|
 
-1.4.1. Copernicus Atmosphere Monitoring Service
-````````````````````````````````````````````````
+Copernicus Atmosphere Monitoring Service
+`````````````````````````````````````````
 The `Copernicus Atmosphere Monitoring Service <https://atmosphere.copernicus.eu/>`_ provides data and information on atmospheric composition. It describes the current situation, forecasts a few days ahead, and analyses consistently retrospective data records for recent years. 
 
 For example, the Copernicus Atmosphere Monitoring Service provides daily information on the global atmospheric composition by monitoring and forecasting constituents such as greenhouse gases, reactive gases, ozone and aerosols. The service also delivers information on the solar radiation at the Earth’s surface (which is essential for health, agriculture and renewable energies), near-real-time analysis, 4-day forecasts, and reanalysis of the European air quality.
@@ -353,8 +348,8 @@ Overall, the service focuses on five main areas:
 
 |br|
 
-1.4.2. Copernicus Marine Environment Monitoring Service
-````````````````````````````````````````````````````````
+Copernicus Marine Environment Monitoring Service
+`````````````````````````````````````````````````
 The `Copernicus Marine Environment Monitoring Service <https://marine.copernicus.eu/>`_ provides regular and systematic information on the physical and biogeochemical state, variability and dynamics of the ocean and marine ecosystems.
 
 For example, the Copernicus Marine Environment Monitoring Service improves ship routing services, offshore operations or search and rescue operations. The service also contributes to the protection and sustainable management of living marine resources. And the physical and biogeochemical components are useful for water quality monitoring, pollution control, or coastal erosion assessment.
@@ -373,8 +368,8 @@ Overall, the service focuses on four main areas:
 
 |br|
 
-1.4.3. Copernicus Land Monitoring Service
-`````````````````````````````````````````
+Copernicus Land Monitoring Service
+````````````````````````````````````
 The `Copernicus Land Monitoring Service <https://land.copernicus.eu/>`_ provides geographical information on land cover and its changes, land use, vegetation state, water cycle and Earth’s surface energy variables.
 
 For example, the Copernicus Land Monitoring Service supports applications such as spatial and urban planning, forest management, water management, agriculture and food security, nature conservation and restoration, rural development, ecosystem accounting and mitigation/adaptation to climate change.
@@ -394,8 +389,8 @@ Overall, the service focuses on five main areas:
 
 |br|
 
-1.4.4. Copernicus Climate Change Service
-````````````````````````````````````````
+Copernicus Climate Change Service
+````````````````````````````````````
 The `Copernicus Climate Change Service <https://climate.copernicus.eu/>`_ provides information about the past, present and future climate in Europe and the rest of the World.
 
 For example, The Copernicus Climate Change Service provides scientists, consultants, planners, policymakers, media and the general public free and open access to climate data and tools to assess climate change impacts on biodiversity.
@@ -407,8 +402,8 @@ For example, The Copernicus Climate Change Service provides scientists, consulta
 
 |br|
 
-1.4.5. Copernicus Security Service
-````````````````````````````````````
+Copernicus Security Service
+````````````````````````````
 The `Copernicus Security Service <https://climate.copernicus.eu/>`_ provides information in response to Europe’s security challenges.
 
 For example, the Copernicus Security Service supports the reduction of illegal immigrants’ death at sea, increases the European Union’s internal security, and fights against cross-border crime. It also increases navigation safety, supports fisheries control, combats marine pollution, and law enforcement at sea. Besides, the Copernicus Security Service provides decision-makers with geo-information on remote and difficult to access areas, where security issues are at stake.
@@ -426,8 +421,8 @@ Overall, the service focuses on three main areas:
 
 |br|
 
-1.4.6. Copernicus Emergency Management Service
-````````````````````````````````````````````````````````
+Copernicus Emergency Management Service
+````````````````````````````````````````
 The `Copernicus Emergency Management Service <https://emergency.copernicus.eu/>`_ provides all actors involved in managing natural disasters, man-made emergency situations, and humanitarian crises with timely and accurate satellite-based geospatial information completed by available on-site data or open data sources.
 
 For example, the Copernicus Emergency Management Service provides digital and printed maps to Civil Protection Authorities and Humanitarian Aid Agencies. Map products can support all the phases of the emergency management cycle: preparedness, prevention, disaster risk reduction, emergency response and recovery.

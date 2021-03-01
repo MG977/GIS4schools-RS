@@ -1,16 +1,16 @@
 .. include:: html_lat.txt
 
 
-2. Principles of image analysis 
-===============================
+Principles of image analysis 
+=============================
 
-2.1. The spectral signature
----------------------------
+The spectral signature
+-----------------------
 
 .. _What-is-a-spectral-signature:
 
-2.1.1. What is a spectral signature
-````````````````````````````````````
+What is a spectral signature
+`````````````````````````````
 Each natural and manmade material reflects the sunlight depending on its *chemical composition*, *physical properties*, *texture*, *moisture*, *surface roughness*, and *alteration or degradation state*. |br|
 This reflected sunlight is called **reflectance** and is represented with the symbol :math:`\rho`.
 
@@ -19,8 +19,8 @@ This variation of reflectance with wavelengths is called **spectral signature**.
 
 Since each material has a unique spectral signature (like a fingerprint), that means:
 
-- If we know the object material, we can use its spectral signature to monitor health status or degradation (for more details see :any:`Spectral-indices-for-environmental-monitoring`. For exercises see :any:`Monitoring-lake-trophic-state` and :any:`Monitoring-crops-vegetative-stage`),
-- If we don’t know the object material, we can use its spectral signature for its identification (for more details see :any:`Automatic-land-cover-mapping`. For exercises see :any:`Mapping-crop-types`).
+- If we know the object material, we can use its spectral signature to monitor health status or degradation (for more details see :ref:`Spectral-indices-for-environmental-monitoring`. For exercises see :ref:`Monitoring-lake-trophic-state` and :ref:`Monitoring-crops-vegetative-stage`),
+- If we don’t know the object material, we can use its spectral signature for its identification (for more details see :ref:`Automatic-land-cover-mapping`. For exercises see :ref:`Mapping-crop-types`).
 
 .. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of their spectral signatures is the principles of multispectral Earth observation.**
 
@@ -69,9 +69,9 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 |br|
 
-2.1.2. How to measure spectral signatures with satellites
-`````````````````````````````````````````````````````````
-Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:any:`Spectral-characteristics`).
+How to measure spectral signatures with satellites
+````````````````````````````````````````````````````
+Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:ref:`Spectral-characteristics`).
 
 Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we approximate its continuous spectral signature with a polyline** *(a line made of segments)*. :numref:`Fig8_signature` shows an example.
 
@@ -87,9 +87,9 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 
 .. _How-to-compare-spectral-signatures:
 
-2.1.3. How to compare spectral signatures
-`````````````````````````````````````````
-Spectral signatures are curves that describe the variation of reflectance with wavelengths :any:`What-is-a-spectral-signature`. The closer the curves are, the more they are similar. |br|
+How to compare spectral signatures
+````````````````````````````````````
+Spectral signatures are curves that describe the variation of reflectance with wavelengths :ref:`What-is-a-spectral-signature`. The closer the curves are, the more they are similar. |br|
 Unfortunately, it is difficult to calculate the “distance” between curves.
 
 Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called **feature space** and has **ONE AXIS FOR EACH SPECTRAL BAND**. |br|
@@ -126,11 +126,11 @@ z is the axis for spectral band 3.
 
 .. _Spectral-indices-for-environmental-monitoring:
 
-2.2. Spectral indices for environmental monitoring
---------------------------------------------------
+Spectral indices for environmental monitoring
+----------------------------------------------
 
-2.2.1. What is a spectral index
-````````````````````````````````
+What is a spectral index
+`````````````````````````
 A spectral index is a math expression applied to a multispectral image to highlight specific properties of different land covers, their state of alteration, amount or health.
 
 Spectral indices combine the reflectance information from multiple spectral bands into **ONE** numeric value. Thus, they turn satellite images *from a qualitative visual inspection tool into a quantitative numerical analysis tool.* |br|
@@ -162,8 +162,8 @@ The most popular spectral indices are those to retrieve the status of vegetation
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
-2.2.2. How spectral indices are designed 
-````````````````````````````````````````
+How spectral indices are designed 
+````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, moisture content, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
 
 Let's see some examples for vegetation.
@@ -256,11 +256,11 @@ The list of existing spectral indices is very long, but you could build your own
 
 .. _Automatic-land-cover-mapping:
 
-2.3. Automatic land cover mapping
----------------------------------
+Automatic land cover mapping
+-----------------------------
 
-2.3.1. Land cover maps vs land use maps
-````````````````````````````````````````
+Land cover maps vs land use maps
+`````````````````````````````````
 Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
 Example of land cover classes are:
 
@@ -289,8 +289,8 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 |br|
 
-2.3.2. Supervised image classification
-````````````````````````````````````````
+Supervised image classification
+````````````````````````````````
 Automatic mapping of land cover classes is done with supervised image classification.
 
 The basic idea is to train a mathematical model to recognise spectral signatures. This is done using the spectral signatures of the **training samples**, which are image pixels selected in sites with **KNOWN land cover** (called *training sites*).
@@ -303,7 +303,7 @@ For each class, pick some training samples on the satellite image and label them
 
 	Training sites and training samples.
 
-Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** with the **KNOWN training samples** (see :any:`How-to-compare-spectral-signatures`). |br|
+Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** with the **KNOWN training samples** (see :ref:`How-to-compare-spectral-signatures`). |br|
 The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
 
 **In other words, the classification map is a prediction based on the knowledge of some limited training sites.**
@@ -319,8 +319,8 @@ The output is a classification map with all the classes defined by the training 
 
 |br|
 
-2.3.3 Classification strategies
-````````````````````````````````
+Classification strategies
+````````````````````````````
 A massive number of classification strategies are used in remote sensing. They have different requirements, constraints and accuracy. |br|
 The subject is so vast that we cannot generalize and is out-of-scope for this training.
 
@@ -334,7 +334,7 @@ A simple and popular method is the **Minimum Distance (to Means)** classifier. T
 
 Thus, the Minimum Distance (to Means) classifier labels the image pixels based their “global” distance with the training samples.
 
-.. note:: See :any:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
+.. note:: See :ref:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
 
 .. hint:: **Small activity** |br|
 	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
@@ -359,11 +359,11 @@ Thus, the Spectral Angle Mapper classifier labels the image pixels based their "
 |br|
 |br|
 
-2.4. Map validation
--------------------
+Map validation
+---------------
 
-2.4.1. Precision or accuracy?
-`````````````````````````````
+Precision or accuracy?
+````````````````````````
 Precision and accuracy are often used as synonyms. **But they are not!**
 
 - **Precision** refers to the degree to which repeated attempts (under unchanged conditions) *are close to each other*, independent of their true value. Thus, a precise quantity might be completely wrong because biased!,
@@ -392,13 +392,13 @@ The archer is precise and unbiased. Thus, the first archer is **accurate**.
 .. hint:: For land cover mapping:
 
 	- **Accuracy** refers to the degree to which the information on the map matches the real world, |br|
-	- **Precision** refers to how exactly is the data used to create the map. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :any:`Fundamentals-of-remote-sensing-and-Earth-observation`).
+	- **Precision** refers to how exactly is the data used to create the map. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :ref:`Fundamentals-of-remote-sensing-and-Earth-observation`).
 
 
 |br|
 
-2.4.2. How much is accurate a map?
-````````````````````````````````````
+How much is accurate a map?
+````````````````````````````
 Referring to the mapping process, **accuracy** is the most used performance metric and tells *“how many sites are mapped correctly.”*
 
 Map accuracy is estimated using the **confusion matrix**, a table that relates the actual land cover of some KNOWN reference locations, called the *testing samples*, with their predicted values in the map. |br|

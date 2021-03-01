@@ -1,23 +1,23 @@
 .. include:: html_lat.txt
 
 
-4. Hands-on exercises
-======================
+Hands-on exercises
+===================
 
 .. _Monitoring-lake-trophic-state:
 
-4.1. Monitoring lake’s trophic state (difficulty: advanced)
-------------------------------------------------------------
+Monitoring lake’s trophic state (difficulty: advanced)
+-------------------------------------------------------
 
-4.1.0 Download the data
-````````````````````````
+Download the data
+````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
    `Click here to download the data for this exercise (1.2 GB). <https://drive.google.com/file/d/1fVFf_5HaIPZ6Ckh84M6BiNKUpEvqjmYH/view?usp=sharing>`_
 
+|br|
 
-
-4.1.1 The environmental problem
-````````````````````````````````
+The environmental problem
+````````````````````````````
 The trophic state of a water body describes the amount of nutrients (mainly phosphorus and nitrogen) available to grow aquatic vegetation and phytoplankton. However, when water becomes rich with nutrients, phytoplankton’s rapid growth (called **algae bloom**) could cause negative impacts on the marine environment, like:
 
 - The disruption of the normal ecosystem functioning,
@@ -42,24 +42,25 @@ Lakes are usually classified into 4 trophic states, according to chlorophyll’s
 .. Warning:: **The role of climate change** |br|
    Climate change may indirectly cause eutrophication by increasing runoff from the land, affecting nutrient load, due to increased precipitation resulting from global warming.
 
+|br|
 
-
-4.1.2 Scope of the exercise
-````````````````````````````
+Scope of the exercise
+````````````````````````
 This exercise shows a very simple method to monitor the eutrophic level of a lake with satellites.
 
+|br|
 
 .. _Study-area:
 
-4.1.3 Study area
-`````````````````
+Study area
+````````````
 Lake Trasimeno is located in central Italy, in the Umbria region on the border with Tuscany. The lake is the fourth for surface area in Italy (mean surface area 121 km2), has two minor tributaries but none natural emissaries, and is surrounded by a natural park. |br|
 The lake is very shallow (4-5 m average depth). Its water level is usually at the highest level in April/May (less than 6 m) and at the minimum level in September/October. For its peculiar characteristics, in summer Lake Trasimeno is prone to eutrophication.
 
+|br|
 
-
-4.1.4 Satellite images
-````````````````````````
+Satellite images
+`````````````````
 The analysis is done using ten cloud-free Sentinel-2 images collected in the following dates of Summer 2016:
 
 - 18 July 2016,
@@ -77,11 +78,12 @@ The analysis is done using ten cloud-free Sentinel-2 images collected in the fol
 
    Atmospheric correction is an advanced topic not covered in training. Thus, this exercise uses the most simple atmospheric compensation technique, called Dark Object Subtraction (DOS), to derive pseudo ``L2A`` products.
 
+|br|
 
 .. _The-modelling-WQ:
 
-4.1.5 The modelling
-````````````````````
+The modelling
+````````````````
 The Ratio Vegetation Index (RVI) is a spectral index proportional to chlorophyll’s concentration. Thus, it could be used as a proxy for its estimation. |br|
 Phytoplankton are microorganisms that float on the water body and contain chlorophyll. Thus, they could be detected with RVI.
 
@@ -95,10 +97,10 @@ For Sentinel-2 images, we calculate Equation :eq:`eqWQ1` as follows:
 .. math:: Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b
    :label: eqWQ2
 
+|br|
 
-
-4.1.6 Chlorophyll’s concentration and water level
-`````````````````````````````````````````````````
+Chlorophyll’s concentration and water level
+````````````````````````````````````````````
 The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentration, but it does not represent its exact value. Thus, we need some experimental data of known chlorophyll’s concentration vs RVI value for the calibration of the equation :eq:`eqWQ2`.
 
 :numref:`Fig1_WQ` shows Lake Trasimeno with superimposed five sampling locations (green dots) where the chlorophyll’s concentration was measured on 18 July 2016. These data are used for the model’s calibration.
@@ -135,10 +137,10 @@ The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentratio
    October    +2 m
    =========  ====================================================
 
+|br|
 
-
-4.1.7 QGIS set-up
-`````````````````
+QGIS set-up
+`````````````
 Open QGIS. Go to the menu bar and click ``Plugins`` → ``Manage and Install Plugins...`` (:numref:`Fig3_WQ_Plugins`).
 
 .. _Fig3_WQ_Plugins:
@@ -160,10 +162,10 @@ In QGIS main window, select ``New Empty Project`` (:numref:`Fig2_WQ_New_Project`
 
    Sample screenshot.
 
+|br|
 
-
-4.1.8 Prepare the satellite images
-````````````````````````````````````
+Prepare the satellite images
+````````````````````````````````
 Open the Semi-Automatic Classification Plugin (SCP) (:numref:`Fig5_WQ_Open_SCP`).
 
 .. _Fig5_WQ_Open_SCP:
@@ -218,11 +220,12 @@ The image is loaded in QGIS. However, its colours are not what we expect because
 
 To solve this problem, we need to tell QGIS which spectral bands correspond to Red, Green and Blue.
 
+|br|
 
 .. _Load-the-satellite-images-with-the-correct-colours:
 
-4.1.9 Load the satellite images with the correct colours
-`````````````````````````````````````````````````````````
+Load the satellite images with the correct colours
+````````````````````````````````````````````````````
 Right-click on the image name → ``Properties`` → ``Symbology`` and set (:numref:`Fig10_WQ_Layer_Symbology`):
 
 - ``Red band:`` set ``Band 03``. The satellite’s band 3 collects the Red reflected sunlight,
@@ -243,10 +246,10 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig11_WQ_T
 
    Sample screenshot.
 
+|br|
 
-
-4.1.10 Resize the image
-````````````````````````
+Resize the image
+````````````````````
 The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the data processing.
 
 Import in QGIS the vector layer ``..\Study_area\trasimeno_proj.shp``.
@@ -290,7 +293,7 @@ The new clipped image will appear in QGIS (:numref:`Fig15_WQ_Lake_Clip`). Now th
 
 Like it happened when importing the full-size Sentinel-2 image, the resized image is loaded with the wrong order’s spectral bands. Thus, Lake Trasimeno has the wrong colour.
 
-Repeat the steps described in :any:`Load-the-satellite-images-with-the-correct-colours` (:numref:`Fig16_WQ_Lake_Clip_Symbology`).
+Repeat the steps described in :ref:`Load-the-satellite-images-with-the-correct-colours` (:numref:`Fig16_WQ_Lake_Clip_Symbology`).
 
 .. _Fig16_WQ_Lake_Clip_Symbology:
 .. figure:: /Figure/Fig16_WQ_Lake_Clip_Symbology.png
@@ -304,11 +307,11 @@ Now QGIS shows the satellite image with the correct colours (:numref:`Fig17_WQ_L
 
    Sample screenshot.
 
+|br|
 
-
-4.1.11 Calculate the Ratio Vegetation Index
-````````````````````````````````````````````
-Remember we use the spectral model described in (:any:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:any:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
+Calculate the Ratio Vegetation Index
+`````````````````````````````````````
+Remember we use the spectral model described in (:ref:`The-modelling-WQ`). Thus we calculate the Ratio Vegetation Index (RVI) (:ref:`Examples-of-spectral-indices-for-studying-vegetation`) with Sentinel-2’s band 3 (B3) and band 4 (B4).
 
 Now we do some calculations with images using the **Raster Calculator**. This tool allows evaluating equations based on the image pixel values. |br|
 Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:`Fig18_WQ_Raster_Calculator`).
@@ -351,10 +354,10 @@ The output is a grayscale image, where each pixel contains its RVI value just co
 
    Sample screenshot.
 
+|br|
 
-
-4.1.12 Sample the RVI in the calibration sites
-````````````````````````````````````````````````
+Sample the RVI in the calibration sites
+````````````````````````````````````````
 We know chlorophyll’s concentration in the five calibration sites because it was measured *on site*. But also we need the satellite-derived RVI.
 
 Import in QGIS the layer ``..Points/Sampling_2016.shp``. This file contains five small red polygons where the chlorophyll was sampled (:numref:`Fig21_WQ_Points`).
@@ -403,10 +406,10 @@ The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i
 
    Sample screenshot.
 
+|br|
 
-
-4.1.13 Calibrate the spectral model
-````````````````````````````````````
+Calibrate the spectral model
+`````````````````````````````
 To transform the spectral information of satellites into chlorophyll concentrations, we use the simple linear model of Equation :eq:`eqWQ4`:
 
 .. math:: Chl\ \left[mg/m^3\right]=a\times\frac{\rho_{Band 4}}{\rho_{Band 3}}+b
@@ -463,10 +466,10 @@ Consequently, the calibrated model becames Equation :eq:`eqWQ5`:
 .. math:: Chl\ \left[mg/m^3\right]=155\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-123
    :label: eqWQ5
 
+|br|
 
-
-4.1.14 Create an automatic workflow
-````````````````````````````````````
+Create an automatic workflow
+`````````````````````````````
 Remove all the layers from QGIS and import all the Sentinel-2 images from the folder ``..\GIS_4_School\4.1_Monitoring_lake_trophic_state\Pre-processed``. These images are already corrected for the atmospheric disturbance with the DOS algorithm and are, thus, ready for the processing.
 
 Now we need to repeat the same data processing for ALL the 10 satellite images. This task is very time consuming and also prone to errors. Thus, we automate data processing.
@@ -598,10 +601,10 @@ We have created the processing workflow (like if we have written a script) and a
 
 .. note:: Internally, QGIS transforms the graphical model into a Python code.
 
+|br|
 
-
-4.1.15 Create a batch processing to manipulate all the satellite images at once
-````````````````````````````````````````````````````````````````````````````````
+Create a batch processing to manipulate all the satellite images at once
+````````````````````````````````````````````````````````````````````````````
 We want to monitor the eutrophic level of Lake Trasimeno with Sentinel-2 images. Thus we have to run the processing workflow several times, each one with a different satellite image. This task is called **batch processing.**
 
 To run the model, select ``Model`` → ``Run Model``.
@@ -660,11 +663,12 @@ Now, QGIS knows how to save the results (:numref:`Fig46_WQ_Batch_processing_para
 
    Sample screenshot.
 
+|br|
 
 .. _Estimate-the-chlorophyll-concentration-in-Lake-Trasimeno:
 
-4.1.16 Estimate the chlorophyll's concentration in Lake Trasimeno
-`````````````````````````````````````````````````````````````````
+Estimate the chlorophyll's concentration in Lake Trasimeno
+````````````````````````````````````````````````````````````
 Click the button ``Run``. QGIS runs the processing workflow for each satellite image and saves the results in the output folder.
 
 Remove all the layer from QGIS and import the outputs of the automatic data processing. Each image describes the map of the estimated chlorophyll concentration. (:numref:`Fig47_WQ_Chl_Concentration_images`) shows an example 
@@ -731,15 +735,15 @@ Click the button ``Apply`` and ``OK``.
 
 Now all the maps have the same colour ramp, and the eutrophic states can be compared.
 
+|br|
 
-
-4.1.17 Simple analysis of results
-`````````````````````````````````
+Simple analysis of results
+````````````````````````````
 Let’s analyze the trophic level dynamics of Lake Trasimeno in summer 2016.
 
 Keep the maps of chlorophyll load estimated for 18 July 2016 (layer **T32TQN_20160718_Chl_Clip**), 4 August 2016 (layer **T32TQN_20160804_Chl_Clip**), 27 August 2016 (layer **T32TQN_20160827_Chl_Clip**), 13 September 2016 (layer **T32TQN_20160913_Chl_Clip**), 26 September 2016 (layer **T32TQN_20160926_Chl_Clip**), and close the other maps.
 
-As done in :any:`Estimate-the-chlorophyll-concentration-in-Lake-Trasimeno`, right-click on each map and select ``Properties``. In the left-side panel select **Symbology** and set the following parameters (:numref:`Fig54_WQ_Chl_Map`):
+As done in :ref:`Estimate-the-chlorophyll-concentration-in-Lake-Trasimeno`, right-click on each map and select ``Properties``. In the left-side panel select **Symbology** and set the following parameters (:numref:`Fig54_WQ_Chl_Map`):
 
 - ``Render type:`` set ``Singleband pseudocolor``,
 - ``Band:`` set ``Band 1 (Gray)``,
@@ -797,23 +801,24 @@ Finally, after two weeks, the trophic level decreases again to eutrophic (:numre
 
    Sample screenshot.
 
-Overall, our results are consistent with the characteristics and habitat of Lake Trasimeno (see :any:`Study-area`).
+Overall, our results are consistent with the characteristics and habitat of Lake Trasimeno (see :ref:`Study-area`).
 
+|br|
 
 .. _Mapping-crop-types:
 
-4.2. Mapping crop types (difficulty: intermediate)
----------------------------------------------------
+Mapping crop types (difficulty: intermediate)
+----------------------------------------------
 
-4.2.0 Download the data
-````````````````````````
+Download the data
+````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
    `Click here to download the data for this exercise (2.5 GB). <https://drive.google.com/file/d/145Lh5o4do7niR6YDtlXOjEMcLI2cpqcI/view?usp=sharing>`_
 
+|br|
 
-
-4.2.1 The environmental problem
-`````````````````````````````````
+The environmental problem
+````````````````````````````
 Agriculture is highly dependent on the climate. For any crop type, the effect of climate change will depend on the crop’s optimal temperature and water availability for growth and reproduction.
 
 The temperature increase will change farming practices. In some countries, warming could increase productivity or allow farmers to shift to crops that are currently grown in warmer areas. A higher temperature could exceed the crop’s optimum temperature in some other countries, and production will decline.
@@ -821,23 +826,23 @@ The temperature increase will change farming practices. In some countries, warmi
 .. Warning:: **The role of climate change.** |br|
    Overall, climate change may make it difficult to grow crops the same ways and in the same places as in the past.
 
+|br|
 
-
-4.2.2 Scope of the exercise
-`````````````````````````````
+Scope of the exercise
+````````````````````````
 This exercise shows a very simple method to map crop types with satellites.
 
+|br|
 
-
-4.2.3 Study area
-````````````````````
+Study area
+````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
 
+|br|
 
-
-4.2.4 Satellite images
-`````````````````````````
+Satellite images
+`````````````````
 The analysis is done using two cloud-free Sentinel-2 images collected in the following dates of Spring-Summer 2018:
 
 - 18 April 2018,
@@ -845,10 +850,10 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
 
+|br|
 
-
-4.2.5 Land cover information
-````````````````````````````````
+Land cover information
+````````````````````````
 Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in :numref:`Fig1_CROP_Study_area` stands for a crop field with available information on the cultivated crop type.
 
 In the study area are cultivated the following main crops:
@@ -867,16 +872,16 @@ In the study area are cultivated the following main crops:
 
    Farmlands in the Wallonia region.
 
+|br|
 
-
-4.2.6 Methods
-````````````````
+Methods
+````````
 The mapping process uses the **Minimum Distance** supervised classification algorithm. The training samples, called *Region Of Interest (ROI)* in QGIS, are extracted from available land cover polygons.
 
+|br|
 
-
-4.2.7 QGIS set-up
-````````````````````
+QGIS set-up
+````````````
 Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_CROP_New_Project`).
 
 .. _Fig2_CROP_New_Project:
@@ -884,12 +889,12 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_CRO
 
    Sample screenshot.
 
-
+|br|
 
 .. _Prepare-multiband-files-for-10-meter-satellite-images:
 
-4.2.8 Prepare multiband files for 10-meter satellite images
-`````````````````````````````````````````````````````````````
+Prepare multiband files for 10-meter satellite images
+````````````````````````````````````````````````````````
 Open the folder ``S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE`` → ``GRANULE`` → ``L2A_T31UFS_A014734_20180418T104512`` → ``IMG_DATA`` → ``R10m``.
 
 Each 10-meter Sentinel-2’s spectral band is stored as a single file. Now select the spectral bands with 10 m spatial resolution, those file names end with  (:numref:`Fig3_CROP_Band_selection`):
@@ -979,10 +984,10 @@ Select the following parameters in the **Merge window**:
 
    Sample screenshot.
 
+|br|
 
-
-4.2.9 Prepare multiband files for 20-meter satellite images
-`````````````````````````````````````````````````````````````
+Prepare multiband files for 20-meter satellite images
+````````````````````````````````````````````````````````
 Repeat the same data processing done for the 10-meter satellite images, and create multiband files for the 20-meter satellite images.
 
 Remove the open layers from QGIS and open the folder ``S2A_MSIL2A_20180418T104021_N0207_R008_T31UFS_20180418T125356.SAFE`` → ``GRANULE`` → ``L2A_T31UFS_A014734_20180418T104512`` → ``IMG_DATA`` → ``R20m``.
@@ -1004,7 +1009,7 @@ Each 20-meter Sentinel-2’s spectral band is stored as a single file. Now selec
 
    Sample screenshot.
 
-Now create the multiband file by merging together the spectral bands, as described in :any:`Prepare-multiband-files-for-10-meter-satellite-images`.
+Now create the multiband file by merging together the spectral bands, as described in :ref:`Prepare-multiband-files-for-10-meter-satellite-images`.
 
 .. Caution:: Be careful when selecting the input layers. Band **B8A** is the last entry by default. **IT MUST BE MOVED AFTER BAND B07** (:numref:`Fig8_CROP_20m_wrong_band_order`).
 
@@ -1033,12 +1038,12 @@ Select the following parameters in the **Merge window**:
 
    Sample screenshot.
 
-
+|br|
 
 .. _Resize-the-image:
 
-4.2.10 Resize the image
-````````````````````````
+Resize the image
+`````````````````
 The Sentinel-2 images cover a larger area than our study area. Thus, we can resize them before starting the classification process.
 
 In the menu bar select ``Layer`` → ``Data Source Manager`` (:numref:`Fig107_Data_Source_Manager_Vector`).
@@ -1111,13 +1116,13 @@ The new clipped image will appear in QGIS (:numref:`Fig113_Clipped_image`). Now 
 
 Remove all the layers from QGIS.
 
+|br|
 
-
-4.2.11 Create the training samples for image classification
-`````````````````````````````````````````````````````````````
+Create the training samples for image classification
+`````````````````````````````````````````````````````
 In our study area, farmlands are much more extensive than 20 m x 20 m. Thus, we use the 20-meters Sentinel-2 image to perform the classification process. On the one hand we do not need greater detail, and on the other hand the 20-meters images have much more spectral bands, thus allowing a better recognition of crop types.
 
-Import in QGIS the Sentinel-2 multiband image of 27 June 2018 from the folder ``..\Sentinel-2\20m`` (:numref:`Fig114_Import_Clipped_Image`). This image is already merged and resized as described in :any:`Prepare-multiband-files-for-10-meter-satellite-images` and :any:`Resize-the-image`.
+Import in QGIS the Sentinel-2 multiband image of 27 June 2018 from the folder ``..\Sentinel-2\20m`` (:numref:`Fig114_Import_Clipped_Image`). This image is already merged and resized as described in :ref:`Prepare-multiband-files-for-10-meter-satellite-images` and :ref:`Resize-the-image`.
 
 .. _Fig114_Import_Clipped_Image:
 .. figure:: /Figure/Fig114_Import_Clipped_Image.png
@@ -1220,10 +1225,10 @@ Click the ``Import vector`` icon (:numref:`Fig17_v2_CROP_ROI_Creation`).
 .. important:: Wait until the importing is finished! |br|
    This process might take some minutes, depending on your PC performances.
 
+|br|
 
-
-4.2.12 Automatic mapping of crop types
-````````````````````````````````````````
+Automatic mapping of crop types
+````````````````````````````````
 Let’s start the classification process.
 
 Open the ``SCP window`` and go to the ``Band processing`` panel. Select ``Classification`` and set the parameters as follows (:numref:`Fig18_CROP_Classification_tool`):
@@ -1252,10 +1257,10 @@ The data processing transforms the input satellite image into a land cover map o
 
    Sample screenshot.
 
+|br|
 
-
-4.2.13 Simple analysis of results
-````````````````````````````````````
+Simple analysis of results
+````````````````````````````
 If we want to estimate the most farmed crop, right-click on the classification layer ``20180627_Classification`` and select ``Properties`` (:numref:`Fig20_CROP_Classification_properties`).
 
 .. _Fig20_CROP_Classification_properties:
@@ -1276,22 +1281,24 @@ We see that the crop Flax (Linseed), *coded with the class number 4*, is the mos
 
 .. hint:: If we have some information on the land cover and satellite images for the same period, but in a different location, we can compare how crop types are farmed in other places.
 
+|br|
 
 .. _Monitoring-crops-vegetative-stage:
 
-4.3. Monitoring crops’ vegetative stage (difficulty: easy)
------------------------------------------------------------
+Monitoring crops’ vegetative stage (difficulty: easy)
+------------------------------------------------------
 
-4.3.0 Download the data
-````````````````````````
+Download the data
+````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
    `Click here to download the data for this exercise (270 MB). <https://drive.google.com/file/d/1iyZDXhl4NnlTixUk2BVecHNT6q2uJd0u/view?usp=sharing>`_
 
+|br|
 
 .. _The-environmental-problem-agricultural-productivity:
 
-4.3.1 The environmental problem
-`````````````````````````````````
+The environmental problem
+````````````````````````````
 Agricultural productivity is strictly related to environmental factors. For example:
 
 - Rising levels of CO2 reduce protein content and essential minerals in most crops, including Wheat, Soybeans, and Rice, resulting in a loss of food quality,
@@ -1304,23 +1311,23 @@ Agricultural productivity is strictly related to environmental factors. For exam
 .. Warning:: **The role of climate change** |br|
    Climate change is modifying the temperature and the precipitation regimes, intensifying extreme weather, and increasing desertification in many fragile territories. That has an impact on the health of vegetation and crops.
 
+|br|
 
-
-4.3.2 Scope of the exercise
-````````````````````````````
+Scope of the exercise
+````````````````````````
 This exercise shows satellites’ use to evaluate Barley and Potatoes’ vegetative stage in different periods of the year.
 
+|br|
 
-
-4.3.3 Study area
-````````````````````
+Study area
+````````````
 The study area is Wallonia, the southern and most extensive region of Belgium. The climate is temperate, moderately humid, with an annual rainfall of about 780 mm well distributed over the year. |br|
 The soil is loamy and moderately well-drained; thus, it does not require irrigation. The main winter crops are Wheat and Barley, while the main Summer crops are Potatoe, Sugar beet and Maize. Field size ranges from 3 ha to 15 ha.
 
+|br|
 
-
-4.3.4 Satellite images
-````````````````````````
+Satellite images
+`````````````````
 The analysis is done using two cloud-free Sentinel-2 images collected in the following dates of Spring-Summer 2018:
 
 - 18 April 2018,
@@ -1328,10 +1335,10 @@ The analysis is done using two cloud-free Sentinel-2 images collected in the fol
 
 .. Warning:: The Sentinel-2 images used in this exercise are supplied as atmospherically corrected ``L2A`` products. **THUS, THEY CAN BE USED WITHOUT ANY FURTHER PRE-PROCESSING.**
 
+|br|
 
-
-4.3.5 Land cover information
-````````````````````````````````
+Land cover information
+````````````````````````
 Information on the actual land cover is provided as polygons (shapefiles). Each red polygon in :numref:`Fig1_NDVI_Study_area` stands for a crop field with available information on the cultivated crop type.
 
 In the study area are cultivated the following main crops:
@@ -1350,18 +1357,18 @@ In the study area are cultivated the following main crops:
 
    Farmlands in the Wallonia region.
 
+|br|
 
-
-4.3.6 Methods
-````````````````
-The monitoring of vegetative stage is done using the **Normalized Difference Vegetation Index (NDVI)** (:any:`Examples-of-spectral-indices-for-studying-vegetation`) described by Equation :eq:`eqSI2`:
+Methods
+`````````
+The monitoring of vegetative stage is done using the **Normalized Difference Vegetation Index (NDVI)** (:ref:`Examples-of-spectral-indices-for-studying-vegetation`) described by Equation :eq:`eqSI2`:
 
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
 
+|br|
 
-
-4.3.7 QGIS set-up
-````````````````````
+QGIS set-up
+````````````
 Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDVI_New_Project`).
 
 .. _Fig2_NDVI_New_Project:
@@ -1371,15 +1378,15 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDV
 
 .. _Calculate_NDVI:
 
+|br|
 
-
-4.3.8 Calculate NDVI
-````````````````````````
+Calculate NDVI
+````````````````
 To compute NDVI, we need only the NIR and Red bands. Thus, we use Sentinel-2’s highest spatial resolution images (10-meters).
 
 Open the folder ``…\Sentinel-2\10m`` and import in QGIS the image ``S2_20180418_10m``.
 
-.. note:: Prepare the input multiband satellite images as described in :any:`Prepare-multiband-files-for-10-meter-satellite-images`.
+.. note:: Prepare the input multiband satellite images as described in :ref:`Prepare-multiband-files-for-10-meter-satellite-images`.
 
 Now we do some calculations with images using the **Raster Calculator**. This tool allows evaluating equations based on the image pixel values. |br|
 Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...`` (:numref:`Fig1_NDVIRaster_calculator`).
@@ -1389,7 +1396,7 @@ Open **Raster Calculator** from the menu ``Raster`` → ``Raster Calculator...``
 
    Sample screenshot.
 
-We want to calculate the NDVI for each of the satellite image pixels (for more information refer to :any:`Examples-of-spectral-indices-for-studying-vegetation`):
+We want to calculate the NDVI for each of the satellite image pixels (for more information refer to :ref:`Examples-of-spectral-indices-for-studying-vegetation`):
 
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
 
@@ -1440,12 +1447,12 @@ The output is a grayscale image, where each pixel contains its NDVI value just c
 Now repeat the data processing again for the satellite image collected on 27 June 2018 (multiband file ``S2_20180627_10m``). |br|
 Remember to use **"S2A_20180627_10m@3"** and **"S2A_20180627_10m@4"** in the expression for calculating NDVI on 27 June 2018. Save results as ``..\NDVI\2018_06_27_NDVI``.
 
-.. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:any:`Calculate_NDVI`).
+.. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:ref:`Calculate_NDVI`).
 
+|br|
 
-
-4.3.9 Select the NDVI information for Barley and Potato
-````````````````````````````````````````````````````````
+Select the NDVI information for Barley and Potato
+````````````````````````````````````````````````````
 Once computed the NDVI for both the satellite images, we want to compare Barley and Potato’s vegetative stage in April and June.
 
 Open the attribute table of the shapefile **Wallonia_2018_In_Situ_Extracted_v1**: right-click on ``Wallonia_2018_In_Situ_Extracted_v1`` → ``Open Attribute Table`` (:numref:`Fig4_NDVI_Open_Attribute_table`).
@@ -1517,10 +1524,10 @@ A window opens. Select the following parameters (:numref:`Fig11_NDVI_Save_Vector
 
    Sample screenshot.
 
+|br|
 
-
-4.3.10 Compare winter crops and summer crops
-````````````````````````````````````````````````
+Compare winter crops and summer crops
+````````````````````````````````````````
 Now we want to compare the different vegetative stage of Barley and Potato. For this task, we use the **Zonal statistics** tool. |br|
 Unlike the **Cell Statistics** algorithm that computes per-pixel statistics, the **Zonal statistics** algorithm calculates per-polygon statistics. That means the output (e.g. minimum, maximum, sum, count, *etc.*) is calculated only on pixels within the selected polygons.
 
@@ -1574,10 +1581,10 @@ Remember to set the **Raster layer** to ``2018_06_27_NDVI``, and **Output column
 
    Sample screenshot.
 
+|br|
 
-
-4.3.11 Simple analysis of results
-````````````````````````````````````
+Simple analysis of results
+````````````````````````````
 Let’s discuss our findings.
 
 - **Mid April:**
@@ -1597,13 +1604,13 @@ In contrast, we **deduce** that *Potato is cultivated as a summer crop* in the s
 
    It is interesting to notice that, unlike one may expect, not all the fields with the same crop have the same NDVI values in the period of full growth. This phenomenon is easily explained because the seedlings’ health and vigour may vary due to non-optimal environmental conditions.
 
-   Thus, fields cultivated with Barley in winter, or fields cultivated with Potato in summer, showing abnormal low NDVI values could have productivity issues related to environmental factors, as recalled in :any:`The-environmental-problem-agricultural-productivity`.
+   Thus, fields cultivated with Barley in winter, or fields cultivated with Potato in summer, showing abnormal low NDVI values could have productivity issues related to environmental factors, as recalled in :ref:`The-environmental-problem-agricultural-productivity`.
 
 |br|
 |br|
 
-4.4. Additional resources
--------------------------
+Additional resources
+---------------------
 For additional hands-on, have a look at the following recommended practices by the `United Nations Office for Outer Space Affairs <https://un-spider.org/>`_ using QGIS and open data:
 
 - `Flood mapping and damage assessment <https://un-spider.org/advisory-support/recommended-practices/flood-mapping-and-damage-assessment-using-s2-data/step-by-step>`_ using Sentinel-2 data (UN-SPIDER).
