@@ -1376,9 +1376,9 @@ Open QGIS and select ``New Empty Project`` in the main window (:numref:`Fig2_NDV
 
    Sample screenshot.
 
-.. _Calculate_NDVI:
-
 |br|
+
+.. _Calculate-NDVI:
 
 Calculate NDVI
 ````````````````
@@ -1447,7 +1447,7 @@ The output is a grayscale image, where each pixel contains its NDVI value just c
 Now repeat the data processing again for the satellite image collected on 27 June 2018 (multiband file ``S2_20180627_10m``). |br|
 Remember to use **"S2A_20180627_10m@3"** and **"S2A_20180627_10m@4"** in the expression for calculating NDVI on 27 June 2018. Save results as ``..\NDVI\2018_06_27_NDVI``.
 
-.. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:ref:`Calculate_NDVI`).
+.. tip:: To simplify the processing, remove all the layer from QGIS and start from scratch (:ref:`Calculate-NDVI`).
 
 |br|
 

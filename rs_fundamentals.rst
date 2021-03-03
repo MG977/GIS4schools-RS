@@ -36,14 +36,28 @@ Today, hundreds of satellites are orbiting or planet. They differ for:
 
 All these characteristics are defined during the mission design, depending on the satellite mission’s specific applications.
 
-For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands.
+For example, to monitor the weather at a global scale and in real-time, we need satellites with a very high orbit, a low spatial resolution with a large swath, and a few spectral bands (:numref:`Fig_Meteo_SAT`).
 
-On the opposite, to monitor each small field’s agricultural productivity, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands.
+.. _Fig_Meteo_SAT:
+.. figure:: /Figure/Fig0_SAT.png
 
-.. _Fig_intro_SAT:
-.. figure:: /Figure/Fig_intro_SAT.png
+	Earth observation missions developed by the European Space Agency (credit: EUMETSAT [2021] – CC BY-SA IGO 3.0).
 
-	Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).
+.. hint:: Click here to see `real-time meteo imageries over Europe <https://view.eumetsat.int/productviewer?v=default>`_ *(Credit: EUMETSAT – CC BY-SA IGO 3.0).*
+
+On the opposite, to monitor our urban areas, we need satellites with a low orbit, a high spatial resolution with a small swath, and many spectral bands (:numref:`Fig_30cm_SAT`).
+
+.. _Fig_30cm_SAT:
+.. figure:: /Figure/Fig00_SAT.png
+
+	Earth observation missions developed by the European Space Agency (credit: © European Space Imaging).
+
+.. hint:: Click here to see `a 30 cm satellite image over Madrid (Spain) <https://www.euspaceimaging.com/30-cm/>`_  *(Credit: © European Space Imaging).*
+
+.. .. _Fig_intro_SAT:
+.. .. figure:: /Figure/Fig_intro_SAT.png
+
+.. 	Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).
 
 |br|
 
@@ -272,11 +286,7 @@ The mission objectives for Sentinel-2 are systematic:
 
 .. hint:: See how Sentinel-2 `collects multispectral images <https://www.esa.int/ESA_Multimedia/Videos/2016/08/Sentinel-2_s_multispectral_imager_in_action>`_
 
-.. raw:: html
-
-	<iframe src="https://www.esa.int/content/view/embedjw/473936" width="640" height="360" frameborder="0"></iframe>
-
-*(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).*
+|br|
 
 **Sentinel-3** |br|
 The Sentinel-3 satellites (twin satellites Sentinel-3A and Sentinel-3B) provide **multispectral low resolution imagery** for ocean and land services. |br|
