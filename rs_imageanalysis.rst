@@ -245,7 +245,7 @@ While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all 
 	Most satellite-based crop monitoring systems use NDVI (or similar spectral indices) to show farmers which parts of their fields have more stressed vegetation. |br|
 	See `CropSAT <https://cropsat.com/>`_ for a free online demo to highlight where to increase the fertilization rate (suggestion: try the location "Paderno Ponchielli, CR, Italia").
 
-The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance.
+The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance. |br|
 
 .. hint:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|

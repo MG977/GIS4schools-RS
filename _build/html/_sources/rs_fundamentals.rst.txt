@@ -3,10 +3,10 @@
 
 .. _Fundamentals-of-remote-sensing-and-Earth-observation:
 
-Fundamentals of Earth observation
-==================================
+Fundamentals of multispectral Earth observation
+===============================================
 
-Remote sensing and Earth observation
+Remote sensing vs Earth observation
 -------------------------------------
 Remote sensing and Earth observation are often used interchangeably, but they refer to different concepts:
 
@@ -275,12 +275,12 @@ The mission objectives for Sentinel-2 are systematic:
    2     Visible (Blue)              10 m                290 km       Mapping reflected Blue light
    3     Visible (Green)             10 m                290 km       Mapping reflected Green light
    4     Visible (Red)               10 m                290 km       Mapping reflected Red light
-   5     Near Infrared 1 (red edge)  20 m                290 km       Classification of vegetation
-   6     Near Infrared 2 (red edge)  20 m                290 km       Classification of vegetation
-   7     Near Infrared 3 (red edge)  20 m                290 km       Classification of vegetation
-   8     Near Infrared 4             10 m                290 km       Sensitive to chlorophyll and biomass
-   8A    Near Infrared 5 (red edge)  20 m                290 km       Classification of vegetation
-   9     Near Infrared 6             60 m                290 km       Estimation of atmospheric water vapor
+   5     Near infrared 1 (red edge)  20 m                290 km       Classification of vegetation
+   6     Near infrared 2 (red edge)  20 m                290 km       Classification of vegetation
+   7     Near infrared 3 (red edge)  20 m                290 km       Classification of vegetation
+   8     Near infrared 4             10 m                290 km       Sensitive to chlorophyll and biomass
+   8A    Near infrared 5 (red edge)  20 m                290 km       Classification of vegetation
+   9     Near infrared 6             60 m                290 km       Estimation of atmospheric water vapor
    10    Short-wave infrared 1       60 m                290 km       Detection of clouds (cirrus)
    11    Short-wave infrared 2       20 m                290 km       Sensitive to lignin, discrimination of snow / ice / clouds
    12    Short-wave infrared 3       20 m                290 km       Distinction of live and dead biomass, discrimination of snow / ice / clouds
@@ -311,6 +311,54 @@ The mission objectives for Sentinel-3 are global coverage of:
 - Weather forecasting,
 - Measuring Earth’s thermal radiation for atmospheric applications.
 
+.. _Tab1_S3:
+.. table:: Sentinel-3 OLCI spectral bands.
+
+   ====  ==========================  ==================  ===========  ===========================================================
+   Band  "Light" (colour)            Spatial resolution  Swath width  Application
+   ====  ==========================  ==================  ===========  ===========================================================
+   1     Visible 1 (Violet)          300 m               1,270 km     Aerosol correction, improved water constituent retrieval
+   2     Visible 2 (Violet)          300 m               1,270 km     Yellow substance and detrital pigments (turbidity)
+   3     Visible 3 (Violet-Blue)     300 m               1,270 km     Chlorophyll absorption maximum, biogeochemistry, vegetation
+   4     Visible 4 (Cyan)            300 m               1,270 km     High Chlorophyll
+   5     Visible 5 (Green)           300 m               1,270 km     Chlorophyll, sediment, turbidity, red tide
+   6     Visible 6 (Green)           300 m               1,270 km     Chlorophyll reference (Chlorophyll minimum)
+   7     Visible 7 (Red)             300 m               1,270 km     Sediment loading
+   8     Visible 8 (Red)             300 m               1,270 km     Chlorophyll, sediment, yellow substance/vegetation
+   9     Visible 9 (Red)             300 m               1,270 km     Improved fluorescence retrieval
+   10    Visible 10 (Red)            300 m               1,270 km     Chlorophyll fluorescence peak
+   11    Near infrared 1 (red edge)  300 m               1,270 km     Chlorophyll fluorescence baseline
+   12    Near infrared 2 (red edge)  300 m               1,270 km     Oxigen absorption, clouds, vegetation
+   13    Near infrared 3 (red edge)  300 m               1,270 km     Aerosol correction
+   14    Near infrared 4 (red edge)  300 m               1,270 km     Atmospheric correction
+   15    Near infrared 5 (red edge)  300 m               1,270 km     Fluorescence over land
+   16    Near infrared 6 (red edge)  300 m               1,270 km     Atmospheric/aerosol correction
+   17    Near infrared 7             300 m               1,270 km     Atmospheric/aerosol correction, clouds
+   18    Near infrared 8             300 m               1,270 km     Water vapour absorption, vegetation monitoring
+   19    Near infrared 9             300 m               1,270 km     Water vapour absorption, vegetation monitoring
+   20    Near infrared 10            300 m               1,270 km     Water vapour absorption, atmospheric correction
+   21    Near infrared 11            300 m               1,270 km     Atmospheric/aerosol correction
+   ====  ==========================  ==================  ===========  ===========================================================
+
+.. _Tab1_S4:
+.. table:: Sentinel-3 SLSTR spectral bands.
+
+   ====  =====================  ==================  ===========  ===============================================
+   Band  "Light" (colour)       Spatial resolution  Swath width  Application
+   ====  =====================  ==================  ===========  ===============================================
+   S1    Visible 1 (Green)      500 m               1,270 km     Cloud screening, vegetation monitoring, aerosol
+   S2    Visible 2 (Red)        500 m               1,270 km     Vegetation monitoring, aerosol
+   S3    Near infrared          500 m               1,270 km     Cloud
+   S4    Short-wave infrared 1  500 m               1,270 km     Cirrus detection over land
+   S5    Short-wave infrared 2  500 m               1,270 km     Cloud, ice, snow, vegetation monitoring
+   S6    Short-wave infrared 3  500 m               1,270 km     Vegetation state and clouds
+   S7    Thermal infrared 1     1 km                1,270 km     Active fires
+   S8    Thermal infrared 2     1 km                1,270 km     Surface temperature, active fires
+   S9    Thermal infrared 3     1 km                1,270 km     Surface temperature
+   F1    Thermal infrared 4     1 km                1,270 km     Active fires
+   F2    Thermal infrared 5     1 km                1,270 km     Surface temperature, active fires
+   ====  =====================  ==================  ===========  ===============================================
+
 .. hint:: `Look inside Sentinel-3 <http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission>`_
 
 .. raw:: html
@@ -318,6 +366,40 @@ The mission objectives for Sentinel-3 are global coverage of:
 	<iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe>
 
 *(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).*
+
+|br|
+
+**Sentinel-5P** |br|
+Sentinel-5P is the precursor mission of Sentinel-5 and provides **multispectral extremely low resolution imagery** for atmospheric and climate services. |br|
+
+The mission objective for Sentinel-5P is to provide daily global information on air pollutants for the atmosphere monitoring and climate change services:
+
+	- Aerosols,
+	- Clouds,
+	- Ozone :math:`(O_3)`,
+	- Nitrogen dioxide :math:`({\rm NO}_2)`,
+	- Carbon monoxide :math:`(CO)`,
+	- Sulfur dioxide :math:`({\rm SO}_2)`,
+	- Methane :math:`({\rm CH}_4)`,
+	- Formaldehyde :math:`({\rm CH}_2O)`.
+
+.. _Tab1_S5:
+.. table:: Sentinel-5P spectral bands.
+
+   ====  ==============================  ==================  ===========
+   Band  "Light" (colour)                Spatial resolution  Swath width
+   ====  ==============================  ==================  ===========
+   1     Ultraviolet 1                   28 km x 7 km        2,670 km
+   2     Ultraviolet 2                   3.5 km x 7 km       2,670 km
+   3     Ultraviolet & Visible (Violet)  3.5 km x 7 km       2,670 km
+   4     Visible (Violet-Blue)           3.5 km x 7 km       2,670 km
+   5     Near Infrared 1                 3.5 km x 7 km       2,670 km
+   6     Near Infrared 2                 3.5 km x 7 km       2,670 km
+   7     Short-wave infrared 1           7 km x 7 km         2,670 km
+   8     Short-wave infrared 2           7 km x 7 km         2,670 km
+   ====  ==============================  ==================  ===========
+
+.. hint:: See the benefits of the lockdown in China `on air quality <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/COVID-19_nitrogen_dioxide_over_China>`_
 
 .. seealso:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 

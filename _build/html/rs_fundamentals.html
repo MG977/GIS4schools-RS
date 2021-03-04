@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Fundamentals of Earth observation &mdash; GIS4Schools preview documentation</title>
+  <title>1. Fundamentals of multispectral Earth observation &mdash; GIS4Schools preview documentation</title>
   
 
   
@@ -85,8 +85,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Fundamentals of Earth observation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#remote-sensing-and-earth-observation">1.1. Remote sensing and Earth observation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Fundamentals of multispectral Earth observation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#remote-sensing-vs-earth-observation">1.1. Remote sensing vs Earth observation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#satellites-for-earth-observation">1.2. Satellites for Earth observation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#satellite-orbits-and-revisit-time">1.2.1. Satellite orbits and revisit time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#digital-images-and-the-em-spectrum">1.2.2. Digital images and the EM spectrum</a></li>
@@ -206,7 +206,6 @@
 <li class="toctree-l2"><a class="reference internal" href="rs_credits.html#content-of-the-course-and-eeb-book-creation">5.1. Content of the course and eeb book creation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rs_version.html">6. v.</a></li>
 </ul>
 
             
@@ -253,7 +252,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Fundamentals of Earth observation</li>
+      <li><span class="section-number">1. </span>Fundamentals of multispectral Earth observation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -272,10 +271,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fundamentals-of-earth-observation">
-<span id="fundamentals-of-remote-sensing-and-earth-observation"></span><h1><span class="section-number">1. </span>Fundamentals of Earth observation<a class="headerlink" href="#fundamentals-of-earth-observation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="remote-sensing-and-earth-observation">
-<h2><span class="section-number">1.1. </span>Remote sensing and Earth observation<a class="headerlink" href="#remote-sensing-and-earth-observation" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="fundamentals-of-multispectral-earth-observation">
+<span id="fundamentals-of-remote-sensing-and-earth-observation"></span><h1><span class="section-number">1. </span>Fundamentals of multispectral Earth observation<a class="headerlink" href="#fundamentals-of-multispectral-earth-observation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="remote-sensing-vs-earth-observation">
+<h2><span class="section-number">1.1. </span>Remote sensing vs Earth observation<a class="headerlink" href="#remote-sensing-vs-earth-observation" title="Permalink to this headline">¶</a></h2>
 <p>Remote sensing and Earth observation are often used interchangeably, but they refer to different concepts:</p>
 <p><strong>Remote sensing</strong> is the</p>
 <blockquote>
@@ -555,37 +554,37 @@ Their orbit is Sun-synchronous, and the constellation (2 identical satellites) h
 <td>Mapping reflected Red light</td>
 </tr>
 <tr class="row-even"><td>5</td>
-<td>Near Infrared 1 (red edge)</td>
+<td>Near infrared 1 (red edge)</td>
 <td>20 m</td>
 <td>290 km</td>
 <td>Classification of vegetation</td>
 </tr>
 <tr class="row-odd"><td>6</td>
-<td>Near Infrared 2 (red edge)</td>
+<td>Near infrared 2 (red edge)</td>
 <td>20 m</td>
 <td>290 km</td>
 <td>Classification of vegetation</td>
 </tr>
 <tr class="row-even"><td>7</td>
-<td>Near Infrared 3 (red edge)</td>
+<td>Near infrared 3 (red edge)</td>
 <td>20 m</td>
 <td>290 km</td>
 <td>Classification of vegetation</td>
 </tr>
 <tr class="row-odd"><td>8</td>
-<td>Near Infrared 4</td>
+<td>Near infrared 4</td>
 <td>10 m</td>
 <td>290 km</td>
 <td>Sensitive to chlorophyll and biomass</td>
 </tr>
 <tr class="row-even"><td>8A</td>
-<td>Near Infrared 5 (red edge)</td>
+<td>Near infrared 5 (red edge)</td>
 <td>20 m</td>
 <td>290 km</td>
 <td>Classification of vegetation</td>
 </tr>
 <tr class="row-odd"><td>9</td>
-<td>Near Infrared 6</td>
+<td>Near infrared 6</td>
 <td>60 m</td>
 <td>290 km</td>
 <td>Estimation of atmospheric water vapor</td>
@@ -634,11 +633,321 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 <li>Weather forecasting,</li>
 <li>Measuring Earth’s thermal radiation for atmospheric applications.</li>
 </ul>
+<span id="tab1-s3"></span><table border="1" class="docutils align-default" id="id21">
+<caption><span class="caption-number">Table 1.3.2.2 </span><span class="caption-text">Sentinel-3 OLCI spectral bands.</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="3%" />
+<col width="22%" />
+<col width="15%" />
+<col width="9%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Band</th>
+<th class="head">“Light” (colour)</th>
+<th class="head">Spatial resolution</th>
+<th class="head">Swath width</th>
+<th class="head">Application</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Visible 1 (Violet)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Aerosol correction, improved water constituent retrieval</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Visible 2 (Violet)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Yellow substance and detrital pigments (turbidity)</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Visible 3 (Violet-Blue)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll absorption maximum, biogeochemistry, vegetation</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Visible 4 (Cyan)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>High Chlorophyll</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Visible 5 (Green)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll, sediment, turbidity, red tide</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>Visible 6 (Green)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll reference (Chlorophyll minimum)</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>Visible 7 (Red)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Sediment loading</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>Visible 8 (Red)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll, sediment, yellow substance/vegetation</td>
+</tr>
+<tr class="row-even"><td>9</td>
+<td>Visible 9 (Red)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Improved fluorescence retrieval</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>Visible 10 (Red)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll fluorescence peak</td>
+</tr>
+<tr class="row-even"><td>11</td>
+<td>Near infrared 1 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Chlorophyll fluorescence baseline</td>
+</tr>
+<tr class="row-odd"><td>12</td>
+<td>Near infrared 2 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Oxigen absorption, clouds, vegetation</td>
+</tr>
+<tr class="row-even"><td>13</td>
+<td>Near infrared 3 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Aerosol correction</td>
+</tr>
+<tr class="row-odd"><td>14</td>
+<td>Near infrared 4 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Atmospheric correction</td>
+</tr>
+<tr class="row-even"><td>15</td>
+<td>Near infrared 5 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Fluorescence over land</td>
+</tr>
+<tr class="row-odd"><td>16</td>
+<td>Near infrared 6 (red edge)</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Atmospheric/aerosol correction</td>
+</tr>
+<tr class="row-even"><td>17</td>
+<td>Near infrared 7</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Atmospheric/aerosol correction, clouds</td>
+</tr>
+<tr class="row-odd"><td>18</td>
+<td>Near infrared 8</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Water vapour absorption, vegetation monitoring</td>
+</tr>
+<tr class="row-even"><td>19</td>
+<td>Near infrared 9</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Water vapour absorption, vegetation monitoring</td>
+</tr>
+<tr class="row-odd"><td>20</td>
+<td>Near infrared 10</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Water vapour absorption, atmospheric correction</td>
+</tr>
+<tr class="row-even"><td>21</td>
+<td>Near infrared 11</td>
+<td>300 m</td>
+<td>1,270 km</td>
+<td>Atmospheric/aerosol correction</td>
+</tr>
+</tbody>
+</table>
+<span id="tab1-s4"></span><table border="1" class="docutils align-default" id="id22">
+<caption><span class="caption-number">Table 1.3.2.3 </span><span class="caption-text">Sentinel-3 SLSTR spectral bands.</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="4%" />
+<col width="21%" />
+<col width="18%" />
+<col width="11%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Band</th>
+<th class="head">“Light” (colour)</th>
+<th class="head">Spatial resolution</th>
+<th class="head">Swath width</th>
+<th class="head">Application</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>S1</td>
+<td>Visible 1 (Green)</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Cloud screening, vegetation monitoring, aerosol</td>
+</tr>
+<tr class="row-odd"><td>S2</td>
+<td>Visible 2 (Red)</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Vegetation monitoring, aerosol</td>
+</tr>
+<tr class="row-even"><td>S3</td>
+<td>Near infrared</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Cloud</td>
+</tr>
+<tr class="row-odd"><td>S4</td>
+<td>Short-wave infrared 1</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Cirrus detection over land</td>
+</tr>
+<tr class="row-even"><td>S5</td>
+<td>Short-wave infrared 2</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Cloud, ice, snow, vegetation monitoring</td>
+</tr>
+<tr class="row-odd"><td>S6</td>
+<td>Short-wave infrared 3</td>
+<td>500 m</td>
+<td>1,270 km</td>
+<td>Vegetation state and clouds</td>
+</tr>
+<tr class="row-even"><td>S7</td>
+<td>Thermal infrared 1</td>
+<td>1 km</td>
+<td>1,270 km</td>
+<td>Active fires</td>
+</tr>
+<tr class="row-odd"><td>S8</td>
+<td>Thermal infrared 2</td>
+<td>1 km</td>
+<td>1,270 km</td>
+<td>Surface temperature, active fires</td>
+</tr>
+<tr class="row-even"><td>S9</td>
+<td>Thermal infrared 3</td>
+<td>1 km</td>
+<td>1,270 km</td>
+<td>Surface temperature</td>
+</tr>
+<tr class="row-odd"><td>F1</td>
+<td>Thermal infrared 4</td>
+<td>1 km</td>
+<td>1,270 km</td>
+<td>Active fires</td>
+</tr>
+<tr class="row-even"><td>F2</td>
+<td>Thermal infrared 5</td>
+<td>1 km</td>
+<td>1,270 km</td>
+<td>Surface temperature, active fires</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><a class="reference external" href="http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission" rel="noopener noreferrer" target="_blank">Look inside Sentinel-3</a></p>
 </div>
 <iframe src="https://www.esa.int/content/view/embedjw/463803" width="640" height="360" frameborder="0"></iframe><p><em>(Credit: ESA/ATG medialab – CC BY-SA IGO 3.0).</em></p>
+<p><br /></p>
+<p><strong>Sentinel-5P</strong> <br />
+Sentinel-5P is the precursor mission of Sentinel-5 and provides <strong>multispectral extremely low resolution imagery</strong> for atmospheric and climate services. <br /></p>
+<p>The mission objective for Sentinel-5P is to provide daily global information on air pollutants for the atmosphere monitoring and climate change services:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Aerosols,</li>
+<li>Clouds,</li>
+<li>Ozone <span class="math notranslate nohighlight">\((O_3)\)</span>,</li>
+<li>Nitrogen dioxide <span class="math notranslate nohighlight">\(({\rm NO}_2)\)</span>,</li>
+<li>Carbon monoxide <span class="math notranslate nohighlight">\((CO)\)</span>,</li>
+<li>Sulfur dioxide <span class="math notranslate nohighlight">\(({\rm SO}_2)\)</span>,</li>
+<li>Methane <span class="math notranslate nohighlight">\(({\rm CH}_4)\)</span>,</li>
+<li>Formaldehyde <span class="math notranslate nohighlight">\(({\rm CH}_2O)\)</span>.</li>
+</ul>
+</div></blockquote>
+<span id="tab1-s5"></span><table border="1" class="docutils align-default" id="id23">
+<caption><span class="caption-number">Table 1.3.2.4 </span><span class="caption-text">Sentinel-5P spectral bands.</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="6%" />
+<col width="48%" />
+<col width="29%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Band</th>
+<th class="head">“Light” (colour)</th>
+<th class="head">Spatial resolution</th>
+<th class="head">Swath width</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Ultraviolet 1</td>
+<td>28 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Ultraviolet 2</td>
+<td>3.5 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Ultraviolet &amp; Visible (Violet)</td>
+<td>3.5 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Visible (Violet-Blue)</td>
+<td>3.5 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Near Infrared 1</td>
+<td>3.5 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>Near Infrared 2</td>
+<td>3.5 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>Short-wave infrared 1</td>
+<td>7 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>Short-wave infrared 2</td>
+<td>7 km x 7 km</td>
+<td>2,670 km</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">See the benefits of the lockdown in China <a class="reference external" href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/COVID-19_nitrogen_dioxide_over_China" rel="noopener noreferrer" target="_blank">on air quality</a></p>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">For additional information, <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites" rel="noopener noreferrer" target="_blank">discover all the Sentinel satellites</a></p>
