@@ -385,11 +385,18 @@ The Zonal Statistics window opens. Select the following parameters (:numref:`Fig
 - **Raster band:** set to ``Band 1 (Gray)``,
 - **Vector layer containing zones:** set to ``Sampling_2016``,
 - **Output column prefix:** set to ``b4/b3_``,
-- Statistics to calculate:
+- **Statistics to calculate:**
 
    - Click on the three dots ``[...]``,
    - Select **Mean** and unselect all the other statistics,
    - Click the blue back arrow, located in the upper-left corner.
+
+- **Zonal statistics:**
+
+   - Click on the three dots ``[...]``,
+   - Save to file,
+   - Select the folder where to save the Zonal Statistics file,
+   - Name the file ``b4_b3_mean``.
 
 Click the button ``RUN`` to execute the data processing.
 
@@ -398,8 +405,8 @@ Click the button ``RUN`` to execute the data processing.
 
    Sample screenshot.
 
-The data processing adds a new attribute (i.e. column) to the attribute table of the shapefile **Sampling_2016**. It is called **Ratio_b4_b3**. |br|
-The new attribute **Ratio_b4_b3** contains the RVI mean value of each polygon (i.e. rows) (:numref:`Fig24_WQ_Points_attribute_table`).
+The data processing adds a new shapefile layer called “b4_b3_mean”. This is the copy of the shapefile “Sampling_2016”, with the addition of the new attribute (i.e. column) **b4/b3_mean**. |br|
+This attribute contains the RVI mean value of each polygon (i.e. rows) (:numref:`Fig24_WQ_Points_attribute_table`).
 
 .. _Fig24_WQ_Points_attribute_table:
 .. figure:: /Figure/Fig24_WQ_Points_attribute_table.png
@@ -463,7 +470,7 @@ We see that out of the five repetitions, the second one is the best because it h
 
 Consequently, the calibrated model becames Equation :eq:`eqWQ5`:
 
-.. math:: Chl\ \left[mg/m^3\right]=155\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-123
+.. math:: Chl\ \left[mg/m^3\right]=97.95\times\frac{\rho_{Band 4}}{\rho_{Band 3}}-76.09
    :label: eqWQ5
 
 |br|
@@ -526,7 +533,7 @@ In the left-side panel click on the tab ``Algorithms``. The list of available co
 
 The **Raster calculator** window opens (:numref:`Fig34_WQ_Model_Raster_Calculator_Expression`). With the help of the calculator buttons, write the following expression:
 
-155*(“Sentinel-2@4”/”Sentinel-2@3”) - 123
+97.95*(“Sentinel-2@4”/”Sentinel-2@3”) - 76.09
 
 And set the following parameters (:numref:`Fig34_WQ_Model_Raster_Calculator_Expression`):
 
@@ -762,7 +769,7 @@ Click the button ``Export color map to file`` and save to disk with file name ``
    Sample screenshot.
 
 **18 July 2016** |br|
-In mid-July, the north of Lake Trasimeno and some south shores are eutrophic, while the central lake is mesotrophic (:numref:`Fig55_WQ_Chl_Map`).
+In mid-July, **the majority of Lake Trasimeno is mesotrophic.** Eutrophic zones are limited to the north and shores (:numref:`Fig55_WQ_Chl_Map`).
 
 .. _Fig55_WQ_Chl_Map:
 .. figure:: /Figure/Fig55_WQ_Chl_Map.png
@@ -770,7 +777,7 @@ In mid-July, the north of Lake Trasimeno and some south shores are eutrophic, wh
    Sample screenshot.
 
 **4 August 2016** |br|
-Two weeks later, most of Lake Trasimeno is eutrophic. Only the southern lake is still mesotrophic (:numref:`Fig56_WQ_Chl_Map`).
+Two weeks later, **most of Lake Trasimeno is eutrophic.** Only the southern lake is still mesotrophic (:numref:`Fig56_WQ_Chl_Map`).
 
 .. _Fig56_WQ_Chl_Map:
 .. figure:: /Figure/Fig56_WQ_Chl_Map.png
@@ -778,28 +785,20 @@ Two weeks later, most of Lake Trasimeno is eutrophic. Only the southern lake is 
    Sample screenshot.
 
 **27 August 2016** |br|
-At the end of August, all Lake Trasimeno is eutrophic (:numref:`Fig57_WQ_Chl_Map`).
+At the end of August, **almost all Lake Trasimeno is eutrophic.** Only a small part of the south-east is still mesotrophic (:numref:`Fig57_WQ_Chl_Map`).
 
 .. _Fig57_WQ_Chl_Map:
 .. figure:: /Figure/Fig57_WQ_Chl_Map.png
 
    Sample screenshot.
 
-**13 September 2016** |br|
-Two weeks later, in mid-September, the chlorophyll concentration increases to more than 56 mg/m3, and all Lake Trasimeno becomes hypereutrophic (:numref:`Fig58_WQ_Chl_Map`).
+**September 2016** |br|
+In September, Lake Trasimeno **turns to a stable eutrophic state.** (:numref:`Fig58_WQ_Chl_Map`).
 
 .. _Fig58_WQ_Chl_Map:
 .. figure:: /Figure/Fig58_WQ_Chl_Map.png
 
-   Sample screenshot.
-
-**26 September 2016** |br|
-Finally, after two weeks, the trophic level decreases again to eutrophic (:numref:`Fig59_WQ_Chl_Map`).
-
-.. _Fig59_WQ_Chl_Map:
-.. figure:: /Figure/Fig59_WQ_Chl_Map.png
-
-   Sample screenshot.
+   Sample screenshot (top: 13 September 2016, bottom: 26 September 2016).
 
 Overall, our results are consistent with the characteristics and habitat of Lake Trasimeno (see :ref:`Study-area`).
 

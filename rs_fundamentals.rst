@@ -8,6 +8,8 @@ Fundamentals of Earth observation
 
 Remote sensing and Earth observation
 -------------------------------------
+Remote sensing and Earth observation are often used interchangeably, but they refer to different concepts:
+
 **Remote sensing** is the
 
 	*"The gathering of information without actual physical contact with what is being observed. This involves the use of radars, sonars, spectroscopy, and the use of airborne and satellite photography."*  |br|
