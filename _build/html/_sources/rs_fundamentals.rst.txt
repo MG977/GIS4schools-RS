@@ -399,7 +399,8 @@ The mission objective for Sentinel-5P is to provide daily global information on 
    8     Short-wave infrared 2           7 km x 7 km         2,670 km
    ====  ==============================  ==================  ===========
 
-.. hint:: See the benefits of the lockdown in China `on air quality <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/COVID-19_nitrogen_dioxide_over_China>`_
+.. hint:: **Small activity** |br|
+	See the benefits of the lockdown in China `on air quality <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/COVID-19_nitrogen_dioxide_over_China>`_
 
 .. seealso:: For additional information, `discover all the Sentinel satellites <https://www.copernicus.eu/en/about-copernicus/infrastructure/discover-our-satellites>`_
 

@@ -219,7 +219,7 @@ How to download the data with Sentinel Hub EO Browser
 Some alternative repositories
 ------------------------------
 Alternative European repositories are the Copernicus Open Access Hub (:numref:`Fig1_scihub`) and the DIASs (:numref:`Fig_DIAS`) listed below. However, they are usually more complex than Sentinel Hub EO Browser. They might also have a different level of maturity, data archived and user-friendliness. |br|
-Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_ and on the five `DIASs <https://www.copernicus.eu/en/access-data/dias>`_:
+Discover more information on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_ and on the five `Data and Information Access Services (DIAS) <https://www.copernicus.eu/en/access-data/dias>`_:
 
 - `CREO DIAS <https://creodias.eu>`_,
 - `MUNDI web services <https://mundiwebservices.com>`_,
