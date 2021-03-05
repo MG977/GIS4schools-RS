@@ -86,7 +86,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rs_fundamentals.html">1. Fundamentals of multispectral Earth observation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rs_fundamentals.html#remote-sensing-vs-earth-observation">1.1. Remote sensing vs Earth observation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rs_fundamentals.html#remote-sensing-earth-observation-and-gis">1.1. Remote sensing, Earth observation and GIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rs_fundamentals.html#satellites-for-earth-observation">1.2. Satellites for Earth observation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rs_fundamentals.html#satellite-orbits-and-revisit-time">1.2.1. Satellite orbits and revisit time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rs_fundamentals.html#digital-images-and-the-em-spectrum">1.2.2. Digital images and the EM spectrum</a></li>
@@ -453,6 +453,7 @@ The gap between the low reflectance in the Red band (due to chlorophylls), and t
 <span id="fig2-si"></span><img alt="_images/Fig2_SI.png" src="_images/Fig2_SI.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Colours and spectral signatures of healthy and senescing leaves.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <p><strong>Ratio Vegetation Index (RVI)</strong> <br />
 This is the basic greenness vegetation index and it is effective over a wide range of different conditions. Equation <a class="reference internal" href="#equation-eqsi1">(2.2.2.1)</a> shows its simple mathematical formula:</p>
 <div class="math notranslate nohighlight" id="equation-eqsi1">
@@ -464,6 +465,7 @@ This is the basic greenness vegetation index and it is effective over a wide ran
 <p>Typical values for vegetation cover range from <strong>RVI=4</strong> (parse or sick vegetation) up to <strong>RVI=30</strong> (very dense and very healthy vegetation). <br />
 Healthy vegetation generally falls between values of 4 to 10.</p>
 <p>Unfortunately, RVI is not bounded from above, making it difficult to compare different vegetation covers.</p>
+<p><br /></p>
 <p><strong>Normalized Difference Vegetation Index (NDVI)</strong> <br />
 This is the most known and used greenness vegetation index. Equation <a class="reference internal" href="#equation-eqsi2">(2.2.2.2)</a> shows its mathematical formula:</p>
 <div class="math notranslate nohighlight" id="equation-eqsi2">
@@ -507,7 +509,19 @@ If we are looking at a mixed image pixel with healthy vegetation, then:</p>
 Most satellite-based crop monitoring systems use NDVI (or similar spectral indices) to show farmers which parts of their fields have more stressed vegetation. <br />
 See <a class="reference external" href="https://cropsat.com/" rel="noopener noreferrer" target="_blank">CropSAT</a> for a free online demo to highlight where to increase the fertilization rate (suggestion: try the location “Paderno Ponchielli, CR, Italia”).</p>
 </div>
-<p>The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance. <br /></p>
+<p><br /></p>
+<p><strong>Additional spectral indices</strong> <br />
+The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance. <br /></p>
+<p>For instance, spectral indices can be used to map floodings occurring more frequently due to climate change.</p>
+<p>The <strong>Normalized Difference Water Index (NDWI)</strong> is built on the effects of water/moisture on the soil’s spectral signature: with the increasing of water, the ratio <span class="math notranslate nohighlight">\(\frac{\rho_{Green}}{\rho_{NIR}}\)</span> decreases. Equation <a class="reference internal" href="#equation-eqsi3">(2.2.2.3)</a> shows its mathematical formula:</p>
+<div class="math notranslate nohighlight" id="equation-eqsi3">
+<span class="eqno">(2.2.2.3)<a class="headerlink" href="#equation-eqsi3" title="Permalink to this equation">¶</a></span>\[NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}\]</div>
+<p>NDWI is a normalized index ranging from -1 to 1, but for <strong>WATER</strong> it has positive values. The larger the ratio, the more “amount of water” is present in the image pixel. <br />
+The threshold <strong>NDWI=0.3</strong> is often used to differentiate non-flooded areas (NDVI&lt;0.3) from flooded areas (NDWI&gt;0.3).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">A DIFFERENT spectral index, also called <strong>Normalized Difference Water Index (NDWI)</strong>, uses NIR and SWIR spectral bands to detect <em>water stress in vegetation (e.g. drought)</em>.</p>
+</div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Looking for a specific spectral index?</strong> <br />
@@ -636,10 +650,10 @@ The archer is precise and unbiased. Thus, the first archer is <strong>accurate</
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p>For land cover mapping:</p>
+<p>For a land cover map:</p>
 <ul class="last simple">
-<li><strong>Accuracy</strong> refers to the degree to which the information on the map matches the real world, <br /></li>
-<li><strong>Precision</strong> refers to how exactly is the data used to create the map. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see <a class="reference internal" href="rs_fundamentals.html#fundamentals-of-remote-sensing-and-earth-observation"><span class="std std-ref">Fundamentals of multispectral Earth observation</span></a>).</li>
+<li><strong>Accuracy</strong> refers to the degree to which <em>the information on the map</em> matches the real world, <br /></li>
+<li><strong>Precision</strong> refers to how exactly is <em>the data used to create the map</em>. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see <a class="reference internal" href="rs_fundamentals.html#fundamentals-of-remote-sensing-and-earth-observation"><span class="std std-ref">Fundamentals of multispectral Earth observation</span></a>).</li>
 </ul>
 </div>
 <p><br /></p>

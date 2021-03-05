@@ -185,6 +185,8 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 
 	Colours and spectral signatures of healthy and senescing leaves.
 
+|br|
+
 **Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and it is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
 
@@ -201,6 +203,8 @@ Typical values for vegetation cover range from **RVI=4** (parse or sick vegetati
 Healthy vegetation generally falls between values of 4 to 10.
 
 Unfortunately, RVI is not bounded from above, making it difficult to compare different vegetation covers.
+
+|br|
 
 **Normalized Difference Vegetation Index (NDVI)** |br|
 This is the most known and used greenness vegetation index. Equation :eq:`eqSI2` shows its mathematical formula:
@@ -245,7 +249,22 @@ While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all 
 	Most satellite-based crop monitoring systems use NDVI (or similar spectral indices) to show farmers which parts of their fields have more stressed vegetation. |br|
 	See `CropSAT <https://cropsat.com/>`_ for a free online demo to highlight where to increase the fertilization rate (suggestion: try the location "Paderno Ponchielli, CR, Italia").
 
+|br|
+
+**Additional spectral indices** |br|
 The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance. |br|
+
+For instance, spectral indices can be used to map floodings occurring more frequently due to climate change.
+
+The **Normalized Difference Water Index (NDWI)** is built on the effects of water/moisture on the soil’s spectral signature: with the increasing of water, the ratio :math:`\frac{\rho_{Green}}{\rho_{NIR}}` decreases. Equation :eq:`eqSI3` shows its mathematical formula:
+
+.. math:: NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}
+	:label: eqSI3
+
+NDWI is a normalized index ranging from -1 to 1, but for **WATER** it has positive values. The larger the ratio, the more “amount of water” is present in the image pixel. |br|
+The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDVI<0.3) from flooded areas (NDWI>0.3).
+
+.. warning:: A DIFFERENT spectral index, also called **Normalized Difference Water Index (NDWI)**, uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
 
 .. hint:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
@@ -389,10 +408,10 @@ The archer is precise and unbiased. Thus, the first archer is **accurate**.
 
 	The second archer's shots.
 
-.. hint:: For land cover mapping:
+.. hint:: For a land cover map:
 
-	- **Accuracy** refers to the degree to which the information on the map matches the real world, |br|
-	- **Precision** refers to how exactly is the data used to create the map. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :ref:`Fundamentals-of-remote-sensing-and-Earth-observation`).
+	- **Accuracy** refers to the degree to which *the information on the map* matches the real world, |br|
+	- **Precision** refers to how exactly is *the data used to create the map*. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :ref:`Fundamentals-of-remote-sensing-and-Earth-observation`).
 
 
 |br|

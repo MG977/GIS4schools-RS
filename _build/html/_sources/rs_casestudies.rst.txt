@@ -12,7 +12,7 @@ Monitoring lake’s trophic state (difficulty: advanced)
 Download the data
 ````````````````````
 .. important:: **DATA FOR THE EXERCISE** |br|
-   `Click here to download the data for this exercise (1.2 GB). <https://drive.google.com/file/d/1fVFf_5HaIPZ6Ckh84M6BiNKUpEvqjmYH/view?usp=sharing>`_
+   `Click here to download the data for this exercise (1.1 GB). <https://drive.google.com/file/d/1p4a8IUE0RGNIK4ARXXOYMti_IgG-SIJn/view?usp=sharing>`_
 
 |br|
 

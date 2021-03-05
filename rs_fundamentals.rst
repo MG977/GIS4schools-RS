@@ -6,8 +6,8 @@
 Fundamentals of multispectral Earth observation
 ===============================================
 
-Remote sensing vs Earth observation
--------------------------------------
+Remote sensing, Earth observation and GIS
+-----------------------------------------
 Remote sensing and Earth observation are often used interchangeably, but they refer to different concepts:
 
 **Remote sensing** is the
@@ -20,9 +20,14 @@ while **Earth observation** (EO) is the
 	*"The gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. Earth observation is used to monitor and assess the status of, and changes in, the natural and manmade environment."*  |br|
 	(Credit: `European Commission <https://ec.europa.eu/jrc/en/research-topic/earth-observation>`_).
 
-That means *Earth observation* **is the process** of collecting information on our planet using **non-contact** *remote sensing* **technologies**.
+That means *Earth observation* **is the process** of collecting information on our planet using **contactless** *remote sensing* **technologies**.
 
-Thus, *Earth observation* provides **raw data** and a set of methods for their **processing** and **analysis**, while *geographic information systems (GIS)* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
+We already know that a **geographic information system (GIS)** is an
+
+	*"Integrated system of computer hardware, software, and trained personnel linking topographic, demographic, utility, facility, image and other resource data that is geographically referenced."* |br| 
+	(Credit: `NASA <https://www.nasa.gov/>`_).
+
+Thus, *Earth observation* provides **data** collected with *remote sensing* **systems** and a set of methods for their **processing** and **analysis**, while *geographic information systems* offer a framework for the **management**, **manipulation**, **query** and **representation** of the geospatial information.
 
 |br|
 |br|
