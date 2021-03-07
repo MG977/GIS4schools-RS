@@ -47,6 +47,7 @@ For example, to monitor the weather at a global scale and in real-time, we need 
 
 .. _Fig_Meteo_SAT:
 .. figure:: /Figure/Fig0_SAT.png
+	:align: center
 
 	Earth observation missions developed by the European Space Agency (credit: EUMETSAT [2021] – CC BY-SA IGO 3.0).
 
@@ -56,6 +57,7 @@ On the opposite, to monitor our urban areas, we need satellites with a low orbit
 
 .. _Fig_30cm_SAT:
 .. figure:: /Figure/Fig00_SAT.png
+	:align: center
 
 	Earth observation missions developed by the European Space Agency (credit: © European Space Imaging).
 
@@ -63,6 +65,7 @@ On the opposite, to monitor our urban areas, we need satellites with a low orbit
 
 .. .. _Fig_intro_SAT:
 .. .. figure:: /Figure/Fig_intro_SAT.png
+	:align: center
 
 .. 	Earth observation missions developed by the European Space Agency (credit: ESA – CC BY-SA IGO 3.0).
 
@@ -93,6 +96,7 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 
 .. _Fig1_SAT:
 .. figure:: /Figure/Fig1_SAT.png
+	:align: center
 
 	Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).
 
@@ -110,6 +114,7 @@ A greyscale digital image is a **matrix** (i.e. table) of individual elements (c
 
 .. _Fig3_SAT:
 .. figure:: /Figure/Fig3_SAT.png
+	:align: center
 
 	The digital image as a table of numbers.
 
@@ -119,6 +124,7 @@ We can think of the different wavelengths as different “colours”.
 
 .. _Fig4_SAT:
 .. figure:: /Figure/Fig4_SAT.png
+	:align: center
 
 	The electromagnetic spectrum (credit: NASA – CC BY-SA 3.0).
 
@@ -128,11 +134,13 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 
 .. _Fig5_SAT:
 .. figure:: /Figure/Fig5_SAT.png
+	:align: center
 
 	The electromagnetic spectrum sensed by humans, cats and snakes.
 
 .. _Fig6_SAT:
 .. figure:: /Figure/Fig6_SAT.png
+	:align: center
 
 	The electromagnetic spectrum sensed humans and bees.
 
@@ -149,6 +157,7 @@ Optical satellites use special “cameras”, called **multispectral cameras** (
 
 .. _Fig_camera_SAT:
 .. figure:: /Figure/Fig_camera_SAT.png
+	:align: center
 
 	The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).
 
@@ -157,6 +166,7 @@ Multispectral cameras produce multispectral (=multiband) grayscale images. That 
 
 .. _Fig7_SAT:
 .. figure:: /Figure/Fig7_SAT.png
+	:align: center
 
 	Example of multiband image.
 
@@ -175,6 +185,7 @@ Multispectral cameras produce multispectral (=multiband) grayscale images. That 
 
 .. _Fig8_SAT:
 .. figure:: /Figure/Fig8_SAT.png
+	:align: center
 
 	Colour channels splitter.
 
@@ -182,6 +193,7 @@ The combination of different greyscale spectral bands produces the colours of sa
 
 .. _Fig_Venezia_SAT:
 .. figure:: /Figure/Fig_Venezia_SAT.png
+	:align: center
 
 	Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.
 
@@ -217,6 +229,7 @@ Generally speaking:
 
 .. _Fig2_SAT:
 .. figure:: /Figure/Fig2_SAT.png
+	:align: center
 
 	The London Eye (UK). The effect of spatial resolution on image detail and swath.
 

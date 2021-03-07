@@ -28,6 +28,7 @@ When studying the Earth’s ecosystems, we are interested in monitoring our plan
 
 .. _Fig1_signature:
 .. figure:: /Figure/Fig1_signature.png
+	:align: center
 
 	Distribution of main land covers on Earth.
 
@@ -36,31 +37,37 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 .. _Fig2_signature:
 .. figure:: /Figure/Fig2_signature.png
+	:align: center
 
 	Typical spectral signature of clear water (open Ocean).
 
 .. _Fig3_signature:
 .. figure:: /Figure/Fig3_signature.png
+	:align: center
 
 	Typical spectral signatures of snow and ice.
 
 .. _Fig4_signature:
 .. figure:: /Figure/Fig4_signature.png
+	:align: center
 
 	Typical spectral signature of clouds.
 
 .. _Fig5_signature:
 .. figure:: /Figure/Fig5_signature.png
+	:align: center
 
 	Typical spectral signature of bare soil (unvegetated).
 
 .. _Fig6_signature:
 .. figure:: /Figure/Fig6_signature.png
+	:align: center
 
 	Typical spectral signature of healthy vegetation.
 
 .. _Fig7_signature:
 .. figure:: /Figure/Fig7_signature.png
+	:align: center
 
 	Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).
 
@@ -77,6 +84,7 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 
 .. _Fig8_signature:
 .. figure:: /Figure/Fig8_signature.png
+	:align: center
 
 	How to calculate the spectral signature with satellite images.
 
@@ -97,6 +105,7 @@ In the feature space, the spectral signatures become points (:numref:`Fig8bis_si
 
 .. _Fig8bis_signature:
 .. figure:: /Figure/Fig8bis_signature.png
+	:align: center
 
 	Top: Multispectral satellite image. Centre: spectral signatures extracted from the satellite image. Bottom: spectral signatures plotted in the feature space.
 
@@ -173,6 +182,7 @@ The gap between the low reflectance in the Red band (due to chlorophylls), and t
 
 .. _Fig1_SI:
 .. figure:: /Figure/Fig1_SI.png
+	:align: center
 
 	Spectral signature of a decidous tree with highlighted the gap between the Red and NIR.
 
@@ -182,6 +192,7 @@ Moreover, the more vigour the vegetation is, or the more green biomass is presen
 
 .. _Fig2_SI:
 .. figure:: /Figure/Fig2_SI.png
+	:align: center
 
 	Colours and spectral signatures of healthy and senescing leaves.
 
@@ -307,6 +318,7 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 
 .. _Fig1_Maps:
 .. figure:: /Figure/Fig1_Maps.png
+	:align: center
 
 	Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).
 
@@ -325,6 +337,7 @@ For each class, pick some training samples on the satellite image and label them
 
 .. _Fig9_signature:
 .. figure:: /Figure/Fig9_signature.png
+	:align: center
 
 	Training sites and training samples.
 
@@ -335,6 +348,7 @@ The output is a classification map with all the classes defined by the training 
 
 .. _Fig10_signature:
 .. figure:: /Figure/Fig10_signature.png
+	:align: center
 
 	Prediction of the land cover.
 
@@ -404,6 +418,7 @@ However, his arrows are systematically displaced from the target’s centre (:nu
 .. _Fig1_validation:
 .. figure:: /Figure/Fig1_validation.png
 	:scale: 30%
+	:align: center
 
 	The first archer's shots.
 
@@ -413,6 +428,7 @@ The archer is precise and unbiased. Thus, the first archer is **accurate**.
 .. _Fig3_validation:
 .. figure:: /Figure/Fig3_validation.png
 	:scale: 30%
+	:align: center
 
 	The second archer's shots.
 
@@ -420,7 +436,6 @@ The archer is precise and unbiased. Thus, the first archer is **accurate**.
 
 	- **Accuracy** refers to the degree to which *the information on the map* matches the real world, |br|
 	- **Precision** refers to how exactly is *the data used to create the map*. This is also related to its spatial resolution, spectral characteristics, or time of acquisition (see :ref:`Fundamentals-of-remote-sensing-and-Earth-observation`).
-
 
 |br|
 
@@ -438,6 +453,7 @@ Map accuracy is estimated using the **confusion matrix**, a table that relates t
 
 .. _Fig1_confmatrix:
 .. figure:: /Figure/Fig1_confmatrix.png
+	:align: center
 
 	Confusion matrix. Number of testing samples correctly classified.
 
@@ -446,6 +462,7 @@ Overall, the confusion matrix has **434 testing samples.**
 
 .. _Fig2_confmatrix:
 .. figure:: /Figure/Fig2_confmatrix.png
+	:align: center
 
 	Confusion matrix. Number of misclassified testing samples.
 

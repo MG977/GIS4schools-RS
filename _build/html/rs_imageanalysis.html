@@ -291,33 +291,33 @@ This variation of reflectance with wavelengths is called <strong>spectral signat
 <p class="last"><strong>The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of their spectral signatures is the principles of multispectral Earth observation.</strong></p>
 </div>
 <p>When studying the Earth’s ecosystems, we are interested in monitoring our planet’s changes. <a class="reference internal" href="#fig1-signature"><span class="std std-numref">Fig. 2.1.1.1</span></a> shows the distribution of the main land covers on Earth.</p>
-<div class="figure align-default" id="id7">
+<div class="figure align-center" id="id7">
 <span id="fig1-signature"></span><img alt="_images/Fig1_signature.png" src="_images/Fig1_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1 </span><span class="caption-text">Distribution of main land covers on Earth.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Thus, we use satellites to study how such land covers’ spectral signatures change in time. <br />
 <a class="reference internal" href="#fig2-signature"><span class="std std-numref">Fig. 2.1.1.2</span></a> - <a class="reference internal" href="#fig7-signature"><span class="std std-numref">Fig. 2.1.1.7</span></a> show the typical spectral signatures of the main land covers.</p>
-<div class="figure align-default" id="id8">
+<div class="figure align-center" id="id8">
 <span id="fig2-signature"></span><img alt="_images/Fig2_signature.png" src="_images/Fig2_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.2 </span><span class="caption-text">Typical spectral signature of clear water (open Ocean).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id9">
+<div class="figure align-center" id="id9">
 <span id="fig3-signature"></span><img alt="_images/Fig3_signature.png" src="_images/Fig3_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.3 </span><span class="caption-text">Typical spectral signatures of snow and ice.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id10">
+<div class="figure align-center" id="id10">
 <span id="fig4-signature"></span><img alt="_images/Fig4_signature.png" src="_images/Fig4_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.4 </span><span class="caption-text">Typical spectral signature of clouds.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id11">
+<div class="figure align-center" id="id11">
 <span id="fig5-signature"></span><img alt="_images/Fig5_signature.png" src="_images/Fig5_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.5 </span><span class="caption-text">Typical spectral signature of bare soil (unvegetated).</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id12">
+<div class="figure align-center" id="id12">
 <span id="fig6-signature"></span><img alt="_images/Fig6_signature.png" src="_images/Fig6_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.6 </span><span class="caption-text">Typical spectral signature of healthy vegetation.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id13">
+<div class="figure align-center" id="id13">
 <span id="fig7-signature"></span><img alt="_images/Fig7_signature.png" src="_images/Fig7_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.7 </span><span class="caption-text">Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
@@ -332,7 +332,7 @@ Try the <a class="reference external" href="https://remotesensinglab.com/measuri
 <h3><span class="section-number">2.1.2. </span>How to measure spectral signatures with satellites<a class="headerlink" href="#how-to-measure-spectral-signatures-with-satellites" title="Permalink to this headline">¶</a></h3>
 <p>Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (<a class="reference internal" href="rs_fundamentals.html#spectral-characteristics"><span class="std std-ref">Spectral characteristics</span></a>).</p>
 <p>Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, <strong>we approximate its continuous spectral signature with a polyline</strong> <em>(a line made of segments)</em>. <a class="reference internal" href="#fig8-signature"><span class="std std-numref">Fig. 2.1.2.1</span></a> shows an example.</p>
-<div class="figure align-default" id="id14">
+<div class="figure align-center" id="id14">
 <span id="fig8-signature"></span><img alt="_images/Fig8_signature.png" src="_images/Fig8_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.2.1 </span><span class="caption-text">How to calculate the spectral signature with satellite images.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
@@ -349,7 +349,7 @@ Multispectral satellite images capture both the sunlight reflected by the Earth�
 Unfortunately, it is difficult to calculate the “distance” between curves.</p>
 <p>Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called <strong>feature space</strong> and has <strong>ONE AXIS FOR EACH SPECTRAL BAND</strong>. <br />
 In the feature space, the spectral signatures become points (<a class="reference internal" href="#fig8bis-signature"><span class="std std-numref">Fig. 2.1.3.1</span></a>).</p>
-<div class="figure align-default" id="id15">
+<div class="figure align-center" id="id15">
 <span id="fig8bis-signature"></span><img alt="_images/Fig8bis_signature.png" src="_images/Fig8bis_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.3.1 </span><span class="caption-text">Top: Multispectral satellite image. Centre: spectral signatures extracted from the satellite image. Bottom: spectral signatures plotted in the feature space.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
@@ -443,13 +443,13 @@ z is the axis for spectral band 3.</p>
 <p>Let’s see some examples for vegetation.</p>
 <p>Look at the spectral signature of a vegetated image pixel (<a class="reference internal" href="#fig1-si"><span class="std std-numref">Fig. 2.2.2.1</span></a>). <br />
 The gap between the low reflectance in the Red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.</p>
-<div class="figure align-default" id="id17">
+<div class="figure align-center" id="id17">
 <span id="fig1-si"></span><img alt="_images/Fig1_SI.png" src="_images/Fig1_SI.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2.2.1 </span><span class="caption-text">Spectral signature of a decidous tree with highlighted the gap between the Red and NIR.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the example of <a class="reference internal" href="#fig1-si"><span class="std std-numref">Fig. 2.2.2.1</span></a>, we have  <span class="math notranslate nohighlight">\(\rho_{Red}=0.05\)</span> and <span class="math notranslate nohighlight">\(\rho_{NIR}=0.55\)</span>.</p>
 <p>Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (<a class="reference internal" href="#fig2-si"><span class="std std-numref">Fig. 2.2.2.2</span></a>). Thus, the difference between NIR and Red reflectances is used as a proxy for overall “amount and health” of green vegetation.</p>
-<div class="figure align-default" id="id18">
+<div class="figure align-center" id="id18">
 <span id="fig2-si"></span><img alt="_images/Fig2_SI.png" src="_images/Fig2_SI.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Colours and spectral signatures of healthy and senescing leaves.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
@@ -563,7 +563,7 @@ Some examples of land use classes are:</p>
 <li>Industrial.</li>
 </ul>
 <p>Remote sensing systems can provide information on physical coverages. Thus <em>land use cannot be determined by analysing satellite images.</em><a class="reference internal" href="#fig1-maps"><span class="std std-numref">Fig. 2.3.1.1</span></a> shows the difference between land cover and land use.</p>
-<div class="figure align-default" id="id19">
+<div class="figure align-center" id="id19">
 <span id="fig1-maps"></span><img alt="_images/Fig1_Maps.png" src="_images/Fig1_Maps.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3.1.1 </span><span class="caption-text">Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
@@ -575,14 +575,14 @@ Some examples of land use classes are:</p>
 <p>The basic idea is to train a mathematical model to recognise spectral signatures. This is done using the spectral signatures of the <strong>training samples</strong>, which are image pixels selected in sites with <strong>KNOWN land cover</strong> (called <em>training sites</em>).</p>
 <p>For each class, pick some training samples on the satellite image and label them with their actual land cover (<a class="reference internal" href="#fig9-signature"><span class="std std-numref">Fig. 2.3.2.1</span></a>). Thus, all the categories have a <em>reference spectral signature</em> defined by their training samples (often their mean value) and a <em>label</em> (i.e. the land cover class). <br />
 <strong>Remember to collect training samples for ALL land cover classes you want to map.</strong> Otherwise, some categories will not be recognised!</p>
-<div class="figure align-default" id="id20">
+<div class="figure align-center" id="id20">
 <span id="fig9-signature"></span><img alt="_images/Fig9_signature.png" src="_images/Fig9_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">Training sites and training samples.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now we want the classification algorithm to <strong>predict</strong> each image pixel’s <strong>UNKNOWN land cover</strong> based on their spectral signature’s <strong>similarity</strong> with the <strong>KNOWN training samples</strong> (see <a class="reference internal" href="#how-to-compare-spectral-signatures"><span class="std std-ref">How to compare spectral signatures</span></a>). <br />
 The output is a classification map with all the classes defined by the training samples (<a class="reference internal" href="#fig10-signature"><span class="std std-numref">Fig. 2.3.2.2</span></a>).</p>
 <p><strong>In other words, the classification map is a prediction based on the knowledge of some limited training sites.</strong></p>
-<div class="figure align-default" id="id21">
+<div class="figure align-center" id="id21">
 <span id="fig10-signature"></span><img alt="_images/Fig10_signature.png" src="_images/Fig10_signature.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">Prediction of the land cover.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
@@ -646,13 +646,13 @@ See how the Spectral Angle Mapper classifier works (Credit: <a class="reference 
 <p>Let’s see how precision and accuracy work. Assume that two archers are participating in a tournament.</p>
 <p>The first archer always hit the same spot. He is <strong>precise</strong>. <br />
 However, his arrows are systematically displaced from the target’s centre (<a class="reference internal" href="#fig1-validation"><span class="std std-numref">Fig. 2.4.1.1</span></a>). Thus, the second archer is <strong>inaccurate</strong>.</p>
-<div class="figure align-default" id="id22">
+<div class="figure align-center" id="id22">
 <span id="fig1-validation"></span><a class="reference internal image-reference" href="_images/Fig1_validation.png"><img alt="_images/Fig1_validation.png" src="_images/Fig1_validation.png" style="width: 328.5px; height: 285.3px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.1 </span><span class="caption-text">The first archer’s shots.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second archer fires all his arrows grouped in the target’s centre (<a class="reference internal" href="#fig3-validation"><span class="std std-numref">Fig. 2.4.1.2</span></a>). <br />
 The archer is precise and unbiased. Thus, the first archer is <strong>accurate</strong>.</p>
-<div class="figure align-default" id="id23">
+<div class="figure align-center" id="id23">
 <span id="fig3-validation"></span><a class="reference internal image-reference" href="_images/Fig3_validation.png"><img alt="_images/Fig3_validation.png" src="_images/Fig3_validation.png" style="width: 285.3px; height: 285.3px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2 </span><span class="caption-text">The second archer’s shots.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
@@ -676,13 +676,13 @@ The archer is precise and unbiased. Thus, the first archer is <strong>accurate</
 <li>Rows represent the instances of testing samples in the predicted land cover class,</li>
 <li>Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly.</li>
 </ul>
-<div class="figure align-default" id="id24">
+<div class="figure align-center" id="id24">
 <span id="fig1-confmatrix"></span><img alt="_images/Fig1_confmatrix.png" src="_images/Fig1_confmatrix.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">Confusion matrix. Number of testing samples correctly classified.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#fig2-confmatrix"><span class="std std-numref">Fig. 2.4.2.2</span></a> highlights the number of misclassified testing samples (red cells). <br />
 Overall, the confusion matrix has <strong>434 testing samples.</strong></p>
-<div class="figure align-default" id="id25">
+<div class="figure align-center" id="id25">
 <span id="fig2-confmatrix"></span><img alt="_images/Fig2_confmatrix.png" src="_images/Fig2_confmatrix.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.2.2 </span><span class="caption-text">Confusion matrix. Number of misclassified testing samples.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>

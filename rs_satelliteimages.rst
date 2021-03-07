@@ -15,11 +15,13 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 
 .. _Fig1_EObrowser:
 .. figure:: /Figure/Fig1_EObrowser.png
+	:align: center
 
 	Home page of the Sentinel Hub EO Browser.
 
 .. _Fig2_EObrowser:
 .. figure:: /Figure/Fig2_EObrowser.png
+	:align: center
 
 	Log in to the Sentinel Hub EO Browser.
 
@@ -45,6 +47,7 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
 
 .. _Fig3_EObrowser:
 .. figure:: /Figure/Fig3_EObrowser-2.png
+	:align: center
 
  Set the searching criteria.
 
@@ -61,6 +64,7 @@ Select your image tile in the main window and click :guilabel:`Visualize`. Alter
 
 .. _Fig6_EObrowser:
 .. figure:: /Figure/Fig6_EObrowser-2.png
+	:align: center
 
 	Select your satellite image archived in the Sentinel Hub EO Browser.
 
@@ -68,6 +72,7 @@ By default, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobro
 
 .. _Fig7_EObrowser:
 .. figure:: /Figure/Fig7_EObrowser.png
+	:align: center
 
 	The satellite image(s) are displayed.
 
@@ -89,6 +94,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig8_EObrowser:
 .. figure:: /Figure/Fig8_EObrowser.png
+	:align: center
 
 	False colour composite.
 
@@ -107,6 +113,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig15_EObrowser:
 .. figure:: /Figure/Fig15_EObrowser.png
+	:align: center
 
 	False colour (urban) composite.
 
@@ -126,6 +133,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig16_EObrowser:
 .. figure:: /Figure/Fig16_EObrowser.png
+	:align: center
 
 	Shortwave infrared (SWIR) composite.
 
@@ -145,6 +153,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig9_EObrowser:
 .. figure:: /Figure/Fig9_EObrowser.png
+	:align: center
 
 	Map of the Normalized Difference Vegetation Index (NDVI).
 
@@ -156,6 +165,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig17_EObrowser:
 .. figure:: /Figure/Fig17_EObrowser.png
+	:align: center
 
 	Map of the Normalized Difference Moisture Index (NDMI).
 
@@ -167,6 +177,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig18_EObrowser:
 .. figure:: /Figure/Fig18_EObrowser.png
+	:align: center
 
 	Map of the Normalized Difference Water Index (NDWI).
 
@@ -177,6 +188,7 @@ However, `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowse
 
 .. _Fig19_EObrowser:
 .. figure:: /Figure/Fig19_EObrowser.png
+	:align: center
 
 	Map of the Normalised Difference Snow Index (NDSI).
 
@@ -186,6 +198,7 @@ Additionally, there is a simple scene classification map with 9 land cover class
 
 .. _Fig10_EObrowser:
 .. figure:: /Figure/Fig10_EObrowser.png
+	:align: center
 
 	Scene classification map.
 
@@ -206,6 +219,7 @@ How to download the data with Sentinel Hub EO Browser
 
 .. _Fig14_EObrowser:
 .. figure:: /Figure/Fig14_EObrowser.png
+	:align: center
 
 	Activate the link to download the images.
 
@@ -231,11 +245,13 @@ Discover more information on the `Copernicus Open Access Hub <https://scihub.cop
 
 .. _Fig1_scihub:
 .. figure:: /Figure/Fig1_scihub.png
+	:align: center
 
 	Copernicus Open Access Hub.
 
 .. _Fig_DIAS:
 .. figure:: /Figure/Fig_DIAS.png
+	:align: center
 
 	Data and Information Access Services (credit: European Commission).
 
