@@ -22,7 +22,7 @@ while **Earth observation** (EO) is the
 
 That means *Earth observation* **is the process** of collecting information on our planet using **contactless** *remote sensing* **technologies**.
 
-We already know that a **geographic information system (GIS)** is an
+We already know (see :ref:`1.1`) that a **geographic information system (GIS)** is an:
 
 	*"Integrated system of computer hardware, software, and trained personnel linking topographic, demographic, utility, facility, image and other resource data that is geographically referenced."* |br| 
 	(Credit: `NASA <https://www.nasa.gov/>`_).
@@ -113,8 +113,7 @@ A greyscale digital image is a **matrix** (i.e. table) of individual elements (c
 
 	The digital image as a table of numbers.
 
-**But what are the electromagnetic spectrum and wavelengths?**
-
+**But what are the electromagnetic spectrum and wavelengths?** |br|
 Consider the electromagnetic spectrum as the full range of “light” that exists in the universe (:numref:`Fig4_SAT`): from Gamma rays (shorter wavelengths) to Radio waves (longer wavelengths). |br|
 We can think of the different wavelengths as different “colours”.
 
@@ -137,7 +136,7 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 
 	The electromagnetic spectrum sensed humans and bees.
 
-.. hint:: **Small activity** |br|
+.. hint:: **< Small activity >** |br|
 	See planet Earth live from the International Space Station with the `External High Definition Camera <https://www.n2yo.com/space-station/>`_ (real time streaming).
 
 |br|
@@ -154,7 +153,7 @@ Optical satellites use special “cameras”, called **multispectral cameras** (
 	The imaging camera of the Sentinel-2 satellite (credit: ESA – CC BY-SA IGO 3.0).
 
 Multispectral cameras produce multispectral (=multiband) grayscale images. That is to say, a multitude of greyscale images - *collected at the same time* - recording the reflected sunlight in a specific range of wavelengths (i.e. the spectral bands) (:numref:`Fig7_SAT`). |br|
-**In other words, a multiband image describes the intensity of the different “colours” sensed in the different “lights” of the electromagnetic spectrum.**
+**In other words, a multiband image describes the intensity of the different “colours” sensed in the different “lights” of the electromagnetic spectrum** (also see :ref:`1.3.1`).
 
 .. _Fig7_SAT:
 .. figure:: /Figure/Fig7_SAT.png

@@ -202,7 +202,7 @@ In the example of :numref:`Fig1_SI`, we have:
 Typical values for vegetation cover range from **RVI=4** (parse or sick vegetation) up to **RVI=30** (very dense and very healthy vegetation). |br|
 Healthy vegetation generally falls between values of 4 to 10.
 
-Unfortunately, RVI is not bounded from above, making it difficult to compare different vegetation covers.
+.. note:: Unfortunately, RVI is not bounded from above. That makes difficult to compare values for different vegetation covers.
 
 |br|
 
@@ -264,7 +264,7 @@ The **Normalized Difference Water Index (NDWI)** is built on the effects of wate
 NDWI is a normalized index ranging from -1 to 1, but for **WATER** it has positive values. The larger the ratio, the more “amount of water” is present in the image pixel. |br|
 The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDVI<0.3) from flooded areas (NDWI>0.3).
 
-.. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
+.. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, (:math:`NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}`) uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
 
 .. hint:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|

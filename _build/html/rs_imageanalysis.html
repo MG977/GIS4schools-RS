@@ -464,7 +464,10 @@ This is the basic greenness vegetation index and it is effective over a wide ran
 \[RVI=\frac{0.55}{0.05}=11\]</div>
 <p>Typical values for vegetation cover range from <strong>RVI=4</strong> (parse or sick vegetation) up to <strong>RVI=30</strong> (very dense and very healthy vegetation). <br />
 Healthy vegetation generally falls between values of 4 to 10.</p>
-<p>Unfortunately, RVI is not bounded from above, making it difficult to compare different vegetation covers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unfortunately, RVI is not bounded from above. That makes difficult to compare values for different vegetation covers.</p>
+</div>
 <p><br /></p>
 <p><strong>Normalized Difference Vegetation Index (NDVI)</strong> <br />
 This is the most known and used greenness vegetation index. Equation <a class="reference internal" href="#equation-eqsi2">(2.2.2.2)</a> shows its mathematical formula:</p>
@@ -520,7 +523,7 @@ The list of existing spectral indices is very long, but you could build your own
 The threshold <strong>NDWI=0.3</strong> is often used to differentiate non-flooded areas (NDVI&lt;0.3) from flooded areas (NDWI&gt;0.3).</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">A DIFFERENT spectral index, also called <a class="reference external" href="https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf" rel="noopener noreferrer" target="_blank">Normalized Difference Water Index (NDWI)</a>, uses NIR and SWIR spectral bands to detect <em>water stress in vegetation (e.g. drought)</em>.</p>
+<p class="last">A DIFFERENT spectral index, also called <a class="reference external" href="https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf" rel="noopener noreferrer" target="_blank">Normalized Difference Water Index (NDWI)</a>, (<span class="math notranslate nohighlight">\(NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}\)</span>) uses NIR and SWIR spectral bands to detect <em>water stress in vegetation (e.g. drought)</em>.</p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
