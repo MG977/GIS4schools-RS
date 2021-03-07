@@ -255,6 +255,8 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 
 |br|
 
+.. _Multispectral-Sentinel-satellites:
+
 Multispectral Sentinel satellites
 ````````````````````````````````````
 **Sentinel-2** |br|
@@ -519,6 +521,8 @@ Overall, the service focuses on three main areas:
 .. seealso:: For additional information, see the `Copernicus Security Service web site <https://climate.copernicus.eu/>`_.
 
 |br|
+
+.. _Copernicus-Emergency-Management-Service:
 
 Copernicus Emergency Management Service
 ````````````````````````````````````````

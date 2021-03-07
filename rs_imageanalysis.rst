@@ -266,6 +266,10 @@ The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDV
 
 .. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, (:math:`NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}`) uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
 
+.. caution:: The values and thresholds of the spectral indices described above are intended as general recommendations. |br|
+	The analyst’s experience can suggest more appropriate values to the specific case study.
+
+
 .. hint:: **Looking for a specific spectral index?** |br|
 	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
@@ -307,6 +311,8 @@ Remote sensing systems can provide information on physical coverages. Thus *land
 	Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).
 
 |br|
+
+.. _Supervised-image-classification:
 
 Supervised image classification
 ````````````````````````````````
@@ -377,6 +383,8 @@ Thus, the Spectral Angle Mapper classifier labels the image pixels based their "
 
 |br|
 |br|
+
+.. _Map-validation:
 
 Map validation
 ---------------

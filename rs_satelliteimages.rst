@@ -25,6 +25,8 @@ This repository also gives access to the images collected by NASA’s `Landsat-5
 
 |br|
 
+.. _How-to-select-the-correct-products-with-Sentinel-Hub-EO-Browser:
+
 How to select the correct products with Sentinel Hub EO Browser
 ````````````````````````````````````````````````````````````````
 Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explore/eobrowser/>`_, configure the search criteria (:numref:`Fig3_EObrowser`):
