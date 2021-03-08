@@ -3,19 +3,13 @@
 
 Credits
 ========
-
-Content of the course and eeb book creation
---------------------------------------------
 .. figure:: /Figure/Fig_MarcoG.png
 	:width: 200px
 	:align: left
 
-**Marco GIANINETTO** (PhD in Geodesy and Geomatics) is an Associate Professor of Geomatics at Politecnico di Milano (Italy) and an Associate at the National Research Council of Italy (Italy). |br|
-His research interests range from Remote Sensing technologies for Earth Observation to Geosciences. The main application fields are the monitoring of the environment and the effects of climate change.
-
-Prof. Gianinetto is a member of the Governing Council of Italian Remote Sensing Society, Co-Editor-in-Chief for European Journal of Remote Sensing (UK), Associate Editor for International Journal of Remote Sensing (UK), and Associate Editor for Journal of Applied Remote Sensing (USA).
-
-Marco Gianinetto has been a scientific advisor for the study ‘Space Market Uptake in Europe’ commissioned for the European Parliament, and a member of advisory/evaluator panels including the Executive Agency for SMEs of the European Commission, the Israel Science Foundation, the National Research Council of Romania, the Belgian Federal Science Policy Office, the French National Research Agency.
+**Marco GIANINETTO** is Professor of Remote Sensing and Copernicus Uptake at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy), and an Associate at the `National Research Council of Italy. <http://www.irea.cnr.it/en/>`_ |br|
+He is the head of the `Laboratory of Remote Sensing <http://www.abclab.test.polimi.it/index.php?id=72>`_ at Politecnico di Milano, member of the Governing Council of the `Italian Society of Remote Sensing <https://aitonline.org/en/>`_ , mentor for the `Copernicus Accelerator <https://accelerator.copernicus.eu/>`_ programme of the European Commission, Co-Editor-in-Chief for `European Journal of Remote Sensing <https://www.tandfonline.com/toc/tejr20/current>`_ (UK), Associate Editor for `International Journal of Remote Sensing <https://www.tandfonline.com/toc/tres20/current>`_ (UK), and Associate Editor for `Journal of Applied Remote Sensing <https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing?SSO=1>`_ (USA). |br|
+Marco Gianinetto has been a co-author of the study `Space Market Uptake in Europe <https://www.europarl.europa.eu/thinktank/en/document.html?reference=IPOL_STU%282016%29569984>`_ for the `European Parliament. <https://www.europarl.europa.eu/portal/en>`_
 
 |br|
 
@@ -23,6 +17,10 @@ Marco Gianinetto has been a scientific advisor for the study ‘Space Market Upt
 	:width: 200px
 	:align: left
 
-**Francesco Niccolò POLINELLI** (MSc in Environmental and Land Planning Engineering) is a research assistant at Politecnico di Milano (Italy) and PhD candidate in Environmental and Infrastructure Engineering.
-
+**Francesco Niccolò POLINELLI** (MSc in Environmental and Land Planning Engineering) is a research assistant at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy) and PhD candidate in Environmental and Infrastructure Engineering. |br|
 His research interests are Remote Sensing technologies for Earth Observation, Geosciences and Machine Learning. The main field of application are the monitoring and mapping of vegetation, soil erosion analysis and the effects of climate change on land cover evolution.
+
+|br|
+|br|
+
+Document version: 08/03/2021, 20:28

@@ -1541,15 +1541,22 @@ Search in the **Processing Toolbox** panel for the **Zonal statistics** (or writ
 
 The Zonal Statistics window opens. Select the following parameters (:numref:`Fig12_NDVI_Zonals_Statistics_Parameters`): 
 
+- **Input layer:** set ``Barley_Potato``,
 - **Raster layer:** set to ``2018_04_18_NDVI``,
 - **Raster band:** set to ``Band 1 (Gray)``,
-- **Vector layer containing zones:** set to ``Barley_Potato``,
 - **Output column prefix:** set to ``18_04_``,
 - Statistics to calculate:
 
    - Click on the three dots ``[...]``,
    - Select **Mean** and unselect all the other statistics,
    - Click the blue back arrow, located in the upper-left corner (:numref:`Fig13_NDVI_Zonal_statistics_select_mean`).
+
+- Zonal Statistics:
+
+   - Click on the three dots ``[...]``,
+   - Save to file,
+   - Select the folder where to save the Zonal Statistics file,
+   - Name the file ``Zonal_statistics_18_04``.
 
 Click the button ``RUN`` to execute the data processing.
 
@@ -1563,8 +1570,7 @@ Click the button ``RUN`` to execute the data processing.
 
    Sample screenshot.
 
-The data processing adds a new attribute (i.e. column) to the attribute table of the shapefile **Barley_Potato**. It is called **18_04_mean**. |br|
-The new attribute **18_04_mean** contains the NDVI mean value of each polygon (i.e. rows) (:numref:`Fig14_NDVI_18_April_NDVI_in_the_attribute_table`).
+The data processing adds a new shapefile layer, called ``b4_b3_mean``. This is a copy of the shapefile ``Sampling_2016`` with the new attribute (i.e. column) ``b4/b3_mean``. The new attribute ``b4/b3_mean`` contains the mean RVI of each polygon (i.e. rows) (:numref:`Fig14_NDVI_18_April_NDVI_in_the_attribute_table`).
 
 .. _Fig14_NDVI_18_April_NDVI_in_the_attribute_table:
 .. figure:: /Figure/Fig14_NDVI_18_April_NDVI_in_the_attribute_table.png

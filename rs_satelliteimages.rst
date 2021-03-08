@@ -49,7 +49,7 @@ Once logged in the `Sentinel Hub EO Browser <https://www.sentinel-hub.com/explor
 .. figure:: /Figure/Fig3_EObrowser-2.png
 	:align: center
 
- Set the searching criteria.
+	Set the searching criteria.
 
 .. warning:: **Remember to use ONLY atmospherically corrected images!** |br|
 	Multispectral satellite images capture both the sunlight reflected by the Earth’s surface and the light scattered by the atmosphere. However, when monitoring the environment, atmospheric scattering is a noise that must be removed before image manipulation or analysis. |br|

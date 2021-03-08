@@ -202,10 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#additional-resources">4.4. Additional resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rs_credits.html">5. Credits</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rs_credits.html#content-of-the-course-and-eeb-book-creation">5.1. Content of the course and eeb book creation</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="rs_credits.html">5. Credits</a></li>
 </ul>
 
             
@@ -1671,11 +1668,11 @@ Unlike the <strong>Cell Statistics</strong> algorithm that computes per-pixel st
 </div>
 <p>The Zonal Statistics window opens. Select the following parameters (<a class="reference internal" href="#fig12-ndvi-zonals-statistics-parameters"><span class="std std-numref">Fig. 4.3.11.2</span></a>):</p>
 <ul>
+<li><p class="first"><strong>Input layer:</strong> set <code class="docutils literal notranslate"><span class="pre">Barley_Potato</span></code>,</p>
+</li>
 <li><p class="first"><strong>Raster layer:</strong> set to <code class="docutils literal notranslate"><span class="pre">2018_04_18_NDVI</span></code>,</p>
 </li>
 <li><p class="first"><strong>Raster band:</strong> set to <code class="docutils literal notranslate"><span class="pre">Band</span> <span class="pre">1</span> <span class="pre">(Gray)</span></code>,</p>
-</li>
-<li><p class="first"><strong>Vector layer containing zones:</strong> set to <code class="docutils literal notranslate"><span class="pre">Barley_Potato</span></code>,</p>
 </li>
 <li><p class="first"><strong>Output column prefix:</strong> set to <code class="docutils literal notranslate"><span class="pre">18_04_</span></code>,</p>
 </li>
@@ -1685,6 +1682,16 @@ Unlike the <strong>Cell Statistics</strong> algorithm that computes per-pixel st
 <li>Click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code>,</li>
 <li>Select <strong>Mean</strong> and unselect all the other statistics,</li>
 <li>Click the blue back arrow, located in the upper-left corner (<a class="reference internal" href="#fig13-ndvi-zonal-statistics-select-mean"><span class="std std-numref">Fig. 4.3.11.3</span></a>).</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Zonal Statistics:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click on the three dots <code class="docutils literal notranslate"><span class="pre">[...]</span></code>,</li>
+<li>Save to file,</li>
+<li>Select the folder where to save the Zonal Statistics file,</li>
+<li>Name the file <code class="docutils literal notranslate"><span class="pre">Zonal_statistics_18_04</span></code>.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -1698,8 +1705,7 @@ Unlike the <strong>Cell Statistics</strong> algorithm that computes per-pixel st
 <span id="fig13-ndvi-zonal-statistics-select-mean"></span><img alt="_images/Fig13_NDVI_Zonal_statistics_select_mean.png" src="_images/Fig13_NDVI_Zonal_statistics_select_mean.png" />
 <p class="caption"><span class="caption-number">Fig. 4.3.11.3 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id134" title="Permalink to this image">¶</a></p>
 </div>
-<p>The data processing adds a new attribute (i.e. column) to the attribute table of the shapefile <strong>Barley_Potato</strong>. It is called <strong>18_04_mean</strong>. <br />
-The new attribute <strong>18_04_mean</strong> contains the NDVI mean value of each polygon (i.e. rows) (<a class="reference internal" href="#fig14-ndvi-18-april-ndvi-in-the-attribute-table"><span class="std std-numref">Fig. 4.3.11.4</span></a>).</p>
+<p>The data processing adds a new shapefile layer, called <code class="docutils literal notranslate"><span class="pre">b4_b3_mean</span></code>. This is a copy of the shapefile <code class="docutils literal notranslate"><span class="pre">Sampling_2016</span></code> with the new attribute (i.e. column) <code class="docutils literal notranslate"><span class="pre">b4/b3_mean</span></code>. The new attribute <code class="docutils literal notranslate"><span class="pre">b4/b3_mean</span></code> contains the mean RVI of each polygon (i.e. rows) (<a class="reference internal" href="#fig14-ndvi-18-april-ndvi-in-the-attribute-table"><span class="std std-numref">Fig. 4.3.11.4</span></a>).</p>
 <div class="figure align-default" id="id135">
 <span id="fig14-ndvi-18-april-ndvi-in-the-attribute-table"></span><img alt="_images/Fig14_NDVI_18_April_NDVI_in_the_attribute_table.png" src="_images/Fig14_NDVI_18_April_NDVI_in_the_attribute_table.png" />
 <p class="caption"><span class="caption-number">Fig. 4.3.11.4 </span><span class="caption-text">Sample screenshot.</span><a class="headerlink" href="#id135" title="Permalink to this image">¶</a></p>
