@@ -256,3 +256,7 @@ Discover more information on the `Copernicus Open Access Hub <https://scihub.cop
 	Data and Information Access Services (credit: European Commission).
 
 .. caution:: Sentinel images could also be downloaded from the US repositories `EarthExplorer <https://earthexplorer.usgs.gov/>`_ and `GloVis <https://glovis.usgs.gov/app?fullscreen=0>`_. However, this repository mirrors only ``L1C`` products (i.e. images which are NOT atmospherically corrected)!
+
+|br|
+
+(v.11.03.20-10.15)

@@ -15,7 +15,7 @@ Welcome to Gis4Schools's documentation!
    rs_imageanalysis.rst
    rs_satelliteimages.rst
    rs_casestudies.rst
-   rs_credits.rst
+..   rs_credits.rst
 
 ..
    Indices and tables

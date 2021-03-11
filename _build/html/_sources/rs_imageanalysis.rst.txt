@@ -546,3 +546,7 @@ Typically, user’s and producer’s accuracy for a given land cover class are d
 	Calculate the overall accuracy and the per-class producer’s accuracy and user’s accuracy of your own map. Try the free `Confusion matrix online calculator <http://www.marcovanetti.com/pages/cfmatrix/>`_.
 
 .. seealso:: For additional information, see the practical guide on `Map Accuracy Assessment and Area Estimation <http://www.fao.org/3/i5601e/i5601e.pdf>`_ of `FAO <http://www.fao.org/home/en/>`_.
+
+|br|
+
+(v.11.03.20-10.15)
